@@ -1,0 +1,67 @@
+{
+  "amr": {
+    "url": "https://git.code.sf.net/p/opencore-amr/code",
+    "ref": "refs/tags/v0.1.6",
+    "commit": "7dba8c32238418ce0b316a852b2224df586ca896"
+  },
+  "baresip": {
+    "url": "https://github.com/baresip/baresip.git",
+    "ref": "refs/tags/v4.13.0",
+    "commit": "8a4f18c1c1b5331daa026236dcdd108deff601e8"
+  },
+  "bcg729": {
+    "url": "https://github.com/BelledonneCommunications/bcg729.git",
+    "ref": "refs/heads/release/1.1.1",
+    "commit": "7743da51c0bc5ff366da97179e1003b8ef056a1c"
+  },
+  "codec2": {
+    "url": "https://github.com/drowe67/codec2.git",
+    "ref": "refs/tags/1.2.0",
+    "commit": "06d4c11e699b0351765f10398abb4f663a984f36"
+  },
+  "g722": {
+    "url": "https://github.com/sippy/libg722.git",
+    "ref": "refs/tags/v1.2.2",
+    "commit": "2ec8a2dbe0cd1786e0525de94fe0d1d5fb8034ac"
+  },
+  "g7221": {
+    "url": "https://github.com/freeswitch/libg7221.git",
+    "ref": "refs/heads/master",
+    "commit": "7d35574323585fa5ad2c90daf4f88784c518dec4"
+  },
+  "ilbc": {
+    "url": "https://github.com/juha-h/libilbc.git",
+    "ref": "refs/heads/main",
+    "commit": "5533286ac556fc6cc027701242a3e8832f9910df"
+  },
+  "openssl": {
+    "url": "https://github.com/openssl/openssl.git",
+    "ref": "refs/heads/openssl-4.0",
+    "commit": "4ce7f193443699a80ea63149c86db6aa07b150ec"
+  },
+  "opus": {
+    "url": "https://github.com/xiph/opus.git",
+    "ref": "refs/tags/v1.4",
+    "commit": "82ac57d9f1aaf575800cf17373348e45b7ce6c0d"
+  },
+  "re": {
+    "url": "https://github.com/baresip/re.git",
+    "ref": "refs/tags/v4.13.0",
+    "commit": "b827bcaf55a18be141ca7bcee1e22872a3a29656"
+  },
+  "sndfile": {
+    "url": "https://github.com/juha-h/libsndfile.git",
+    "ref": "refs/heads/master",
+    "commit": "4d5c8600023c82874eb2c1c108172a8f0e6f8f1f"
+  },
+  "vo-amrwbenc": {
+    "url": "https://git.code.sf.net/p/opencore-amr/vo-amrwbenc",
+    "ref": "HEAD",
+    "commit": "884dd247dbeb6b2bd2cd3291c4872de95700291f"
+  },
+  "zrtpcpp": {
+    "url": "https://github.com/juha-h/ZRTPCPP.git",
+    "ref": "refs/heads/master",
+    "commit": "11c86eda399875368a124c0b018cb86700dc11d0"
+  }
+}

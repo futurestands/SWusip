@@ -1,0 +1,3 @@
+[submodule "baresip-studio-master/libbaresip-android"]
+    path = baresip-studio-master/libbaresip-android
+    url = https://github.com/juha-h/libbaresip-android.git

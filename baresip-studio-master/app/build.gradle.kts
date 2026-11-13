@@ -18,20 +18,19 @@ configure<ApplicationExtension> {
         @Suppress("UnstableApiUsage")
         externalNativeBuild {
             cmake {
-                cFlags += "-DHAVE_INTTYPES_H -lstdc++"
+                cFlags += "-DHAVE_INTTYPES_H"
                 arguments.addAll(listOf("-DANDROID_STL=c++_shared", "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-z,max-page-size=16384"))
             }
         }
         ndk {
             // noinspection ChromeOsAbiSupport
-            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a"))
+            abiFilters.addAll(providers.gradleProperty("swusipAbis")
+                .orElse("arm64-v8a").get().split(","))
         }
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
-        debug {
-            ndk { abiFilters.add("x86_64") }
-        }
+        debug {}
         release {
             isMinifyEnabled = true
             isShrinkResources = true

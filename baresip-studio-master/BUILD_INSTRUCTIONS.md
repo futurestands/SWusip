@@ -2,7 +2,7 @@
 
 **Organisation:** South Western Umbrella of Water and Sanitation (SWUWS), Ministry of Water and Environment, Uganda  
 **Application Name:** SWUSIP  
-**Display Name:** Umbrella Call Centre  
+**Display Name:** SWUSIP
 **Application Identifier:** `ug.go.mwe.swusip`  
 **PBX Integration:** Grandstream UCM6302A SIP PBX  
 
@@ -12,7 +12,8 @@
 
 - **Development OS:** Windows with Windows Subsystem for Linux (WSL) enabled.
 - **IDE:** Android Studio (Koala / Ladybug or newer) with Java Development Kit (JDK 21) and Android SDK (Compile SDK 37, Target SDK 36, Min SDK 28).
-- **Build Tool:** Gradle 9.6.0+
+- **Build Tool:** pinned Gradle 9.6.0 wrapper, JDK 21, SDK CMake 3.31.6, NDK 30.0.16248370.
+- **Host distinction:** Windows NDK for Gradle; matching Linux NDK for WSL native builds.
 
 ---
 
@@ -26,20 +27,21 @@ The underlying SIP and VoIP protocol engine (`baresip` and media libraries like 
    ```bash
    sudo apt update && sudo apt install -y wget cmake make libtool m4 automake pkg-config unzip build-essential
    ```
-3. Navigate to `libbaresip-android`:
-   ```bash
-   cd libbaresip-android
-   ```
-4. Configure the Android NDK path in the `Makefile` (pointing to your Android NDK installation, e.g. `/mnt/c/Users/MJ/AppData/Local/Android/Sdk/ndk/...`).
-5. Download sources and patch:
-   ```bash
-   make download-sources
-   ```
-6. Build libraries for target architectures (`arm64-v8a`, `armeabi-v7a`):
-   ```bash
-   make all
-   ```
-   This populates the `distribution/` directory with static libraries required by CMake (`app/src/main/cpp/CMakeLists.txt`).
+3. At the actual Git root (one directory above this Android project), run
+   `git submodule update --init`. The gitlink remains pinned to upstream `bf8448d`.
+4. In the Android project run `python scripts/prepare_native.py`. This fetches
+   immutable commits from the committed lock and exports native source archives.
+   Do not run upstream `make download-sources` over existing source directories.
+5. In WSL set `ANDROID_NDK_ROOT` to an extracted **Linux** r30 NDK, and
+   `SWUSIP_NATIVE_SOURCE` to an initially absent directory on the Linux filesystem.
+   Run `bash scripts/stage-native-linux.sh` to extract and apply upstream patches.
+6. Run `bash scripts/run-native-build.sh arm64-v8a`. It records compilation output
+   and the exact exit code under `docs/evidence/`, and checks object members,
+   architecture and genuine engine symbols. No empty archive workaround is allowed.
+
+The first build targets arm64 only. Build other ABIs separately before selecting
+them with Gradle's `-PswusipAbis=...`. See `docs/NATIVE_DEPENDENCIES.md` for source
+and licence details and `docs/BUILD_VERIFICATION.md` for acceptance evidence.
 
 ---
 
@@ -50,7 +52,7 @@ Once native libraries are compiled into `distribution/`:
 1. Open the project in Android Studio or build via command line:
    ```cmd
    cd baresip-studio-master
-   gradlew assembleDebug
+   gradlew.bat --no-daemon clean :app:assembleDebug :app:testDebugUnitTest :app:lintDebug
    ```
 2. The debug APK will be generated at:
    `app/build/outputs/apk/debug/app-debug.apk`
@@ -63,20 +65,12 @@ Once native libraries are compiled into `distribution/`:
 
 ## 4. Grandstream UCM6302A PBX Configuration Guide
 
-To connect SWUSIP to the Grandstream UCM6302A PBX:
+Do not alter the live PBX or network. Obtain two approved non-production extensions
+and configuration from its administrator, with passwords delivered out of band.
+Follow `docs/SIP_INTEROP_REPORT.md`: prove digest authentication, rejection of
+incorrect credentials, refresh, incoming/outgoing calls and two-way audio. UI
+indicators and application startup alone do not establish interoperability.
 
-1. **Log in to UCM6302A Web UI** as administrator.
-2. **Create SIP Extension:**
-   - Go to **PBX > Basic/Call Routes > Extensions**.
-   - Add new SIP Extension (e.g., Extension `1001` for Agent 1).
-   - Set a secure SIP Password.
-3. **Configure Transport & Network:**
-   - Transport: UDP / TCP / TLS (TLS recommended).
-   - Enable SIP registration.
-4. **Compatible Audio Codecs:**
-   - Enable G.711u (PCMU), G.711a (PCMA), Opus, and G.722.
-5. **SWUSIP Client Configuration:**
-   - Open SWUSIP app on Android device.
-   - Go to **Accounts > Add SIP Account**.
-   - Enter SIP Server IP/Domain (UCM6302A address), Port (`5060` or `5061`), Username (`1001`), and Password.
-   - Verify green registration indicator light.
+This repository remains public. Do not commit internal addressing, credentials,
+signing keys, customer records or unredacted authentication traces. Production
+deployment requires the acceptance gates in `docs/DEPLOYMENT_GUIDE.md`.
