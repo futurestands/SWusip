@@ -55,14 +55,44 @@ the original/corrected instrumentation transcripts, corrected build/lint logs,
 unit-test XML, and the original/corrected startup reports in that directory.
 Raw UI dumps and device diagnostics remain in ignored local storage.
 
-## Interactive tests blocked by the phone lock
+## Follow-up on the unlocked handset (14 November 2026)
+
+The authorised handset reconnected successfully. The unchanged **1.0.1-pilot / 587**
+APK was reinstalled using `adb install -r`, preserving app data. Its installed
+SHA-256 again matched the artifact above. All **7 Android instrumentation tests
+passed** again (`OK (7 tests)`, 0.559 seconds). The new ten-second observation
+in [revalidation-startup.json](evidence/device-validation/revalidation-startup.json)
+observed the live process, genuine native library and foreground service, with
+zero crash, native-loading, foreground-service or security-exception counters.
+
+On this occasion the unlocked SWUSIP interface was visible. Semantic UI inspection
+confirmed the institutional header, Ministry name, customer-search prompt, recent
+calls section and labelled navigation. Home explicitly reported **Extension not
+provisioned** and **SIP connection: Not registered**. Navigation from home to agent
+settings, About SWUSIP and back worked. About showed the correct institutional
+identity, version, agent guidance and a dedicated Third-Party Licences link.
+Agent settings showed audio, notifications, device-lock and help controls, and
+denied administrator access before workspace authentication.
+
+A device-bound, 30-day signed pilot administrator grant was loaded successfully
+through Android's document picker. Only the signed public grant was transferred;
+the issuer private key remains local and ignored. Android initially required file
+indexing before the transferred JSON appeared in Downloads. No app defect was
+established by that picker behaviour. The credential-confirmation screen was then
+opened for the owner to authenticate directly on the handset. **Workspace access,
+CSV/XLSX import into the encrypted directory, scheme/account searches and customer
+profiles remain pending that confirmation.** No credentials were collected and no
+security gate was bypassed. No synthetic telephone fixture was dialled.
+
+## Earlier interactive tests blocked by the phone lock
 
 ADB can reach the phone, but repeated UI inspection found only the Android System UI
 keyguard. The SWUSIP home screen was not visible to the tester. A request to unlock
 the phone and leave SWUSIP open is pending. The phone lock and workspace credential
 gate were not bypassed or disabled.
 
-Consequently these checks are **not yet completed**:
+At that earlier milestone these checks were **not yet completed** (see the
+follow-up above for the subsequently completed checks):
 
 - Visual home/header, About, navigation, labels, buttons and small-screen layouts.
 - Signed phone enrolment and credential-confirmed workspace access.
