@@ -1,25 +1,49 @@
-This is an Android Studio project implementing <a href="https://github.com/alfredh/baresip">baresip</a> library based calling and messaging User Agent for Android. Its development is motivated by need for a secure, privacy focused User Agent that does not depend on third party push notification services.
+# SWUSIP ? South Western Umbrella Call Centre
 
-Originally baresip app only supported SIP based VoIP calling and messaging. Now it can also be chosen as Android's default mobile calling and messaging app.  In addition, contacts are integrated within the app. Voice conference calls, voicemail indication as well as blind and attended call transfers are available when VoIP is used. Sending of multimedia messages (MMS) is not supported yet.
+Android softphone and offline customer directory for the South Western Umbrella
+of Water and Sanitation, Ministry of Water and Environment, Uganda.
 
-In VoIP calls audio can be coded with AMR, Codec2, G.729, G.722, G.722.1, iLBC, opus or PCMU/PCMA codecs. Security is achieved via TLS or WSS SIP signaling transport and ZRTP or (DTLS) SRTP media encapsulation.
+The genuine Baresip native SIP engine is retained. The institutional interface
+adds an agent workspace, protected administrator settings, local encrypted customer
+records, scheme search, profiles, CSV/XLSX import and encrypted spreadsheet export.
+The intended deployment is 15 authorised agents using existing Grandstream UCM6302A
+extensions. No central directory server is required for this pilot.
 
-This application can be installed on Android devices running Android version 9 or later.  Mobile calling and messaging requires Android version 10 or later.
+## Start here
 
-If you need video calling and have a device that supports Camera2 API, you can instead of this application install its sister application baresip+ from the video branch.
+- [Feature inventory and data model](docs/SWUSIP_REDESIGN.md)
+- [Pilot setup, offline phone authorisation and customer imports](docs/SWUSIP_PILOT_GUIDE.md)
+- [Excel customer template](docs/templates/swusip-customers.xlsx)
+- [CSV customer template](docs/templates/swusip-customers.csv)
+- [Native build verification and earlier milestones](docs/BUILD_VERIFICATION.md)
 
-After cloning the project, generate static libraries and include files to distribution directory using master branch of <a href="https://github.com/juha-h/libbaresip-android">libbaresip-android</a>.
+## Build
 
-Then in Android Studio (tested with Android Studio Quail 3):
+Open this Android project directory in Android Studio on Windows. Retain the
+pinned toolchain and genuine native archives described by the existing build
+documentation. Run:
 
-- Open an existing Android Studio project
+`gradlew.bat --no-daemon :app:assembleDebug :app:testDebugUnitTest :app:assembleDebugAndroidTest :app:lintDebug`
 
-- File -> Invalidate Caches ... -> Invalidate & Restart
+APK: `app/build/outputs/apk/debug/app-debug.apk`.
+Device test APK: `app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`.
+Do not confuse a debug pilot with a production-signed institutional release.
+Phone installation, authenticated directory review and real PBX/audio tests are
+separate gates. They have been deferred at the user's request while the phone charges.
+No live extension has yet been provisioned for this milestone.
 
-- Build -> Generate Signed Bundle / APK ...
+## Data and authorisation
 
-Ready to be installed baresip app is available from <a href="https://f-droid.org/app/com.tutpro.baresip">F-Droid</a>, <a href="https://play.google.com/store/apps/details?id=com.tutpro.baresip">Play Store</a>, and from <a href="https://github.com/juha-h/baresip-studio/releases">GitHub</a>.  Signing certificate SHA-256 fingerprint of baresip and baresip+ APKs on GitHub is `fecc79c20ab725b9b78bb16a75ba9a04092822cf52ba32e4a437170a68020602`. Use `apksigner verify  --print-certs app-release.apk` to verify.
+Use synthetic records for development. Never commit real customer spreadsheets,
+credentials or the offline issuer's private key. Authorisation supports device-bound
+signed files and Android managed configurations. The debug public authority alone
+is committed; the issuer private key stays in ignored `.local-pilot-authority/`.
+Release builds require a separately approved institutional authority or managed policy.
 
-Language translations are managed via baresip <a href="https://hosted.weblate.org/projects/baresip/">Weblate</a> project.
+## Third-party licences
 
-Copyright (c) 2018 TutPro Inc. Distributed under BSD-3-Clause license.
+SWUSIP derives from Baresip Studio by Juha Heinanen and TutPro Inc. and uses the
+Baresip SIP engine and other open-source components. Original copyrights and licence
+conditions are retained in [LICENSE](LICENSE), the in-app Third-Party Licences page
+and [bundled notices](app/src/main/assets/third-party-notices.txt). Historical upstream
+background is preserved in [UPSTREAM_README.md](docs/UPSTREAM_README.md).

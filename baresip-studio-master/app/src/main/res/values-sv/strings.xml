@@ -95,7 +95,7 @@
     <string name="outbound_proxies_help">SIP-URI för en eller två proxyservrar som måste användas när begäranden skickas. Om två anges skickas REGISTER-begäranden till båda och övriga begäranden till den som svarar. Om ingen utgående proxy anges skickas begäranden baserat på DNS-uppslag av NAPTR-/SRV-/A-poster för värddelen i begärans URI. SIP-URI:n har formatet sip:&lt;värd&gt;[:&lt;port&gt;][;transport=udp|tcp|tls|wss]. Om &lt;port&gt; inte anges men transportprotokoll anges används som standard 5060 (udp, tcp), 5061 (tls) eller 443 (wss). Om &lt;värd&gt; är en IPv6-adress måste adressen skrivas inom hakparenteser [].\nExempel:\n • sip:example.com;transport=tls\n • sip:[2001:67c:223:777::10];transport=tcp\n • sip:192.168.43.50:4430;transport=wss</string>
     <string name="outbound_proxies">Utgående proxyservrar</string>
     <string name="invalid_authentication_password">Ogiltigt lösenord för autentisering \'%1$s\'</string>
-    <string name="authentication_password_help">Lösenord för autentisering, upp till 64 tecken. Om användarnamn för autentisering är ifyllt, men lösenordet lämnas tomt kommer baresip fråga om lösenord vid uppstart.</string>
+    <string name="authentication_password_help">Lösenord för autentisering, upp till 64 tecken. Om användarnamn för autentisering är ifyllt, men lösenordet lämnas tomt kommer SWUSIP fråga om lösenord vid uppstart.</string>
     <string name="authentication_password">Lösenord för autentisering</string>
     <string name="authentication_username_help">Användarnamn som används om SIP-förfrågningar kräver autentisering. Förvalt värde är kontots användarnamn.</string>
     <string name="authentication_username">Användarnamn för autentisering</string>
@@ -104,12 +104,12 @@
     <string name="display_name_help">Namn som, om det anges, används i From-URI i utgående SIP-förfrågningar.</string>
     <string name="display_name">Visat namn</string>
     <string name="account">Konto</string>
-    <string name="about_title_plus">Om baresip+</string>
-    <string name="about_title">Om baresip</string>
-    <string name="about_text"><![CDATA[<h1>SIP-användaragent för samtal via mobilnätet och internet, baserad på\n<a href=\"https://github.com/baresip/baresip\">baresip</a>-biblioteket</h1>\n<br>\n<p>Juha Heinanen &lt;jh@tutpro.com&gt;</p>\n<p>Version %1$s</p>\n<br>\n<h2>Användningstips</h2>\n<ul>\n<li>Kontrollera att standardvärdena i inställningarna för baresip uppfyller\ndina behov (tryck på objektrubrikerna för hjälp).</li>\n<li>Om enheten har SIM-kort och du vill använda baresip för mobilsamtal aktiverar du inställningen\nStandardapp för telefoni. Då skapas ett mobilkonto för mobilsamtal.</li>\n<li>Skapa sedan ett eller flera SIP-konton under Konton (tryck återigen på objektrubrikerna för hjälp).</li>\n<li>Registreringsstatus för ett konto visas med en färgad punkt: grön\n(registreringen lyckades), gul (registrering pågår),\nröd (registreringen misslyckades), vit (registreringen har inte aktiverats).</li>\n<li>Tryck på statuspunkten för att gå direkt till kontokonfigurationen.</li>\n<li>Ett långt tryck på ikonerna i baresips fält visar information om ikonerna.</li>\n<li>Ett svep nedåt omregistrerar det konto som visas.</li>\n<li>Ett långt tryck på kontot som visas aktiverar eller inaktiverar kontots registrering.</li>\n<li>Svep åt vänster eller höger för att växla mellan kontona.</li>\n<li>Den tidigare samtalspartnern kan väljas igen genom att trycka på samtalsikonen när Mottagare är tom.</li>\n<li>Samtals- och meddelandemotparter kan läggas till bland kontakterna med långa tryck.</li>\n<li>Du kan också använda långa tryck för att ta bort samtal, chattar, meddelanden och kontakter.</li>\n<li>Tryck eller långt tryck på kontaktikonen kan användas för att\ninstallera eller ta bort en bildavatar.</li>\n<li>Ett långt tryck på en ljudcodec kan användas för att aktivera eller inaktivera codecen.</li>\n<li>Se <a href=\"https://github.com/juha-h/baresip-studio/wiki\">wikin</a> för mer information.</li>\n</ul>\n<h2>Integritetspolicy</h2>\n<p>Integritetspolicyn finns\n<a href=\"https://raw.githubusercontent.com/juha-h/baresip-studio/master/PrivacyPolicy.txt\">här</a>.</p>\n<br>\n<h2>Källkod</h2>\n<p>Källkoden finns på <a href=\"https://github.com/juha-h/baresip-studio\">GitHub</a>,\ndär problem också kan rapporteras.</p>\n<br>\n<h2>Översättningar</h2>\n<p>Översättningarna sköts via baresips projekt på\n<a href=\"https://hosted.weblate.org/projects/baresip/\">Weblate</a>.</p>\n<br>\n<h2>Licenser</h2>\n<ul>\n<li><b>BSD-3-Clause</b> med undantag för följande:</li>\n<li><b>Apache 2.0</b> för AMR-codecar och TLS-säkerhet</li>\n<li><b>AGPLv4</b> för ZRTP-mediekryptering</li>\n<li><b>GNU LGPL 2.1</b> för Codec2-codecen</li>\n<li><b>Free</b> för G.722-codecen</li>\n<li><b>GNU GPLv3</b> för G.729-codecen</li>\n</ul>]]></string>
+    <string name="about_title_plus">Om SWUSIP</string>
+    <string name="about_title">Om SWUSIP</string>
+
     <string name="transfer_request_query">Accepterar du att koppla det här samtalet till \'%1$s\'\?</string>
     <string name="audio_modules_title">Ljudmoduler</string>
-    <string name="start_failed">Baresip kunde inte starta. Det kan bero på ett ogiltigt värde för en inställning. Kontrollera Adress att lyssna på, TLS certifikat-fil och TLS CA-fil. Starta sedan om baresip.</string>
+    <string name="start_failed">SWUSIP kunde inte starta. Det kan bero på ett ogiltigt värde för en inställning. Kontrollera Adress att lyssna på, TLS certifikat-fil och TLS CA-fil. Starta sedan om SWUSIP.</string>
     <string name="call_already_active">Du har redan ett pågående samtal.</string>
     <string name="rate">Nuvarande hastighet: %1$s (kbits/s)</string>
     <string name="call_info_not_available">Ingen information tillgänglig</string>
@@ -124,7 +124,7 @@
     <string name="cancel">Avbryt</string>
     <string name="contact_already_exists">Kontakten \'%1$s\' finns redan.</string>
     <string name="invalid_contact">Ogiltigt kontaktnamn \'%1$s\'</string>
-    <string name="config_restart">Du måste starta om baresip för att aktivera de nya inställningarna. Starta om nu\?</string>
+    <string name="config_restart">Du måste starta om SWUSIP för att aktivera de nya inställningarna. Starta om nu\?</string>
     <string name="read_ca_certs_error">Kunde inte läsa filen \'ca_certs.crt\'.</string>
     <string name="read_cert_error">Kunde inte läsa filen \'cert.pem\'.</string>
     <string name="reset">Nollställ</string>
@@ -141,7 +141,7 @@
     <string name="verify_server">Verifiera servercertifikat</string>
     <string name="transfer_request_to">Begäran att koppla samtalet till</string>
     <string name="account_allocation_failure">Kunde inte skapa ett nytt konto.</string>
-    <string name="default_account_help">Kryssa i för att välja detta konto när baresip startar.</string>
+    <string name="default_account_help">Kryssa i för att välja detta konto när SWUSIP startar.</string>
     <string name="voicemain_uri_help">SIP-URI för att kontrollera röstmeddelanden. Om fältet lämnas tomt kommer röstmeddelanden (Message Waiting Indications) inte kontrolleras.</string>
     <string name="voicemail_uri">URI till röstbrevlåda</string>
     <string name="auto">Automatiskt</string>
@@ -158,9 +158,9 @@
     <string name="failed_to_set_dns_servers">Kunde inte ställa in DNS-servrar</string>
     <string name="dns_servers_help">Kommaseparerad lista med adresser på DNS-servrar. Om listan lämnas tom hämtas DNS-serveradresser automatiskt från systemet. Varje DNS-adress skrivs på formatet \'ip:port\' eller \'ip\'. Om port utelämnas används port 53. Om ip är en IPv6-adress och en port anges då måste ip skrivas inom hakparenteser []. Som exempel, i listan \'8.8.8.8:53,[2001:4860:4860::8888]:53\' anges IPv4- och IPv6-adresser för Googles publika DNS-servrar.</string>
     <string name="invalid_listen_address">Ogiltig adress att lyssna på</string>
-    <string name="listen_address_help">IP-adress och port i formatet ”adress:port” där baresip lyssnar efter inkommande SIP-förfrågningar. Om IP-adressen är en IPv6-adress måste den skrivas inom hakparenteser []. IPv4-adressen 0.0.0.0 eller IPv6-adressen [::] gör att baresip lyssnar på alla tillgängliga adresser. Om fältet lämnas tomt (fabriksinställning) lyssnar baresip på en godtycklig port på alla tillgängliga adresser.</string>
+    <string name="listen_address_help">IP-adress och port i formatet ”adress:port” där SWUSIP lyssnar efter inkommande SIP-förfrågningar. Om IP-adressen är en IPv6-adress måste den skrivas inom hakparenteser []. IPv4-adressen 0.0.0.0 eller IPv6-adressen [::] gör att SWUSIP lyssnar på alla tillgängliga adresser. Om fältet lämnas tomt (fabriksinställning) lyssnar SWUSIP på en godtycklig port på alla tillgängliga adresser.</string>
     <string name="listen_address">Adress att lyssna på</string>
-    <string name="start_automatically_help">Om alternativet är markerat startar baresip automatiskt när enheten har startats eller en ny version av baresip har installerats. Starten fördröjs tills enheten har låsts upp.</string>
+    <string name="start_automatically_help">Om alternativet är markerat startar SWUSIP automatiskt när enheten har startats eller en ny version av SWUSIP har installerats. Starten fördröjs tills enheten har låsts upp.</string>
     <string name="delete_chats_alert">Vill du ta bort chatt-historiken för kontot \'%1$s\'\?</string>
     <string name="short_chat_question">Vill du ta bort chatten med \'%1$s\'\?</string>
     <string name="long_chat_question">Vill du lägga till ”%1$s” bland kontakterna, blockera den eller ta bort den här chatten?</string>
@@ -183,11 +183,11 @@
     <string name="default_call_volume_help">Om alternativet är markerat används en förvald samtalsvolym på en skala från 1 till 10.</string>
     <string name="accept">Acceptera</string>
     <string name="android_contact_help">Kryssa i för att lägga till kontakten till dina Android-kontakter.</string>
-    <string name="sip_trace_help">Kryssa i för att inkludera SIP-meddelanden i Logcat-meddelanden när Felsökning är aktiverat. Funktionen inaktiveras automatiskt när baresip startar.</string>
+    <string name="sip_trace_help">Kryssa i för att inkludera SIP-meddelanden i Logcat-meddelanden när Felsökning är aktiverat. Funktionen inaktiveras automatiskt när SWUSIP startar.</string>
     <string name="debug_help">Kryssa i för att skicka felsöknings- och info-meddelanden till Logcat.</string>
     <string name="tls_ca_file_help">Om denna ruta är markerad har en fil läst in eller kommer att läst in som innehåller TLS-certifikat från certifikatutfärdare som inte ingår i Android OS. I Android version 9 läst in en fil med namnet ”ca_certs.crt” från mappen Hämtningar.</string>
-    <string name="verify_server_help">Om denna ruta är markerad verifierar baresip TLS-certifikat för SIP-användaragenter och SIP-proxyservrar när TLS-transport används.</string>
-    <string name="tls_certificate_file_help">Om denna ruta är markerad har en fil som innehåller TLS-certifikatet och den privata nyckeln för denna baresip-instans läsas in eller kommer att läsas in. I Android version 9 läses in en fil med namnet ”cert.pem” från mappen Download. Av säkerhetsskäl bör du radera filen efter inläsningen.</string>
+    <string name="verify_server_help">Om denna ruta är markerad verifierar SWUSIP TLS-certifikat för SIP-användaragenter och SIP-proxyservrar när TLS-transport används.</string>
+    <string name="tls_certificate_file_help">Om denna ruta är markerad har en fil som innehåller TLS-certifikatet och den privata nyckeln för denna SWUSIP-instans läsas in eller kommer att läsas in. I Android version 9 läses in en fil med namnet ”cert.pem” från mappen Download. Av säkerhetsskäl bör du radera filen efter inläsningen.</string>
     <string name="confirmation">Bekräftelse</string>
     <string name="notice">Notis</string>
     <string name="info">Info</string>
@@ -198,10 +198,10 @@
     <string name="video_size">Storlek på bildrutor</string>
     <string name="no_cameras">Du har ingen videokamera som stöds!</string>
     <string name="no_video_calls">Aktivera behörigheten \"Kamera\" för att ringa eller ta emot samtal.</string>
-    <string name="no_calls">baresip behöver behörigheten \"Mikrofon\" för röstsamtal.</string>
-    <string name="restore_failed">Det gick inte att återställa programdata. Kontrollera att du har angett rätt lösenord och att säkerhetskopian kommer från det här programmet. I Android version 9 ska du också kontrollera Appar → baresip → Behörighet → Lagring och att filen ’%1$s’ finns i mappen Nedladdningar.</string>
-    <string name="restored">Programdata återställd. baresip behöver startas om. Starta om nu\?</string>
-    <string name="backup_failed">Kunde inte säkerhetskopiera programdata till filen \'%1$s\'. Kontrollera Appar → baresip → Behörigheter → Lagring.</string>
+    <string name="no_calls">SWUSIP behöver behörigheten \"Mikrofon\" för röstsamtal.</string>
+    <string name="restore_failed">Det gick inte att återställa programdata. Kontrollera att du har angett rätt lösenord och att säkerhetskopian kommer från det här programmet. I Android version 9 ska du också kontrollera Appar → SWUSIP → Behörighet → Lagring och att filen ’%1$s’ finns i mappen Nedladdningar.</string>
+    <string name="restored">Programdata återställd. SWUSIP behöver startas om. Starta om nu\?</string>
+    <string name="backup_failed">Kunde inte säkerhetskopiera programdata till filen \'%1$s\'. Kontrollera Appar → SWUSIP → Behörigheter → Lagring.</string>
     <string name="backed_up">Applikationsdata (exklusive inspelningar) säkerhetskopierade till filen ’%1$s’. I Android version 9 finns filen i mappen Hämtningar.</string>
     <string name="no_network">Inget nätverk tillgängligt!</string>
     <string name="missed_calls">Missade samtal</string>
@@ -210,7 +210,7 @@
     <string name="avatar_image">Profilbild</string>
     <string name="no_backup">Det går inte att skapa en backup utan behörigheten \"Lagring\".</string>
     <string name="no_restore">Det går inte att återställa en backup utan behörigheten \"Lagring\".</string>
-    <string name="battery_optimizations_help">Inaktivera batterioptimeringar om du vill minska risken att Android begränsar baresips nätverksåtkomst eller försätter baresip i viloläge.</string>
+    <string name="battery_optimizations_help">Inaktivera batterioptimeringar om du vill minska risken att Android begränsar SWUSIPs nätverksåtkomst eller försätter SWUSIP i viloläge.</string>
     <string name="audio_settings">Ljudinställningar</string>
     <string name="jitter">Jitter: %1$s (ms)</string>
     <string name="call_is_on_hold">Samtalet är parkerat</string>
@@ -228,7 +228,7 @@
     <string name="user_domain_or_number">användare@domän eller telefonnummer</string>
     <string name="lost">Tappade</string>
     <string name="invalid_sip_or_tel_uri">Ogiltig SIP- eller tel-URI \'%1$s\'</string>
-    <string name="contacts_help">Väljer om baresip-kontakter, Android-kontakter eller båda ska användas. Om båda används och en kontakt med samma namn finns i båda kontakterna, väljs baresip-kontakten.</string>
+    <string name="contacts_help">Väljer om SWUSIP-kontakter, Android-kontakter eller båda ska användas. Om båda används och en kontakt med samma namn finns i båda kontakterna, väljs SWUSIP-kontakten.</string>
     <string name="both">Båda</string>
     <string name="no_android_contacts">Det går inte att komma åt Androids kontakter utan behörigheten \"Kontakter\".</string>
     <string name="country_code">Landsnummer</string>
@@ -240,11 +240,11 @@
     <string name="diverted_by_dots">Omdirigerad av…</string>
     <string name="attended">Vägledd</string>
     <string name="blind">Blind</string>
-    <string name="contacts_consent">Om Androids kontakter används då kan de användas som SIP- eller tel-URI-referenser för samtal och för att skicka meddelanden. baresip sparar inte Androids kontakter och delar dem inte heller med någon. För att Androids kontakter ska bli tillgängliga i baresip kräver Google att du accepterar användningen som beskrivs här och i appens <a href="https://raw.githubusercontent.com/juha-h/baresip-studio/master/PrivacyPolicy.txt">integritetspolicy</a>.</string>
+    <string name="contacts_consent">Om Androids kontakter används då kan de användas som SIP- eller tel-URI-referenser för samtal och för att skicka meddelanden. SWUSIP sparar inte Androids kontakter och delar dem inte heller med någon. För att Androids kontakter ska bli tillgängliga i SWUSIP kräver Google att du accepterar användningen som beskrivs här och i appens <a href="https://raw.githubusercontent.com/juha-h/baresip-studio/master/PrivacyPolicy.txt">integritetspolicy</a>.</string>
     <string name="rtcp_mux_help">Kryssa i för att låta RTP- och RTCP-paket använda samma port (RFC 5761).</string>
     <string name="rtcp_mux">RTCP-multiplex</string>
     <string name="no_notifications">Det går inte att använda den här appen utan behörigheten \"Aviseringar\".</string>
-    <string name="account_nickname_help">Namn (valfritt) som används för att identifiera det här kontot i baresip-appen.</string>
+    <string name="account_nickname_help">Namn (valfritt) som används för att identifiera det här kontot i SWUSIP-appen.</string>
     <string name="nickname">Smeknamn</string>
     <string name="invalid_account_nickname">Ogiltigt kontonamn \'%1$s\'</string>
     <string name="non_unique_account_nickname">Namnet \'%1$s\' används redan</string>
@@ -252,17 +252,17 @@
     <string name="reg_int">Registreringsintervall</string>
     <string name="invalid_reg_int">Ogiltigt registreringsintervall \'%1$s\'</string>
     <string name="no_telephony_provider">Kontot \'%1$s\' har ingen telefonileverantör</string>
-    <string name="address_family_help">Väljer vilken eller vilka IP-adress baresip använder. Om IPv4 eller IPv6 väljs använder baresip enbart vald adresstyp. Om ingen adresstyp väljs använder baresip både IPv4- och IPv6-adresser.</string>
+    <string name="address_family_help">Väljer vilken eller vilka IP-adress SWUSIP använder. Om IPv4 eller IPv6 väljs använder SWUSIP enbart vald adresstyp. Om ingen adresstyp väljs använder SWUSIP både IPv4- och IPv6-adresser.</string>
     <string name="address_family">Adresstyp</string>
     <string name="rec_in_call">Inspelning kan bara slås på/av när inget samtal pågår</string>
     <string name="choose_destination_uri">Välj destinations-URI</string>
-    <string name="audio_permissions">baresip behöver behörighet för ”Mikrofon” för röstsamtal, behörighet för ”Närliggande enheter” för Bluetooth-mikrofon-/högtalardetektering, behörighet för ’Meddelanden’ för att publicera meddelanden och i Android 9 behörighet för ”Lagring” för säkerhetskopierings-/återställningsåtgärder.</string>
+    <string name="audio_permissions">SWUSIP behöver behörighet för ”Mikrofon” för röstsamtal, behörighet för ”Närliggande enheter” för Bluetooth-mikrofon-/högtalardetektering, behörighet för ’Meddelanden’ för att publicera meddelanden och i Android 9 behörighet för ”Lagring” för säkerhetskopierings-/återställningsåtgärder.</string>
     <string name="audio_delay">Fördröjt ljud</string>
     <string name="invalid_audio_delay">Ogiltigt värde för fördröjt ljud \'%1$s\'. Giltiga värden är från 100 till 3000.</string>
     <string name="permissions_rationale">Behörigheters motivering</string>
-    <string name="reg_int_help">Avgör hur ofta (i sekunder) baresip skickar REGISTER-förfrågningar. Giltiga värden är från 60 till 3600.</string>
+    <string name="reg_int_help">Avgör hur ofta (i sekunder) SWUSIP skickar REGISTER-förfrågningar. Giltiga värden är från 60 till 3600.</string>
     <string name="audio_delay_help">Tid (i millisekunder) att vänta på ljud från motparten när ett samtal upprättats. Sätt till ett högre värde om du saknar ljud från motparten i början av samtalet.</string>
-    <string name="audio_and_video_permissions">baresip+ behöver behörighet för ”Mikrofon” för röstsamtal, behörighet för ”Kamera” för videosamtal, behörighet för ”Närliggande enheter” för Bluetooth-mikrofon-/högtalardetektering, behörighet för ’Meddelanden’ för att publicera meddelanden och i Android 9 behörighet för ”Lagring” för säkerhetskopierings-/återställningsåtgärder.</string>
+    <string name="audio_and_video_permissions">SWUSIP behöver behörighet för ”Mikrofon” för röstsamtal, behörighet för ”Kamera” för videosamtal, behörighet för ”Närliggande enheter” för Bluetooth-mikrofon-/högtalardetektering, behörighet för ’Meddelanden’ för att publicera meddelanden och i Android 9 behörighet för ”Lagring” för säkerhetskopierings-/återställningsåtgärder.</string>
     <string name="call_answered">Samtal besvarat</string>
     <string name="call_answered_elsewhere">Samtal besvarat någon annanstans</string>
     <string name="call_missed">Samtal missat</string>
@@ -281,7 +281,7 @@
     <string name="appear_on_top_permission">Automatisk start kräver behörighet för att visas överst.</string>
     <string name="default_phone_app">Telefonapp som standard</string>
     <string name="dialer_role_not_available">Rollen som standardapp för telefoni är inte tillgänglig</string>
-    <string name="default_phone_app_help">Om alternativet är markerat är baresip standardapp för telefoni.</string>
+    <string name="default_phone_app_help">Om alternativet är markerat är SWUSIP standardapp för telefoni.</string>
     <string name="no_read_permission">Ingen läsbehörighet för extern lagring</string>
     <string name="speaker_phone">Högtalartelefon</string>
     <string name="speaker_phone_help">Om denna ruta är markerad aktiveras högtalartelefonen automatiskt när samtalet inleds.</string>
@@ -351,7 +351,7 @@
     <string name="voicemain_tel_uri_help">TEL-URI för kontroll av röstmeddelanden.</string>
     <string name="no_telephone_number">Mobilsamtal kan endast ringas till telefonnummer</string>
     <string name="default_messaging_app">Standardapp för meddelanden</string>
-    <string name="default_messaging_app_help">Om alternativet är markerat är baresip standardapp för SMS/MMS.</string>
+    <string name="default_messaging_app_help">Om alternativet är markerat är SWUSIP standardapp för SMS/MMS.</string>
     <string name="messaging_role_not_available">Rollen som standardapp för meddelanden är inte tillgänglig</string>
     <string name="enable_default_messaging">Aktivera Standardapp för meddelanden i Inställningar</string>
     <string name="email">E-postadress</string>

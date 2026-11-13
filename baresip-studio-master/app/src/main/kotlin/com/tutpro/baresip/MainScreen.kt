@@ -45,6 +45,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -528,198 +529,28 @@ private fun TopAppBar(
     onRestartClick: () -> Unit,
     onQuitClick: () -> Unit
 ) {
-    val ctx = LocalContext.current
-    val currentMicIcon by viewModel.micIcon.collectAsState()
-
-    val recOffImage = Icons.Filled.VoiceOverOff
-    val recOnImage = Icons.Filled.RecordVoiceOver
-    var isRecOn by remember { mutableStateOf(BaresipService.isRecOn) }
-    val isSpeakerOn by viewModel.isSpeakerOn.collectAsState()
-    var menuExpanded by remember { mutableStateOf(false) }
-
-    val about = stringResource(R.string.about)
-    val settings = stringResource(R.string.configuration)
-    val accounts = stringResource(R.string.accounts)
-    val backup = stringResource(R.string.backup)
-    val restore = stringResource(R.string.restore)
-    val logcat = stringResource(R.string.logcat)
-    val restart = stringResource(R.string.restart)
-    val quit = stringResource(R.string.quit)
-
-    TopAppBar(
-        title = {
-            Text(
-                text = stringResource(R.string.baresip),
-                color = MaterialTheme.colorScheme.primary,
-                fontSize = 22.sp,
-                fontWeight = FontWeight.Bold
-            )
-        },
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant,
-            titleContentColor = MaterialTheme.colorScheme.primary,
-            navigationIconContentColor = MaterialTheme.colorScheme.secondary,
-            actionIconContentColor = MaterialTheme.colorScheme.secondary
-        ),
-        actions = {
-
-            val selectedAor by viewModel.selectedAor.collectAsState()
-            val uas by uas
-            val isMobile = uas.find { it.account.aor == selectedAor }?.account?.isMobile ?: false
-
-            if (!isMobile) {
-                Spacer(modifier = Modifier.width(8.dp))
-
-                val callRecordingTitle = stringResource(R.string.call_recording_title)
-                val callRecordingMessage = stringResource(R.string.call_recording_tip)
-                Box(contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .size(48.dp)
-                        .clip(CircleShape)
-                        .combinedClickable(
-                            onClick = {
-                                if (checkLockedAndToast(ctx)) return@combinedClickable
-                                if (Call.call("connected") == null) {
-                                    BaresipService.isRecOn = !BaresipService.isRecOn
-                                    if (BaresipService.isRecOn)
-                                        Api.module_load("sndfile")
-                                    else
-                                        Api.module_unload("sndfile")
-                                    isRecOn = BaresipService.isRecOn
-                                }
-                                else
-                                    Toast.makeText(
-                                        ctx,
-                                        R.string.rec_in_call,
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                            },
-                            onLongClick = {
-                                alertTitle.value = callRecordingTitle
-                                alertMessage.value = callRecordingMessage
-                                showAlert.value = true
-                            }
-                        )
-                ) {
-                    Icon(
-                        imageVector = if (isRecOn) recOnImage else recOffImage,
-                        contentDescription = null,
-                        tint = if (isRecOn)
-                            MaterialTheme.colorScheme.error
-                        else
-                            MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier.size(40.dp)
-                    )
-                }
+    val context = LocalContext.current
+    Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceVariant).statusBarsPadding()) {
+        Text("SWUSIP", Modifier.padding(start = 20.dp, top = 12.dp),
+            color = MaterialTheme.colorScheme.primary, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+        Text("South Western Umbrella Call Centre", Modifier.padding(horizontal = 20.dp, vertical = 4.dp),
+            style = MaterialTheme.typography.bodyMedium)
+        val speaker by viewModel.isSpeakerOn.collectAsState()
+        var muted by remember { mutableStateOf(BaresipService.isMicMuted) }
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+            TextButton(onClick = {
+                BaresipService.setMicMute(!BaresipService.isMicMuted)
+                muted = BaresipService.isMicMuted
+            }) { Text(if (muted) "Unmute" else "Mute") }
+            TextButton(onClick = { BaresipService.instance?.toggleSpeakerphone() }) {
+                Text(if (speaker) "Speaker on" else "Speaker off")
             }
-
-            Spacer(modifier = Modifier.width(22.dp))
-
-            val microPhoneTitle = stringResource(R.string.microphone_title)
-            val microPhoneMessage = stringResource(R.string.microphone_tip)
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier
-                    .size(48.dp)
-                    .clip(CircleShape)
-                    .combinedClickable(
-                        onClick = {
-                            if (Call.call("connected") != null) {
-                                val newMuteState = !BaresipService.isMicMuted
-                                BaresipService.setMicMute(newMuteState)
-                                if (newMuteState)
-                                    viewModel.updateMicIcon(Icons.Filled.MicOff)
-                                else
-                                    viewModel.updateMicIcon(Icons.Filled.Mic)
-                            }
-                        },
-                        onLongClick = {
-                            alertTitle.value = microPhoneTitle
-                            alertMessage.value = microPhoneMessage
-                            showAlert.value = true
-                        }
-                    )
-            ) {
-                Icon(
-                    imageVector = currentMicIcon,
-                    contentDescription = null,
-                    tint = if (BaresipService.isMicMuted)
-                        MaterialTheme.colorScheme.error
-                    else
-                        MaterialTheme.colorScheme.secondary,
-                    modifier = Modifier.size(40.dp)
-                )
-            }
-
-            Spacer(modifier = Modifier.width(16.dp))
-
-            val speakerPhoneTitle = stringResource(R.string.speakerphone_title)
-            val speakerPhoneMessage = stringResource(R.string.speakerphone_tip)
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier
-                    .size(48.dp)
-                    .clip(CircleShape)
-                    .combinedClickable(
-                        onClick = { BaresipService.instance?.toggleSpeakerphone() },
-                        onLongClick = {
-                            alertTitle.value = speakerPhoneTitle
-                            alertMessage.value = speakerPhoneMessage
-                            showAlert.value = true
-                        }
-                    )
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.SpeakerPhone,
-                    contentDescription = null,
-                    tint = if (isSpeakerOn)
-                        MaterialTheme.colorScheme.error
-                    else
-                        MaterialTheme.colorScheme.secondary,
-                    modifier = Modifier.size(40.dp)
-                )
-            }
-
-            IconButton(
-                onClick = { menuExpanded = !menuExpanded }
-            ) {
-                Icon(
-                    imageVector = Icons.Default.MoreVert,
-                    contentDescription = "Menu",
-                    tint = MaterialTheme.colorScheme.secondary
-                )
-            }
-
-            DropdownMenu(
-                expanded = menuExpanded,
-                onDismissRequest = { menuExpanded = false },
-                menuItems = listOfNotNull(
-                    MenuItem(about, Icons.Outlined.Info),
-                    MenuItem(settings, Icons.Outlined.Settings),
-                    MenuItem(accounts, Icons.Outlined.ManageAccounts),
-                    MenuItem(backup, Icons.Outlined.Upload),
-                    MenuItem(restore, Icons.Outlined.Download),
-                    if (VERSION.SDK_INT >= 29) MenuItem(logcat, Icons.AutoMirrored.Outlined.ReceiptLong) else null,
-                    MenuItem(restart, Icons.Outlined.RestartAlt),
-                    MenuItem(quit, Icons.AutoMirrored.Filled.Logout)
-                ),
-                onItemClick = { selectedItem ->
-                    menuExpanded = false
-                    if (checkLockedAndToast(ctx)) return@DropdownMenu
-                    when (selectedItem) {
-                        about -> { navController.navigate("about") }
-                        settings -> { navController.navigate("settings") }
-                        accounts -> { navController.navigate("accounts") }
-                        backup -> onBackupClick()
-                        restore -> onRestoreClick()
-                        logcat -> onLogcatClick()
-                        restart -> onRestartClick()
-                        quit -> onQuitClick()
-                    }
-                }
-            )
+            TextButton(onClick = {
+                if (!checkLockedAndToast(context))
+                    navController.navigate("agent-settings")
+            }) { Text("Settings") }
         }
-    )
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -750,134 +581,21 @@ private fun DockedToolbarItem(
 
 @Composable
 private fun BottomBar(ctx: Context, viewModel: ViewModel, navController: NavController) {
-
     val aor by viewModel.selectedAor.collectAsState()
-    val accountUpdate by viewModel.accountUpdate.collectAsState()
-
-    val showVmIcon = remember(aor, accountUpdate) {
-        aor.isNotEmpty() && (Account.ofAor(aor)?.vmUri?.isNotEmpty() == true)
-    }
-    val hasNewVoicemail = remember(aor, accountUpdate) {
-        aor.isNotEmpty() && ((Account.ofAor(aor)?.vmNew ?: 0) > 0)
-    }
-    val isMobile = remember(aor, accountUpdate) {
-        aor.isNotEmpty() && (Account.ofAor(aor)?.isMobile == true)
-    }
-    val hasUnreadMessages = remember(aor, accountUpdate) {
-        aor.isNotEmpty() && (Account.ofAor(aor)?.unreadMessages == true)
-    }
-    val hasMissedCalls = remember(aor, accountUpdate) {
-        aor.isNotEmpty() && (Account.ofAor(aor)?.missedCalls == true)
-    }
-
-    val isDialpadVisible by viewModel.isDialpadVisible.collectAsState()
-
-    val voicemailLabel = stringResource(R.string.voicemail_uri)
-    val contactsLabel = stringResource(R.string.contacts)
-    val chatsLabel = stringResource(R.string.chats)
-    val historyLabel = stringResource(R.string.call_history)
-    val dialpadLabel = stringResource(R.string.numeric_keypad)
-
-    val iconSize = 36.dp
-
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .navigationBarsPadding()
-            .padding(start = if (showVmIcon) 16.dp else 32.dp, end = if (showVmIcon) 16.dp else 32.dp, bottom = 12.dp)
-            .shadow(12.dp, RoundedCornerShape(32.dp))
-            .background(MaterialTheme.colorScheme.surfaceVariant, shape = RoundedCornerShape(32.dp))
-            .height(64.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            if (showVmIcon)
-                DockedToolbarItem(
-                    enabled = aor.isNotEmpty(),
-                    onClick = {
-                        if (checkLockedAndToast(ctx)) return@DockedToolbarItem
-                        val ua = UserAgent.ofAor(aor) ?: return@DockedToolbarItem
-                        val acc = ua.account
-                        if (acc.vmUri.isNotEmpty()) {
-                            if (isMobile) {
-                                val intent = Intent(ctx, MainActivity::class.java)
-                                intent.putExtra("uap", ua.uap)
-                                intent.putExtra("peer", acc.vmUri)
-                                handleIntent(ctx, viewModel, intent, "call")
-                            }
-                            else {
-                                dialogTitle.value = ctx.getString(R.string.voicemail_messages)
-                                dialogMessage.value = acc.vmMessages(ctx)
-                                firstText.value = ctx.getString(R.string.cancel)
-                                onFirstClicked.value = {}
-                                secondText.value = ""
-                                lastText.value = ctx.getString(R.string.listen)
-                                onLastClicked.value = {
-                                    val intent = Intent(ctx, MainActivity::class.java)
-                                    intent.putExtra("uap", ua.uap)
-                                    intent.putExtra("peer", acc.vmUri)
-                                    handleIntent(ctx, viewModel, intent, "call")
-                                }
-                                showDialog.value = true
-                            }
-                        }
-                    },
-                    icon = Icons.Filled.Voicemail,
-                    contentDescription = voicemailLabel,
-                    iconSize = iconSize,
-                    tint = if (hasNewVoicemail) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.secondary
-                )
-
-            DockedToolbarItem(
-                onClick = {
-                    if (checkLockedAndToast(ctx)) return@DockedToolbarItem
-                    navController.navigate("contacts")
-                },
-                icon = Icons.Filled.Person,
-                contentDescription = contactsLabel,
-                iconSize = iconSize,
-                tint = MaterialTheme.colorScheme.secondary
-            )
-
-            DockedToolbarItem(
-                enabled = aor.isNotEmpty(),
-                onClick = {
-                    if (checkLockedAndToast(ctx)) return@DockedToolbarItem
-                    navController.navigate("chats/$aor")
-                },
-                icon = Icons.AutoMirrored.Filled.Chat,
-                contentDescription = chatsLabel,
-                iconSize = iconSize,
-                tint = if (hasUnreadMessages) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.secondary
-            )
-
-            DockedToolbarItem(
-                enabled = aor.isNotEmpty(),
-                onClick = {
-                    if (checkLockedAndToast(ctx)) return@DockedToolbarItem
-                    navController.navigate("calls/$aor")
-                },
-                icon = Icons.Filled.History,
-                contentDescription = historyLabel,
-                iconSize = iconSize,
-                tint = if (hasMissedCalls) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.secondary
-            )
-
-            DockedToolbarItem(
-                onClick = {
-                    if (checkLockedAndToast(ctx)) return@DockedToolbarItem
-                    viewModel.toggleDialpadVisibility()
-                },
-                enabled = dialpadButtonEnabled.value,
-                icon = Icons.Filled.Dialpad,
-                contentDescription = dialpadLabel,
-                iconSize = iconSize,
-                tint = if (isDialpadVisible) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.secondary
-            )
+    val updates by viewModel.accountUpdate.collectAsState()
+    val missed = remember(aor, updates) { Account.ofAor(aor)?.missedCalls == true }
+    Row(Modifier.fillMaxWidth().navigationBarsPadding().background(MaterialTheme.colorScheme.surfaceVariant),
+        horizontalArrangement = Arrangement.SpaceEvenly) {
+        listOf("Dialler", "Contacts", if (missed) "History •" else "History", "Customers").forEachIndexed { index, label ->
+            TextButton(modifier = Modifier.weight(1f), onClick = {
+                if (checkLockedAndToast(ctx)) return@TextButton
+                when (index) {
+                    0 -> viewModel.toggleDialpadVisibility()
+                    1 -> navController.navigate("contacts")
+                    2 -> if (aor.isNotEmpty()) navController.navigate("calls/${Uri.encode(aor)}")
+                    3 -> navController.navigate("customers")
+                }
+            }) { Text(label, fontSize = 11.sp, maxLines = 2, textAlign = TextAlign.Center) }
         }
     }
 }
@@ -974,7 +692,7 @@ private fun OutgoingCallCard(
             ) {
                 Icon(
                     imageVector = Icons.Default.CallEnd,
-                    contentDescription = null,
+                    contentDescription = "End call",
                     tint = Color.White,
                     modifier = Modifier.size(36.dp)
                 )
@@ -1069,7 +787,7 @@ private fun IncomingCallCard(
             ) {
                 Icon(
                     imageVector = Icons.Default.CallEnd,
-                    contentDescription = null,
+                    contentDescription = "End call",
                     tint = Color.White,
                     modifier = Modifier.size(36.dp)
                 )
@@ -1117,7 +835,7 @@ private fun CallCard(
                     ) {
                         Icon(
                             imageVector = Icons.Default.CallEnd,
-                            contentDescription = null,
+                            contentDescription = "End call",
                             tint = Color.White,
                             modifier = Modifier.size(36.dp)
                         )
@@ -1246,11 +964,24 @@ private fun MainContent(navController: NavController, viewModel: ViewModel, cont
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        Text("Ministry of Water and Environment, Uganda",
+            style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(bottom = 8.dp))
         AccountSpinner(ctx, viewModel, navController)
+        val status = uasStatus.value[selectedAor]
+        Text("SIP connection: " + when (status) {
+            R.drawable.circle_green, R.drawable.circle_green_blind -> "Connected"
+            R.drawable.circle_red, R.drawable.circle_red_blind -> "Registration failed"
+            R.drawable.circle_yellow, R.drawable.circle_yellow_blind -> "Connecting"
+            else -> "Not registered"
+        }, modifier = Modifier.padding(vertical = 8.dp), style = MaterialTheme.typography.bodyMedium)
+        TextButton(onClick = {
+            if (!checkLockedAndToast(ctx)) navController.navigate("customers")
+        }) { Text("Search customer by name, number, account or scheme") }
 
         aorCalls.forEach { call ->
             key(call.callp) {
                 CallCard(ctx = ctx, viewModel = viewModel, call = call, dialerState = null)
+                CallCustomerPanel(call.peerUri) { navController.navigate("customers?phone=${Uri.encode(CustomerNumbers.normalise(call.peerUri) ?: "")}") }
             }
         }
 
@@ -1261,6 +992,17 @@ private fun MainContent(navController: NavController, viewModel: ViewModel, cont
 
         if (showEmptyCard)
             CallCard(ctx = ctx, viewModel = viewModel, call = null, dialerState = viewModel.dialerState)
+
+        if (!hasActiveCalls) {
+            val recent = BaresipService.callHistory.filter { it.aor == selectedAor }.takeLast(3).reversed()
+            Text("Recent calls", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 12.dp))
+            if (recent.isEmpty()) Text("No recent calls for this extension")
+            recent.forEach { entry ->
+                TextButton(onClick = {
+                    if (!checkLockedAndToast(ctx)) viewModel.dialerState.callUri.value = entry.peerUri
+                }) { Text(ua?.let { Utils.friendlyUri(ctx,entry.peerUri,it.account) } ?: entry.peerUri) }
+            }
+        }
 
         Indicator(
             modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -1299,7 +1041,7 @@ private fun AccountSpinner(ctx: Context, viewModel: ViewModel, navController: Na
         OutlinedButton(
             onClick = {
                 if (checkLockedAndToast(ctx)) return@OutlinedButton
-                navController.navigate("accounts")
+                navController.navigate("agent-settings")
             },
             modifier = Modifier.padding(horizontal = 4.dp).height(50.dp).fillMaxWidth(),
             colors = ButtonColors(
@@ -1310,7 +1052,7 @@ private fun AccountSpinner(ctx: Context, viewModel: ViewModel, navController: Na
             ),
             shape = RoundedCornerShape(12.dp),
             contentPadding = PaddingValues(horizontal = 10.dp)
-        ) { Text(text = "") }
+        ) { Text(text = "Extension not provisioned — contact your administrator") }
     }
     else
         OutlinedButton(
@@ -1330,7 +1072,7 @@ private fun AccountSpinner(ctx: Context, viewModel: ViewModel, navController: Na
                         },
                         onLongPress = {
                             val ua = UserAgent.ofAor(selected)
-                            if (ua != null) {
+                            if (ua != null && InstitutionAccess.administrator(ctx)) {
                                 val acc = ua.account
                                 if (!acc.isMobile) {
                                     if (Api.account_regint(acc.accp) > 0) {
@@ -1367,7 +1109,7 @@ private fun AccountSpinner(ctx: Context, viewModel: ViewModel, navController: Na
                     .padding(end = 10.dp)
                     .clickable(onClick = {
                         if (checkLockedAndToast(ctx)) return@clickable
-                        navController.navigate("account/$selected/old")
+                        navController.navigate("agent-settings")
                     })
             )
             Text(
@@ -1385,7 +1127,7 @@ private fun AccountSpinner(ctx: Context, viewModel: ViewModel, navController: Na
                         },
                         onLongClick = {
                             val ua = UserAgent.ofAor(selected)
-                            if (ua != null) {
+                            if (ua != null && InstitutionAccess.administrator(ctx)) {
                                 val acc = ua.account
                                 if (!acc.isMobile) {
                                     if (Api.account_regint(acc.accp) > 0) {
@@ -1826,15 +1568,7 @@ private fun CallRow(
                         }
                     },
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.PauseCircle,
-                        modifier = Modifier.size(42.dp),
-                        tint = if (call.callOnHold.value)
-                            MaterialTheme.colorScheme.error
-                        else
-                            MaterialTheme.colorScheme.secondary,
-                        contentDescription = null,
-                    )
+                    Text(if (call.callOnHold.value) "Resume" else "Hold", fontSize = 10.sp, maxLines = 1)
                 }
 
             var showTransferDialog by remember { mutableStateOf(false) }
@@ -1864,15 +1598,7 @@ private fun CallRow(
                             showTransferDialog = true
                     },
                 ) {
-                    Icon(
-                        imageVector = Icons.Outlined.ArrowCircleRight,
-                        modifier = Modifier.size(42.dp),
-                        tint = if (call.callTransfer.value)
-                            MaterialTheme.colorScheme.error
-                        else
-                            MaterialTheme.colorScheme.secondary,
-                        contentDescription = null,
-                    )
+                    Text("Transfer", fontSize = 10.sp, maxLines = 1)
                 }
 
             if (showTransferDialog) {

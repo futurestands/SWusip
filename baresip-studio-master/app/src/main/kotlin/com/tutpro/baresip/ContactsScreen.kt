@@ -306,7 +306,7 @@ private fun ContactsScreen(navController: NavController) {
     }
 
     val contactModeItems = remember(both, BaresipService.contactsMode) {
-        val names = listOf("baresip", "Android", both)
+        val names = listOf("SWUSIP contacts", "Android contacts", both)
         val values = listOf("baresip", "android", "both")
         names.mapIndexed { index, name ->
             MenuItem(

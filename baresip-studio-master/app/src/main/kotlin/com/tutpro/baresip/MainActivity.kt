@@ -262,6 +262,8 @@ class MainActivity : ComponentActivity() {
                         onRestartApp = { restartApp() },
                         onQuitApp = { quitApp() }
                     )
+                    agentSettingsRoute(navController)
+                    customersRoute(navController, viewModel)
                     aboutScreenRoute(navController)
                     settingsScreenRoute(
                         navController = navController,

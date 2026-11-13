@@ -65,6 +65,11 @@ fun NavGraphBuilder.blockingScreenRoute(navController: NavController) {
         route = "blocking/{aor}",
         arguments = listOf(navArgument("aor") { type = NavType.StringType })
     ) { backStackEntry ->
+        if (!administratorAccess()) {
+            androidx.compose.material3.Text("Institutional administrator authorisation required")
+            return@composable
+        }
+        InstitutionScreenPrivacy()
         val aor = backStackEntry.arguments?.getString("aor")!!
         val viewModel = viewModel<AccountViewModel>()
         val ua = UserAgent.ofAor(aor)

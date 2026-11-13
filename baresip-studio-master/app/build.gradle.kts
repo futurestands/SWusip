@@ -13,8 +13,9 @@ configure<ApplicationExtension> {
         applicationId = "ug.go.mwe.swusip"
         minSdk = 28
         targetSdk = 36
-        versionCode = 585
-        versionName = "94.1.9"
+        versionCode = 586
+        versionName = "1.0.0-pilot"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         externalNativeBuild {
             cmake {
@@ -68,6 +69,10 @@ composeCompiler {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("net.sf.kxml:kxml2:2.3.0")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.compose.material3)

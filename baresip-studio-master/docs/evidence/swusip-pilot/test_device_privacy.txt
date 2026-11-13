@@ -1,0 +1,11 @@
+test_does_not_capture_logs_for_similarly_named_app (__main__.ScopedDeviceLogging.test_does_not_capture_logs_for_similarly_named_app) ... ok
+test_executable_mapping_must_match_exact_apk_and_native_byte_range (__main__.ScopedDeviceLogging.test_executable_mapping_must_match_exact_apk_and_native_byte_range) ... ok
+test_old_crash_does_not_contaminate_current_observation (__main__.ScopedDeviceLogging.test_old_crash_does_not_contaminate_current_observation) ... ok
+test_padded_epoch_timestamps_are_not_silently_discarded (__main__.ScopedDeviceLogging.test_padded_epoch_timestamps_are_not_silently_discarded) ... ok
+test_process_survival_alone_cannot_pass_service_startup (__main__.ScopedDeviceLogging.test_process_survival_alone_cannot_pass_service_startup) ... ok
+test_selects_only_exact_application_uid (__main__.ScopedDeviceLogging.test_selects_only_exact_application_uid) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

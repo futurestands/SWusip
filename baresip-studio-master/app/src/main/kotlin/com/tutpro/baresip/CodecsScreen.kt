@@ -1,5 +1,7 @@
 package com.tutpro.baresip
 
+import androidx.compose.ui.platform.LocalContext
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Column
@@ -50,6 +52,11 @@ fun NavGraphBuilder.codecsScreenRoute(navController: NavController) {
             navArgument("aor") { type = NavType.StringType },
             navArgument("media") { type = NavType.StringType })
     ) { backStackEntry ->
+        if (!administratorAccess()) {
+            androidx.compose.material3.Text("Institutional administrator authorisation required")
+            return@composable
+        }
+        InstitutionScreenPrivacy()
         val aor = backStackEntry.arguments?.getString("aor")!!
         val media = backStackEntry.arguments?.getString("media")!!
         val ua = UserAgent.ofAor(aor)

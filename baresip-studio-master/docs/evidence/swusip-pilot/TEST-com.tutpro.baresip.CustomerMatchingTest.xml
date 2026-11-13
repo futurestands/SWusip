@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tutpro.baresip.CustomerMatchingTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-11-13T20:14:15.044Z" hostname="DESKTOP-6B00F9J" time="0.032">
+  <properties/>
+  <testcase name="sameAccountNumberInDifferentSchemeIsValid" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.009"/>
+  <testcase name="conflictingSchemeNamesWithinOneFileAreRejected" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.004"/>
+  <testcase name="searchSupportsEveryRequiredFieldAndUgandaPhoneFormats" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.007"/>
+  <testcase name="simulatedLookupReturnsNameAccountAndScheme" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.001"/>
+  <testcase name="additionalTelephoneIsAnAuthorisedUpdateProposal" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.001"/>
+  <testcase name="sharedCallerNumberReturnsAllCustomersAndSchemes" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.005"/>
+  <testcase name="unknownCallerRemainsUnknown" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.0"/>
+  <testcase name="conflictingOwnerIsRejected" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.0"/>
+  <testcase name="duplicateImportIsExplicitlySkipped" classname="com.tutpro.baresip.CustomerMatchingTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

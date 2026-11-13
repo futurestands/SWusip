@@ -351,30 +351,8 @@ private fun Calls(
                                             }
                                         }
                                     }
-                                    thirdButtonText.value = ctx.getString(R.string.send_message)
-                                    thirdAction.value = {
-                                        if (ua.account.isMobile) {
-                                            if (ua.status != circleGreen.getValue(colorblind)) {
-                                                alertTitle.value = ctx.getString(R.string.notice)
-                                                alertMessage.value = Utils.mobileStatusMessage(ctx, ua.status)
-                                                showAlert.value = true
-                                            }
-                                            else if (!Utils.isDefaultSmsApp(ctx)) {
-                                                    alertTitle.value = ctx.getString(R.string.notice)
-                                                    alertMessage.value =
-                                                        ctx.getString(R.string.enable_default_messaging)
-                                                    showAlert.value = true
-                                                }
-                                            else {
-                                                handleIntent(ctx, viewModel, intent, "message")
-                                                navController.navigateUp()
-                                            }
-                                        }
-                                        else {
-                                            handleIntent(ctx, viewModel, intent, "message")
-                                            navController.navigateUp()
-                                        }
-                                    }
+                                    thirdButtonText.value = ""
+                                    thirdAction.value = {}
                                     if (contact is Contact.BaresipContact && contact.email.isNotEmpty()) {
                                         lastButtonText.value = ctx.getString(R.string.send_email)
                                         lastAction.value = {

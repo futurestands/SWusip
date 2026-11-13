@@ -93,6 +93,11 @@ fun NavGraphBuilder.settingsScreenRoute(
     onRestartApp: () -> Unit
 ) {
     composable("settings") {
+        if (!administratorAccess()) {
+            androidx.compose.material3.Text("Institutional administrator authorisation required")
+            return@composable
+        }
+        InstitutionScreenPrivacy()
         val ctx = LocalContext.current
         val viewModel = viewModel<SettingsViewModel>()
         SettingsScreen(
@@ -163,7 +168,7 @@ private fun SettingsScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = stringResource(R.string.configuration), fontWeight = FontWeight.Bold)
+                    Text(text = "SWUSIP Administrator Settings", fontWeight = FontWeight.Bold)
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surfaceVariant,

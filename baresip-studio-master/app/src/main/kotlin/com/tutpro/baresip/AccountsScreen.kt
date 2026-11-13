@@ -55,7 +55,14 @@ import com.tutpro.baresip.CustomElements.AlertDialog
 import com.tutpro.baresip.CustomElements.verticalScrollbar
 
 fun NavGraphBuilder.accountsScreenRoute(navController: NavController) {
-    composable("accounts") { AccountsScreen(navController) }
+    composable("accounts") {
+        if (!administratorAccess()) {
+            androidx.compose.material3.Text("Institutional administrator authorisation required")
+            return@composable
+        }
+        InstitutionScreenPrivacy()
+        AccountsScreen(navController)
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)

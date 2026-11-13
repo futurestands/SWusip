@@ -23,3 +23,12 @@ build
 *.p12
 *.pem
 __pycache__/
+
+# Offline pilot issuer secrets and signed phone grants
+.local-pilot-authority/
+*.phone-grant.json
+
+.artifact-build/
+
+# Local deliverable copies (APK artifacts are not source files)
+artifacts/

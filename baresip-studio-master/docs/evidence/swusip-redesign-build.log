@@ -1,0 +1,116 @@
+./gradlew.bat : WARNING: A restricted method in java.lang.System has been called
+At line:3 char:1
++ ./gradlew.bat --no-daemon :app:assembleDebug :app:testDebugUnitTest * ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an
+unnamed module (file:/C:/Users/MJ/.gradle/wrapper/dists/gradle-9.6.0-bin/42k10rwplmzkhuboz9kdazi7s/gradle-9.6.0/lib/nat
+ive-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:mergeDebugResources
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :app:parseDebugLocalResources
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:generateDebugRFile
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:processDebugManifestForPackage
+> Task :app:compileDebugKotlin
+> Task :app:processDebugResources
+
+> Task :app:compileDebugKotlin
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Acc
+ountsScreen.kt:57:21 Functions which invoke @Composable functions must be marked with the @Composable annotation
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Acc
+ountsScreen.kt:59:59 @Composable invocations can only happen from the context of a @Composable function
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Acc
+ountsScreen.kt:60:40 @Composable invocations can only happen from the context of a @Composable function
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Acc
+ountsScreen.kt:61:19 Unresolved label.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:6:19 Unresolved reference 'RestrictionsManager'.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:28:17 Inapplicable candidate(s): fun getSystemService(p0: String): Any!
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:28:34 Unresolved reference 'RestrictionsManager'.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:28:61 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:28:61 Candidate 'val <T> KClass<T>.java: Class<T>' is inapplicable because of a receiver type
+mismatch.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:29:14 Unresolved reference 'applicationRestrictions' on receiver of type 'Any'.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:31:17 Inapplicable candidate(s): fun getSystemService(p0: String): Any!
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:31:34 Unresolved reference 'RestrictionsManager'.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:31:61 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:31:61 Candidate 'val <T> KClass<T>.java: Class<T>' is inapplicable because of a receiver type
+mismatch.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Age
+ntSettingsScreen.kt:32:14 Unresolved reference 'applicationRestrictions' on receiver of type 'Any'.
+e: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/baresip/Cod
+ecsScreen.kt:53:46 Unresolved reference 'LocalContext'.
+
+> Task :app:compileDebugKotlin FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin' (registered by plugin 'com.android.internal.application').
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.btapi.BuildToolsApiCompilationWork
+   > Kotlin compiler: COMPOSABLE_EXPECTED
+       Kotlin compiler error
+         Functions which invoke @Composable functions must be marked with the @Composable annotation
+         Location: C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/kotlin/com/tutpro/bar
+esip/AccountsScreen.kt line 57
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4m 11s
+36 actionable tasks: 15 executed, 21 up-to-date

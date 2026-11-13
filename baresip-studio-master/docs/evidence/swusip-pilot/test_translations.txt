@@ -1,0 +1,9 @@
+test_empty_locale_directory_is_not_treated_as_complete (__main__.TranslationResources.test_empty_locale_directory_is_not_treated_as_complete) ... ok
+test_every_active_locale_is_complete (__main__.TranslationResources.test_every_active_locale_is_complete) ... ok
+test_ordinary_ui_labels_remain_translatable (__main__.TranslationResources.test_ordinary_ui_labels_remain_translatable) ... ok
+test_pending_translations_preserve_upstream_content (__main__.TranslationResources.test_pending_translations_preserve_upstream_content) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.559s
+
+OK

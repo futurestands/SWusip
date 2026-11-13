@@ -2,60 +2,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">SWUSIP</string>
     <!-- About Activity -->
-    <string name="about_title">About baresip</string>
-    <string name="about_title_plus">About baresip+</string>
-    <string name="about_text">
-        <![CDATA[
-        <h1>SIP and mobile calling and messaging app based on
-            <a href="https://github.com/baresip/baresip">baresip</a> library</h1>
-        <br>
-        <p>Juha Heinanen &lt;jh@tutpro.com&gt;</p>
-        <p>Version %1$s</p>
-        <br>
-        <h2>Usage Hints</h2>
-        <ul>
-            <li>Check that default values in baresip\'s Settings meet your needs
-                (touch item titles for help).</li>
-            <li>If your device has SIM and you want use baresip for mobile calling, turn on Default Phone App setting.
-                It will create Mobile account for mobile calling.</li>
-            <li>Then in Accounts, create one or more SIP accounts (again touch item titles for help).</li>
-            <li>Registration status of an account is shown with a colored dot: green (registration
-                succeeded), yellow (registration is in progress), red (registration failed),
-                white (registration has not been activated).</li>
-            <li>Touch on the status dot leads directly to account configuration.</li>
-            <li>Long touch on baresip bar icons shows information about the icons.</li>
-            <li>Swipe down gesture causes re-registration of the currently shown account.</li>
-            <li>Long touch on currently shown account enables or disables account\'s registration.</li>
-            <li>Swipe left/right gesture toggles between the accounts.</li>
-            <li>Previous call party can be reselect by touching the call icon when Callee is empty.</li>
-            <li>Peers of calls and messages can be added to contacts by long touches.</li>
-            <li>Long touches can also be used to remove calls, chats, messages, and contacts.</li>
-            <li>Touch/long touch on contact icon can be used to install/remove image avatar.</li>
-            <li>Long touch on an audio codec can be used to enable/disable the codec.</li>
-            <li>See <a href="https://github.com/juha-h/baresip-studio/wiki">Wiki</a> for more information.</li>
-        </ul>
-        <h2>Privacy Policy</h2>
-            <p>Privacy policy is available <a href="https://raw.githubusercontent.com/juha-h/baresip-studio/master/PrivacyPolicy.txt">here</a>.</p>
-        <br>
-        <h2>Source Code</h2>
-            <p>Source code is available at <a href="https://github.com/juha-h/baresip-studio">GitHub</a>,
-            where also issues can be reported.</p>
-        <br>
-        <h2>Language Translations</h2>
-            <p>Language translations are managed via baresip
-                <a href="https://hosted.weblate.org/projects/baresip/">Weblate</a> project.</p>
-        <br>
-        <h2>Licenses</h2>
-        <ul>
-            <li><b>BSD-3-Clause</b> except the following:</li>
-            <li><b>Apache 2.0</b> AMR codecs, MMS, and TLS security</li>
-            <li><b>AGPLv4</b> ZRTP media encryption</li>
-            <li><b>GNU LGPL 2.1</b> Codec2 codec</li>
-            <li><b>Free</b> G.722 codec</li>
-            <li><b>GNU GPLv3</b> G.729 codec</li>
-        </ul>
-        ]]>
-    </string>
+    <string name="about_title">About SWUSIP</string>
+    <string name="about_title_plus">About SWUSIP</string>
+    <string name="third_party_text" translatable="false"><![CDATA[<h1>Third-Party Licences</h1><p>SWUSIP uses the genuine Baresip SIP engine and derives its Android interface from Baresip Studio by Juha Heinanen and TutPro Inc.</p><p>Original authors retain their copyrights. The institutional application identity does not imply authorship of upstream components.</p><p>Source: <a href="https://github.com/futurestands/SWusip">SWUSIP</a>; upstream <a href="https://github.com/juha-h/baresip-studio">Baresip Studio</a> and <a href="https://github.com/baresip/baresip">Baresip</a>.</p><p>Full bundled copyright notices and licence conditions follow.</p>]]></string>
+    <string name="about_text" translatable="false"><![CDATA[<h1>SWUSIP</h1><p>South Western Umbrella Call Centre</p><p>South Western Umbrella of Water and Sanitation</p><p>Ministry of Water and Environment, Uganda</p><p>Version %1$s</p><h2>Agent help</h2><p>Use your assigned SIP extension. Your administrator provisions the server and credentials. SWUSIP does not require the default phone or SMS role. Keep notifications and background activity enabled for incoming calls.</p><p>Customer data is institutional information. Access only records needed for your work.</p>]]></string>
     <string name="about_text_plus">
         <![CDATA[
         <h1>SIP and mobile calling and messaging app based on <a href="https://github.com/baresip/baresip">baresip</a> library</h1>
@@ -123,7 +73,7 @@
     <string name="tel_uri_messages">TEL URI for Messages</string>
     <string name="not_available">Not available</string>
     <string name="account_nickname_help">Nickname (if any) used to identify this account within
-        baresip app.</string>
+        SWUSIP app.</string>
     <string name="nickname">Nickname</string>
     <string name="sim_manager">SIM Manager</string>
     <string name="invalid_account_nickname">Invalid Account Nickname \'%1$s\'</string>
@@ -139,7 +89,7 @@
     <string name="authentication_password">Authentication Password</string>
     <string name="authentication_password_help">Authentication
     Password up to 64 characters. If Authentication Username is given, but Password is not
-    given, it will be asked when baresip is started.
+    given, it will be asked when SWUSIP is started.
     </string>
     <string name="invalid_authentication_password">Invalid Authentication Password \'%1$s\'</string>
     <string name="outbound_proxies">Outbound Proxies</string>
@@ -162,7 +112,7 @@
     <string name="register_help">If checked, registration is enabled and REGISTER requests are sent
         at the interval specified by Registration Interval.</string>
     <string name="reg_int">Registration Interval</string>
-    <string name="reg_int_help">Tells how often (in seconds) baresip sends REGISTER requests.
+    <string name="reg_int_help">Tells how often (in seconds) SWUSIP sends REGISTER requests.
         Valid values are from 60 to 3600.</string>
     <string name="invalid_reg_int">Invalid Registration Interval \'%1$s\'</string>
     <string name="check_origin">Check Origin</string>
@@ -242,7 +192,7 @@
         field is focused.</string>
     <string name="invalid_sip_uri_hostpart">Invalid SIP URI host part \'%1$s\'</string>
     <string name="default_account">Default Account</string>
-    <string name="default_account_help">If checked, this account is selected when baresip is started.
+    <string name="default_account_help">If checked, this account is selected when SWUSIP is started.
     </string>
     <string name="custom_parameters">Custom Parameters</string>
     <string name="custom_parameters_help">Semicolor separeted list of custom account parameters</string>
@@ -342,37 +292,37 @@
     <!-- Settings Activity -->
     <string name="configuration">Settings</string>
     <string name="start_automatically">Start Automatically</string>
-    <string name="start_automatically_help">If checked, baresip starts automatically after device boots
-        or after a new version of baresip is installed. Start is delayed until device is unlocked.
+    <string name="start_automatically_help">If checked, SWUSIP starts automatically after device boots
+        or after a new version of SWUSIP is installed. Start is delayed until device is unlocked.
     </string>
     <string name="appear_on_top_permission">Automatic start needs Appear on Top permission.</string>
     <string name="battery_optimizations">Battery Optimizations</string>
     <string name="battery_optimizations_help">Disable battery optimizations if you want
-        to reduce likelihood that Android restricts baresip\'s access to network or enters baresip
+        to reduce likelihood that Android restricts SWUSIP\'s access to network or enters SWUSIP
         to standby state.</string>
     <string name="default_phone_app">Default Phone App</string>
     <string name="dialer_role_not_available">Default phone app role is not available</string>
-    <string name="default_phone_app_help">If checked, baresip is the default phone app.</string>
+    <string name="default_phone_app_help">If checked, SWUSIP is the default phone app.</string>
     <string name="default_messaging_app">Default Messaging App</string>
-    <string name="default_messaging_app_help">If checked, baresip is the default messaging app for SMS/MMS.</string>
+    <string name="default_messaging_app_help">If checked, SWUSIP is the default messaging app for SMS/MMS.</string>
     <string name="max_mms_images_size">Max MMS Images Size</string>
     <string name="max_mms_images_size_help">Maximum total compressed size of MMS message images</string>
     <string name="messaging_role_not_available">Default messaging app role is not available</string>
     <string name="enable_default_messaging">Please enable Default Messaging App in Settings</string>
     <string name="enable_default_phone">Please enable Default Phone App in Settings</string>
     <string name="listen_address">Listen Address</string>
-    <string name="listen_address_help">IP address and port of form \'address:port\' at which baresip listens
+    <string name="listen_address_help">IP address and port of form \'address:port\' at which SWUSIP listens
         for incoming SIP requests.  If IP address is an IPv6 address, it must be written inside
-        brackets [].  IPv4 address 0.0.0.0 or IPv6 address [::] makes baresip listen at all
-        available addresses. If left empty (factory default), baresip listens at an arbitrary port at
+        brackets [].  IPv4 address 0.0.0.0 or IPv6 address [::] makes SWUSIP listen at all
+        available addresses. If left empty (factory default), SWUSIP listens at an arbitrary port at
         all available addresses.
     </string>
     <string name="invalid_listen_address">Invalid Listen Address</string>
     <string name="_0_0_0_0_5060" translatable="false">0.0.0.0:5060</string>
     <string name="address_family">Address Family</string>
-    <string name="address_family_help">Chooses which IP addresses baresip is
-        using.  If IPv4 or IPv6 is chosen, baresip uses only IPv4 or IPv6 addresses.  If neither is
-        chosen, baresip uses both IPv4 and IPv6 addresses.
+    <string name="address_family_help">Chooses which IP addresses SWUSIP is
+        using.  If IPv4 or IPv6 is chosen, SWUSIP uses only IPv4 or IPv6 addresses.  If neither is
+        chosen, SWUSIP uses both IPv4 and IPv6 addresses.
     </string>
     <string name="transport_protocols">Transport Protocols</string>
     <string name="transport_protocols_help">Comma separated list of supported SIP request/response
@@ -392,11 +342,11 @@
     <string name="failed_to_set_dns_servers">Failed to set DNS servers</string>
     <string name="tls_certificate_file">TLS Certificate File</string>
     <string name="tls_certificate_file_help">If checked, a file containing TLS certificate and
-        private key of this baresip instance has been or will be loaded. In Android version 9,
+        private key of this SWUSIP instance has been or will be loaded. In Android version 9,
         a file called \'cert.pem\' is loaded from Download folder. For security reasons,
         delete the file after loading.</string>
     <string name="verify_server">Verify Server Certificates</string>
-    <string name="verify_server_help">If checked, baresip verifies TLS certificates of SIP User
+    <string name="verify_server_help">If checked, SWUSIP verifies TLS certificates of SIP User
         Agent and SIP Proxy Servers when TLS transport is used.</string>
     <string name="tls_ca_file">TLS CA File</string>
     <string name="tls_ca_file_help">If checked, a file has been or will be loaded that contains
@@ -460,15 +410,15 @@
     <string name="user_agent">User Agent</string>
     <string name="user_agent_help">Custom SIP request/response User-Agent header field value</string>
     <string name="invalid_user_agent">Invalid User-Agent header field value</string>
-    <string name="contacts_help">Chooses if baresip contacts, Android contacts, or both are used.
+    <string name="contacts_help">Chooses if SWUSIP contacts, Android contacts, or both are used.
         If both are used and a contact with the same name exists in both contacts,
-        the baresip contact will be chosen.</string>
+        the SWUSIP contact will be chosen.</string>
     <string name="both">Both</string>
     <string name="debug">Debug</string>
     <string name="debug_help">If checked, provides debug and info level log messages to Logcat.</string>
     <string name="sip_trace">SIP Trace</string>
     <string name="sip_trace_help">If checked and if Debug is checked, Logcat messages include also SIP
-        request and response trace. Unchecked automatically at baresip start.</string>
+        request and response trace. Unchecked automatically at SWUSIP start.</string>
     <string name="reset_config">Reset to Factory Defaults</string>
     <string name="reset_config_help">If checked, settings are reset to factory default values.</string>
     <string name="reset_config_alert">Are you sure you want to reset settings to factory
@@ -476,13 +426,13 @@
     <string name="reset">Reset</string>
     <string name="read_cert_error">Failed to read file \'cert.pem\'.</string>
     <string name="read_ca_certs_error">Failed to read file \'ca_certs.crt\'.</string>
-    <string name="config_restart">You need to restart baresip in order to activate the new
+    <string name="config_restart">You need to restart SWUSIP in order to activate the new
         settings. Restart now?
     </string>
     <string name="consent_request">Consent Request</string>
     <string name="contacts_consent">If Android contacts is chosen, they can be used
-        in calling and messaging as references to SIP and tel URIs. baresip app does not store Android
-        contacts nor share them with anyone.  In order to make Android contacts available in baresip,
+        in calling and messaging as references to SIP and tel URIs. SWUSIP app does not store Android
+        contacts nor share them with anyone.  In order to make Android contacts available in SWUSIP,
         Google requires that you accept their use as described here and in app\'s
         <a href="https://raw.githubusercontent.com/juha-h/baresip-studio/master/PrivacyPolicy.txt">Privacy Policy</a>.
     </string>
@@ -551,7 +501,7 @@
     <string name="invalid_sip_or_tel_uri">Invalid SIP or tel URI \'%1$s\'</string>
     <string name="permission_denied">Permission Denied</string>
     <string name="unlock_to_access_full_app">Please unlock the device</string>
-    <string name="baresip" translatable="false">baresip</string>
+    <string name="baresip" translatable="false">SWUSIP</string>
     <string name="android" translatable="false">Android</string>
     <!-- Main Activity -->
     <string name="backup">Backup</string>
@@ -604,8 +554,8 @@
     <string name="no_messages">You have no messages</string>
     <string name="listen">Listen</string>
     <string name="call_already_active">You already have an active call.</string>
-    <string name="start_failed">Baresip failed to start. This may be due to an invalid Settings value.
-        Check Listen Address, TLS Certificate File, and TLS CA File.  Then restart baresip.
+    <string name="start_failed">SWUSIP failed to start. This may be due to an invalid Settings value.
+        Check Listen Address, TLS Certificate File, and TLS CA File.  Then restart SWUSIP.
     </string>
     <string name="registering_failed">Registering of \`%1$s\` failed.</string>
     <string name="verify">Verify Request</string>
@@ -628,14 +578,14 @@
     <string name="backed_up">Application data (excluding recordings) backed up
         to file \'%1$s\'. In Android version 9, the file is in Download folder.</string>
     <string name="backup_failed">Failed to back up application data to file
-        \'%1$s\'. Check Apps → baresip → Permissions → Storage.</string>
+        \'%1$s\'. Check Apps → SWUSIP → Permissions → Storage.</string>
     <string name="restart_request">Restart Request</string>
-    <string name="restored">Application data restored. baresip needs to be restarted.
+    <string name="restored">Application data restored. SWUSIP needs to be restarted.
         Restart now?
     </string>
     <string name="restore_failed">Failed to restore application data. Check that you gave correct
         password and that the backup file is from this application. In Android versions 9,
-        also check Apps → baresip → Permissions → Storage and that file \'%1$s\' exists
+        also check Apps → SWUSIP → Permissions → Storage and that file \'%1$s\' exists
         in Download folder.
     </string>
     <string name="restore_unzip_failed">Failed to restore application data. Android version 14 and
@@ -645,7 +595,7 @@
         permission.</string>
     <string name="airplane_mode">Airplane mode is ON. Turn it OFF to use mobile account.</string>
     <string name="mobile_service_not_available">Mobile service is not available.</string>
-    <string name="no_calls">baresip needs \"Microphone\" permission for voice calls.</string>
+    <string name="no_calls">SWUSIP needs \"Microphone\" permission for voice calls.</string>
     <string name="no_video_calls">Grant \"Camera\" permission to make or answer video calls.</string>
     <string name="no_backup">You are not able create backup without \"Storage\" permission.</string>
     <string name="no_restore">You are not able restore backup without \"Storage\" permission.</string>
@@ -659,11 +609,11 @@
     <string name="ussd_service_unavailable">USSD service unavailable</string>
     <string name="ussd_unknown_error">USSD unknown error</string>
     <string name="permissions_rationale">Permissions rationale</string>
-    <string name="audio_permissions">baresip needs \"Microphone\" permission for voice calls,
+    <string name="audio_permissions">SWUSIP needs \"Microphone\" permission for voice calls,
         \"Nearby devices\" permission for Bluetooth microphone/speaker detection,
         \"Notifications\" permission for posting notifications, and in Android 9
         \"Storage\" permission for Backup/Restore operations.</string>
-    <string name="audio_and_video_permissions">baresip+ needs \"Microphone\" permission
+    <string name="audio_and_video_permissions">SWUSIP needs \"Microphone\" permission
         for voice calls, \"Camera\" permission for video calls, \"Nearby devices\" permission
         for Bluetooth microphone/speaker detection, \"Notifications\" permission for posting
         notifications, and in Android 9 \"Storage\" permissions for Backup/Restore operations.</string>

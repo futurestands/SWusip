@@ -713,44 +713,6 @@ private fun UrisSection(
 
                     val ua = UserAgent.ofAor(selectedAor)
 
-                    // Chat Button
-                    if (ua != null &&
-                            if (uri.startsWith("tel:"))
-                                ua.account.isMobile || ua.account.telProvider != ""
-                            else
-                                !ua.account.isMobile)
-                        IconButton(
-                            onClick = {
-                                if (ua.account.isMobile && ua.status != circleGreen.getValue(colorblind)) {
-                                    alertTitle.value = ctx.getString(R.string.notice)
-                                    alertMessage.value = Utils.mobileStatusMessage(ctx, ua.status)
-                                    showAlert.value = true
-                                }
-                                else if (ua.account.isMobile && !Utils.isDefaultSmsApp(ctx)) {
-                                    alertTitle.value = ctx.getString(R.string.notice)
-                                    alertMessage.value = ctx.getString(R.string.enable_default_messaging)
-                                    showAlert.value = true
-                                }
-                                else {
-                                    val intent = Intent(ctx, MainActivity::class.java)
-                                    intent.putExtra("uap", ua.uap)
-                                    intent.putExtra("peer", uri)
-                                    handleIntent(ctx, viewModel, intent, "message")
-                                    navController.navigate("main") {
-                                        popUpTo("main") { inclusive = false }
-                                        launchSingleTop = true
-                                    }
-                                }
-                            }
-                        ) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.Chat,
-                                contentDescription = "Send Message",
-                                modifier = Modifier.size(24.dp),
-                                tint = MaterialTheme.colorScheme.onBackground
-                            )
-                        }
-
                     // Call Button
                     if (ua != null &&
                         if (uri.startsWith("tel:"))

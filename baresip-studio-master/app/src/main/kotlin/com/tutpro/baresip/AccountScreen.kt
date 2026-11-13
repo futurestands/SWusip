@@ -97,6 +97,11 @@ fun NavGraphBuilder.accountScreenRoute(navController: NavController) {
             navArgument("kind") { type = NavType.StringType }
         )
     ) { backStackEntry ->
+        if (!administratorAccess()) {
+            androidx.compose.material3.Text("Institutional administrator authorisation required")
+            return@composable
+        }
+        InstitutionScreenPrivacy()
         val ctx = LocalContext.current
         val viewModel = viewModel<AccountViewModel>()
         val aor = backStackEntry.arguments?.getString("aor")!!

@@ -1,0 +1,311 @@
+./gradlew.bat : WARNING: A restricted method in java.lang.System has been called
+At line:3 char:1
++ ./gradlew.bat --no-daemon :app:assembleDebug :app:testDebugUnitTest : ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an
+unnamed module (file:/C:/Users/MJ/.gradle/wrapper/dists/gradle-9.6.0-bin/42k10rwplmzkhuboz9kdazi7s/gradle-9.6.0/lib/nat
+ive-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugAssets
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :app:compressDebugAssets
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:processDebugResources
+> Task :app:compileDebugKotlin
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:compressDebugJavaRes
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:dexBuilderDebug
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:mergeProjectDexDebug
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :app:compileDebugUnitTestKotlin
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:compressDebugUnitTestJavaRes
+> Task :app:extractDebugUnitTestJavaRes
+> Task :app:lintAnalyzeDebug
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:testDebugUnitTest
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/reports/lint-results-debug.html
+Couldn't compute fix edits for Replace with the transaction extension function
+java.lang.IllegalArgumentException: Did not find "beginTransaction(" in "t)) { "Administra" in
+app\src\main\kotlin\com\tutpro\baresip\CustomerDirectory.kt as suggested in the quickfix.
+
+Consider calling ReplaceStringBuilder#range() to set a larger range to
+search than the default highlight range.
+
+(This fix is associated with the issue id `UseKtx`,
+reported via com.android.tools.lint.checks.UseKtxDetector.)
+	at com.android.tools.lint.client.api.LintFixPerformer.addReplaceString(LintFixPerformer.kt:710)
+	at com.android.tools.lint.client.api.LintFixPerformer.addEdits(LintFixPerformer.kt:366)
+	at com.android.tools.lint.client.api.LintFixPerformer.addEdits(LintFixPerformer.kt:357)
+	at com.android.tools.lint.client.api.LintFixPerformer.addEdits$default(LintFixPerformer.kt:341)
+	at com.android.tools.lint.client.api.LintFixPerformer.registerFix(LintFixPerformer.kt:98)
+	at com.android.tools.lint.client.api.LintFixPerformer.computeEdits(LintFixPerformer.kt:823)
+	at com.android.tools.lint.LintCliFixPerformer.computeEdits(LintCliFixPerformer.kt:80)
+	at com.android.tools.lint.SarifReporter.writeQuickFixes(SarifReporter.kt:568)
+	at com.android.tools.lint.SarifReporter.writeResults(SarifReporter.kt:315)
+	at com.android.tools.lint.SarifReporter.write(SarifReporter.kt:124)
+	at com.android.tools.lint.LintCliClient.writeReports(LintCliClient.kt:468)
+	at com.android.tools.lint.LintCliClient.performReporting(LintCliClient.kt:335)
+	at com.android.tools.lint.LintCliClient.mergeOnly$lambda$1(LintCliClient.kt:286)
+	at com.android.tools.lint.LintCliClient.run(LintCliClient.kt:323)
+	at com.android.tools.lint.LintCliClient.mergeOnly(LintCliClient.kt:286)
+	at com.android.tools.lint.Main.run(Main.java:1790)
+	at com.android.tools.lint.Main.run(Main.java:287)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.invokeLintMainRunMethod(AndroidLintWorkAction.kt:103)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.runLint(AndroidLintWorkAction.kt:90)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.execute(AndroidLintWorkAction.kt:64)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:68)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:64)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:61)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:102)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:61)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:58)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQ
+ueue.java:191)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$500(DefaultConditionalExecutionQue
+ue.java:112)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.ja
+va:168)
+	at org.gradle.internal.Factories$1.create(Factories.java:30)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$runAndReleaseLocks$0(DefaultWorkerLeaseService.java:300)
+	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStatistics.java:43)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAndReleaseLocks(DefaultWorkerLeaseService.java:298)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(DefaultWorkerLeaseService.java:294)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:286)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:130)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:135)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue
+.java:163)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java
+:125)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Couldn't compute fix edits for Replace with the transaction extension function
+java.lang.IllegalArgumentException: Did not find "beginTransaction(" in ",batch,JSONObject" in
+app\src\main\kotlin\com\tutpro\baresip\CustomerDirectory.kt as suggested in the quickfix.
+
+Consider calling ReplaceStringBuilder#range() to set a larger range to
+search than the default highlight range.
+
+(This fix is associated with the issue id `UseKtx`,
+reported via com.android.tools.lint.checks.UseKtxDetector.)
+	at com.android.tools.lint.client.api.LintFixPerformer.addReplaceString(LintFixPerformer.kt:710)
+	at com.android.tools.lint.client.api.LintFixPerformer.addEdits(LintFixPerformer.kt:366)
+	at com.android.tools.lint.client.api.LintFixPerformer.addEdits(LintFixPerformer.kt:357)
+	at com.android.tools.lint.client.api.LintFixPerformer.addEdits$default(LintFixPerformer.kt:341)
+	at com.android.tools.lint.client.api.LintFixPerformer.registerFix(LintFixPerformer.kt:98)
+	at com.android.tools.lint.client.api.LintFixPerformer.computeEdits(LintFixPerformer.kt:823)
+	at com.android.tools.lint.LintCliFixPerformer.computeEdits(LintCliFixPerformer.kt:80)
+	at com.android.tools.lint.SarifReporter.writeQuickFixes(SarifReporter.kt:568)
+	at com.android.tools.lint.SarifReporter.writeResults(SarifReporter.kt:315)
+	at com.android.tools.lint.SarifReporter.write(SarifReporter.kt:124)
+	at com.android.tools.lint.LintCliClient.writeReports(LintCliClient.kt:468)
+	at com.android.tools.lint.LintCliClient.performReporting(LintCliClient.kt:335)
+	at com.android.tools.lint.LintCliClient.mergeOnly$lambda$1(LintCliClient.kt:286)
+	at com.android.tools.lint.LintCliClient.run(LintCliClient.kt:323)
+	at com.android.tools.lint.LintCliClient.mergeOnly(LintCliClient.kt:286)
+	at com.android.tools.lint.Main.run(Main.java:1790)
+	at com.android.tools.lint.Main.run(Main.java:287)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.invokeLintMainRunMethod(AndroidLintWorkAction.kt:103)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.runLint(AndroidLintWorkAction.kt:90)
+	at com.android.build.gradle.internal.lint.AndroidLintWorkAction.execute(AndroidLintWorkAction.kt:64)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:68)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:64)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:61)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:102)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:61)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:210)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperati
+onRunner.java:205)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:58)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQ
+ueue.java:191)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$500(DefaultConditionalExecutionQue
+ue.java:112)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.ja
+va:168)
+	at org.gradle.internal.Factories$1.create(Factories.java:30)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$runAndReleaseLocks$0(DefaultWorkerLeaseService.java:300)
+	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStatistics.java:43)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAndReleaseLocks(DefaultWorkerLeaseService.java:298)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(DefaultWorkerLeaseService.java:294)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:286)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:130)
+Wrote SARIF report to file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/reports/lint-results-debug.sarif
+Lint found 1 error and 68 warnings. First failure:
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\MainScreen.kt:969: Error: StateFlow.value should not be called within composition [StateFlowValueCalledInComposition from androidx.compose.runtime]
+This issue has been automatically fixed.
+        val status = uasStatus.value[viewModel.selectedAor.value]
+                                                           ~~~~~
+
+
+> Task :app:lintDebug FAILED
+Lint found 1 error, 68 warnings. First failure:
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\MainScreen.kt:969: Error: StateFlow.value should not be called within composition [StateFlowValueCalledInComposition from androidx.compose.runtime]
+        val status = uasStatus.value[viewModel.selectedAor.value]
+                                                           ~~~~~
+
+   Explanation for issues of type "StateFlowValueCalledInComposition":
+   Calling StateFlow.value within composition will not observe changes to the
+   StateFlow, so changes might not be reflected within the composition.
+   Instead you should use stateFlow.collectAsState() to observe changes to the
+   StateFlow, and recompose when it changes.
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.runtime
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+
+The full lint text report is located at:
+  C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\lint_intermediate_text_report\debug\lintReportDebug\lint-results-debug.txt
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:135)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue
+.java:163)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java
+:125)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lintDebug' (registered by plugin 'com.android.internal.application').
+> Lint found errors in the project; aborting build.
+
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+
+  Lint found 1 error, 68 warnings. First failure:
+
+  C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\MainScreen.k
+t:969: Error: StateFlow.value should not be called within composition [StateFlowValueCalledInComposition from
+androidx.compose.runtime]
+          val status = uasStatus.value[viewModel.selectedAor.value]
+                                                             ~~~~~
+
+     Explanation for issues of type "StateFlowValueCalledInComposition":
+     Calling StateFlow.value within composition will not observe changes to the
+     StateFlow, so changes might not be reflected within the composition.
+     Instead you should use stateFlow.collectAsState() to observe changes to the
+     StateFlow, and recompose when it changes.
+
+     Vendor: Jetpack Compose
+     Identifier: androidx.compose.runtime
+     Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+
+  The full lint text report is located at:
+    C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\lint_intermediate_text_re
+port\debug\lintReportDebug\lint-results-debug.txt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 12m 22s
+58 actionable tasks: 30 executed, 28 up-to-date

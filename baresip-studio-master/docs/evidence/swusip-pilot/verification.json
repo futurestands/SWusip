@@ -1,0 +1,81 @@
+{
+  "generatedUtc": "2026-11-13T20:37:18.291574+00:00",
+  "package": "ug.go.mwe.swusip",
+  "versionCode": 586,
+  "versionName": "1.0.0-pilot",
+  "build": "PASS",
+  "lint": {
+    "errors": 0,
+    "warnings": 79
+  },
+  "unitTestSuites": [
+    {
+      "name": "com.tutpro.baresip.CustomerExportTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerImportTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerMatchingTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerXlsxTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "pythonTests": {
+    "test_source_integrity.py": "PASS",
+    "test_device_privacy.py": "PASS",
+    "test_translations.py": "PASS"
+  },
+  "nativeArchives": {
+    "passed": 15,
+    "nativeSourceChanged": false
+  },
+  "apk": {
+    "path": "artifacts/SWUSIP-1.0.0-pilot-debug.apk",
+    "bytes": 90650858,
+    "sha256": "8c3c6ac27920c31f62485b3190ba80723d1e12491154f09da6e8d2e43042177d",
+    "signing": "DEBUG PILOT",
+    "identityAndJniInspection": "PASS",
+    "signatureVerification": "PASS"
+  },
+  "androidDeviceTests": {
+    "compiled": true,
+    "execution": "DEFERRED_BY_USER"
+  },
+  "syntheticLookup": {
+    "status": "PASS",
+    "mechanism": "CustomerMatching unit test; no SIP event simulated",
+    "customer": "Synthetic Customer",
+    "account": "000123",
+    "scheme": "Synthetic Water Scheme"
+  },
+  "deviceInstallation": "DEFERRED_BY_USER_PHONE_POWERED_OFF",
+  "deviceUiReview": "DEFERRED_BY_USER",
+  "authenticatedDirectoryDeviceFlow": "NOT_TESTED",
+  "liveSipRegistration": "NOT_TESTED_NO_EXTENSION_PROVISIONED",
+  "liveIncomingCallCustomerIdentification": "NOT_TESTED",
+  "twoWayPbxAudio": "NOT_TESTED",
+  "productionPbxChanges": false,
+  "productionServerChanges": false,
+  "smsMmsBackendRemoval": "PENDING_GENUINE_SIP_REGRESSION_PER_USER_REQUIREMENT",
+  "productionInstitutionalSigningAuthority": "NOT_CONFIGURED",
+  "independentSecurityReview": "PENDING_BEFORE_REAL_CUSTOMER_DATA",
+  "fullAcceptance": "NOT_YET_MET_DEVICE_AND_PBX_GATES_DEFERRED"
+}

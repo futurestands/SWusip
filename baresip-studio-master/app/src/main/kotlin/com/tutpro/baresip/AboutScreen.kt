@@ -18,6 +18,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
@@ -30,21 +31,26 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 
 fun NavGraphBuilder.aboutScreenRoute(navController: NavController) {
-    composable("about") { AboutScreen(onBack = { navController.navigateUp() }) }
+    composable("about") { AboutScreen(onBack = { navController.navigateUp() }, onLicences = { navController.navigate("licences") }) }
+    composable("licences") { AboutScreen(onBack = { navController.navigateUp() }, licences = true) }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AboutScreen(onBack: () -> Unit) {
+fun AboutScreen(onBack: () -> Unit, onLicences: () -> Unit = {}, licences: Boolean = false) {
     val version = BuildConfig.VERSION_NAME
-    val aboutText = stringResource(R.string.about_text, version)
+    val aboutText = stringResource(if (licences) R.string.third_party_text else R.string.about_text, version)
+    val context = LocalContext.current
+    val fullNotices = remember(licences) {
+        if (licences) context.assets.open("third-party-notices.txt").bufferedReader().use { it.readText() } else ""
+    }
     val errorColor = MaterialTheme.colorScheme.error
     val onBackground = MaterialTheme.colorScheme.onBackground
-    val annotatedText = remember(aboutText, errorColor) {
+    val annotatedText = remember(aboutText, errorColor, fullNotices) {
         AnnotatedString.fromHtml(
             htmlString = aboutText,
             linkStyles = TextLinkStyles(SpanStyle(color = errorColor))
-        )
+        ) + AnnotatedString("\n\n" + fullNotices)
     }
 
     Scaffold(
@@ -54,7 +60,7 @@ fun AboutScreen(onBack: () -> Unit) {
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(R.string.about_title),
+                        text = if (licences) "Third-Party Licences" else "About SWUSIP",
                         fontWeight = FontWeight.Bold
                     )
                 },
@@ -75,14 +81,16 @@ fun AboutScreen(onBack: () -> Unit) {
             )
         }
     ) { contentPadding ->
+        androidx.compose.foundation.layout.Column(Modifier.padding(contentPadding)) {
+        if (!licences) androidx.compose.material3.TextButton(onClick = onLicences) { Text("Third-Party Licences") }
         Text(
             text = annotatedText,
             color = onBackground,
             modifier = Modifier
                 .padding(horizontal = 16.dp, vertical = 16.dp)
-                .padding(contentPadding)
                 .verticalScroll(rememberScrollState())
                 .fillMaxSize()
         )
+        }
     }
 }
