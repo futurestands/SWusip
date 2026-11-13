@@ -1,6 +1,25 @@
 # Recovery progress — 2026-11-13
 
-## Latest milestone: localisation and device preparation (from a1678b2)
+## Latest milestone: real physical-device startup (from 751e150)
+
+The project lead's authorised wireless ADB phone is accessible: model 25028RN03A,
+Android 15/API 35, arm64-v8a. The verified SWUSIP 94.1.9 (585) APK installed with
+data-preserving `-r` and launched successfully. Installed/local SHA-256 values match.
+Baresip executable mapping and its active foreground service were verified, with
+no detected startup/JNI/loading/foreground/security failure in a 30-second scoped
+Logcat observation. Microphone/notification/Bluetooth permissions were granted.
+
+The test harness was corrected for padded Logcat epoch timestamps and Android's
+direct APK native mappings; incomplete native/service evidence can no longer pass.
+Twelve Python tests pass. App/native code and APK are unchanged; no new Gradle build
+was needed. See `DEVICE_STARTUP_REPORT.md` for exact hash, results and limitations.
+Raw device identifiers/logs remain private and ignored. Gate 2 is **NOT PASSED**.
+
+Next: administrator-approved non-production SIP test credentials entered privately
+on the phone, a second approved endpoint/extension, then actual registration and
+two-way internal audio verification. No production PBX/trunk/network change was made.
+
+## Previous milestone: localisation and device preparation (from a1678b2)
 
 All 401 MissingTranslation errors are resolved for the supported pilot languages:
 default English plus complete Czech, Swedish and Simplified Chinese packs.

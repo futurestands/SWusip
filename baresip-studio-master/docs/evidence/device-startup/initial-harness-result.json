@@ -1,0 +1,26 @@
+{
+  "timeUtc": "20261113T121554Z",
+  "status": "startup_observed_without_detected_failure",
+  "gate2": "NOT TESTED",
+  "observationSeconds": 30,
+  "adbEnumerationExit": 0,
+  "model": "25028RN03A",
+  "androidVersion": "15",
+  "api": "35",
+  "abis": "arm64-v8a,armeabi-v7a,armeabi",
+  "apkSha256": "4ba7c341017b2c4525798b172f128e9b0aa0b71c35718f0d6c77d30a3353b081",
+  "installExit": 0,
+  "launchExit": 0,
+  "activityStarted": true,
+  "logcatFailureCounts": {
+    "crash": 0,
+    "nativeLoading": 0,
+    "foregroundService": 0,
+    "securityException": 0
+  },
+  "scopedLogcatLines": 0,
+  "processAlive": true,
+  "nativeLibraryMapped": false,
+  "foregroundServiceObserved": true,
+  "limits": "Observation window only; native/foreground flags require review. No SIP registration or audio test performed."
+}

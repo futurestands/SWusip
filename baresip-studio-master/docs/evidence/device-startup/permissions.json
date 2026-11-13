@@ -1,0 +1,7 @@
+{
+  "source": "app-specific package state during test",
+  "RECORD_AUDIO": true,
+  "POST_NOTIFICATIONS": true,
+  "BLUETOOTH_CONNECT": true,
+  "permissionsChangedByHarness": false
+}

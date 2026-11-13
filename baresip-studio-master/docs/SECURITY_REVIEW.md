@@ -31,3 +31,10 @@ errors through documented supported-language resource curation and now passes li
 with **0 errors / 45 warnings**, without baseline or suppression changes.
 Eight source/resource/device-privacy unit tests pass; they do not establish Android
 authentication, Keystore, exported-component or runtime-permission security.
+
+The subsequent authorised physical-device startup test observes a genuine mapped
+engine and active foreground BaresipService without detected startup/security
+exceptions in its bounded window. Twelve Python diagnostic regression tests pass.
+This does not resolve the original credential/backup/component/app-lock findings,
+prove SIP interoperability or approve production rollout. Device identifiers and
+raw logs remain excluded from Git; only sanitised outcomes are published.

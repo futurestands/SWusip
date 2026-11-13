@@ -3,6 +3,13 @@
 Status: **NOT TESTED**. Neither UCM6302A credentials nor two approved test
 extensions have been supplied. No live PBX settings were changed.
 
+Physical-device readiness now passes on the authorised Android 15 arm64 phone:
+data-preserving installation, launch, native executable mapping, foreground service
+and a scoped startup-error observation. Microphone/notification/Bluetooth permissions
+are granted. See `DEVICE_STARTUP_REPORT.md`. This does **not** establish SIP
+registration, codec negotiation, media flow or two-way audio; all SIP cases below
+remain NOT RUN. Test extension details and a second approved endpoint are still required.
+
 ## Next milestone: Gate 2 internal test
 
 Prerequisites: administrator approval for two **non-production** extensions A and

@@ -3,6 +3,17 @@
 Gate 1 (genuine native compilation/linking and inspected APK) **PASSED locally**.
 Runtime registration and calling are not established. Gate 2 remains **NOT PASSED**.
 
+## Physical-device follow-up from 751e150
+
+The exact verified APK below was installed on the authorised Android 15/API 35
+arm64 handset using `adb install -r` (exit 0), then launched (exit 0). The installed
+APK checksum matches the local/build evidence. The process, Baresip native executable
+mapping and foreground BaresipService were observed; corrected scoped Logcat found
+no startup failure during 30 seconds. See `DEVICE_STARTUP_REPORT.md`.
+Application/native source and APK were unchanged; the necessary corrections affect
+only diagnostic parsing. All **12 Python tests pass**. Previous separate Gradle
+build/lint results remain valid. Real-PBX registration and two-way audio are untested.
+
 ## Latest localisation/device-preparation milestone
 
 Continued from `a1678b2`. Clean, assembleDebug, lintDebug and testDebugUnitTest were
@@ -18,8 +29,9 @@ Current APK: `app/build/outputs/apk/debug/app-debug.apk`, 87,360,786 bytes;
 SHA-256 `4ba7c341017b2c4525798b172f128e9b0aa0b71c35718f0d6c77d30a3353b081`.
 The package is still `ug.go.mwe.swusip`, label `SWUSIP`, version 585 / 94.1.9.
 Evidence: `docs/evidence/localisation/`, with exact commands and individual exits
-in `gradle-results.json`. No physical phone is connected; installation, launch,
-Logcat, runtime service/native loading, registration and audio remain untested.
+in `gradle-results.json`. At that localisation milestone no phone was connected;
+the subsequent physical-device results are recorded above. Registration and audio
+remain untested.
 
 The earlier recovery results below are retained as historical evidence, including
 the original combined validation run that exited **1 due to lint**.

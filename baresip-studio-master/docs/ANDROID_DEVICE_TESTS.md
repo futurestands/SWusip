@@ -1,6 +1,22 @@
 # Android device verification
 
-Status: **NOT TESTED**. `adb devices -l` returned no attached devices and
+## Latest physical-device startup — PASSED (bounded observation)
+
+An explicitly authorised wireless ADB handset, model `25028RN03A`, Android 15/API
+35 with arm64-v8a support, passed installation and startup observation on 2026-11-13.
+SWUSIP 94.1.9 (585) installed with `-r` without uninstall/data-clear commands.
+Installed/local APK hashes match. The app remained alive, genuine Baresip executable
+segments were mapped from the installed APK, and BaresipService was in the foreground.
+The corrected 30-second UID/time-scoped Logcat check detected no crash, JNI/loading,
+foreground-service or security-exception failure. Required microphone, notification
+and Bluetooth permissions were already granted; the harness changed none.
+
+See `DEVICE_STARTUP_REPORT.md` and `evidence/device-startup/observed-result.json`.
+No SIP registration, internal calling, audio or long-term reliability pass is claimed.
+
+## Previous no-device milestone (historical)
+
+Status at that milestone: **NOT TESTED**. `adb devices -l` returned no attached devices and
 `emulator -list-avds` returned no installed AVDs (both exit 0 during recovery).
 No authorised device/compatible emulator run is recorded.
 The follow-up localisation milestone rechecked ADB and ran

@@ -63,8 +63,10 @@ and serials remain excluded from the repository.
 
 ## Device and PBX blockers
 
-ADB currently detects no physical handset. No install, launch, crash-free startup,
-native loading or foreground-service result is claimed. Follow
+At this earlier milestone ADB detected no physical handset, so no install, launch,
+native loading or foreground-service result was claimed. The later authorised
+wireless physical-device test now passes those startup observations; see
+`DEVICE_STARTUP_REPORT.md`. For repeat testing, follow
 `PHYSICAL_DEVICE_TEST_GUIDE.md`, connect the authorised phone and accept its RSA
 prompt, then rerun the prepared test harness. Keep raw Logcat and device serials private.
 

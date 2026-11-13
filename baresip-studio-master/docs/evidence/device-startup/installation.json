@@ -1,0 +1,14 @@
+{
+  "timeUtc": "20261113T121554Z",
+  "model": "25028RN03A",
+  "androidVersion": "15",
+  "api": "35",
+  "abis": "arm64-v8a,armeabi-v7a,armeabi",
+  "apkSha256": "4ba7c341017b2c4525798b172f128e9b0aa0b71c35718f0d6c77d30a3353b081",
+  "installExit": 0,
+  "launchExit": 0,
+  "installCommand": "adb -s <authorised-device> install -r <verified-apk>",
+  "dataClearOrUninstallPerformed": false,
+  "versionName": "94.1.9",
+  "versionCode": 585
+}

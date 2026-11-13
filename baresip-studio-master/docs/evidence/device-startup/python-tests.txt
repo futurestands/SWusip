@@ -1,0 +1,34 @@
+python : test_does_not_capture_logs_for_similarly_named_app
+(test_device_privacy.ScopedDeviceLogging.test_does_not_capture_logs_for_similarly_named_app) ... ok
+At line:2 char:19
++ ... ff --check; python -m unittest discover -s scripts -p 'test_*.py' -v  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_does_not_c...med_app) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_executable_mapping_must_match_exact_apk_and_native_byte_range
+(test_device_privacy.ScopedDeviceLogging.test_executable_mapping_must_match_exact_apk_and_native_byte_range) ... ok
+test_old_crash_does_not_contaminate_current_observation
+(test_device_privacy.ScopedDeviceLogging.test_old_crash_does_not_contaminate_current_observation) ... ok
+test_padded_epoch_timestamps_are_not_silently_discarded
+(test_device_privacy.ScopedDeviceLogging.test_padded_epoch_timestamps_are_not_silently_discarded) ... ok
+test_process_survival_alone_cannot_pass_service_startup
+(test_device_privacy.ScopedDeviceLogging.test_process_survival_alone_cannot_pass_service_startup) ... ok
+test_selects_only_exact_application_uid
+(test_device_privacy.ScopedDeviceLogging.test_selects_only_exact_application_uid) ... ok
+test_actual_historical_fake_engine_is_rejected
+(test_source_integrity.NativeSourceRegression.test_actual_historical_fake_engine_is_rejected) ... ok
+test_restored_engine_passes (test_source_integrity.NativeSourceRegression.test_restored_engine_passes) ... ok
+test_empty_locale_directory_is_not_treated_as_complete
+(test_translations.TranslationResources.test_empty_locale_directory_is_not_treated_as_complete) ... ok
+test_every_active_locale_is_complete (test_translations.TranslationResources.test_every_active_locale_is_complete) ...
+ok
+test_ordinary_ui_labels_remain_translatable
+(test_translations.TranslationResources.test_ordinary_ui_labels_remain_translatable) ... ok
+test_pending_translations_preserve_upstream_content
+(test_translations.TranslationResources.test_pending_translations_preserve_upstream_content) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.601s
+
+OK

@@ -1,7 +1,10 @@
 # Authorised SWUSIP physical-phone test
 
-Current blocker: ADB detects no physical phone. No install, launch, native loading
-observation, foreground-service observation or Logcat startup pass is claimed.
+Latest result: the authorised Android 15 arm64 phone passed installation, launch,
+native executable mapping and foreground-service checks; see `DEVICE_STARTUP_REPORT.md`.
+SIP registration and audio are still untested. The existing wireless ADB connection
+was explicitly authorised by the project lead; the harness did not pair a device,
+enable wireless debugging or change network/security settings.
 
 ## USB setup on the phone and Windows
 
@@ -20,7 +23,8 @@ observation, foreground-service observation or Logcat startup pass is claimed.
    try another data cable/USB port. In Windows Device Manager check for an Android
    ADB interface or a device with a warning icon. Obtain the signed USB driver
    from the phone manufacturer's official support site when needed. Do not change
-   driver signing, disable security controls or enable wireless debugging.
+   driver signing or disable security controls. Existing explicitly authorised
+   wireless ADB connections can instead be selected using `--serial`.
 
 ```powershell
 $adb = Join-Path $env:LOCALAPPDATA 'Android/Sdk/platform-tools/adb.exe'
@@ -49,6 +53,12 @@ put that identifier into public evidence. The script checks API/ABI, runs
 Reinstall preserves app data. Signature mismatch or downgrade failures must be
 investigated; the script never uninstalls, clears data or bypasses authentication.
 
+Use `--expected-apk-sha256 <verified-build-hash>` to bind the test to a particular
+build. The harness also checks the installed base APK's digest against the local
+APK. To observe an already-installed verified build without reinstalling, add
+`--observe-only`. To retain phase-specific evidence without replacing historical
+results, supply `--report docs/evidence/device-startup/observed-result.json`.
+
 On the phone, handle the ordinary microphone and notification permission prompts
 for the approved test. Do not select default SMS/phone roles just to test VoIP.
 Starting the UI alone does not establish that BaresipService loaded or registered.
@@ -56,7 +66,10 @@ Starting the UI alone does not establish that BaresipService loaded or registere
 The harness scopes Logcat by this app's UID and the device-clock test boundary;
 checks fatal exceptions/signals, native loading/link errors and foreground-service
 exceptions; checks process survival, the debug app's mapped `libbaresip.so` when
-permitted, and app-scoped service state. Missing native mapping/foreground state
+permitted, and app-scoped service state. Both extracted libraries and executable
+ZIP-entry offsets in the exact installed base APK are supported. Process survival
+alone does not pass; native mapping and foreground service must both be observed.
+Missing native mapping/foreground state
 requires investigation and another observed test after necessary permissions.
 
 Raw install output, Logcat and service diagnostics remain under ignored
