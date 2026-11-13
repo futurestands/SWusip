@@ -1,10 +1,30 @@
 # Build verification
 
 Gate 1 (genuine native compilation/linking and inspected APK) **PASSED locally**.
-The combined clean Gradle validation command exited **1 due to lint**. Runtime
-registration and calling are not established. This is not a fully passing validation run.
+Runtime registration and calling are not established. Gate 2 remains **NOT PASSED**.
 
-## Verified APK
+## Latest localisation/device-preparation milestone
+
+Continued from `a1678b2`. Clean, assembleDebug, lintDebug and testDebugUnitTest were
+run in four separate Gradle invocations, each exiting **0**. Lint reports **0 errors,
+45 warnings**; no lint rules were disabled. The 401 MissingTranslation errors were
+resolved by shipping complete language packs and preserving unfinished upstream
+packs for review, as documented in `LOCALISATION_AND_DEVICE_MILESTONE.md`.
+
+Eight Python unit tests pass. Android `testDebugUnitTest` remains **NO-SOURCE**.
+All 15 native archives and the new APK pass genuine-engine/ABI/JNI checks.
+
+Current APK: `app/build/outputs/apk/debug/app-debug.apk`, 87,360,786 bytes;
+SHA-256 `4ba7c341017b2c4525798b172f128e9b0aa0b71c35718f0d6c77d30a3353b081`.
+The package is still `ug.go.mwe.swusip`, label `SWUSIP`, version 585 / 94.1.9.
+Evidence: `docs/evidence/localisation/`, with exact commands and individual exits
+in `gradle-results.json`. No physical phone is connected; installation, launch,
+Logcat, runtime service/native loading, registration and audio remain untested.
+
+The earlier recovery results below are retained as historical evidence, including
+the original combined validation run that exited **1 due to lint**.
+
+## Recovery APK at a1678b2 (historical)
 
 - Path: `app/build/outputs/apk/debug/app-debug.apk` (ignored build output).
 - Size: 87,796,706 bytes.

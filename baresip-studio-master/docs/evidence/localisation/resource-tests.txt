@@ -1,0 +1,17 @@
+python : test_every_active_locale_is_complete (__main__.TranslationResources.test_every_active_locale_is_complete) ...
+ok
+At line:2 char:1
++ python scripts/test_translations.py *> docs/evidence/localisation/res ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_every_acti...omplete) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_ordinary_ui_labels_remain_translatable
+(__main__.TranslationResources.test_ordinary_ui_labels_remain_translatable) ... ok
+test_pending_translations_preserve_upstream_content
+(__main__.TranslationResources.test_pending_translations_preserve_upstream_content) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.123s
+
+OK

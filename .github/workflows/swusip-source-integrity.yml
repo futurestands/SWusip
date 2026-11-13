@@ -18,6 +18,9 @@ jobs:
           fetch-depth: 0
       - run: python3 scripts/check_sip_source.py
       - run: python3 scripts/test_source_integrity.py
+      - run: python3 scripts/audit_translations.py
+      - run: python3 scripts/test_translations.py
+      - run: python3 scripts/test_device_privacy.py
       - run: python3 -m py_compile scripts/verify_native.py scripts/prepare_native.py
       - run: git diff --check
       - name: Scan public locked native commits

@@ -52,14 +52,17 @@ Once native libraries are compiled into `distribution/`:
 1. Open the project in Android Studio or build via command line:
    ```cmd
    cd baresip-studio-master
-   gradlew.bat --no-daemon clean :app:assembleDebug :app:testDebugUnitTest :app:lintDebug
+   powershell -File scripts/validate-android.ps1
    ```
 2. The debug APK will be generated at:
    `app/build/outputs/apk/debug/app-debug.apk`
-3. Install onto test Android devices (API 28+):
-   ```cmd
-   adb install app/build/outputs/apk/debug/app-debug.apk
-   ```
+   The validation script runs clean, assembleDebug, lintDebug and the Android unit
+   task separately, recording individual exits. `--offline` is used by default for
+   installed dependencies; supply `-Online` when dependency resolution is required.
+   Genuine native/APK verification and current hashes are in `docs/BUILD_VERIFICATION.md`.
+3. Use `docs/PHYSICAL_DEVICE_TEST_GUIDE.md` and `scripts/test_android_device.py`
+   to select the authorised API 28+/arm64 phone, install, launch and inspect scoped
+   diagnostics. Do not uninstall or clear data to work around installation failures.
 
 ---
 

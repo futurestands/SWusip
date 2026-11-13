@@ -1,0 +1,8 @@
+{
+  "timeUtc": "20261113T115229Z",
+  "status": "blocked",
+  "gate2": "NOT TESTED",
+  "observationSeconds": 30,
+  "adbEnumerationExit": 0,
+  "blocker": "No physical Android phone detected by ADB. Connect USB data cable and enable USB debugging."
+}

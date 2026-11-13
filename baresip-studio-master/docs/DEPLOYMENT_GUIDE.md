@@ -1,7 +1,9 @@
 # Deployment status and boundaries
 
 **NOT APPROVED FOR PRODUCTION.** Gate 1 passed locally; later acceptance gates
-remain open and lint has 401 unresolved translation errors.
+remain open. The follow-up localisation milestone passes lint with 0 errors and
+45 warnings; physical-device, SIP interoperability, security and reliability
+acceptance are still required.
 Use only genuine verified APKs on authorised lab devices. Keep SIP calling independent
 of the future backend. No CRM implementation has begun.
 

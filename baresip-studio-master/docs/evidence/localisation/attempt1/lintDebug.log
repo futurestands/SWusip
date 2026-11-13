@@ -1,0 +1,101 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:extractProguardFiles
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebug
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/reports/lint-results-debug.html
+Wrote SARIF report to file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/reports/lint-results-debug.sarif
+Lint found 401 errors and 45 warnings. First failure:
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Error: "about_title" is not translated in "de" (German), "fi" (Finnish), "ru" (Russian), "pt" (Portuguese), "bg" (Bulgarian), "hr" (Croatian), "fr" (French), "uk" (Ukrainian), "sl" (Slovenian), "ca" (Catalan), "ko" (Korean), "in" (Indonesian), "el" (Greek), "ta" (Tamil), "es" (Spanish), "iw" (Hebrew), "ar" (Arabic), "nb" (Norwegian Bokmål), "th" (Thai), "ja" (Japanese), "pl" (Polish), "ro" (Romanian) [MissingTranslation]
+This issue has been automatically fixed.
+    <string name="about_title">About baresip</string>
+            ~~~~~~~~~~~~~~~~~~
+
+
+> Task :app:lintDebug FAILED
+Lint found 401 errors, 45 warnings. First failure:
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Error: "about_title" is not translated in "de" (German), "fi" (Finnish), "ru" (Russian), "pt" (Portuguese), "bg" (Bulgarian), "hr" (Croatian), "fr" (French), "uk" (Ukrainian), "sl" (Slovenian), "ca" (Catalan), "ko" (Korean), "in" (Indonesian), "el" (Greek), "ta" (Tamil), "es" (Spanish), "iw" (Hebrew), "ar" (Arabic), "nb" (Norwegian Bokmål), "th" (Thai), "ja" (Japanese), "pl" (Polish), "ro" (Romanian) [MissingTranslation]
+    <string name="about_title">About baresip</string>
+            ~~~~~~~~~~~~~~~~~~
+
+The full lint text report is located at:
+  C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\lint_intermediate_text_report\debug\lintReportDebug\lint-results-debug.txt
+gradlew.bat :
+At C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\scripts\validate-android.ps1:20 char:5
++     & ./gradlew.bat @arguments *> $log
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lintDebug' (registered by plugin 'com.android.internal.application').
+> Lint found errors in the project; aborting build.
+
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+
+  Lint found 401 errors, 45 warnings. First failure:
+
+  C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Error:
+"about_title" is not translated in "de" (German), "fi" (Finnish), "ru" (Russian), "pt" (Portuguese), "bg" (Bulgarian),
+"hr" (Croatian), "fr" (French), "uk" (Ukrainian), "sl" (Slovenian), "ca" (Catalan), "ko" (Korean), "in" (Indonesian),
+"el" (Greek), "ta" (Tamil), "es" (Spanish), "iw" (Hebrew), "ar" (Arabic), "nb" (Norwegian Bokmål), "th" (Thai), "ja"
+(Japanese), "pl" (Polish), "ro" (Romanian) [MissingTranslation]
+      <string name="about_title">About baresip</string>
+              ~~~~~~~~~~~~~~~~~~
+
+  The full lint text report is located at:
+    C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\lint_intermediate_text_re
+port\debug\lintReportDebug\lint-results-debug.txt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4m 47s
+31 actionable tasks: 10 executed, 21 up-to-date

@@ -1,0 +1,26 @@
+[
+    {
+        "exit":  0,
+        "command":  "gradlew.bat --no-daemon --offline clean :app:clean",
+        "startedUtc":  "2026-11-13T11:40:55.5265659Z",
+        "check":  "clean"
+    },
+    {
+        "exit":  0,
+        "command":  "gradlew.bat --no-daemon --offline :app:assembleDebug",
+        "startedUtc":  "2026-11-13T11:41:27.4404842Z",
+        "check":  "assembleDebug"
+    },
+    {
+        "exit":  0,
+        "command":  "gradlew.bat --no-daemon --offline :app:lintDebug",
+        "startedUtc":  "2026-11-13T11:43:52.0932127Z",
+        "check":  "lintDebug"
+    },
+    {
+        "exit":  0,
+        "command":  "gradlew.bat --no-daemon --offline :app:testDebugUnitTest",
+        "startedUtc":  "2026-11-13T11:48:08.5711722Z",
+        "check":  "testDebugUnitTest"
+    }
+]

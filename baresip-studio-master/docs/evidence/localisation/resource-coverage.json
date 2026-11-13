@@ -1,0 +1,20 @@
+{
+  "default_translatable_count": 401,
+  "locales": [
+    {
+      "locale": "values-cs",
+      "translated": 401,
+      "missing": []
+    },
+    {
+      "locale": "values-sv",
+      "translated": 401,
+      "missing": []
+    },
+    {
+      "locale": "values-zh-rCN",
+      "translated": 401,
+      "missing": []
+    }
+  ]
+}

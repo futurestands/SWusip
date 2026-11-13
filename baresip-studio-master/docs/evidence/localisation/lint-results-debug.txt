@@ -1,0 +1,225 @@
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:15: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 36
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdk specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdk is
+   less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdk to the highest available value. Then
+   test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-sv\strings.xml:23: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Vill du ta bort %2$s från samtalshistoriken?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:47: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Chcete odstranit %2$s z historie hovorů?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-zh-rCN\strings.xml:96: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">您要从通话记录中删除 %2$s 吗？</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:309: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:309: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:309: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:309: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "StringFormatCount":
+   When a formatted string takes arguments, it usually needs to reference the
+   same arguments in all translations (or all arguments if there are no
+   translations.
+
+   There are cases where this is not the case, so this issue is a warning
+   rather than an error by default. However, this usually happens when a
+   language is not translated or updated correctly.
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\colors.xml:4: Warning: The resource R.color.colorSecondary appears to be unused [UnusedResources]
+    <color name="colorSecondary">#00B9A1</color>
+           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\colors.xml:5: Warning: The resource R.color.colorError appears to be unused [UnusedResources]
+    <color name="colorError">#BA1A1A</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.colorWhite appears to be unused [UnusedResources]
+    <color name="colorWhite">#ffffff</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\xml\keep.xml:2: Warning: The resource R.xml.keep appears to be unused [UnusedResources]
+<resources xmlns:tools="http://schemas.android.com/tools"
+^
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.about_title_plus appears to be unused [UnusedResources]
+    <string name="about_title_plus">About baresip+</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:59: Warning: The resource R.string.about_text_plus appears to be unused [UnusedResources]
+    <string name="about_text_plus">
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:268: Warning: The resource R.string.missed_calls appears to be unused [UnusedResources]
+    <string name="missed_calls">Missed calls</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:269: Warning: The resource R.string.missed_calls_count appears to be unused [UnusedResources]
+    <string name="missed_calls_count" tools:ignore="PluralsCandidate">%1$d missed calls</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:301: Warning: The resource R.string.peer appears to be unused [UnusedResources]
+    <string name="peer">Peer</string>
+            ~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:418: Warning: The resource R.string.failed_to_load_module appears to be unused [UnusedResources]
+    <string name="failed_to_load_module">Failed to load module.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:423: Warning: The resource R.string.invalid_microphone_gain appears to be unused [UnusedResources]
+    <string name="invalid_microphone_gain">Invalid Microphone Gain value</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:431: Warning: The resource R.string.invalid_opus_bitrate appears to be unused [UnusedResources]
+    <string name="invalid_opus_bitrate">Invalid Opus bitrate</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:432: Warning: The resource R.string.invalid_opus_packet_loss appears to be unused [UnusedResources]
+    <string name="invalid_opus_packet_loss">Invalid Opus Packet Loss Percentage</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:436: Warning: The resource R.string.invalid_audio_delay appears to be unused [UnusedResources]
+    <string name="invalid_audio_delay">Invalid Audio Delay \'%1$s\'. Valid values are from 100 to 3000.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:452: Warning: The resource R.string.video_size appears to be unused [UnusedResources]
+    <string name="video_size">Video Frame Size</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:453: Warning: The resource R.string.video_size_help appears to be unused [UnusedResources]
+    <string name="video_size_help">Size of transmitted video frames (width x height)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:454: Warning: The resource R.string.video_fps appears to be unused [UnusedResources]
+    <string name="video_fps">Video Frames Per Second</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:455: Warning: The resource R.string.video_fps_help appears to be unused [UnusedResources]
+    <string name="video_fps_help">Video frame rate that will be offered during the SDP handshake.
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:457: Warning: The resource R.string.invalid_fps appears to be unused [UnusedResources]
+    <string name="invalid_fps">Invalid Frames Per Second \'%1$d\'</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:463: Warning: The resource R.string.contacts_help appears to be unused [UnusedResources]
+    <string name="contacts_help">Chooses if baresip contacts, Android contacts, or both are used.
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:541: Warning: The resource R.string.edit appears to be unused [UnusedResources]
+    <string name="edit">Edit</string>
+            ~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:542: Warning: The resource R.string.copy_uri appears to be unused [UnusedResources]
+    <string name="copy_uri">Copy URI</string>
+            ~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:569: Warning: The resource R.string.video_call appears to be unused [UnusedResources]
+    <string name="video_call">Video call</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:570: Warning: The resource R.string.video_request appears to be unused [UnusedResources]
+    <string name="video_request">Video Request</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:571: Warning: The resource R.string.allow_video appears to be unused [UnusedResources]
+    <string name="allow_video">Accept sending and receiving video with \'%1$s\'?</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:572: Warning: The resource R.string.allow_video_send appears to be unused [UnusedResources]
+    <string name="allow_video_send">Accept sending of video to \'%1$s\'?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:573: Warning: The resource R.string.allow_video_recv appears to be unused [UnusedResources]
+    <string name="allow_video_recv">Accept receiving video from \'%1$s\'?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:649: Warning: The resource R.string.no_video_calls appears to be unused [UnusedResources]
+    <string name="no_video_calls">Grant \"Camera\" permission to make or answer video calls.</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:654: Warning: The resource R.string.no_cameras appears to be unused [UnusedResources]
+    <string name="no_cameras">No supported video cameras!</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:666: Warning: The resource R.string.audio_and_video_permissions appears to be unused [UnusedResources]
+    <string name="audio_and_video_permissions">baresip+ needs \"Microphone\" permission
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:82: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="dtmf_mode_help">Vybírá způsob odesílání tónů DTMF 0-9, #, * a A-D.</string>
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:114: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="opus_bit_rate_help">Průměrná maximální přenosová rychlost používaná zvukovým tokem Opus. Platné hodnoty jsou 6000-510000. Výchozí hodnota je 28000.</string>
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:124: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="default_call_volume_help">Pokud je nastaveno, je výchozí hlasitost zvuku hovoru na stupnici 1-10.</string>
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-zh-rCN\strings.xml:153: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="opus_bit_rate_help">Opus 音频流使用的平均最大比特率。有效值为 6000-510000。出厂默认为 28000。</string>
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "TypographyDashes":
+   The "n dash" (u2013, &#8211;) and the "m dash" (u2014, &#8212;) characters
+   are used for ranges (n dash) and breaks (m dash). Using these instead of
+   plain hyphens can make text easier to read and your application will look
+   more polished.
+
+   https://en.wikipedia.org/wiki/Dash
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:280: Warning: Replace "..." with ellipsis character (…, &#8230;) ? [TypographyEllipsis]
+    <string name="numeric_keypad_help">Při zapnutí této volby se při zaměření pole \"Zavolat na ...\" zobrazí numerická klávesnice.</string>
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "TypographyEllipsis":
+   You can replace the string "..." with a dedicated ellipsis character,
+   ellipsis character (u2026, &#8230;). This can help make the text more
+   readable.
+
+   https://en.wikipedia.org/wiki/Ellipsis
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\mipmap-anydpi\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\mipmap-anydpi\ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   The system may use the coloring of the user's chosen wallpaper and theme to
+   tint app icons. Providing a <monochrome> layer (which will be used for
+   tinting) for every adaptive icon is strongly recommended, otherwise Android
+   16 QPR 2 and above will simply tint the color version of the icon, which
+   may look unusual. Devices running earlier Android versions will (with no
+   monochrome layer) show the untinted color icon for your app, which will
+   look inconsistent.
+
+0 errors, 45 warnings

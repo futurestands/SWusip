@@ -25,7 +25,9 @@ OpenSSL snapshot and inherited codec licence risks in `NATIVE_DEPENDENCIES.md`.
 No credentials were supplied, placed into the application, or published by recovery.
 No authentication bypass, PBX changes or network exposure has been introduced.
 
-Full Android lint completed with 401 MissingTranslation errors and 100 warnings;
-this report is retained, and no check was disabled to make validation look successful.
-Two native-source guard regression tests pass; this does not cover Android
-authentication, Keystore, exported components or runtime permissions.
+Initial recovery lint reported 401 MissingTranslation errors and 100 warnings;
+that historical report is retained. The follow-up milestone resolves all translation
+errors through documented supported-language resource curation and now passes lint
+with **0 errors / 45 warnings**, without baseline or suppression changes.
+Eight source/resource/device-privacy unit tests pass; they do not establish Android
+authentication, Keystore, exported-component or runtime-permission security.

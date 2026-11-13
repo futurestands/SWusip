@@ -1,5 +1,31 @@
 # Recovery progress — 2026-11-13
 
+## Latest milestone: localisation and device preparation (from a1678b2)
+
+All 401 MissingTranslation errors are resolved for the supported pilot languages:
+default English plus complete Czech, Swedish and Simplified Chinese packs.
+The 23 unfinished upstream files remain unchanged in `translations/pending/`.
+No human-facing defaults were marked non-translatable and no lint checks were disabled.
+
+Separate clean, assembleDebug, lintDebug and Android unit-task invocations each
+exit 0. Lint: 0 errors / 45 warnings. Android unit tests: NO-SOURCE; eight Python
+regression/privacy tests pass. Fresh APK and all 15 native archives are verified;
+see `LOCALISATION_AND_DEVICE_MILESTONE.md` for commands, hash and evidence.
+Resource correction commit: `9d80a14`; device/CI/report changes follow separately.
+
+ADB rechecks and the prepared device harness detect no physical handset, so
+install/launch/Logcat/native-mapping/foreground-service observations are blocked.
+`PHYSICAL_DEVICE_TEST_GUIDE.md` gives exact USB setup and test commands.
+`SIP_INTEROP_REPORT.md` now defines the two-approved-extension internal-call test.
+Gate 2 remains **NOT PASSED**. No live PBX, trunks, production extensions, VPN or
+external calling were configured. Commit/push is authorised to the existing branch.
+
+Next: connect the authorised arm64 phone; execute installation/startup tests; obtain
+two approved non-production UCM6302A extensions privately; verify registration and
+two-way internal audio. Review remaining lint warnings and security findings before pilot rollout.
+
+## Initial recovery observations at a1678b2
+
 Baseline branch `feature/swusip-call-centre`, commit `ff3d538` (remote verified).
 Recovery implementation commit: `a788536c7ded458105e489350dad268f9aab61f9`.
 The project lead explicitly authorised GitHub publication on 2026-11-13. This
