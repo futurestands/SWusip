@@ -1,0 +1,457 @@
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:15: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 36
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdk specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdk is
+   less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdk to the highest available value. Then
+   test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\gradle\wrapper\gradle-wrapper.properties:3: Warning: A newer version of Gradle than 9.6.0 is available: 9.9.1 [AndroidGradlePluginVersion]
+distributionUrl=https\://services.gradle.org/distributions/gradle-9.6.0-bin.zip
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:74: Warning: A newer version of androidx.test:runner than 1.5.2 is available: 1.7.0 [GradleDependency]
+    androidTestImplementation("androidx.test:runner:1.5.2")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:75: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\gradle\libs.versions.toml:13: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.12.0 is available: 1.13.0 [NewerVersionAvailable]
+kotlinxSerializationJson = "1.12.0"
+                           ~~~~~~~~
+
+   Explanation for issues of type "NewerVersionAvailable":
+   This detector checks with a central repository to see if there are newer
+   versions available for the dependencies used by this project. This is
+   similar to the GradleDependency check, which checks for newer versions
+   available in the Android SDK tools and libraries, but this works with any
+   MavenCentral dependency, and connects to the library every time, which
+   makes it more flexible but also much slower.
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-sv\strings.xml:23: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Vill du ta bort %2$s från samtalshistoriken?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:47: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Chcete odstranit %2$s z historie hovorů?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-zh-rCN\strings.xml:96: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">您要从通话记录中删除 %2$s 吗？</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:259: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:259: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:259: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:259: Warning: Formatting string 'calls_delete_question' is not referencing numbered arguments [1] [StringFormatCount]
+    <string name="calls_delete_question">Do you want to delete %2$s from call history?</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "StringFormatCount":
+   When a formatted string takes arguments, it usually needs to reference the
+   same arguments in all translations (or all arguments if there are no
+   translations.
+
+   There are cases where this is not the case, so this issue is a warning
+   rather than an error by default. However, this usually happens when a
+   language is not translated or updated correctly.
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\OfflineAuthorisation.kt:18: Warning: Using getString to get device identifiers is not recommended [HardwareIds]
+        val id = Settings.Secure.getString(ctx.contentResolver, Settings.Secure.ANDROID_ID)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardwareIds":
+   Using these device identifiers is not recommended other than for high value
+   fraud prevention and advanced telephony use-cases. For advertising
+   use-cases, use AdvertisingIdClient$Info#getId and for analytics, use
+   InstanceId#getId.
+
+   https://developer.android.com/training/articles/user-data-ids.html
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\AndroidManifest.xml:68: Warning: The attribute android:allowBackup is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute android:dataExtractionRules specifying an @xml resource which configures cloud backups and device transfers on Android 12 and higher. [DataExtractionRules]
+        android:allowBackup="false"
+                             ~~~~~
+
+   Explanation for issues of type "DataExtractionRules":
+   Before Android 12, the attributes android:allowBackup and
+   android:fullBackupContent were used to configure all forms of backup,
+   including cloud backups, device-to-device transfers and adb backup.
+
+   In Android 12 and higher, these attributes have been deprecated and will
+   only apply to cloud backups. You should instead use the attribute
+   android:dataExtractionRules, specifying an @xml resource that configures
+   which files to back up, for cloud backups and for device-to-device
+   transfers, separately. If your minSdkVersion supports older versions,
+   you'll still want to specify an android:fullBackupContent resource if the
+   default behavior is not right for your app.
+
+   https://developer.android.com/about/versions/12/backup-restore#xml-changes
+   https://goo.gle/DataExtractionRules
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\colors.xml:4: Warning: The resource R.color.colorSecondary appears to be unused [UnusedResources]
+    <color name="colorSecondary">#00B9A1</color>
+           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\colors.xml:5: Warning: The resource R.color.colorError appears to be unused [UnusedResources]
+    <color name="colorError">#BA1A1A</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.colorWhite appears to be unused [UnusedResources]
+    <color name="colorWhite">#ffffff</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\xml\keep.xml:2: Warning: The resource R.xml.keep appears to be unused [UnusedResources]
+<resources xmlns:tools="http://schemas.android.com/tools"
+^
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Warning: The resource R.string.about_title appears to be unused [UnusedResources]
+    <string name="about_title">About SWUSIP</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.about_title_plus appears to be unused [UnusedResources]
+    <string name="about_title_plus">About SWUSIP</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:9: Warning: The resource R.string.about_text_plus appears to be unused [UnusedResources]
+    <string name="about_text_plus">
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:218: Warning: The resource R.string.missed_calls appears to be unused [UnusedResources]
+    <string name="missed_calls">Missed calls</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:219: Warning: The resource R.string.missed_calls_count appears to be unused [UnusedResources]
+    <string name="missed_calls_count" tools:ignore="PluralsCandidate">%1$d missed calls</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:251: Warning: The resource R.string.peer appears to be unused [UnusedResources]
+    <string name="peer">Peer</string>
+            ~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:293: Warning: The resource R.string.configuration appears to be unused [UnusedResources]
+    <string name="configuration">Settings</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:368: Warning: The resource R.string.failed_to_load_module appears to be unused [UnusedResources]
+    <string name="failed_to_load_module">Failed to load module.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:373: Warning: The resource R.string.invalid_microphone_gain appears to be unused [UnusedResources]
+    <string name="invalid_microphone_gain">Invalid Microphone Gain value</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:381: Warning: The resource R.string.invalid_opus_bitrate appears to be unused [UnusedResources]
+    <string name="invalid_opus_bitrate">Invalid Opus bitrate</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:382: Warning: The resource R.string.invalid_opus_packet_loss appears to be unused [UnusedResources]
+    <string name="invalid_opus_packet_loss">Invalid Opus Packet Loss Percentage</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:386: Warning: The resource R.string.invalid_audio_delay appears to be unused [UnusedResources]
+    <string name="invalid_audio_delay">Invalid Audio Delay \'%1$s\'. Valid values are from 100 to 3000.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:402: Warning: The resource R.string.video_size appears to be unused [UnusedResources]
+    <string name="video_size">Video Frame Size</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:403: Warning: The resource R.string.video_size_help appears to be unused [UnusedResources]
+    <string name="video_size_help">Size of transmitted video frames (width x height)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:404: Warning: The resource R.string.video_fps appears to be unused [UnusedResources]
+    <string name="video_fps">Video Frames Per Second</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:405: Warning: The resource R.string.video_fps_help appears to be unused [UnusedResources]
+    <string name="video_fps_help">Video frame rate that will be offered during the SDP handshake.
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:407: Warning: The resource R.string.invalid_fps appears to be unused [UnusedResources]
+    <string name="invalid_fps">Invalid Frames Per Second \'%1$d\'</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:413: Warning: The resource R.string.contacts_help appears to be unused [UnusedResources]
+    <string name="contacts_help">Chooses if SWUSIP contacts, Android contacts, or both are used.
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:463: Warning: The resource R.string.send_message appears to be unused [UnusedResources]
+    <string name="send_message">Send Message</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:491: Warning: The resource R.string.edit appears to be unused [UnusedResources]
+    <string name="edit">Edit</string>
+            ~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:492: Warning: The resource R.string.copy_uri appears to be unused [UnusedResources]
+    <string name="copy_uri">Copy URI</string>
+            ~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:504: Warning: The resource R.string.baresip appears to be unused [UnusedResources]
+    <string name="baresip" translatable="false">SWUSIP</string>
+            ~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:507: Warning: The resource R.string.backup appears to be unused [UnusedResources]
+    <string name="backup">Backup</string>
+            ~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:508: Warning: The resource R.string.restore appears to be unused [UnusedResources]
+    <string name="restore">Restore</string>
+            ~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:509: Warning: The resource R.string.logcat appears to be unused [UnusedResources]
+    <string name="logcat" translatable="false">Logcat</string>
+            ~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:510: Warning: The resource R.string.about appears to be unused [UnusedResources]
+    <string name="about">About</string>
+            ~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:512: Warning: The resource R.string.quit appears to be unused [UnusedResources]
+    <string name="quit">Quit</string>
+            ~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:519: Warning: The resource R.string.video_call appears to be unused [UnusedResources]
+    <string name="video_call">Video call</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:520: Warning: The resource R.string.video_request appears to be unused [UnusedResources]
+    <string name="video_request">Video Request</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:521: Warning: The resource R.string.allow_video appears to be unused [UnusedResources]
+    <string name="allow_video">Accept sending and receiving video with \'%1$s\'?</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:522: Warning: The resource R.string.allow_video_send appears to be unused [UnusedResources]
+    <string name="allow_video_send">Accept sending of video to \'%1$s\'?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:523: Warning: The resource R.string.allow_video_recv appears to be unused [UnusedResources]
+    <string name="allow_video_recv">Accept receiving video from \'%1$s\'?</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:527: Warning: The resource R.string.rec_in_call appears to be unused [UnusedResources]
+    <string name="rec_in_call">Recording can be turned on or off only when call is not
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:547: Warning: The resource R.string.voicemail_messages appears to be unused [UnusedResources]
+    <string name="voicemail_messages">Voicemail Messages</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:555: Warning: The resource R.string.listen appears to be unused [UnusedResources]
+    <string name="listen">Listen</string>
+            ~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:599: Warning: The resource R.string.no_video_calls appears to be unused [UnusedResources]
+    <string name="no_video_calls">Grant \"Camera\" permission to make or answer video calls.</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:604: Warning: The resource R.string.no_cameras appears to be unused [UnusedResources]
+    <string name="no_cameras">No supported video cameras!</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:616: Warning: The resource R.string.audio_and_video_permissions appears to be unused [UnusedResources]
+    <string name="audio_and_video_permissions">SWUSIP needs \"Microphone\" permission
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:620: Warning: The resource R.string.call_recording_title appears to be unused [UnusedResources]
+    <string name="call_recording_title">Call Recording</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:621: Warning: The resource R.string.call_recording_tip appears to be unused [UnusedResources]
+    <string name="call_recording_tip">If activated, new incoming and outgoing calls will be recorded.
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:623: Warning: The resource R.string.microphone_title appears to be unused [UnusedResources]
+    <string name="microphone_title">Microphone</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:624: Warning: The resource R.string.microphone_tip appears to be unused [UnusedResources]
+    <string name="microphone_tip">If activated during call, microphone is muted.</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:625: Warning: The resource R.string.speakerphone_title appears to be unused [UnusedResources]
+    <string name="speakerphone_title">Speakerphone</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:626: Warning: The resource R.string.speakerphone_tip appears to be unused [UnusedResources]
+    <string name="speakerphone_tip">If activated, audio is played via device speakerphone.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests=true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests=true.
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:82: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="dtmf_mode_help">Vybírá způsob odesílání tónů DTMF 0-9, #, * a A-D.</string>
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:114: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="opus_bit_rate_help">Průměrná maximální přenosová rychlost používaná zvukovým tokem Opus. Platné hodnoty jsou 6000-510000. Výchozí hodnota je 28000.</string>
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:124: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="default_call_volume_help">Pokud je nastaveno, je výchozí hlasitost zvuku hovoru na stupnici 1-10.</string>
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-zh-rCN\strings.xml:153: Warning: Replace "-" with an "en dash" character (–, &#8211;) ? [TypographyDashes]
+    <string name="opus_bit_rate_help">Opus 音频流使用的平均最大比特率。有效值为 6000-510000。出厂默认为 28000。</string>
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "TypographyDashes":
+   The "n dash" (u2013, &#8211;) and the "m dash" (u2014, &#8212;) characters
+   are used for ranges (n dash) and breaks (m dash). Using these instead of
+   plain hyphens can make text easier to read and your application will look
+   more polished.
+
+   https://en.wikipedia.org/wiki/Dash
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values-cs\strings.xml:280: Warning: Replace "..." with ellipsis character (…, &#8230;) ? [TypographyEllipsis]
+    <string name="numeric_keypad_help">Při zapnutí této volby se při zaměření pole \"Zavolat na ...\" zobrazí numerická klávesnice.</string>
+                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "TypographyEllipsis":
+   You can replace the string "..." with a dedicated ellipsis character,
+   ellipsis character (u2026, &#8230;). This can help make the text more
+   readable.
+
+   https://en.wikipedia.org/wiki/Ellipsis
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\mipmap-anydpi\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\mipmap-anydpi\ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   The system may use the coloring of the user's chosen wallpaper and theme to
+   tint app icons. Providing a <monochrome> layer (which will be used for
+   tinting) for every adaptive icon is strongly recommended, otherwise Android
+   16 QPR 2 and above will simply tint the color version of the icon, which
+   may look unusual. Devices running earlier Android versions will (with no
+   monochrome layer) show the untinted color icon for your app, which will
+   look inconsistent.
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\CustomerDirectory.kt:136: Warning: Use the KTX extension function SQLiteDatabase.transaction instead? [UseKtx]
+        db.beginTransaction()
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\CustomerDirectory.kt:203: Warning: Use the KTX extension function SQLiteDatabase.transaction instead? [UseKtx]
+        db.beginTransaction()
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\CustomerDirectory.kt:247: Warning: Use the KTX extension function SQLiteDatabase.transaction instead? [UseKtx]
+        db.beginTransaction()
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\OfflineAuthorisation.kt:47: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        prefs.edit().putString("grant",text).putLong("newestGrant",fields[3].toLong())
+        ~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\kotlin\com\tutpro\baresip\OfflineAuthorisation.kt:54: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        if(now > previous + 60_000) prefs.edit().putLong("lastObservedTime",now).apply()
+                                    ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling
+
+   ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:72: Warning: Use version catalog instead [UseTomlInstead]
+    testImplementation("junit:junit:4.13.2")
+                       ~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:73: Warning: Use version catalog instead [UseTomlInstead]
+    testImplementation("net.sf.kxml:kxml2:2.3.0")
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:74: Warning: Use version catalog instead [UseTomlInstead]
+    androidTestImplementation("androidx.test:runner:1.5.2")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build.gradle.kts:75: Warning: Use version catalog instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\xml\institution_restrictions.xml:2: Warning: Hardcoded string "SWUSIP institutional role", should use @string resource [HardcodedText]
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android"><restriction android:key="swusip_role" android:title="SWUSIP institutional role" android:restrictionType="string" android:defaultValue="unassigned" /></restrictions>
+                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 79 warnings

@@ -1,0 +1,6 @@
+
+com.tutpro.baresip.DirectoryDeviceTest:.......
+
+Time: 0.662
+
+OK (7 tests)

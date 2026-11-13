@@ -1,5 +1,12 @@
 # SWUSIP 1.0.0-pilot development delivery
 
+**Follow-up:** 1.0.1-pilot / 587 is now installed on the authorised Android phone.
+It corrects the Android XLSX parser defect found by physical-device testing;
+seven Android instrumentation tests pass. Interactive UI review still requires
+phone unlock. See [the physical-device validation record](SWUSIP_DEVICE_VALIDATION.md)
+for the new APK path/checksum and remaining tests. The record below describes
+the original `170be36` milestone and preserves its original APK checksum.
+
 Package `ug.go.mwe.swusip`, version code **586**, version **1.0.0-pilot**.
 
 ## Delivered code and artifacts

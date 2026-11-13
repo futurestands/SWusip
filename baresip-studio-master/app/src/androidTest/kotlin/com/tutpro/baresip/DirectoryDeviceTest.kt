@@ -14,14 +14,14 @@ import java.util.zip.ZipOutputStream
 @RunWith(AndroidJUnit4::class)
 class DirectoryDeviceTest {
     private val context get() = InstrumentationRegistry.getInstrumentation().targetContext
-    private fun spreadsheet(accountCell: String): ByteArray {
+    private fun spreadsheet(accountCell: String, prelude: String = ""): ByteArray {
         val out = ByteArrayOutputStream()
         ZipOutputStream(out).use { zip ->
             zip.putNextEntry(ZipEntry("xl/worksheets/sheet1.xml"))
             val header = CustomerImport.headers.mapIndexed { i,v -> "<c r=\"${'A'+i}1\" t=\"inlineStr\"><is><t>$v</t></is></c>" }.joinToString("")
             val values = listOf("Synthetic Customer","0772123456","000123","SYN-01","Synthetic Scheme","Domestic","")
             val cells = values.mapIndexed { i,v -> if(i == 2) accountCell else "<c r=\"${'A'+i}2\" t=\"inlineStr\"><is><t>$v</t></is></c>" }.joinToString("")
-            zip.write(("<worksheet><sheetData><row r=\"1\">$header</row><row r=\"2\">$cells</row></sheetData></worksheet>").toByteArray())
+            zip.write((prelude + "<worksheet><sheetData><row r=\"1\">$header</row><row r=\"2\">$cells</row></sheetData></worksheet>").toByteArray())
             zip.closeEntry()
         }
         return out.toByteArray()
@@ -40,6 +40,15 @@ class DirectoryDeviceTest {
     }
     @Test fun suppliedExcelTemplateHasCorrectColumnsAndNoCustomers() {
         assertTrue(CustomerImport.parse(context.assets.open("swusip-customers.xlsx"),true).isEmpty())
+    }
+    @Test fun documentDeclarationsRemainRejectedOnAndroid() {
+        try {
+            CustomerImport.parse(spreadsheet("<c r=\"C2\" t=\"inlineStr\"><is><t>&injected;</t></is></c>",
+                "<!DOCTYPE worksheet [<!ENTITY injected 'Synthetic injected value'>]>").inputStream(),true)
+            fail("Document declaration accepted")
+        } catch (error: org.xmlpull.v1.XmlPullParserException) {
+            assertTrue(error.message!!.contains("DTD"))
+        }
     }
     @Test fun forgedPhoneAuthorisationCannotGrantAdministrator() {
         val before = OfflineAuthorisation.role(context)

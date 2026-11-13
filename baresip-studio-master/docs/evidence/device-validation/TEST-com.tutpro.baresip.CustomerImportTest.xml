@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tutpro.baresip.CustomerImportTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-11-13T21:29:50.384Z" hostname="DESKTOP-6B00F9J" time="0.05">
+  <properties/>
+  <testcase name="blankRowsDoNotShiftValidationRowNumbers" classname="com.tutpro.baresip.CustomerImportTest" time="0.001"/>
+  <testcase name="sharedPhoneAcrossAccountsIsNotDiscardedByParser" classname="com.tutpro.baresip.CustomerImportTest" time="0.008"/>
+  <testcase name="mandatoryFieldsProduceRowErrors" classname="com.tutpro.baresip.CustomerImportTest" time="0.002"/>
+  <testcase name="oversizedDocumentIsRejected" classname="com.tutpro.baresip.CustomerImportTest" time="0.023"/>
+  <testcase name="ugandaVariantsMatchTheSameCaller" classname="com.tutpro.baresip.CustomerImportTest" time="0.002"/>
+  <testcase name="preserveInternationalNumbers" classname="com.tutpro.baresip.CustomerImportTest" time="0.004"/>
+  <testcase name="unclosedQuoteIsRejected" classname="com.tutpro.baresip.CustomerImportTest" time="0.003"/>
+  <testcase name="rejectAmbiguousOrInvalidNumbers" classname="com.tutpro.baresip.CustomerImportTest" time="0.003"/>
+  <testcase name="wrongHeaderIsRejected" classname="com.tutpro.baresip.CustomerImportTest" time="0.001"/>
+  <testcase name="preserveLeadingZeroAccountAndQuotedNotes" classname="com.tutpro.baresip.CustomerImportTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

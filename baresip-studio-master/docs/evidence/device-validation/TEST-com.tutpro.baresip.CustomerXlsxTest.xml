@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tutpro.baresip.CustomerXlsxTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-13T21:29:50.477Z" hostname="DESKTOP-6B00F9J" time="0.155">
+  <properties/>
+  <testcase name="documentEntitiesCannotSupplyCustomerData" classname="com.tutpro.baresip.CustomerXlsxTest" time="0.043"/>
+  <testcase name="generatedTemplateIgnoresAllStyledEmptyCells" classname="com.tutpro.baresip.CustomerXlsxTest" time="0.099"/>
+  <testcase name="textAccountsRetainLeadingZeroes" classname="com.tutpro.baresip.CustomerXlsxTest" time="0.004"/>
+  <testcase name="formulaAccountsAreRejected" classname="com.tutpro.baresip.CustomerXlsxTest" time="0.003"/>
+  <testcase name="numericAccountsAreRejected" classname="com.tutpro.baresip.CustomerXlsxTest" time="0.003"/>
+  <testcase name="missingWorksheetRowsDoNotShiftErrorLocations" classname="com.tutpro.baresip.CustomerXlsxTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

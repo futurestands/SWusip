@@ -1,0 +1,59 @@
+{
+  "generatedUtc": "2026-11-13T21:49:25.861709+00:00",
+  "baselineCommit": "170be36c5bf7a78d813ed55095ee6e26963dedc5",
+  "originalApkSha256Verified": "8c3c6ac27920c31f62485b3190ba80723d1e12491154f09da6e8d2e43042177d",
+  "installedVersion": "1.0.1-pilot",
+  "installedVersionCode": 587,
+  "apkPath": "artifacts/SWUSIP-1.0.1-pilot-debug.apk",
+  "apkSha256": "d09a666247efffcad42acd6ff8ff97d1f7ffe14e8fe7cbaca9a7097caa97d73f",
+  "installMethod": "adb install -r; no uninstall or app-data clearing",
+  "originalInstrumentation": {
+    "tests": 6,
+    "failures": 4,
+    "cause": "Android Xml.newPullParser enables DTD processing by default; valid XLSX rejected"
+  },
+  "correctedInstrumentation": {
+    "tests": 7,
+    "failures": 0,
+    "status": "PASS"
+  },
+  "jvmUnitTests": [
+    {
+      "name": "com.tutpro.baresip.CustomerExportTest",
+      "tests": 3
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerImportTest",
+      "tests": 10
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerMatchingTest",
+      "tests": 9
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerXlsxTest",
+      "tests": 6
+    }
+  ],
+  "pythonChecksPassed": 12,
+  "lint": {
+    "errors": 0,
+    "warnings": 79
+  },
+  "nativeSourceChanged": false,
+  "startupObservationSeconds": 10,
+  "startupStatus": "ui_native_and_foreground_startup_verified",
+  "crashCount": 0,
+  "foregroundServiceObserved": true,
+  "uiReview": "BLOCKED_PHONE_KEYGUARD",
+  "authenticatedCustomerImportUi": "NOT_TESTED_REQUIRES_PHONE_UNLOCK_AND_WORKSPACE_AUTH",
+  "schemeAccountSearchUi": "NOT_TESTED",
+  "multipleMatchesAndProfilesUi": "NOT_TESTED",
+  "incomingCallerPanelDuringRealCall": "NOT_TESTED_NO_APPROVED_PBX_TEST_PERFORMED",
+  "realSipRegistrationAndTwoWayAudio": "NOT_TESTED",
+  "securityControlsBypassed": false,
+  "realCustomerDataUsed": false,
+  "productionPbxOrServerChanges": false,
+  "apkSignatureVerified": true,
+  "apkIdentityAndGenuineJniVerified": true
+}

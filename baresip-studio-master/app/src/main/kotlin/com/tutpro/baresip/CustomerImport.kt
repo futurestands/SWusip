@@ -85,9 +85,12 @@ object CustomerImport {
                 throw XmlPullParserException("DTD declarations are not supported")
             return newParser().apply {
                 setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true)
-                // Some compliant parsers do not allow setting the default-false
-                // feature. Require it to remain disabled instead of rejecting
-                // every valid workbook on those implementations.
+                // Android Xml.newPullParser enables document declarations,
+                // while some JVM parsers leave the feature disabled and reject
+                // attempts to set it. Disable it where supported, then verify
+                // the effective state on both implementations.
+                try { setFeature(XmlPullParser.FEATURE_PROCESS_DOCDECL,false) }
+                catch (_: XmlPullParserException) { /* Effective state checked below. */ }
                 if(getFeature(XmlPullParser.FEATURE_PROCESS_DOCDECL))
                     throw XmlPullParserException("DTD processing must remain disabled")
                 setInput(data.inputStream(), "UTF-8")

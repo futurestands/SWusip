@@ -1,0 +1,68 @@
+
+com.tutpro.baresip.DirectoryDeviceTest:..
+Error in excelFormulaAccountsAreRejected(com.tutpro.baresip.DirectoryDeviceTest):
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:107)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.excelFormulaAccountsAreRejected(DirectoryDeviceTest.kt:38)
+
+Error in excelNumericAccountsAreRejectedRatherThanInventingLostZeroes(com.tutpro.baresip.DirectoryDeviceTest):
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:107)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.excelNumericAccountsAreRejectedRatherThanInventingLostZeroes(DirectoryDeviceTest.kt:34)
+
+Error in excelTextAccountsKeepLeadingZeroes(com.tutpro.baresip.DirectoryDeviceTest):
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:107)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.excelTextAccountsKeepLeadingZeroes(DirectoryDeviceTest.kt:30)
+
+Error in suppliedExcelTemplateHasCorrectColumnsAndNoCustomers(com.tutpro.baresip.DirectoryDeviceTest):
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:98)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.suppliedExcelTemplateHasCorrectColumnsAndNoCustomers(DirectoryDeviceTest.kt:42)
+
+
+Time: 0.155
+There were 4 failures:
+1) excelFormulaAccountsAreRejected(com.tutpro.baresip.DirectoryDeviceTest)
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:107)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.excelFormulaAccountsAreRejected(DirectoryDeviceTest.kt:38)
+2) excelNumericAccountsAreRejectedRatherThanInventingLostZeroes(com.tutpro.baresip.DirectoryDeviceTest)
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:107)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.excelNumericAccountsAreRejectedRatherThanInventingLostZeroes(DirectoryDeviceTest.kt:34)
+3) excelTextAccountsKeepLeadingZeroes(com.tutpro.baresip.DirectoryDeviceTest)
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:107)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.excelTextAccountsKeepLeadingZeroes(DirectoryDeviceTest.kt:30)
+4) suppliedExcelTemplateHasCorrectColumnsAndNoCustomers(com.tutpro.baresip.DirectoryDeviceTest)
+org.xmlpull.v1.XmlPullParserException: DTD processing must remain disabled
+	at com.tutpro.baresip.CustomerImport.spreadsheet$parser(CustomerImport.kt:92)
+	at com.tutpro.baresip.CustomerImport.spreadsheet(CustomerImport.kt:98)
+	at com.tutpro.baresip.CustomerImport.parseWithParser$app(CustomerImport.kt:18)
+	at com.tutpro.baresip.CustomerImport.parse(CustomerImport.kt:14)
+	at com.tutpro.baresip.DirectoryDeviceTest.suppliedExcelTemplateHasCorrectColumnsAndNoCustomers(DirectoryDeviceTest.kt:42)
+
+FAILURES!!!
+Tests run: 6,  Failures: 4
