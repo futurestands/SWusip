@@ -13,8 +13,8 @@ configure<ApplicationExtension> {
         applicationId = "ug.go.mwe.swusip"
         minSdk = 28
         targetSdk = 36
-        versionCode = 587
-        versionName = "1.0.1-pilot"
+        versionCode = 588
+        versionName = "1.0.2-pilot"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         @Suppress("UnstableApiUsage")
         externalNativeBuild {

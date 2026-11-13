@@ -71,7 +71,7 @@ class ViewModel: ViewModel() {
     private val _isSpeakerOn = MutableStateFlow(false)
     val isSpeakerOn = _isSpeakerOn.asStateFlow()
 
-    private val _isDialpadVisible = MutableStateFlow(false)
+    private val _isDialpadVisible = MutableStateFlow(true)
     val isDialpadVisible = _isDialpadVisible.asStateFlow()
 
     private val _showKeyboard = MutableStateFlow(0)
@@ -153,6 +153,8 @@ class ViewModel: ViewModel() {
     fun toggleDialpadVisibility() {
         _isDialpadVisible.value = !_isDialpadVisible.value
     }
+
+    fun showDialpad() { _isDialpadVisible.value = true }
 
     fun requestHideKeyboard() {
         _hideKeyboard.value += 1

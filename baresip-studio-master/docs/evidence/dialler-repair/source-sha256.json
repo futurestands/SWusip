@@ -1,0 +1,7 @@
+{
+  "app/build.gradle.kts": "4acae6a2fab635cb539c9b760f9a56979a6df23c172c5a3991a4c89aebdae59e",
+  "app/src/main/kotlin/com/tutpro/baresip/MainScreen.kt": "c224dad895e646ef5c17f10ed2a32d69372f5cae626073029dbbca5ea6ed7f37",
+  "app/src/main/kotlin/com/tutpro/baresip/ViewModel.kt": "4c3ab7962576a58bf420fb2d143400059c15d90e8201f56be299ad66c1ecf5a9",
+  "app/src/main/kotlin/com/tutpro/baresip/DiallerKeypad.kt": "185d36f0eb0f8b166ed2bd70813dbbd46dc0c94898f080afa97df255a82fa1a6",
+  "app/src/androidTest/kotlin/com/tutpro/baresip/DiallerDeviceTest.kt": "d144e310afe0778be1e4856a32e24b0fbd5818252f752ce699d3091b2cb28205"
+}

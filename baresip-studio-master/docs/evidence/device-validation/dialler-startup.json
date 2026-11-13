@@ -1,0 +1,30 @@
+{
+  "timeUtc": "20261113T223954Z",
+  "status": "ui_native_and_foreground_startup_verified",
+  "gate2": "NOT TESTED",
+  "observationSeconds": 10,
+  "adbEnumerationExit": 0,
+  "model": "25028RN03A",
+  "androidVersion": "15",
+  "api": "35",
+  "abis": "arm64-v8a,armeabi-v7a,armeabi",
+  "apkSha256": "6b9971dc38932f6235bd4d200742f5d67d295eaf4460b36ba847da12b21510ad",
+  "observeOnly": true,
+  "installedApkHashVerified": true,
+  "deviceLogStartEpoch": 1794609595.0,
+  "launchExit": 0,
+  "activityStarted": true,
+  "logcatFailureCounts": {
+    "crash": 0,
+    "nativeLoading": 0,
+    "foregroundService": 0,
+    "securityException": 0
+  },
+  "scopedLogcatLines": 79,
+  "processAlive": true,
+  "nativeLibraryMapped": true,
+  "nativeMappingMethod": "apk-embedded-executable-segment",
+  "baresipServiceObserved": true,
+  "foregroundServiceObserved": true,
+  "limits": "Observation window only. No SIP registration, two-way audio or long-term reliability test performed."
+}

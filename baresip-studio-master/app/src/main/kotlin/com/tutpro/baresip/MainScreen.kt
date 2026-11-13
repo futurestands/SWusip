@@ -590,7 +590,7 @@ private fun BottomBar(ctx: Context, viewModel: ViewModel, navController: NavCont
             TextButton(modifier = Modifier.weight(1f), onClick = {
                 if (checkLockedAndToast(ctx)) return@TextButton
                 when (index) {
-                    0 -> viewModel.toggleDialpadVisibility()
+                    0 -> viewModel.showDialpad()
                     1 -> navController.navigate("contacts")
                     2 -> if (aor.isNotEmpty()) navController.navigate("calls/${Uri.encode(aor)}")
                     3 -> navController.navigate("customers")
@@ -815,6 +815,22 @@ private fun CallCard(
     }
     Column {
             CallUriRow(ctx, viewModel, call, dialerState)
+            if (dialerState != null) {
+                DiallerKeypad(enabled = dialerState.callUriEnabled.value) { key ->
+                    if (!checkLockedAndToast(ctx)) {
+                        val old = dialerState.callUri.value
+                        val updated = when (key) {
+                            "Backspace" -> old.dropLast(1)
+                            "Clear number" -> ""
+                            else -> old + key
+                        }
+                        dialerState.callUri.value = updated
+                        dialerState.redialUri = ""
+                        dialerState.showSuggestions.value = false
+                        Account.ofAor(viewModel.selectedAor.value)?.resumeUri = updated
+                    }
+                }
+            }
             CallRow(ctx, viewModel, call, dialerState)
             if (call != null && call.showHangupButton.value && !call.conferenceCall) {
                 Row(
@@ -1262,7 +1278,7 @@ private fun CallUriRow(
                 trailingIcon = {
                     if (isDialer && dialerState.callUriEnabled.value && dialerState.callUri.value.isNotEmpty())
                         Icon(Icons.Outlined.Clear,
-                            contentDescription = null,
+                            contentDescription = "Clear number",
                             modifier = Modifier.clickable {
                                 if (dialerState.showSuggestions.value)
                                     dialerState.showSuggestions.value = false
@@ -1289,7 +1305,7 @@ private fun CallUriRow(
                 label = {
                     Text(
                         text = if (isDialer)
-                            dialerState.callUriLabel.value
+                            dialerState.callUriLabel.value.ifBlank { "Number or SIP address" }
                         else
                             call!!.callUriLabel.value,
                         fontSize = 18.sp
@@ -1483,10 +1499,10 @@ private fun CallRow(
                             R.color.colorTrafficGreen
                         else
                             R.color.colorTrafficYellow),
-                        contentDescription = null,
+                        contentDescription = "Call",
                     )
                 }
-            if (dialerState.showCallConferenceButton.value) {
+            if (dialerState.showCallConferenceButton.value && Call.calls().isNotEmpty()) {
                 if (dialerState.showCallButton.value) Spacer(modifier = Modifier.width(48.dp))
                 IconButton(
                     modifier = Modifier.size(48.dp),
@@ -1507,7 +1523,7 @@ private fun CallRow(
                             else
                                 R.color.colorTrafficYellow
                         ),
-                        contentDescription = null,
+                        contentDescription = "Add call to conference",
                     )
                 }
             }
@@ -2074,6 +2090,17 @@ private fun spinToAor(viewModel: ViewModel, aor: String, call: Call? = null, for
 }
 
 private fun callClick(ctx: Context, viewModel: ViewModel, dialerState: ViewModel.DialerState?) {
+    if (checkLockedAndToast(ctx)) return
+    val selectedUa = UserAgent.ofAor(viewModel.selectedAor.value)
+    if (selectedUa == null) {
+        handleCallProblem(ctx, "Not connected to the office telephone system. Contact your administrator to configure your extension.")
+        return
+    }
+    if (!selectedUa.account.isMobile && selectedUa.account.regint > 0 &&
+        selectedUa.status !in setOf(R.drawable.circle_green, R.drawable.circle_green_blind)) {
+        handleCallProblem(ctx, "Your extension is not registered with the office telephone system. Check the office network connection or contact your administrator.")
+        return
+    }
     if (viewModel.selectedAor.value != "" && dialerState != null) {
         val uriText = dialerState.callUri.value.trim()
         if (uriText.isNotEmpty()) {
@@ -2089,7 +2116,7 @@ private fun callClick(ctx: Context, viewModel: ViewModel, dialerState: ViewModel
                 makeCall(ctx, viewModel, uriToCall, dialerState)
             }
             else
-                Toast.makeText(ctx, R.string.no_calls, Toast.LENGTH_SHORT).show()
+                handleCallProblem(ctx, "Microphone permission is required to make a call. Allow microphone access for SWUSIP in Android app settings.")
         }
         else {
             val ua = UserAgent.ofAor(viewModel.selectedAor.value) ?: return
@@ -2100,8 +2127,15 @@ private fun callClick(ctx: Context, viewModel: ViewModel, dialerState: ViewModel
                 dialerState.callUri.value = friendly
                 ua.account.resumeUri = friendly
             }
+            else handleCallProblem(ctx, "Enter an extension number or telephone number before pressing Call.")
         }
     }
+}
+
+private fun handleCallProblem(ctx: Context, message: String) {
+    alertTitle.value = "SWUSIP calling"
+    alertMessage.value = message
+    showAlert.value = true
 }
 
 private fun makeCall(ctx: Context, viewModel: ViewModel, uriText: String,
@@ -2228,6 +2262,7 @@ private fun makeCall(ctx: Context, viewModel: ViewModel, uriText: String,
         if (error != "") {
             Log.e(TAG, error)
             viewModel.dialerState.callButtonsEnabled.value = true
+            handleCallProblem(ctx, "Android could not start the call. Check SWUSIP calling permissions and contact your administrator if the problem continues.")
         }
         else
             viewModel.viewModelScope.launch {

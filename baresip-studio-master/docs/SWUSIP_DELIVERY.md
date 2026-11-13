@@ -1,6 +1,10 @@
 # SWUSIP 1.0.0-pilot development delivery
 
-**Follow-up:** 1.0.1-pilot / 587 is now installed on the authorised Android phone.
+**Latest:** [1.0.2-pilot / 588 dialler repair](SWUSIP_DIALLER_REPAIR.md) is installed
+on the authorised Android phone. Eight physical-device tests pass; real PBX/audio
+verification remains outstanding. Use that record for the latest APK checksum.
+
+**Earlier follow-up:** 1.0.1-pilot / 587 was installed on the authorised Android phone.
 It corrects the Android XLSX parser defect found by physical-device testing;
 seven Android instrumentation tests pass. Interactive UI review still requires
 phone unlock. See [the physical-device validation record](SWUSIP_DEVICE_VALIDATION.md)

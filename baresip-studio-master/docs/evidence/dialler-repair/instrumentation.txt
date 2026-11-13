@@ -1,0 +1,6 @@
+com.tutpro.baresip.DirectoryDeviceTest:.......
+com.tutpro.baresip.DiallerDeviceTest:.
+
+Time: 12.684
+
+OK (8 tests)

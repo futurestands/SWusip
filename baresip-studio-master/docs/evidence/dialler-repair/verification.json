@@ -1,0 +1,22 @@
+{
+  "version": "1.0.2-pilot",
+  "versionCode": 588,
+  "baselineCommit": "f9c312dfaa9b099466f6efb1a566ec4500594cac",
+  "apk": "artifacts/SWUSIP-1.0.2-pilot-debug.apk",
+  "apkSha256": "6b9971dc38932f6235bd4d200742f5d67d295eaf4460b36ba847da12b21510ad",
+  "installation": "adb install -r, preserving app data",
+  "physicalTests": 8,
+  "physicalTestFailures": 0,
+  "jvmTests": 28,
+  "jvmFailures": 0,
+  "pythonChecksPassed": 12,
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 79
+  },
+  "nativeLibraryUnchanged": true,
+  "nativeLibrarySha256": "108931f7a0780b4009c9548ecd5824a6ef26e266466870aa9456c50c3bc19fed",
+  "realSipCalling": "NOT VERIFIED - no approved configured test extension",
+  "screenshotReview": "Blocked by capture protection; accessibility controls tested"
+}
