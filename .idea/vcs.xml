@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/amr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/baresip" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/bcg729" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/codec2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/g722" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/g7221" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/ilbc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/openssl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/opus" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/re" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/sndfile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/vo-amrwbenc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baresip-studio-master/libbaresip-android/zrtpcpp" vcs="Git" />
   </component>
 </project>
