@@ -1,0 +1,14 @@
+amr: 0 matching commit advisories
+baresip: 0 matching commit advisories
+bcg729: 0 matching commit advisories
+codec2: 0 matching commit advisories
+g722: 0 matching commit advisories
+g7221: 0 matching commit advisories
+ilbc: 0 matching commit advisories
+openssl: 0 matching commit advisories
+opus: 0 matching commit advisories
+re: 0 matching commit advisories
+sndfile: 0 matching commit advisories
+vo-amrwbenc: 0 matching commit advisories
+zrtpcpp: 0 matching commit advisories
+Public native commit queries only; not a complete transitive/package scan.

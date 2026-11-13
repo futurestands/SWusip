@@ -1,0 +1,58 @@
+python : From https://github.com/BelledonneCommunications/bcg729
+At line:2 char:1
++ python scripts/prepare_native.py *> docs/evidence/native-source-fetch ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ications/bcg729:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+ * branch            7743da51c0bc5ff366da97179e1003b8ef056a1c -> FETCH_HEAD
+From https://github.com/baresip/baresip
+ * branch            8a4f18c1c1b5331daa026236dcdd108deff601e8 -> FETCH_HEAD
+HEAD is now at 7743da5 fix test patterns URL
+FETCHED bcg729 7743da51c0bc5ff366da97179e1003b8ef056a1c
+From https://git.code.sf.net/p/opencore-amr/code
+ * branch            7dba8c32238418ce0b316a852b2224df586ca896 -> FETCH_HEAD
+HEAD is now at 8a4f18c release v4.13.0
+FETCHED baresip 8a4f18c1c1b5331daa026236dcdd108deff601e8
+HEAD is now at 7dba8c3 Bump the version number to 0.1.6, add changelog entries
+FETCHED amr 7dba8c32238418ce0b316a852b2224df586ca896
+From https://github.com/freeswitch/libg7221
+ * branch            7d35574323585fa5ad2c90daf4f88784c518dec4 -> FETCH_HEAD
+From https://github.com/juha-h/libilbc
+ * branch            5533286ac556fc6cc027701242a3e8832f9910df -> FETCH_HEAD
+HEAD is now at 7d35574 Merge pull request #3 from freeswitch/trixie-mirror
+FETCHED g7221 7d35574323585fa5ad2c90daf4f88784c518dec4
+From https://github.com/sippy/libg722
+ * branch            2ec8a2dbe0cd1786e0525de94fe0d1d5fb8034ac -> FETCH_HEAD
+HEAD is now at 5533286 Add project description to README.md
+FETCHED ilbc 5533286ac556fc6cc027701242a3e8832f9910df
+HEAD is now at 2ec8a2d Make this version 1.2.2.
+FETCHED g722 2ec8a2dbe0cd1786e0525de94fe0d1d5fb8034ac
+From https://github.com/baresip/re
+ * branch            b827bcaf55a18be141ca7bcee1e22872a3a29656 -> FETCH_HEAD
+From https://github.com/drowe67/codec2
+ * branch            06d4c11e699b0351765f10398abb4f663a984f36 -> FETCH_HEAD
+From https://github.com/xiph/opus
+ * branch            82ac57d9f1aaf575800cf17373348e45b7ce6c0d -> FETCH_HEAD
+HEAD is now at b827bca release v4.13.0
+FETCHED re b827bcaf55a18be141ca7bcee1e22872a3a29656
+HEAD is now at 06d4c11 Merge pull request #3 from drowe67/dr-cleanup2
+FETCHED codec2 06d4c11e699b0351765f10398abb4f663a984f36
+HEAD is now at 82ac57d oops, avoid using a reserved identifier
+FETCHED opus 82ac57d9f1aaf575800cf17373348e45b7ce6c0d
+From https://git.code.sf.net/p/opencore-amr/vo-amrwbenc
+ * branch            884dd247dbeb6b2bd2cd3291c4872de95700291f -> FETCH_HEAD
+HEAD is now at 884dd24 Upstream commit "Remove extraneous parentheses"
+FETCHED vo-amrwbenc 884dd247dbeb6b2bd2cd3291c4872de95700291f
+From https://github.com/juha-h/libsndfile
+ * branch            4d5c8600023c82874eb2c1c108172a8f0e6f8f1f -> FETCH_HEAD
+HEAD is now at 4d5c860 Added missing include file
+FETCHED sndfile 4d5c8600023c82874eb2c1c108172a8f0e6f8f1f
+From https://github.com/juha-h/ZRTPCPP
+ * branch            11c86eda399875368a124c0b018cb86700dc11d0 -> FETCH_HEAD
+HEAD is now at 11c86ed Upgraded cmake version and removed no-client ANDROID option
+FETCHED zrtpcpp 11c86eda399875368a124c0b018cb86700dc11d0
+From https://github.com/openssl/openssl
+ * branch            4ce7f193443699a80ea63149c86db6aa07b150ec -> FETCH_HEAD
+HEAD is now at 4ce7f19 Fix ECH client with custom extensions after HelloRetryRequest
+FETCHED openssl 4ce7f193443699a80ea63149c86db6aa07b150ec

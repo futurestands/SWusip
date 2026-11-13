@@ -1,0 +1,2 @@
+PASS: 94 JNI exports; all essential calls delegate to the native engine.
+Static guard only; binary provenance, symbol/ABI checks and real SIP tests remain required.

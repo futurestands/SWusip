@@ -1,0 +1,134 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.6.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+> Task :clean UP-TO-DATE
+> Task :app:externalNativeBuildCleanDebug
+> Task :app:externalNativeBuildCleanRelease
+> Task :app:clean
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:dataBindingMergeDependencyArtifactsDebug
+> Task :app:generateDebugResources
+> Task :app:mergeDebugResources
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:javaPreCompileDebug
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugAssets
+> Task :app:dataBindingGenBaseClassesDebug
+> Task :app:generateDebugRFile
+> Task :app:compressDebugAssets
+> Task :app:generateDebugGlobalSynthetics
+> Task :app:desugarDebugFileDependencies
+> Task :app:mapDebugSourceSetPaths
+> Task :app:compileDebugNavigationResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:checkDebugDuplicateClasses
+> Task :app:checkDebugAarMetadata
+> Task :app:processDebugMainManifest
+> Task :app:mergeLibDexDebug
+> Task :app:processDebugManifest
+> Task :app:compileDebugKotlin
+> Task :app:mergeExtDexDebug
+> Task :app:processDebugManifestForPackage
+> Task :app:configureCMakeDebug[arm64-v8a]
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:mergeDebugJniLibFolders
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:mergeDebugNativeLibs
+> Task :app:javaPreCompileDebugUnitTest
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:extractProguardFiles
+> Task :app:stripDebugDebugSymbols
+> Task :app:processDebugResources
+> Task :app:compileDebugJavaWithJavac
+> Task :app:compressDebugJavaRes
+> Task :app:mergeDebugJavaResource
+> Task :app:dexBuilderDebug
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:mergeProjectDexDebug
+> Task :app:generateDebugLintReportModel
+> Task :app:compileDebugUnitTestKotlin NO-SOURCE
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:compressDebugUnitTestJavaRes NO-SOURCE
+> Task :app:extractDebugUnitTestJavaRes
+> Task :app:testDebugUnitTest NO-SOURCE
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:packageDebug
+> Task :app:lintAnalyzeDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:lintAnalyzeDebugAndroidTest
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/reports/lint-results-debug.html
+Wrote SARIF report to file:///C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/reports/lint-results-debug.sarif
+Lint found 401 errors and 100 warnings. First failure:
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Error: "about_title" is not translated in "hr" (Croatian), "uk" (Ukrainian), "ca" (Catalan), "ko" (Korean), "th" (Thai), "pl" (Polish) [MissingTranslation]
+This issue has been automatically fixed.
+    <string name="about_title">About baresip</string>
+            ~~~~~~~~~~~~~~~~~~
+
+
+> Task :app:lintDebug FAILED
+Lint found 401 errors, 100 warnings. First failure:
+
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Error: "about_title" is not translated in "hr" (Croatian), "uk" (Ukrainian), "ca" (Catalan), "ko" (Korean), "th" (Thai), "pl" (Polish) [MissingTranslation]
+    <string name="about_title">About baresip</string>
+            ~~~~~~~~~~~~~~~~~~
+
+The full lint text report is located at:
+  C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\lint_intermediate_text_report\debug\lintReportDebug\lint-results-debug.txt
+59 actionable tasks: 58 executed, 1 up-to-date
+gradlew.bat :
+At C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\scripts\build-android.ps1:23 char:1
++ & ./gradlew.bat --no-daemon clean :app:clean :app:assembleDebug :app: ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:lintDebug' (registered by plugin 'com.android.internal.application').
+> Lint found errors in the project; aborting build.
+
+  Fix the issues identified by lint, or create a baseline to see only new errors.
+  To create a baseline, run `gradlew updateLintBaseline` after adding the following to the module's build.gradle file:
+  ```
+  android {
+      lint {
+          baseline = file("lint-baseline.xml")
+      }
+  }
+  ```
+  For more details, see https://developer.android.com/studio/write/lint#snapshot
+
+  Lint found 401 errors, 100 warnings. First failure:
+
+  C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\src\main\res\values\strings.xml:5: Error:
+"about_title" is not translated in "hr" (Croatian), "uk" (Ukrainian), "ca" (Catalan), "ko" (Korean), "th" (Thai), "pl"
+(Polish) [MissingTranslation]
+      <string name="about_title">About baresip</string>
+              ~~~~~~~~~~~~~~~~~~
+
+  The full lint text report is located at:
+    C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\lint_intermediate_text_re
+port\debug\lintReportDebug\lint-results-debug.txt
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 11m 27s

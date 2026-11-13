@@ -6,3 +6,6 @@
 *.bat text eol=crlf
 gradlew text eol=lf
 .gitignore text eol=lf
+*.txt text eol=lf
+*.log text eol=lf
+*.exit text eol=lf

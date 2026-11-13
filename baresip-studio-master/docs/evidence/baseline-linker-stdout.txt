@@ -1,0 +1,113 @@
+ninja: Entering directory `C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\.cxx\Debug\303894b6\arm64-v8a'
+[1/1] Linking C shared library C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\cxx\Debug\303894b6\obj\arm64-v8a\libbaresip.so
+FAILED: C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/build/intermediates/cxx/Debug/303894b6/obj/arm64-v8a/libbaresip.so
+C:\Windows\system32\cmd.exe /C "cd . && C:\Users\MJ\AppData\Local\Android\Sdk\ndk\30.0.16248370\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe --target=aarch64-none-linux-android28 --sysroot=C:/Users/MJ/AppData/Local/Android/Sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DHAVE_INTTYPES_H -lstdc++ -fno-limit-debug-info  -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,max-page-size=16384   -Xlinker --build-id=none -Wl,-z,max-page-size=16384 -Xlinker --dependency-file=CMakeFiles\baresip.dir\link.d -shared -Wl,-soname,libbaresip.so -o C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\app\build\intermediates\cxx\Debug\303894b6\obj\arm64-v8a\libbaresip.so CMakeFiles/baresip.dir/baresip.c.o  -landroid  -laaudio  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/baresip/lib/arm64-v8a/libbaresip.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/re/lib/arm64-v8a/libre.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/openssl/lib/arm64-v8a/libssl.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/openssl/lib/arm64-v8a/libcrypto.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/opus/lib/arm64-v8a/libopus.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/g722/lib/arm64-v8a/libg722.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/g7221/lib/arm64-v8a/libg722_1.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/g729/lib/arm64-v8a/libbcg729.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/ilbc/lib/arm64-v8a/libilbc.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/codec2/lib/arm64-v8a/libcodec2.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/amr/lib/arm64-v8a/libamrnb.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/amr/lib/arm64-v8a/libamrwb.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/amr/lib/arm64-v8a/libamrwbenc.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/gzrtp/lib/arm64-v8a/libzrtpcppcore.a  C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/../../../../distribution/sndfile/lib/arm64-v8a/libsndfile.a  -lz  -llog  -latomic -lm && cd ."
+ld.lld: error: undefined symbol: log_level_get
+>>> referenced by baresip.c:468 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:468)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(JNI_OnLoad)
+>>> referenced by baresip.c:477 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:477)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(JNI_OnLoad)
+>>> referenced by baresip.c:32 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:32)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(detach_thread)
+>>> referenced 91 more times
+
+ld.lld: error: undefined symbol: libre_init
+>>> referenced by baresip.c:504 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:504)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: re_thread_check
+>>> referenced by baresip.c:510 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:510)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: conf_path_set
+>>> referenced by baresip.c:522 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:522)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: log_level_set
+>>> referenced by baresip.c:524 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:524)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:1760 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1760)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_log_1level_1set)
+
+ld.lld: error: undefined symbol: conf_configure
+>>> referenced by baresip.c:526 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:526)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: re_thread_async_init
+>>> referenced by baresip.c:533 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:533)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: conf_config
+>>> referenced by baresip.c:535 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:535)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:1880 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1880)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_config_1verify_1server_1set)
+
+ld.lld: error: undefined symbol: baresip_init
+>>> referenced by baresip.c:535 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:535)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: baresip_network
+>>> referenced by baresip.c:543 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:543)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:550 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:550)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:557 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:557)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced 5 more times
+
+ld.lld: error: undefined symbol: net_dnsc
+>>> referenced by baresip.c:543 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:543)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: dnsc_cache_max
+>>> referenced by baresip.c:543 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:543)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: net_flush_addresses
+>>> referenced by baresip.c:550 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:550)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: sa_set_str
+>>> referenced by baresip.c:554 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:554)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:1815 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1815)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_net_1add_1address_1ifname)
+>>> referenced by baresip.c:1842 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1842)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_net_1rm_1address)
+
+ld.lld: error: undefined symbol: sa_ntop
+>>> referenced by baresip.c:555 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:555)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:1816 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1816)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_net_1add_1address_1ifname)
+>>> referenced by baresip.c:1843 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1843)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_net_1rm_1address)
+
+ld.lld: error: undefined symbol: net_add_address_ifname
+>>> referenced by baresip.c:557 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:557)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+>>> referenced by baresip.c:1818 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:1818)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_Api_net_1add_1address_1ifname)
+
+ld.lld: error: undefined symbol: ua_init
+>>> referenced by baresip.c:570 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:570)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: uag_set_exit_handler
+>>> referenced by baresip.c:577 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:577)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: bevent_register
+>>> referenced by baresip.c:579 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:579)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: undefined symbol: baresip_message
+>>> referenced by baresip.c:586 (C:/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/app/src/main/cpp/baresip.c:586)
+>>>               CMakeFiles/baresip.dir/baresip.c.o:(Java_com_tutpro_baresip_BaresipService_baresipStart)
+
+ld.lld: error: too many errors emitted, stopping now (use --error-limit=0 to see all errors)
+
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+ninja: build stopped: subcommand failed.

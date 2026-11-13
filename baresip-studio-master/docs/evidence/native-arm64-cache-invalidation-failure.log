@@ -1,0 +1,2031 @@
+Android (16134705, +pgo, +bolt, +lto, +mlgo, based on r574158c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 9f872551d3c681d06fd303b36f16ed5c274735eb)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin
+make: Entering directory '/var/tmp/swusip-native-arm64'
+sed: can't read /usr/src/baresip-studio/app/build.gradle.kts: No such file or directory
+cd amr && \
+rm -rf lib include && \
+autoreconf --install && \
+CC="aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot" CXX=aarch64-linux-android28-clang++ RANLIB=llvm-ranlib AR=llvm-ar PATH=/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin:/usr/bin:/bin ./configure --host=aarch64-linux-android --disable-shared CXXFLAGS="-fPIC -O3" --prefix=/var/tmp/swusip-native-arm64/amr && \
+make clean && \
+CC="aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot" CXX=aarch64-linux-android28-clang++ RANLIB=llvm-ranlib AR=llvm-ar PATH=/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin:/usr/bin:/bin make && \
+make install
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/agc.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+automake: warning: possible forward-incompatibility.
+automake: At least one source file is in a subdirectory, but the 'subdir-objects'
+automake: automake option hasn't been enabled.  For now, the corresponding output
+automake: object file(s) will be placed in the top-level directory.  However, this
+automake: behavior may change in a future Automake major version, with object
+automake: files being placed in the same subdirectory as the corresponding sources.
+automake: You are advised to start using 'subdir-objects' option throughout your
+automake: project, to avoid future incompatibility.
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/amrdecode.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/a_refl.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/b_cn_cod.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/bgnscd.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/c_g_aver.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d1035pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d2_11pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d2_9pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d3_14pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d4_17pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d8_31pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/dec_amr.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/dec_gain.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/dec_input_format_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/dec_lag3.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/dec_lag6.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d_gain_c.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d_gain_p.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d_plsf_3.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d_plsf_5.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/d_plsf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/dtx_dec.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/ec_gains.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/ex_ctrl.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/if2_to_ets.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/int_lsf.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/lsp_avg.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/ph_disp.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/post_pro.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/preemph.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/pstfilt.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/qgain475_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/sp_dec.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:58: warning: source file '$(DEC_SRC_DIR)/wmf_to_ets.cpp' is in a subdirectory,
+amrnb/Makefile.am:58: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/amrencode.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/autocorr.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/c1035pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/c2_11pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/c2_9pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/c3_14pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/c4_17pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/c8_31pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/calc_cor.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/calc_en.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/cbsearch.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/cl_ltp.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/cod_amr.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/convolve.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/cor_h.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/cor_h_x2.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/cor_h_x.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/corrwght_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/div_32.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/dtx_enc.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/enc_lag3.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/enc_lag6.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/enc_output_format_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/ets_to_if2.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/ets_to_wmf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/g_adapt.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/gain_q.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/g_code.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/g_pitch.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/hp_max.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/inter_36.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/inter_36_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/l_abs.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/lag_wind.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/lag_wind_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/l_comp.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/levinson.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/l_extract.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/lflg_upd.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/l_negate.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/lpc.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/ol_ltp.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/pitch_fr.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/pitch_ol.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/p_ol_wgh.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/pre_big.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/pre_proc.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/prm2bits.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/qgain475.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/qgain795.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/q_gain_c.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/q_gain_p.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/qua_gain.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/s10_8pf.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/set_sign.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/sid_sync.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/sp_enc.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/spreproc.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/spstproc.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/ton_stab.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:100: warning: source file '$(ENC_SRC_DIR)/vad1.cpp' is in a subdirectory,
+amrnb/Makefile.am:100: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/add.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/az_lsp.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/bitno_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/bitreorder_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/c2_9pf_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/div_s.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/extract_h.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/extract_l.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/gains_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/gc_pred.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/get_const_tbls.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/gmed_n.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/gray_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/grid_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/int_lpc.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/inv_sqrt.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/inv_sqrt_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/l_deposit_h.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/l_deposit_l.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/log2.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/log2_norm.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/log2_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/lsfwt.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/l_shr_r.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/lsp_az.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/lsp.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/lsp_lsf.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/lsp_lsf_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/lsp_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/mult_r.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/negate.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/norm_l.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/norm_s.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/overflow_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/ph_disp_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/pow2.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/pow2_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/pred_lt.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/q_plsf_3.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/q_plsf_3_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/q_plsf_5.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/q_plsf_5_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/q_plsf.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/qua_gain_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/reorder.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/residu.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/round.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/set_zero.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/shr.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/shr_r.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/sqrt_l.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/sqrt_l_tbl.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/sub.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/syn_filt.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/weight_a.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrnb/Makefile.am:54: warning: source file '$(COMMON_SRC_DIR)/window_tab.cpp' is in a subdirectory,
+amrnb/Makefile.am:54: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/agc2_amr_wb.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/band_pass_6k_7k.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/dec_acelp_2p_in_64.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/dec_acelp_4p_in_64.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/dec_alg_codebook.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/dec_gain2_amr_wb.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/deemphasis_32.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/dtx_decoder_amr_wb.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/get_amr_wb_bits.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/highpass_400hz_at_12k8.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/highpass_50hz_at_12k8.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/homing_amr_wb_dec.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/interpolate_isp.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/isf_extrapolation.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/isp_az.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/isp_isf.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/lagconceal.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/low_pass_filt_7k.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/median5.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/mime_io.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/noise_gen_amrwb.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/normalize_amr_wb.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/oversamp_12k8_to_16k.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/phase_dispersion.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/pit_shrp.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/pred_lt4.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/preemph_amrwb_dec.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/pvamrwbdecoder.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/pvamrwb_math_op.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/q_gain2_tab.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/qisf_ns.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/qisf_ns_tab.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/qpisf_2s.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/qpisf_2s_tab.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/scale_signal.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/synthesis_amr_wb.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/voice_factor.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/wb_syn_filt.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+amrwb/Makefile.am:41: warning: source file '$(DEC_SRC_DIR)/weight_amrwb_lpc.cpp' is in a subdirectory,
+amrwb/Makefile.am:41: but option 'subdir-objects' is disabled
+test/Makefile.am:18: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for aarch64-linux-android-strip... no
+checking for strip... strip
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether UID '1000' is supported by ustar format... yes
+checking whether GID '1000' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether aarch64-linux-android28-clang++ accepts -g... yes
+checking for aarch64-linux-android28-clang++ option to enable C++11 features... none needed
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of aarch64-linux-android28-clang++... gcc3
+checking for aarch64-linux-android-gcc... aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot accepts -g... yes
+checking for aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot option to enable C11 features... none needed
+checking whether aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot understands -c and -o together... yes
+checking dependency style of aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot... gcc3
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking build system type... x86_64-pc-linux-android
+checking host system type... aarch64-unknown-linux-android
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot... /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+checking if the linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... no
+checking for aarch64-linux-android-dumpbin... no
+checking for aarch64-linux-android-link... no
+checking for dumpbin... no
+checking for link... link -dump
+configure: WARNING: using cross tools not prefixed with host triplet
+checking the name lister (nm) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-android file names to aarch64-unknown-linux-android format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-android file names to toolchain format... func_convert_file_noop
+checking for /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld option to reload object files... -r
+checking for file... file
+checking for aarch64-linux-android-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for aarch64-linux-android-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for aarch64-linux-android-ranlib... llvm-ranlib
+checking for aarch64-linux-android-ar... llvm-ar
+checking for archiver @FILE support... @
+checking for aarch64-linux-android-strip... strip
+checking command to parse nm output from aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for aarch64-linux-android-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot supports -fno-rtti -fno-exceptions... yes
+checking for aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot option to produce PIC... -fPIC -DPIC
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot PIC flag -fPIC -DPIC works... yes
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot static flag -static works... yes
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot supports -c -o file.o... yes
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot supports -c -o file.o... (cached) yes
+checking whether the aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... Android linker
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... aarch64-linux-android28-clang++ -E
+checking for ld used by aarch64-linux-android28-clang++... /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+checking if the linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) is GNU ld... yes
+checking whether the aarch64-linux-android28-clang++ linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking for aarch64-linux-android28-clang++ option to produce PIC... -fPIC -DPIC
+checking if aarch64-linux-android28-clang++ PIC flag -fPIC -DPIC works... yes
+checking if aarch64-linux-android28-clang++ static flag -static works... yes
+checking if aarch64-linux-android28-clang++ supports -c -o file.o... yes
+checking if aarch64-linux-android28-clang++ supports -c -o file.o... (cached) yes
+checking whether the aarch64-linux-android28-clang++ linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... Android linker
+checking how to hardcode library paths into programs... immediate
+checking for main in -lm... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for _Bool... yes
+checking for stdbool.h that conforms to C99 or later... yes
+checking for inline... inline
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for int8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for memset... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating amrnb/Makefile
+config.status: creating amrwb/Makefile
+config.status: creating test/Makefile
+config.status: creating amrnb/opencore-amrnb.pc
+config.status: creating amrwb/opencore-amrwb.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+Making clean in amrnb
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+rm -f  libopencore-amrnb.la
+rm -f ./so_locations
+rm -rf .libs _libs
+rm -f *.o
+rm -f *.lo
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+Making clean in amrwb
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+rm -f  libopencore-amrwb.la
+rm -f ./so_locations
+rm -rf .libs _libs
+rm -f *.o
+rm -f *.lo
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+rm -rf .libs _libs
+rm -f *.lo
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+Making all in amrnb
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+  CXX      wrapper.lo
+  CXX      agc.lo
+  CXX      amrdecode.lo
+  CXX      a_refl.lo
+  CXX      b_cn_cod.lo
+  CXX      bgnscd.lo
+  CXX      c_g_aver.lo
+  CXX      d1035pf.lo
+  CXX      d2_11pf.lo
+  CXX      d2_9pf.lo
+  CXX      d3_14pf.lo
+  CXX      d4_17pf.lo
+  CXX      d8_31pf.lo
+  CXX      dec_amr.lo
+  CXX      dec_gain.lo
+  CXX      dec_input_format_tab.lo
+  CXX      dec_lag3.lo
+  CXX      dec_lag6.lo
+  CXX      d_gain_c.lo
+  CXX      d_gain_p.lo
+  CXX      d_plsf_3.lo
+  CXX      d_plsf_5.lo
+  CXX      d_plsf.lo
+  CXX      dtx_dec.lo
+  CXX      ec_gains.lo
+  CXX      ex_ctrl.lo
+  CXX      if2_to_ets.lo
+  CXX      int_lsf.lo
+  CXX      lsp_avg.lo
+  CXX      ph_disp.lo
+  CXX      post_pro.lo
+  CXX      preemph.lo
+  CXX      pstfilt.lo
+  CXX      qgain475_tab.lo
+  CXX      sp_dec.lo
+  CXX      wmf_to_ets.lo
+  CXX      amrencode.lo
+  CXX      autocorr.lo
+  CXX      c1035pf.lo
+  CXX      c2_11pf.lo
+  CXX      c2_9pf.lo
+  CXX      c3_14pf.lo
+  CXX      c4_17pf.lo
+  CXX      c8_31pf.lo
+  CXX      calc_cor.lo
+  CXX      calc_en.lo
+  CXX      cbsearch.lo
+  CXX      cl_ltp.lo
+  CXX      cod_amr.lo
+  CXX      convolve.lo
+  CXX      cor_h.lo
+  CXX      cor_h_x2.lo
+  CXX      cor_h_x.lo
+  CXX      corrwght_tab.lo
+  CXX      div_32.lo
+  CXX      dtx_enc.lo
+  CXX      enc_lag3.lo
+  CXX      enc_lag6.lo
+  CXX      enc_output_format_tab.lo
+  CXX      ets_to_if2.lo
+  CXX      ets_to_wmf.lo
+  CXX      g_adapt.lo
+  CXX      gain_q.lo
+  CXX      g_code.lo
+  CXX      g_pitch.lo
+  CXX      hp_max.lo
+  CXX      inter_36.lo
+  CXX      inter_36_tab.lo
+  CXX      l_abs.lo
+  CXX      lag_wind.lo
+  CXX      lag_wind_tab.lo
+  CXX      l_comp.lo
+  CXX      levinson.lo
+  CXX      l_extract.lo
+  CXX      lflg_upd.lo
+  CXX      l_negate.lo
+  CXX      lpc.lo
+  CXX      ol_ltp.lo
+  CXX      pitch_fr.lo
+  CXX      pitch_ol.lo
+  CXX      p_ol_wgh.lo
+  CXX      pre_big.lo
+  CXX      pre_proc.lo
+  CXX      prm2bits.lo
+  CXX      qgain475.lo
+  CXX      qgain795.lo
+  CXX      q_gain_c.lo
+  CXX      q_gain_p.lo
+  CXX      qua_gain.lo
+  CXX      s10_8pf.lo
+  CXX      set_sign.lo
+  CXX      sid_sync.lo
+  CXX      sp_enc.lo
+  CXX      spreproc.lo
+  CXX      spstproc.lo
+  CXX      ton_stab.lo
+  CXX      vad1.lo
+  CXX      add.lo
+  CXX      az_lsp.lo
+  CXX      bitno_tab.lo
+  CXX      bitreorder_tab.lo
+  CXX      c2_9pf_tab.lo
+  CXX      div_s.lo
+  CXX      extract_h.lo
+  CXX      extract_l.lo
+  CXX      gains_tbl.lo
+  CXX      gc_pred.lo
+  CXX      get_const_tbls.lo
+  CXX      gmed_n.lo
+  CXX      gray_tbl.lo
+  CXX      grid_tbl.lo
+  CXX      int_lpc.lo
+  CXX      inv_sqrt.lo
+  CXX      inv_sqrt_tbl.lo
+  CXX      l_deposit_h.lo
+  CXX      l_deposit_l.lo
+  CXX      log2.lo
+  CXX      log2_norm.lo
+  CXX      log2_tbl.lo
+  CXX      lsfwt.lo
+  CXX      l_shr_r.lo
+  CXX      lsp_az.lo
+  CXX      lsp.lo
+  CXX      lsp_lsf.lo
+  CXX      lsp_lsf_tbl.lo
+  CXX      lsp_tab.lo
+  CXX      mult_r.lo
+  CXX      negate.lo
+  CXX      norm_l.lo
+  CXX      norm_s.lo
+  CXX      overflow_tbl.lo
+  CXX      ph_disp_tab.lo
+  CXX      pow2.lo
+  CXX      pow2_tbl.lo
+  CXX      pred_lt.lo
+  CXX      q_plsf_3.lo
+  CXX      q_plsf_3_tbl.lo
+  CXX      q_plsf_5.lo
+  CXX      q_plsf_5_tbl.lo
+  CXX      q_plsf.lo
+  CXX      qua_gain_tbl.lo
+  CXX      reorder.lo
+  CXX      residu.lo
+  CXX      round.lo
+  CXX      set_zero.lo
+  CXX      shr.lo
+  CXX      shr_r.lo
+  CXX      sqrt_l.lo
+  CXX      sqrt_l_tbl.lo
+  CXX      sub.lo
+  CXX      syn_filt.lo
+  CXX      weight_a.lo
+  CXX      window_tab.lo
+  GEN      libopencore-amrnb.la
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+Making all in amrwb
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+  CXX      wrapper.lo
+  CXX      agc2_amr_wb.lo
+  CXX      band_pass_6k_7k.lo
+  CXX      dec_acelp_2p_in_64.lo
+  CXX      dec_acelp_4p_in_64.lo
+  CXX      dec_alg_codebook.lo
+  CXX      dec_gain2_amr_wb.lo
+  CXX      deemphasis_32.lo
+  CXX      dtx_decoder_amr_wb.lo
+  CXX      get_amr_wb_bits.lo
+  CXX      highpass_400hz_at_12k8.lo
+  CXX      highpass_50hz_at_12k8.lo
+  CXX      homing_amr_wb_dec.lo
+  CXX      interpolate_isp.lo
+  CXX      isf_extrapolation.lo
+  CXX      isp_az.lo
+  CXX      isp_isf.lo
+  CXX      lagconceal.lo
+  CXX      low_pass_filt_7k.lo
+  CXX      median5.lo
+  CXX      mime_io.lo
+  CXX      noise_gen_amrwb.lo
+  CXX      normalize_amr_wb.lo
+  CXX      oversamp_12k8_to_16k.lo
+  CXX      phase_dispersion.lo
+  CXX      pit_shrp.lo
+  CXX      pred_lt4.lo
+  CXX      preemph_amrwb_dec.lo
+  CXX      pvamrwbdecoder.lo
+  CXX      pvamrwb_math_op.lo
+  CXX      q_gain2_tab.lo
+  CXX      qisf_ns.lo
+  CXX      qisf_ns_tab.lo
+  CXX      qpisf_2s.lo
+  CXX      qpisf_2s_tab.lo
+  CXX      scale_signal.lo
+  CXX      synthesis_amr_wb.lo
+  CXX      voice_factor.lo
+  CXX      wb_syn_filt.lo
+  CXX      weight_amrwb_lpc.lo
+  GEN      libopencore-amrwb.la
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+Making install in amrnb
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/amr/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libopencore-amrnb.la '/var/tmp/swusip-native-arm64/amr/lib'
+libtool: install: /usr/bin/install -c .libs/libopencore-amrnb.lai /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrnb.la
+libtool: install: /usr/bin/install -c .libs/libopencore-amrnb.a /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrnb.a
+libtool: install: chmod 644 /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrnb.a
+libtool: install: llvm-ranlib /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrnb.a
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/amr/include/opencore-amrnb'
+ /usr/bin/install -c -m 644 interf_dec.h interf_enc.h '/var/tmp/swusip-native-arm64/amr/include/opencore-amrnb'
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/amr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 opencore-amrnb.pc '/var/tmp/swusip-native-arm64/amr/lib/pkgconfig'
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrnb'
+Making install in amrwb
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/amr/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libopencore-amrwb.la '/var/tmp/swusip-native-arm64/amr/lib'
+libtool: install: /usr/bin/install -c .libs/libopencore-amrwb.lai /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrwb.la
+libtool: install: /usr/bin/install -c .libs/libopencore-amrwb.a /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrwb.a
+libtool: install: chmod 644 /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrwb.a
+libtool: install: llvm-ranlib /var/tmp/swusip-native-arm64/amr/lib/libopencore-amrwb.a
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/amr/include/opencore-amrwb'
+ /usr/bin/install -c -m 644 dec_if.h if_rom.h '/var/tmp/swusip-native-arm64/amr/include/opencore-amrwb'
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/amr/lib/pkgconfig'
+ /usr/bin/install -c -m 644 opencore-amrwb.pc '/var/tmp/swusip-native-arm64/amr/lib/pkgconfig'
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr/amrwb'
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/amr'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/amr'
+cd vo-amrwbenc && \
+rm -rf include && \
+autoreconf --install && \
+CC="aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot" CXX=aarch64-linux-android28-clang++ CC=aarch64-linux-android28-clang RANLIB=llvm-ranlib AR=llvm-ar PATH=/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin:/usr/bin:/bin ./configure --host=aarch64-linux-android --disable-shared CFLAGS="-fPIC -O3" CXXFLAGS="-fPIC -O3" --prefix=/var/tmp/swusip-native-arm64/vo-amrwbenc && \
+make clean && \
+CC="aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot" CXX=aarch64-linux-android28-clang++ RANLIB=llvm-ranlib AR=llvm-ar PATH=/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin:/usr/bin:/bin make && \
+make install
+configure.ac:32: warning: The macro 'AC_PROG_CC_C99' is obsolete.
+configure.ac:32: You should run autoupdate.
+./lib/autoconf/c.m4:1662: AC_PROG_CC_C99 is expanded from...
+configure.ac:32: the top level
+Makefile.am:26: warning: source file '$(VO_COMMON)/cmnMemory.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+automake: warning: possible forward-incompatibility.
+automake: At least one source file is in a subdirectory, but the 'subdir-objects'
+automake: automake option hasn't been enabled.  For now, the corresponding output
+automake: object file(s) will be placed in the top-level directory.  However, this
+automake: behavior may change in a future Automake major version, with object
+automake: files being placed in the same subdirectory as the corresponding sources.
+automake: You are advised to start using 'subdir-objects' option throughout your
+automake: project, to avoid future incompatibility.
+Makefile.am:26: warning: source file '$(ENC_SRC)/autocorr.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/az_isp.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/bits.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/c2t64fx.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/c4t64fx.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/convolve.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/cor_h_x.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/decim54.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/deemph.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/dtx.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/g_pitch.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/gpclip.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/homing.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/hp400.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/hp50.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/hp6k.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/hp_wsp.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/int_lpc.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/isp_az.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/isp_isf.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/lag_wind.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/levinson.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/log2.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/lp_dec2.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/math_op.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/mem_align.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/oper_32b.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/p_med_ol.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/pit_shrp.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/pitch_f4.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/pred_lt4.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/preemph.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/q_gain2.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/q_pulse.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/qisf_ns.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/qpisf_2s.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/random.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/residu.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/scale.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/stream.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/syn_filt.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/updt_tar.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/util.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/voAMRWBEnc.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/voicefac.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/wb_vad.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:26: warning: source file '$(ENC_SRC)/weight_a.c' is in a subdirectory,
+Makefile.am:26: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/convolve_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/cor_h_vec_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/Deemph_32_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/Dot_p_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/Filt_6k_7k_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/Norm_Corr_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/pred_lt4_1_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/residu_asm_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/scale_sig_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/Syn_filt_32_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:78: warning: source file '$(ENC_SRC)/asm/ARMV7/syn_filt_neon.s' is in a subdirectory,
+Makefile.am:78: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/convolve_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/cor_h_vec_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/Deemph_32_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/Dot_p_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/Filt_6k_7k_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/Norm_Corr_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/pred_lt4_1_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/residu_asm_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/scale_sig_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/Syn_filt_32_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+Makefile.am:92: warning: source file '$(ENC_SRC)/asm/ARMV5E/syn_filt_opt.s' is in a subdirectory,
+Makefile.am:92: but option 'subdir-objects' is disabled
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for aarch64-linux-android-strip... no
+checking for strip... strip
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether UID '1000' is supported by ustar format... yes
+checking whether GID '1000' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports the include directive... yes (GNU style)
+checking for aarch64-linux-android-gcc... aarch64-linux-android28-clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android28-clang accepts -g... yes
+checking for aarch64-linux-android28-clang option to enable C11 features... none needed
+checking whether aarch64-linux-android28-clang understands -c and -o together... yes
+checking dependency style of aarch64-linux-android28-clang... gcc3
+checking dependency style of aarch64-linux-android28-clang... gcc3
+checking build system type... x86_64-pc-linux-android
+checking host system type... aarch64-unknown-linux-android
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by aarch64-linux-android28-clang... /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+checking if the linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... no
+checking for aarch64-linux-android-dumpbin... no
+checking for aarch64-linux-android-link... no
+checking for dumpbin... no
+checking for link... link -dump
+configure: WARNING: using cross tools not prefixed with host triplet
+checking the name lister (nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-android file names to aarch64-unknown-linux-android format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-android file names to toolchain format... func_convert_file_noop
+checking for /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld option to reload object files... -r
+checking for file... file
+checking for aarch64-linux-android-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for aarch64-linux-android-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for aarch64-linux-android-ranlib... llvm-ranlib
+checking for aarch64-linux-android-ar... llvm-ar
+checking for archiver @FILE support... @
+checking for aarch64-linux-android-strip... strip
+checking command to parse nm output from aarch64-linux-android28-clang object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for aarch64-linux-android-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if aarch64-linux-android28-clang supports -fno-rtti -fno-exceptions... yes
+checking for aarch64-linux-android28-clang option to produce PIC... -fPIC -DPIC
+checking if aarch64-linux-android28-clang PIC flag -fPIC -DPIC works... yes
+checking if aarch64-linux-android28-clang static flag -static works... yes
+checking if aarch64-linux-android28-clang supports -c -o file.o... yes
+checking if aarch64-linux-android28-clang supports -c -o file.o... (cached) yes
+checking whether the aarch64-linux-android28-clang linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... Android linker
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating vo-amrwbenc.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+rm -f
+test -z "" || rm -f
+rm -f  libvo-amrwbenc.la
+rm -f ./so_locations
+rm -rf .libs _libs
+rm -f *.o
+rm -f *.lo
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+  CC       wrapper.lo
+  CC       cmnMemory.lo
+  CC       autocorr.lo
+  CC       az_isp.lo
+  CC       bits.lo
+  CC       c2t64fx.lo
+  CC       c4t64fx.lo
+  CC       convolve.lo
+  CC       cor_h_x.lo
+  CC       decim54.lo
+  CC       deemph.lo
+  CC       dtx.lo
+  CC       g_pitch.lo
+  CC       gpclip.lo
+  CC       homing.lo
+  CC       hp400.lo
+  CC       hp50.lo
+  CC       hp6k.lo
+  CC       hp_wsp.lo
+  CC       int_lpc.lo
+  CC       isp_az.lo
+  CC       isp_isf.lo
+  CC       lag_wind.lo
+  CC       levinson.lo
+  CC       log2.lo
+  CC       lp_dec2.lo
+  CC       math_op.lo
+  CC       mem_align.lo
+  CC       oper_32b.lo
+  CC       p_med_ol.lo
+  CC       pit_shrp.lo
+  CC       pitch_f4.lo
+  CC       pred_lt4.lo
+  CC       preemph.lo
+  CC       q_gain2.lo
+  CC       q_pulse.lo
+  CC       qisf_ns.lo
+  CC       qpisf_2s.lo
+  CC       random.lo
+  CC       residu.lo
+  CC       scale.lo
+  CC       stream.lo
+  CC       syn_filt.lo
+  CC       updt_tar.lo
+  CC       util.lo
+  CC       voAMRWBEnc.lo
+  CC       voicefac.lo
+  CC       wb_vad.lo
+  CC       weight_a.lo
+  CCLD     libvo-amrwbenc.la
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/vo-amrwbenc/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libvo-amrwbenc.la '/var/tmp/swusip-native-arm64/vo-amrwbenc/lib'
+libtool: install: /usr/bin/install -c .libs/libvo-amrwbenc.lai /var/tmp/swusip-native-arm64/vo-amrwbenc/lib/libvo-amrwbenc.la
+libtool: install: /usr/bin/install -c .libs/libvo-amrwbenc.a /var/tmp/swusip-native-arm64/vo-amrwbenc/lib/libvo-amrwbenc.a
+libtool: install: chmod 644 /var/tmp/swusip-native-arm64/vo-amrwbenc/lib/libvo-amrwbenc.a
+libtool: install: llvm-ranlib /var/tmp/swusip-native-arm64/vo-amrwbenc/lib/libvo-amrwbenc.a
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/vo-amrwbenc/include/vo-amrwbenc'
+ /usr/bin/install -c -m 644 enc_if.h '/var/tmp/swusip-native-arm64/vo-amrwbenc/include/vo-amrwbenc'
+ /usr/bin/mkdir -p '/var/tmp/swusip-native-arm64/vo-amrwbenc/lib/pkgconfig'
+ /usr/bin/install -c -m 644 vo-amrwbenc.pc '/var/tmp/swusip-native-arm64/vo-amrwbenc/lib/pkgconfig'
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/vo-amrwbenc'
+rm -rf /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/amr/lib/arm64-v8a
+mkdir -p /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/amr/lib/arm64-v8a
+cp amr/amrnb/.libs/libopencore-amrnb.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/amr/lib/arm64-v8a/libamrnb.a
+cp amr/amrwb/.libs/libopencore-amrwb.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/amr/lib/arm64-v8a/libamrwb.a
+cp vo-amrwbenc/.libs/libvo-amrwbenc.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/amr/lib/arm64-v8a/libamrwbenc.a
+cd codec2 && \
+rm -rf build && mkdir build && cd build && \
+cmake .. -DBUILD_SHARED_LIBS=OFF -DANDROID=ON -DANDROID_PLATFORM=28 -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=28 -DCMAKE_TOOLCHAIN_FILE=/var/tmp/swusip-toolchains/android-ndk-r30/build/cmake/android.toolchain.cmake -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_C_COMPILER=aarch64-linux-android28-clang -DCMAKE_CXX_COMPILER=aarch64-linux-android28-clang++ -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
+cmake --build . --target codec2 -j4 && \
+cp ../src/codec2.h codec2
+-- The C compiler identification is Clang 21.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test COMPILER_SUPPORTS_GNU11
+-- Performing Test COMPILER_SUPPORTS_GNU11 - Success
+-- Performing Test COMPILER_SUPPORTS_GNU99
+-- Performing Test COMPILER_SUPPORTS_GNU99 - Success
+-- Looking for include file stdlib.h
+-- Looking for include file stdlib.h - found
+-- Looking for include file string.h
+-- Looking for include file string.h - found
+-- Looking for __GNU_LIBRARY__
+-- Looking for __GNU_LIBRARY__ - not found
+-- Looking for _GNU_SOURCE
+-- Looking for _GNU_SOURCE - not found
+-- Looking for floor
+-- Looking for floor - found
+-- Looking for ceil
+-- Looking for ceil - found
+-- Looking for pow
+-- Looking for pow - found
+-- Looking for sqrt
+-- Looking for sqrt - found
+-- Looking for sin
+-- Looking for sin - found
+-- Looking for cos
+-- Looking for cos - found
+-- Looking for atan2
+-- Looking for atan2 - found
+-- Looking for log10
+-- Looking for log10 - found
+-- Looking for round
+-- Looking for round - found
+-- Looking for getopt
+-- Looking for getopt - found
+-- codec2 version: 1.2.0
+-- Build type is: Release
+-- Compiler Flags: -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -Wall -Wno-strict-overflow -std=gnu11 -fPIC-O3
+-- Libraries linked:
+-- Compilation date = XX2026-11-13XX
+-- Configuring done (2.7s)
+-- Generating done (0.3s)
+-- Build files have been written to: /var/tmp/swusip-native-arm64/codec2/build
+gmake[1]: Entering directory '/var/tmp/swusip-native-arm64/codec2/build'
+[  0%] Creating directories for 'codec2_native'
+[  0%] No download step for 'codec2_native'
+[  0%] No update step for 'codec2_native'
+[  2%] No patch step for 'codec2_native'
+[  4%] Performing configure step for 'codec2_native'
+-- The C compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test COMPILER_SUPPORTS_GNU11
+-- Performing Test COMPILER_SUPPORTS_GNU11 - Success
+-- Performing Test COMPILER_SUPPORTS_GNU99
+-- Performing Test COMPILER_SUPPORTS_GNU99 - Success
+-- Looking for include file stdlib.h
+-- Looking for include file stdlib.h - found
+-- Looking for include file string.h
+-- Looking for include file string.h - found
+-- Looking for __GNU_LIBRARY__
+-- Looking for __GNU_LIBRARY__ - found
+-- Looking for floor
+-- Looking for floor - not found
+-- Looking for ceil
+-- Looking for ceil - not found
+-- Looking for pow
+-- Looking for pow - not found
+-- Looking for sqrt
+-- Looking for sqrt - not found
+-- Looking for sin
+-- Looking for sin - not found
+-- Looking for cos
+-- Looking for cos - not found
+-- Looking for atan2
+-- Looking for atan2 - not found
+-- Looking for log10
+-- Looking for log10 - not found
+-- Looking for round
+-- Looking for round - not found
+-- Looking for getopt
+-- Looking for getopt - found
+-- codec2 version: 1.2.0
+-- Build type is: Debug
+-- Compiler Flags:  -Wall -Wno-strict-overflow -std=gnu11 -fPIC-g -O2 -DDUMP
+-- Libraries linked:
+-- Compilation date = XX2026-11-13XX
+-- Configuring done (2.4s)
+-- Generating done (0.2s)
+-- Build files have been written to: /var/tmp/swusip-native-arm64/codec2/build/src/codec2_native
+[  7%] Performing build step for 'codec2_native'
+[100%] Building C object src/CMakeFiles/generate_codebook.dir/generate_codebook.c.o
+[100%] Linking C executable generate_codebook
+[100%] Built target generate_codebook
+[  9%] Performing install step for 'codec2_native'
+[  9%] Completed 'codec2_native'
+[  9%] Built target codec2_native
+[  9%] Generating codebooknewamp2_energy.c
+[  9%] Generating codebookd.c
+[ 11%] Generating codebook.c
+[ 11%] Generating codebookge.c
+[ 14%] Generating codebookjmv.c
+[ 16%] Generating codebooknewamp2.c
+[ 16%] Generating codebooknewamp1_energy.c
+[ 19%] Generating codebooknewamp1.c
+[ 21%] Building C object src/CMakeFiles/codec2.dir/nlp.c.o
+[ 23%] Building C object src/CMakeFiles/codec2.dir/dump.c.o
+[ 23%] Building C object src/CMakeFiles/codec2.dir/lpc.c.o
+[ 26%] Building C object src/CMakeFiles/codec2.dir/postfilter.c.o
+/var/tmp/swusip-native-arm64/codec2/src/postfilter.c:104:10: warning: variable 'uv' set but not used [-Wunused-but-set-variable]
+  104 |   int m, uv;
+      |          ^
+[ 26%] Building C object src/CMakeFiles/codec2.dir/sine.c.o
+1 warning generated.
+[ 28%] Building C object src/CMakeFiles/codec2.dir/codec2.c.o
+[ 28%] Building C object src/CMakeFiles/codec2.dir/codec2_fft.c.o
+[ 30%] Building C object src/CMakeFiles/codec2.dir/cohpsk.c.o
+[ 30%] Building C object src/CMakeFiles/codec2.dir/codec2_fifo.c.o
+[ 33%] Building C object src/CMakeFiles/codec2.dir/fdmdv.c.o
+[ 33%] Building C object src/CMakeFiles/codec2.dir/fm.c.o
+/var/tmp/swusip-native-arm64/codec2/src/fdmdv.c:1983:56: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+ 1983 |   for (i = 0; i < RANDN_IT;[ 35%] Building C object src/CMakeFiles/codec2.dir/fsk.c.o
+ i++) rn += (float)rand() / RAND_MAX;
+      |                                                      ~ ^~~~~~~~
+/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h:277:18: note: expanded from macro 'RAND_MAX'
+  277 | #define RAND_MAX 0x7fffffff
+      |                  ^~~~~~~~~~
+[ 35%] Building C object src/CMakeFiles/codec2.dir/fmfsk.c.o
+[ 38%] Building C object src/CMakeFiles/codec2.dir/kiss_fft.c.o
+[ 38%] Building C object src/CMakeFiles/codec2.dir/kiss_fftr.c.o
+[ 40%] Building C object src/CMakeFiles/codec2.dir/linreg.c.o
+[ 40%] Building C object src/CMakeFiles/codec2.dir/interp.c.o
+[ 42%] Building C object src/CMakeFiles/codec2.dir/lsp.c.o
+[ 42%] Building C object src/CMakeFiles/codec2.dir/mbest.c.o
+[ 45%] Building C object src/CMakeFiles/codec2.dir/newamp1.c.o
+[ 45%] Building C object src/CMakeFiles/codec2.dir/ofdm.c.o
+[ 47%] Building C object src/CMakeFiles/codec2.dir/ofdm_mode.c.o
+[ 47%] Building C object src/CMakeFiles/codec2.dir/phase.c.o
+[ 50%] Building C object src/CMakeFiles/codec2.dir/quantise.c.o
+[ 52%] Building C object src/CMakeFiles/codec2.dir/pack.c.o
+[ 52%] Building C object src/CMakeFiles/codec2.dir/codebook.c.o
+1 warning generated.
+[ 54%] Building C object src/CMakeFiles/codec2.dir/codebookd.c.o
+[ 54%] Building C object src/CMakeFiles/codec2.dir/codebookjmv.c.o
+[ 57%] Building C object src/CMakeFiles/codec2.dir/codebookge.c.o
+[ 57%] Building C object src/CMakeFiles/codec2.dir/codebooknewamp1.c.o
+[ 59%] Building C object src/CMakeFiles/codec2.dir/codebooknewamp1_energy.c.o
+[ 59%] Building C object src/CMakeFiles/codec2.dir/codebooknewamp2.c.o
+[ 61%] Building C object src/CMakeFiles/codec2.dir/codebooknewamp2_energy.c.o
+[ 61%] Building C object src/CMakeFiles/codec2.dir/golay23.c.o
+[ 64%] Building C object src/CMakeFiles/codec2.dir/freedv_api.c.o
+[ 64%] Building C object src/CMakeFiles/codec2.dir/freedv_1600.c.o
+[ 66%] Building C object src/CMakeFiles/codec2.dir/freedv_700.c.o
+[ 66%] Building C object src/CMakeFiles/codec2.dir/freedv_2020.c.o
+[ 69%] Building C object src/CMakeFiles/codec2.dir/freedv_fsk.c.o
+[ 69%] Building C object src/CMakeFiles/codec2.dir/freedv_vhf_framing.c.o
+[ 71%] Building C object src/CMakeFiles/codec2.dir/freedv_data_channel.c.o
+[ 71%] Building C object src/CMakeFiles/codec2.dir/varicode.c.o
+[ 73%] Building C object src/CMakeFiles/codec2.dir/modem_stats.c.o
+[ 73%] Building C object src/CMakeFiles/codec2.dir/mpdecode_core.c.o
+[ 76%] Building C object src/CMakeFiles/codec2.dir/phi0.c.o
+[ 78%] Building C object src/CMakeFiles/codec2.dir/gp_interleaver.c.o
+[ 78%] Building C object src/CMakeFiles/codec2.dir/interldpc.c.o
+[ 80%] Building C object src/CMakeFiles/codec2.dir/filter.c.o
+[ 80%] Building C object src/CMakeFiles/codec2.dir/HRA_112_112.c.o
+[ 83%] Building C object src/CMakeFiles/codec2.dir/HRA_56_56.c.o
+[ 83%] Building C object src/CMakeFiles/codec2.dir/HRAb_396_504.c.o
+[ 85%] Building C object src/CMakeFiles/codec2.dir/H_256_768_22.c.o
+[ 85%] Building C object src/CMakeFiles/codec2.dir/H_256_512_4.c.o
+[ 88%] Building C object src/CMakeFiles/codec2.dir/HRAa_1536_512.c.o
+[ 88%] Building C object src/CMakeFiles/codec2.dir/H_128_256_5.c.o
+[ 90%] Building C object src/CMakeFiles/codec2.dir/H_2064_516_sparse.c.o
+[ 90%] Building C object src/CMakeFiles/codec2.dir/H_4096_8192_3d.c.o
+[ 92%] Building C object src/CMakeFiles/codec2.dir/H_16200_9720.c.o
+[ 92%] Building C object src/CMakeFiles/codec2.dir/H_1024_2048_4f.c.o
+[ 95%] Building C object src/CMakeFiles/codec2.dir/H_212_158.c.o
+[ 95%] Building C object src/CMakeFiles/codec2.dir/ldpc_codes.c.o
+[ 97%] Building C object src/CMakeFiles/codec2.dir/lpcnet_freq.c.o
+[ 97%] Building C object src/CMakeFiles/codec2.dir/reliable_text.c.o
+[100%] Linking C static library libcodec2.a
+[100%] Built target codec2
+gmake[1]: Leaving directory '/var/tmp/swusip-native-arm64/codec2/build'
+rm -rf /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/codec2/lib/arm64-v8a
+mkdir -p /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/codec2/lib/arm64-v8a
+cp codec2/build/src/libcodec2.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/codec2/lib/arm64-v8a
+make clean -C bcg729
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/bcg729'
+make[1]: *** No rule to make target 'clean'.  Stop.
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/bcg729'
+make: [Makefile:129: g729] Error 2 (ignored)
+cd  bcg729/build && \
+find . -maxdepth 1 ! -name CMakeLists.txt -type f -delete && \
+rm -rf build CMakeFiles include src && \
+cmake ..  -DANDROID=ON -DANDROID_PLATFORM=28 -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=28 -DCMAKE_TOOLCHAIN_FILE=/var/tmp/swusip-toolchains/android-ndk-r30/build/cmake/android.toolchain.cmake -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_C_COMPILER=aarch64-linux-android28-clang -DCMAKE_CXX_COMPILER=aarch64-linux-android28-clang++ -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
+cmake --build . --target bcg729-static -j4
+-- The C compiler identification is Clang 21.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Package file name is bcg729-1.1.1
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /var/tmp/swusip-native-arm64/bcg729/build
+gmake[1]: Entering directory '/var/tmp/swusip-native-arm64/bcg729/build'
+[  3%] Building C object src/CMakeFiles/bcg729-static.dir/adaptativeCodebookSearch.c.o
+[ 11%] Building C object src/CMakeFiles/bcg729-static.dir/computeAdaptativeCodebookGain.c.o
+[  7%] Building C object src/CMakeFiles/bcg729-static.dir/computeLP.c.o
+[ 14%] Building C object src/CMakeFiles/bcg729-static.dir/codebooks.c.o
+[ 18%] Building C object src/CMakeFiles/bcg729-static.dir/computeWeightedSpeech.c.o
+[ 22%] Building C object src/CMakeFiles/bcg729-static.dir/decodeAdaptativeCodeVector.c.o
+[ 25%] Building C object src/CMakeFiles/bcg729-static.dir/decodeFixedCodeVector.c.o
+[ 29%] Building C object src/CMakeFiles/bcg729-static.dir/decodeGains.c.o
+[ 33%] Building C object src/CMakeFiles/bcg729-static.dir/decodeLSP.c.o
+[ 37%] Building C object src/CMakeFiles/bcg729-static.dir/decoder.c.o
+[ 40%] Building C object src/CMakeFiles/bcg729-static.dir/encoder.c.o
+[ 44%] Building C object src/CMakeFiles/bcg729-static.dir/findOpenLoopPitchDelay.c.o
+[ 48%] Building C object src/CMakeFiles/bcg729-static.dir/fixedCodebookSearch.c.o
+[ 51%] Building C object src/CMakeFiles/bcg729-static.dir/gainQuantization.c.o
+[ 55%] Building C object src/CMakeFiles/bcg729-static.dir/interpolateqLSP.c.o
+[ 59%] Building C object src/CMakeFiles/bcg729-static.dir/LP2LSPConversion.c.o
+[ 62%] Building C object src/CMakeFiles/bcg729-static.dir/LPSynthesisFilter.c.o
+[ 66%] Building C object src/CMakeFiles/bcg729-static.dir/LSPQuantization.c.o
+[ 70%] Building C object src/CMakeFiles/bcg729-static.dir/postFilter.c.o
+[ 74%] Building C object src/CMakeFiles/bcg729-static.dir/postProcessing.c.o
+[ 77%] Building C object src/CMakeFiles/bcg729-static.dir/preProcessing.c.o
+[ 81%] Building C object src/CMakeFiles/bcg729-static.dir/qLSP2LP.c.o
+[ 85%] Building C object src/CMakeFiles/bcg729-static.dir/utils.c.o
+[ 88%] Building C object src/CMakeFiles/bcg729-static.dir/cng.c.o
+[ 92%] Building C object src/CMakeFiles/bcg729-static.dir/dtx.c.o
+[ 96%] Building C object src/CMakeFiles/bcg729-static.dir/vad.c.o
+[100%] Linking C static library libbcg729.a
+[100%] Built target bcg729-static
+gmake[1]: Leaving directory '/var/tmp/swusip-native-arm64/bcg729/build'
+rm -rf /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g729/lib/arm64-v8a
+mkdir -p /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g729/lib/arm64-v8a
+cp bcg729/build/src/libbcg729.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g729/lib/arm64-v8a
+cd g722 && \
+rm -rf build && mkdir build && cd build && \
+cmake .. -DANDROID=ON -DANDROID_PLATFORM=28 -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=28 -DCMAKE_TOOLCHAIN_FILE=/var/tmp/swusip-toolchains/android-ndk-r30/build/cmake/android.toolchain.cmake -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_C_COMPILER=aarch64-linux-android28-clang -DCMAKE_CXX_COMPILER=aarch64-linux-android28-clang++ -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
+cmake --build . -j4 && \
+rm -rf /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g722/lib/arm64-v8a
+-- The C compiler identification is Clang 21.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- LTO enabled
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /var/tmp/swusip-native-arm64/g722/build
+gmake[1]: Entering directory '/var/tmp/swusip-native-arm64/g722/build'
+[ 10%] Building C object CMakeFiles/g722.dir/g722_decode.c.o
+[ 20%] Building C object CMakeFiles/g722.dir/g722_encode.c.o
+[ 30%] Building C object CMakeFiles/g722_static.dir/g722_decode.c.o
+[ 40%] Building C object CMakeFiles/g722_static.dir/g722_encode.c.o
+[ 50%] Linking C static library libg722.a
+[ 60%] Linking C shared library libg722.so
+[ 60%] Built target g722_static
+[ 70%] Building C object CMakeFiles/test_static.dir/test.c.o
+[ 70%] Built target g722
+[ 80%] Linking C executable test_static
+[ 90%] Building C object CMakeFiles/test_dynamic.dir/test.c.o
+[100%] Linking C executable test_dynamic
+[100%] Built target test_static
+[100%] Built target test_dynamic
+gmake[1]: Leaving directory '/var/tmp/swusip-native-arm64/g722/build'
+mkdir -p /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g722/lib/arm64-v8a
+cp g722/build/libg722.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g722/lib/arm64-v8a
+make distclean -C g7221
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/g7221'
+Making distclean in src
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221/src'
+rm -f  libg722_1.la
+rm -f ./so_locations
+rm -rf .libs _libs
+rm -f  make_dct4_tables
+test -z "" || rm -f  make_dct4_tables
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+rm -f  g722_1.h
+test . = "." || rm -f
+rm -f config.h stamp-h1
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f ./.deps/basop32.Plo
+rm -f ./.deps/bitstream.Plo
+rm -f ./.deps/coef2sam.Plo
+rm -f ./.deps/common.Plo
+rm -f ./.deps/commonf.Plo
+rm -f ./.deps/dct4.Plo
+rm -f ./.deps/dct4_a.Plo
+rm -f ./.deps/dct4_s.Plo
+rm -f ./.deps/decoder.Plo
+rm -f ./.deps/decoderf.Plo
+rm -f ./.deps/encoder.Plo
+rm -f ./.deps/encoderf.Plo
+rm -f ./.deps/huff_tab.Plo
+rm -f ./.deps/make_dct4_tables.Po
+rm -f ./.deps/sam2coef.Plo
+rm -f ./.deps/tables.Plo
+rm -f ./.deps/utilities.Plo
+rm -f Makefile
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/src'
+Making distclean in doc
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221/doc'
+rm -rf .libs _libs
+rm -f *.lo
+rm -f
+test . = "." || rm -f
+rm -f Makefile
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/doc'
+Making distclean in tests
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221/tests'
+rm -rf .libs _libs
+rm -f  g722_1_tests
+test -z "" || rm -f  g722_1_tests
+rm -f *.o
+rm -f *.lo
+rm -f *.tab.c
+rm -f  regression_tests.sh
+test . = "." || rm -f
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f ./.deps/g192_bit_stream.Po
+rm -f ./.deps/g722_1_tests.Po
+rm -f Makefile
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/tests'
+Making distclean in test-data
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221/test-data'
+Making distclean in itu
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/g7221/test-data/itu'
+make[4]: Entering directory '/var/tmp/swusip-native-arm64/g7221/test-data/itu'
+rm -rf .libs _libs
+rm -f *.lo
+rm -f
+test . = "." || rm -f
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[4]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/test-data/itu'
+rm -f Makefile
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/test-data/itu'
+Making distclean in local
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/g7221/test-data/local'
+make[4]: Entering directory '/var/tmp/swusip-native-arm64/g7221/test-data/local'
+rm -rf .libs _libs
+rm -f *.lo
+rm -f
+test . = "." || rm -f
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[4]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/test-data/local'
+rm -f Makefile
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/test-data/local'
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/g7221/test-data'
+rm -rf .libs _libs
+rm -f *.lo
+rm -f
+test . = "." || rm -f
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/test-data'
+rm -f Makefile
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/test-data'
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221'
+rm -rf .libs _libs
+rm -f *.lo
+rm -f  g722_1.pc g722_1.spec
+test . = "." || rm -f
+rm -f libtool config.lt
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -f Makefile
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/g7221'
+cd g7221 && \
+./autogen.sh && \
+CC="aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot" \
+RANLIB=llvm-ranlib AR=llvm-ar PATH=:/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin:/usr/bin:/bin \
+ac_cv_func_malloc_0_nonnull=yes \
+./configure --build=x86_64 --host=aarch64-linux-android --disable-shared CFLAGS="-fPIC -O3" && \
+CC="aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot" \
+RANLIB=llvm-ranlib AR=llvm-ar PATH=:/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin:/usr/bin:/bin \
+make
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+libtoolize: copying file 'config/compile'
+libtoolize: copying file 'config/config.guess'
+libtoolize: copying file 'config/config.sub'
+libtoolize: copying file 'config/depcomp'
+libtoolize: copying file 'config/install-sh'
+libtoolize: copying file 'config/missing'
+libtoolize: copying file 'config/ltmain.sh'
+libtoolize: putting macros in 'libltdl/m4'.
+libtoolize: copying file 'libltdl/m4/libtool.m4'
+libtoolize: copying file 'libltdl/m4/ltargz.m4'
+libtoolize: copying file 'libltdl/m4/ltdl.m4'
+libtoolize: copying file 'libltdl/m4/ltoptions.m4'
+libtoolize: copying file 'libltdl/m4/ltsugar.m4'
+libtoolize: copying file 'libltdl/m4/ltversion.m4'
+libtoolize: copying file 'libltdl/m4/lt~obsolete.m4'
+libtoolize: putting libltdl files in 'libltdl'.
+libtoolize: copying file 'libltdl/COPYING.LIB'
+libtoolize: creating file 'libltdl/Makefile.am'
+libtoolize: copying file 'libltdl/README'
+libtoolize: creating file 'libltdl/configure.ac'
+libtoolize: creating file 'libltdl/aclocal.m4'
+libtoolize: creating file 'libltdl/Makefile.in'
+libtoolize: copying file 'libltdl/config-h.in'
+libtoolize: creating file 'libltdl/configure'
+libtoolize: copying file 'libltdl/libltdl/lt__alloc.h'
+libtoolize: copying file 'libltdl/libltdl/lt__argz_.h'
+libtoolize: copying file 'libltdl/libltdl/lt__dirent.h'
+libtoolize: copying file 'libltdl/libltdl/lt__glibc.h'
+libtoolize: copying file 'libltdl/libltdl/lt__private.h'
+libtoolize: copying file 'libltdl/libltdl/lt__strl.h'
+libtoolize: copying file 'libltdl/libltdl/lt_dlloader.h'
+libtoolize: copying file 'libltdl/libltdl/lt_error.h'
+libtoolize: copying file 'libltdl/libltdl/lt_system.h'
+libtoolize: copying file 'libltdl/libltdl/slist.h'
+libtoolize: copying file 'libltdl/loaders/dld_link.c'
+libtoolize: copying file 'libltdl/loaders/dlopen.c'
+libtoolize: copying file 'libltdl/loaders/dyld.c'
+libtoolize: copying file 'libltdl/loaders/load_add_on.c'
+libtoolize: copying file 'libltdl/loaders/loadlibrary.c'
+libtoolize: copying file 'libltdl/loaders/preopen.c'
+libtoolize: copying file 'libltdl/loaders/shl_load.c'
+libtoolize: copying file 'libltdl/lt__alloc.c'
+libtoolize: copying file 'libltdl/lt__argz.c'
+libtoolize: copying file 'libltdl/lt__dirent.c'
+libtoolize: copying file 'libltdl/lt__strl.c'
+libtoolize: copying file 'libltdl/lt_dlloader.c'
+libtoolize: copying file 'libltdl/lt_error.c'
+libtoolize: copying file 'libltdl/ltdl.c'
+libtoolize: copying file 'libltdl/ltdl.h'
+libtoolize: copying file 'libltdl/slist.c'
+libtoolize: You should add the contents of the following files to 'aclocal.m4':
+libtoolize:   '/usr/share/aclocal/ltargz.m4'
+libtoolize:   '/usr/share/aclocal/ltdl.m4'
+libtoolize: Remember to add 'LTDL_INIT' to configure.ac.
+libtoolize: Remember to add 'LT_CONFIG_LTDL_DIR([libltdl])' to 'configure.ac'.
+libtoolize: Consider adding 'AC_CONFIG_MACRO_DIRS([libltdl/m4])' to configure.ac,
+libtoolize: and rerunning libtoolize and aclocal.
+libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
+configure.ac:53: warning: The macro 'AC_PROG_GCC_TRADITIONAL' is obsolete.
+configure.ac:53: You should run autoupdate.
+./lib/autoconf/c.m4:1676: AC_PROG_GCC_TRADITIONAL is expanded from...
+configure.ac:53: the top level
+configure.ac:54: warning: The macro 'AC_PROG_LIBTOOL' is obsolete.
+configure.ac:54: You should run autoupdate.
+aclocal.m4:122: AC_PROG_LIBTOOL is expanded from...
+configure.ac:54: the top level
+configure.ac:131: warning: The macro 'AC_TYPE_SIGNAL' is obsolete.
+configure.ac:131: You should run autoupdate.
+./lib/autoconf/types.m4:805: AC_TYPE_SIGNAL is expanded from...
+configure.ac:131: the top level
+configure.ac:153: warning: The macro 'AC_TRY_LINK' is obsolete.
+configure.ac:153: You should run autoupdate.
+./lib/autoconf/general.m4:2918: AC_TRY_LINK is expanded from...
+lib/m4sugar/m4sh.m4:690: _AS_IF_ELSE is expanded from...
+lib/m4sugar/m4sh.m4:697: AS_IF is expanded from...
+./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+config/ax_c99_features.m4:46: AX_C99_FUNC_LRINT is expanded from...
+configure.ac:153: the top level
+configure.ac:154: warning: The macro 'AC_TRY_LINK' is obsolete.
+configure.ac:154: You should run autoupdate.
+./lib/autoconf/general.m4:2918: AC_TRY_LINK is expanded from...
+lib/m4sugar/m4sh.m4:690: _AS_IF_ELSE is expanded from...
+lib/m4sugar/m4sh.m4:697: AS_IF is expanded from...
+./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+config/ax_c99_features.m4:83: AX_C99_FUNC_LRINTF is expanded from...
+configure.ac:154: the top level
+configure.ac:155: warning: The macro 'AC_TRY_LINK' is obsolete.
+configure.ac:155: You should run autoupdate.
+./lib/autoconf/general.m4:2918: AC_TRY_LINK is expanded from...
+lib/m4sugar/m4sh.m4:690: _AS_IF_ELSE is expanded from...
+lib/m4sugar/m4sh.m4:697: AS_IF is expanded from...
+./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+config/ax_c99_features.m4:120: AX_C99_FUNC_LLRINT is expanded from...
+configure.ac:155: the top level
+configure.ac:156: warning: The macro 'AC_TRY_LINK' is obsolete.
+configure.ac:156: You should run autoupdate.
+./lib/autoconf/general.m4:2918: AC_TRY_LINK is expanded from...
+lib/m4sugar/m4sh.m4:690: _AS_IF_ELSE is expanded from...
+lib/m4sugar/m4sh.m4:697: AS_IF is expanded from...
+./lib/autoconf/general.m4:2249: AC_CACHE_VAL is expanded from...
+./lib/autoconf/general.m4:2270: AC_CACHE_CHECK is expanded from...
+config/ax_c99_features.m4:158: AX_C99_FUNC_LLRINTF is expanded from...
+configure.ac:156: the top level
+configure.ac:165: warning: The macro 'AC_TRY_LINK' is obsolete.
+configure.ac:165: You should run autoupdate.
+./lib/autoconf/general.m4:2918: AC_TRY_LINK is expanded from...
+config/ax_c99_features.m4:13: AX_C99_FLEXIBLE_ARRAY is expanded from...
+configure.ac:165: the top level
+configure.ac:178: warning: The macro 'AC_HEADER_STDC' is obsolete.
+configure.ac:178: You should run autoupdate.
+./lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
+configure.ac:178: the top level
+configure.ac:180: warning: The macro 'AC_HEADER_TIME' is obsolete.
+configure.ac:180: You should run autoupdate.
+./lib/autoconf/headers.m4:702: AC_HEADER_TIME is expanded from...
+configure.ac:180: the top level
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for aarch64-linux-android-strip... no
+checking for strip... strip
+configure: WARNING: using cross tools not prefixed with host triplet
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether UID '1000' is supported by ustar format... yes
+checking whether GID '1000' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking build system type... x86_64-pc-none
+checking host system type... aarch64-unknown-linux-android
+checking for aarch64-linux-android-gcc... aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot accepts -g... yes
+checking for aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot option to enable C11 features... none needed
+checking whether aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot... gcc3
+checking for aarch64-linux-android-g++... no
+checking for aarch64-linux-android-c++... no
+checking for aarch64-linux-android-gpp... no
+checking for aarch64-linux-android-aCC... no
+checking for aarch64-linux-android-CC... no
+checking for aarch64-linux-android-cxx... no
+checking for aarch64-linux-android-cc++... no
+checking for aarch64-linux-android-cl.exe... no
+checking for aarch64-linux-android-FCC... no
+checking for aarch64-linux-android-KCC... no
+checking for aarch64-linux-android-RCC... no
+checking for aarch64-linux-android-xlC_r... no
+checking for aarch64-linux-android-xlC... no
+checking for aarch64-linux-android-clang++... no
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking dependency style of g++... gcc3
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot... /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+checking if the linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... no
+checking for aarch64-linux-android-dumpbin... no
+checking for aarch64-linux-android-link... no
+checking for dumpbin... no
+checking for link... link -dump
+checking the name lister (nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-none file names to aarch64-unknown-linux-android format... func_convert_file_noop
+checking how to convert x86_64-pc-none file names to toolchain format... func_convert_file_noop
+checking for /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld option to reload object files... -r
+checking for file... file
+checking for aarch64-linux-android-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for aarch64-linux-android-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for aarch64-linux-android-ranlib... llvm-ranlib
+checking for aarch64-linux-android-ar... llvm-ar
+checking for archiver @FILE support... @
+checking for aarch64-linux-android-strip... strip
+checking command to parse nm output from aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for aarch64-linux-android-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for sys/select.h... yes
+checking for sys/socket.h... yes
+checking for sys/time.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot supports -fno-rtti -fno-exceptions... yes
+checking for aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot option to produce PIC... -fPIC -DPIC
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot PIC flag -fPIC -DPIC works... yes
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot static flag -static works... yes
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot supports -c -o file.o... yes
+checking if aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot supports -c -o file.o... (cached) yes
+checking whether the aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... Android linker
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+checking if the linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... Android linker
+checking how to hardcode library paths into programs... immediate
+checking for C compiler vendor... gnu
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for working volatile... yes
+checking for long long... yes
+checking for long double... yes
+checking return type of signal handlers... void
+checking for error_at_line... yes
+checking for vprintf... yes
+checking for GNU libc compatible malloc... (cached) yes
+checking for working memcmp... no
+checking for GNU libc compatible realloc... no
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for lrint... yes
+checking for lrintf... yes
+checking for llrint... yes
+checking for llrintf... yes
+checking C99 struct flexible array support... yes
+checking for memmove... yes
+checking for memset... yes
+checking for select... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for gettimeofday... yes
+checking for egrep... (cached) /usr/bin/grep -E
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for socket.h... no
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for malloc.h... yes
+checking for tgmath.h... yes
+checking for math.h... yes
+checking for float.h... yes
+checking for fcntl.h... yes
+checking for sys/time.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/ioctl.h... yes
+checking for sys/fcntl.h... yes
+checking for audiofile.h... no
+checking for cos in -lm... yes
+checking for library containing sinf... none required
+checking for library containing cosf... none required
+checking for library containing tanf... none required
+checking for library containing asinf... none required
+checking for library containing acosf... none required
+checking for library containing atanf... none required
+checking for library containing atan2f... none required
+checking for library containing ceilf... none required
+checking for library containing floorf... none required
+checking for library containing powf... none required
+checking for library containing expf... none required
+checking for library containing logf... none required
+checking for library containing log10f... none required
+checking if aarch64-unknown-linux-android fails on misaligned memory access... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating test-data/Makefile
+config.status: creating test-data/local/Makefile
+config.status: creating test-data/itu/Makefile
+config.status: creating src/Makefile
+config.status: creating src/g722_1.h
+config.status: creating tests/Makefile
+config.status: creating g722_1.pc
+config.status: creating g722_1.spec
+config.status: creating tests/regression_tests.sh
+config.status: creating src/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[1]: Entering directory '/var/tmp/swusip-native-arm64/g7221'
+Making all in src
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221/src'
+make  all-am
+make[3]: Entering directory '/var/tmp/swusip-native-arm64/g7221/src'
+gcc -o make_dct4_tables ../src/make_dct4_tables.c  -DHAVE_CONFIG_H -I../src -lm
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT basop32.lo -MD -MP -MF .deps/basop32.Tpo -c -o basop32.lo basop32.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT basop32.lo -MD -MP -MF .deps/basop32.Tpo -c basop32.c -o basop32.o
+mv -f .deps/basop32.Tpo .deps/basop32.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT bitstream.lo -MD -MP -MF .deps/bitstream.Tpo -c -o bitstream.lo bitstream.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT bitstream.lo -MD -MP -MF .deps/bitstream.Tpo -c bitstream.c -o bitstream.o
+mv -f .deps/bitstream.Tpo .deps/bitstream.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT coef2sam.lo -MD -MP -MF .deps/coef2sam.Tpo -c -o coef2sam.lo coef2sam.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT coef2sam.lo -MD -MP -MF .deps/coef2sam.Tpo -c coef2sam.c -o coef2sam.o
+mv -f .deps/coef2sam.Tpo .deps/coef2sam.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT common.lo -MD -MP -MF .deps/common.Tpo -c -o common.lo common.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT common.lo -MD -MP -MF .deps/common.Tpo -c common.c -o common.o
+mv -f .deps/common.Tpo .deps/common.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT commonf.lo -MD -MP -MF .deps/commonf.Tpo -c -o commonf.lo commonf.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT commonf.lo -MD -MP -MF .deps/commonf.Tpo -c commonf.c -o commonf.o
+mv -f .deps/commonf.Tpo .deps/commonf.Plo
+./make_dct4_tables >dct4.h
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT dct4.lo -MD -MP -MF .deps/dct4.Tpo -c -o dct4.lo dct4.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT dct4.lo -MD -MP -MF .deps/dct4.Tpo -c dct4.c -o dct4.o
+mv -f .deps/dct4.Tpo .deps/dct4.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT dct4_a.lo -MD -MP -MF .deps/dct4_a.Tpo -c -o dct4_a.lo dct4_a.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT dct4_a.lo -MD -MP -MF .deps/dct4_a.Tpo -c dct4_a.c -o dct4_a.o
+mv -f .deps/dct4_a.Tpo .deps/dct4_a.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT dct4_s.lo -MD -MP -MF .deps/dct4_s.Tpo -c -o dct4_s.lo dct4_s.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT dct4_s.lo -MD -MP -MF .deps/dct4_s.Tpo -c dct4_s.c -o dct4_s.o
+mv -f .deps/dct4_s.Tpo .deps/dct4_s.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT decoder.lo -MD -MP -MF .deps/decoder.Tpo -c -o decoder.lo decoder.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT decoder.lo -MD -MP -MF .deps/decoder.Tpo -c decoder.c -o decoder.o
+mv -f .deps/decoder.Tpo .deps/decoder.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT decoderf.lo -MD -MP -MF .deps/decoderf.Tpo -c -o decoderf.lo decoderf.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT decoderf.lo -MD -MP -MF .deps/decoderf.Tpo -c decoderf.c -o decoderf.o
+mv -f .deps/decoderf.Tpo .deps/decoderf.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT encoder.lo -MD -MP -MF .deps/encoder.Tpo -c -o encoder.lo encoder.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT encoder.lo -MD -MP -MF .deps/encoder.Tpo -c encoder.c -o encoder.o
+mv -f .deps/encoder.Tpo .deps/encoder.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT encoderf.lo -MD -MP -MF .deps/encoderf.Tpo -c -o encoderf.lo encoderf.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT encoderf.lo -MD -MP -MF .deps/encoderf.Tpo -c encoderf.c -o encoderf.o
+mv -f .deps/encoderf.Tpo .deps/encoderf.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT huff_tab.lo -MD -MP -MF .deps/huff_tab.Tpo -c -o huff_tab.lo huff_tab.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT huff_tab.lo -MD -MP -MF .deps/huff_tab.Tpo -c huff_tab.c -o huff_tab.o
+mv -f .deps/huff_tab.Tpo .deps/huff_tab.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT sam2coef.lo -MD -MP -MF .deps/sam2coef.Tpo -c -o sam2coef.lo sam2coef.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT sam2coef.lo -MD -MP -MF .deps/sam2coef.Tpo -c sam2coef.c -o sam2coef.o
+mv -f .deps/sam2coef.Tpo .deps/sam2coef.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT tables.lo -MD -MP -MF .deps/tables.Tpo -c -o tables.lo tables.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT tables.lo -MD -MP -MF .deps/tables.Tpo -c tables.c -o tables.o
+mv -f .deps/tables.Tpo .deps/tables.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I.  -I..  -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT utilities.lo -MD -MP -MF .deps/utilities.Tpo -c -o utilities.lo utilities.c
+libtool: compile:  aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_CONFIG_H -I. -I.. -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -MT utilities.lo -MD -MP -MF .deps/utilities.Tpo -c utilities.c -o utilities.o
+mv -f .deps/utilities.Tpo .deps/utilities.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link aarch64-linux-android28-clang --sysroot /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DNDEBUG -std=gnu99 -ffast-math -Wall -Wunused-variable -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -fPIC -O3 -version-info 0:2:0   -o libg722_1.la -rpath /usr/local/lib basop32.lo bitstream.lo coef2sam.lo common.lo commonf.lo dct4.lo dct4_a.lo dct4_s.lo decoder.lo decoderf.lo encoder.lo encoderf.lo huff_tab.lo sam2coef.lo tables.lo utilities.lo  -lm
+libtool: link: llvm-ar cr .libs/libg722_1.a  basop32.o bitstream.o coef2sam.o common.o commonf.o dct4.o dct4_a.o dct4_s.o decoder.o decoderf.o encoder.o encoderf.o huff_tab.o sam2coef.o tables.o utilities.o
+libtool: link: llvm-ranlib .libs/libg722_1.a
+libtool: link: ( cd ".libs" && rm -f "libg722_1.la" && ln -s "../libg722_1.la" "libg722_1.la" )
+make[3]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/src'
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221/src'
+make[2]: Entering directory '/var/tmp/swusip-native-arm64/g7221'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/var/tmp/swusip-native-arm64/g7221'
+make[1]: Leaving directory '/var/tmp/swusip-native-arm64/g7221'
+rm -rf /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g7221/lib/arm64-v8a
+mkdir -p /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g7221/lib/arm64-v8a
+cp g7221/src/.libs/libg722_1.a /mnt/c/Users/MJ/Downloads/baresip-studio-master/baresip-studio-master/distribution/g7221/lib/arm64-v8a
+cd zrtpcpp && \
+rm -rf build && \
+mkdir build && \
+cd build && \
+cmake .. -DANDROID=ON -DANDROID_PLATFORM=28 -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=28 -DCMAKE_TOOLCHAIN_FILE=/var/tmp/swusip-toolchains/android-ndk-r30/build/cmake/android.toolchain.cmake -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_C_COMPILER=aarch64-linux-android28-clang -DCMAKE_CXX_COMPILER=aarch64-linux-android28-clang++ -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
+sed -i -e 's/;-lpthread//' CMakeCache.txt && \
+cmake .. -DANDROID=ON -DANDROID_PLATFORM=28 -DCMAKE_SYSTEM_NAME=Android -DCMAKE_SYSTEM_VERSION=28 -DCMAKE_TOOLCHAIN_FILE=/var/tmp/swusip-toolchains/android-ndk-r30/build/cmake/android.toolchain.cmake -DANDROID_ABI=arm64-v8a -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a -DCMAKE_SKIP_INSTALL_RPATH=ON -DCMAKE_C_COMPILER=aarch64-linux-android28-clang -DCMAKE_CXX_COMPILER=aarch64-linux-android28-clang++ -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && \
+cmake --build . -j4
+CMake Deprecation Warning at CMakeLists.txt:16 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- The C compiler identification is Clang 21.0.0
+-- The CXX compiler identification is Clang 21.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /var/tmp/swusip-toolchains/android-ndk-r30/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+fatal: not a git repository (or any of the parent directories): .git
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- Configuring GNU libzrtpcpp 4.7.0 for libzrtpcore, commit:  ...
+-- Looking for include file stdlib.h
+-- Looking for include file stdlib.h - found
+-- Looking for include file string.h
+-- Looking for include file string.h - found
+-- Looking for include file stdint.h
+-- Looking for include file stdint.h - found
+-- Looking for include file stdint.h
+-- Looking for include file stdint.h - found
+-- Looking for include file limits.h
+-- Looking for include file limits.h - found
+-- Looking for memmove
+-- Looking for memmove - found
+-- Looking for memcpy
+-- Looking for memcpy - found
+-- Using internal (standalone) crypto functions
+CMake Deprecation Warning at clients/no_client/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Configuring done (2.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: /var/tmp/swusip-native-arm64/zrtpcpp/build
+CMake Deprecation Warning at CMakeLists.txt:16 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+fatal: not a git repository (or any of the parent directories): .git
+-- Configuring GNU libzrtpcpp 4.7.0 for libzrtpcore, commit:  ...
+-- Using internal (standalone) crypto functions
+CMake Deprecation Warning at clients/no_client/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+
+-- Configuring done (0.1s)
+You have changed variables that require your cache to be deleted.
+Configure will be re-run and you may have to reset some variables.
+The following variables have changed:
+CMAKE_C_COMPILER= aarch64-linux-android28-clang
+CMAKE_CXX_COMPILER= aarch64-linux-android28-clang++
+
+CMake Error at CMakeLists.txt:16 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 has been removed from CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+
+  Or, add -DCMAKE_POLICY_VERSION_MINIMUM=3.5 to try configuring anyway.
+
+
+-- Configuring incomplete, errors occurred!
+make: *** [Makefile:167: gzrtp] Error 1
+make: Leaving directory '/var/tmp/swusip-native-arm64'

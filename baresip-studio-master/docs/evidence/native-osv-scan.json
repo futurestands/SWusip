@@ -1,0 +1,71 @@
+{
+  "scanned_at": "2026-11-13T10:58:35.767926+00:00",
+  "coverage": "Public native commit queries only; not a complete transitive/package scan.",
+  "dependencies": [
+    {
+      "name": "amr",
+      "commit": "7dba8c32238418ce0b316a852b2224df586ca896",
+      "advisories": []
+    },
+    {
+      "name": "baresip",
+      "commit": "8a4f18c1c1b5331daa026236dcdd108deff601e8",
+      "advisories": []
+    },
+    {
+      "name": "bcg729",
+      "commit": "7743da51c0bc5ff366da97179e1003b8ef056a1c",
+      "advisories": []
+    },
+    {
+      "name": "codec2",
+      "commit": "06d4c11e699b0351765f10398abb4f663a984f36",
+      "advisories": []
+    },
+    {
+      "name": "g722",
+      "commit": "2ec8a2dbe0cd1786e0525de94fe0d1d5fb8034ac",
+      "advisories": []
+    },
+    {
+      "name": "g7221",
+      "commit": "7d35574323585fa5ad2c90daf4f88784c518dec4",
+      "advisories": []
+    },
+    {
+      "name": "ilbc",
+      "commit": "5533286ac556fc6cc027701242a3e8832f9910df",
+      "advisories": []
+    },
+    {
+      "name": "openssl",
+      "commit": "4ce7f193443699a80ea63149c86db6aa07b150ec",
+      "advisories": []
+    },
+    {
+      "name": "opus",
+      "commit": "82ac57d9f1aaf575800cf17373348e45b7ce6c0d",
+      "advisories": []
+    },
+    {
+      "name": "re",
+      "commit": "b827bcaf55a18be141ca7bcee1e22872a3a29656",
+      "advisories": []
+    },
+    {
+      "name": "sndfile",
+      "commit": "4d5c8600023c82874eb2c1c108172a8f0e6f8f1f",
+      "advisories": []
+    },
+    {
+      "name": "vo-amrwbenc",
+      "commit": "884dd247dbeb6b2bd2cd3291c4872de95700291f",
+      "advisories": []
+    },
+    {
+      "name": "zrtpcpp",
+      "commit": "11c86eda399875368a124c0b018cb86700dc11d0",
+      "advisories": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+python : FAIL .native-build\quarantined-empty-archives\openssl\lib\x86_64\libcrypto.a: missing or empty archive
+At line:2 char:1
++ python scripts/verify_native.py --distribution .native-build/quaranti ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL .native-bu...r empty archive:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+FAIL .native-build\quarantined-empty-archives\openssl\lib\x86_64\libssl.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\re\lib\x86_64\libre.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\baresip\lib\x86_64\libbaresip.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\opus\lib\x86_64\libopus.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\g722\lib\x86_64\libg722.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\g7221\lib\x86_64\libg722_1.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\g729\lib\x86_64\libbcg729.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\ilbc\lib\x86_64\libilbc.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\codec2\lib\x86_64\libcodec2.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\amr\lib\x86_64\libamrnb.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\amr\lib\x86_64\libamrwb.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\amr\lib\x86_64\libamrwbenc.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\gzrtp\lib\x86_64\libzrtpcppcore.a: missing or empty archive
+FAIL .native-build\quarantined-empty-archives\sndfile\lib\x86_64\libsndfile.a: missing or empty archive

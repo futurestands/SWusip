@@ -1,0 +1,40 @@
+python : FAIL
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\openssl\lib\arm64-v8a\libcrypto.a:
+missing or empty archive
+At line:2 char:1
++ python scripts/verify_native.py --tools C:/Users/MJ/AppData/Local/And ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL C:\Users\M...r empty archive:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\openssl\lib\arm64-v8a\libssl.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\re\lib\arm64-v8a\libre.a: missing
+or empty archive
+FAIL
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\baresip\lib\arm64-v8a\libbaresip.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\opus\lib\arm64-v8a\libopus.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\g722\lib\arm64-v8a\libg722.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\g7221\lib\arm64-v8a\libg722_1.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\g729\lib\arm64-v8a\libbcg729.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\ilbc\lib\arm64-v8a\libilbc.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\codec2\lib\arm64-v8a\libcodec2.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\amr\lib\arm64-v8a\libamrnb.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\amr\lib\arm64-v8a\libamrwb.a:
+missing or empty archive
+FAIL C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\amr\lib\arm64-v8a\libamrwbenc.a:
+missing or empty archive
+FAIL
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\gzrtp\lib\arm64-v8a\libzrtpcppcore.a:
+missing or empty archive
+FAIL
+C:\Users\MJ\Downloads\baresip-studio-master\baresip-studio-master\distribution\sndfile\lib\arm64-v8a\libsndfile.a:
+missing or empty archive

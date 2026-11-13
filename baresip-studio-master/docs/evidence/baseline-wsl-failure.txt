@@ -1,0 +1,10 @@
+PATH: /mnt/c/Users/MJ/AppData/Local/Android/Sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/bin/
+./configure: line 4269: aarch64-linux-android28-clang++: command not found
+./configure: line 4269: aarch64-linux-android28-clang++: command not found
+./configure: line 4269: aarch64-linux-android28-clang++: command not found
+./configure: line 4269: aarch64-linux-android28-clang++: command not found
+./configure: line 4322: aarch64-linux-android28-clang++: command not found
+configure:4372: error: C++ compiler cannot create executables
+ac_cv_env_CC_value='aarch64-linux-android28-clang --sysroot /mnt/c/Users/MJ/AppData/Local/Android/Sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/sysroot'
+CC='aarch64-linux-android28-clang --sysroot /mnt/c/Users/MJ/AppData/Local/Android/Sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/sysroot'
+configure: exit 77
