@@ -1,8 +1,15 @@
-# SWUSIP 1.0.0-pilot development delivery
+# SWUSIP pilot deliveries
 
-**Latest:** [1.0.3-pilot / 589 Android continuation](SWUSIP_ANDROID_CONTINUATION.md) is installed
+**Current:** [1.0.5-pilot / 591 customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
+APK `artifacts/SWUSIP-1.0.5-pilot-debug.apk`, SHA-256
+`bc19bea5fd5897dc28a95497084fde6938ae6f482110fc52f8edcb3ee97dc4be`.
+Installed with existing data retained; authenticated directory and UI acceptance
+remain incomplete. [Current evidence](evidence/customer-workflows/verification.json).
+The following sections retain historical results.
+
+**Historical:** [1.0.3-pilot / 589 Android continuation](SWUSIP_ANDROID_CONTINUATION.md) was installed
 on the authorised Android phone. Ten physical-device tests pass; real PBX/audio
-verification remains outstanding. Use that record for the latest APK checksum.
+verification remains outstanding. That record contains its historical APK checksum.
 
 **Earlier follow-up:** 1.0.1-pilot / 587 was installed on the authorised Android phone.
 It corrects the Android XLSX parser defect found by physical-device testing;

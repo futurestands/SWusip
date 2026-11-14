@@ -1,0 +1,22 @@
+[
+  {
+    "suite": "test_source_integrity.py",
+    "exit": 0,
+    "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.144s\n\nOK\n"
+  },
+  {
+    "suite": "test_device_privacy.py",
+    "exit": 0,
+    "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+  },
+  {
+    "suite": "test_translations.py",
+    "exit": 0,
+    "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 1.599s\n\nOK\n"
+  },
+  {
+    "suite": "test_customer_relations.py",
+    "exit": 0,
+    "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.006s\n\nOK\n"
+  }
+]

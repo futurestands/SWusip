@@ -1,0 +1,47 @@
+{
+  "versionName": "1.0.5-pilot",
+  "versionCode": 591,
+  "package": "ug.go.mwe.swusip",
+  "apk": "artifacts/SWUSIP-1.0.5-pilot-debug.apk",
+  "apkSha256": "bc19bea5fd5897dc28a95497084fde6938ae6f482110fc52f8edcb3ee97dc4be",
+  "unitTests": {
+    "tests": 47,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Warning": 85
+  },
+  "pythonTests": 14,
+  "nativeArchiveChecks": 15,
+  "nativeLibrarySha256": "108931f7a0780b4009c9548ecd5824a6ef26e266466870aa9456c50c3bc19fed",
+  "noticeAssets": {
+    "assets/third-party-notices.txt": "d64218b789a63ed2634483f7ed30472cab4c9c0ea51f4849b15b225c3bc6829b"
+  },
+  "deviceCore": {
+    "passed": 9,
+    "skipped": 1,
+    "failed": 0,
+    "skipReason": "Owner must unlock handset"
+  },
+  "startupReport": "device-startup.json",
+  "authenticatedDeviceWorkflows": "PENDING_OWNER_AUTHENTICATION",
+  "finalDeviceResults": {
+    "distinctPassed": 11,
+    "skipped": 1,
+    "failed": 0,
+    "note": "Core nine passed; keypad and public legal tests passed on retries; authenticated administrator test skipped."
+  },
+  "uiDevelopmentFailures": "Earlier failed attempts retained; bounded accessibility waits fixed the harness; no dialler production change.",
+  "aboutLegalScreenshots": "FIVE_PUBLIC_SCREENSHOTS_VISUALLY_REVIEWED",
+  "liveSip": "NOT_TESTED",
+  "temporaryKeepAwake": "Owner authorised; original setting 0 restored and read back",
+  "releaseBlockers": [
+    "Production signing/key custody",
+    "SIP credential vault migration and review",
+    "Genuine SIP regression",
+    "Authenticated device acceptance"
+  ],
+  "scope": "Synthetic tests only; no production PBX, trunk or network changes; no app data cleared."
+}

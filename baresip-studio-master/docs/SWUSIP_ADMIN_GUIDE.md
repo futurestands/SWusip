@@ -1,5 +1,8 @@
 # SWUSIP administrator setup
 
+The 1.0.5 customer-workflow changes and outstanding device/security acceptance
+gates are recorded in [Customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
+
 This pilot is not a production-signed release. Review the security release blockers
 in [the Android review](SWUSIP_ANDROID_REVIEW.md) before deployment to 15 agents.
 

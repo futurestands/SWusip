@@ -51,6 +51,11 @@ class DiallerDeviceTest {
         settle()
     }
     private fun assertNumber(value: String) {
+        val deadline = SystemClock.elapsedRealtime() + 5000
+        while(nodes().none { it.isEditable && it.text?.toString() == value } && SystemClock.elapsedRealtime() < deadline)
+            SystemClock.sleep(100)
+        assertEquals("Keep SWUSIP foreground during keypad review",instrumentation.targetContext.packageName,
+            instrumentation.uiAutomation.rootInActiveWindow?.packageName?.toString())
         assertTrue("Number field must contain the exact entered sequence", nodes().any {
             it.isEditable && it.text?.toString() == value
         })

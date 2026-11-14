@@ -1,0 +1,81 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DiallerDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.DiallerDeviceTest:
+INSTRUMENTATION_STATUS: test=keypadEditingAndUnprovisionedCallFeedback
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DiallerDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Number field must contain the exact entered sequence
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.tutpro.baresip.DiallerDeviceTest.assertNumber(DiallerDeviceTest.kt:54)
+	at com.tutpro.baresip.DiallerDeviceTest.keypadEditingAndUnprovisionedCallFeedback(DiallerDeviceTest.kt:71)
+
+INSTRUMENTATION_STATUS: stream=
+Error in keypadEditingAndUnprovisionedCallFeedback(com.tutpro.baresip.DiallerDeviceTest):
+java.lang.AssertionError: Number field must contain the exact entered sequence
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.tutpro.baresip.DiallerDeviceTest.assertNumber(DiallerDeviceTest.kt:54)
+	at com.tutpro.baresip.DiallerDeviceTest.keypadEditingAndUnprovisionedCallFeedback(DiallerDeviceTest.kt:71)
+
+INSTRUMENTATION_STATUS: test=keypadEditingAndUnprovisionedCallFeedback
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AboutLegalDeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.AboutLegalDeviceTest:
+INSTRUMENTATION_STATUS: test=institutionalAboutPublicLegalNavigationSearchAndShortViewport
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AboutLegalDeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertNotNull(Assert.java:713)
+	at org.junit.Assert.assertNotNull(Assert.java:723)
+	at com.tutpro.baresip.AboutLegalDeviceTest.institutionalAboutPublicLegalNavigationSearchAndShortViewport(AboutLegalDeviceTest.kt:113)
+
+INSTRUMENTATION_STATUS: stream=
+Error in institutionalAboutPublicLegalNavigationSearchAndShortViewport(com.tutpro.baresip.AboutLegalDeviceTest):
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertNotNull(Assert.java:713)
+	at org.junit.Assert.assertNotNull(Assert.java:723)
+	at com.tutpro.baresip.AboutLegalDeviceTest.institutionalAboutPublicLegalNavigationSearchAndShortViewport(AboutLegalDeviceTest.kt:113)
+
+INSTRUMENTATION_STATUS: test=institutionalAboutPublicLegalNavigationSearchAndShortViewport
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 21.916
+There were 2 failures:
+1) keypadEditingAndUnprovisionedCallFeedback(com.tutpro.baresip.DiallerDeviceTest)
+java.lang.AssertionError: Number field must contain the exact entered sequence
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.tutpro.baresip.DiallerDeviceTest.assertNumber(DiallerDeviceTest.kt:54)
+	at com.tutpro.baresip.DiallerDeviceTest.keypadEditingAndUnprovisionedCallFeedback(DiallerDeviceTest.kt:71)
+2) institutionalAboutPublicLegalNavigationSearchAndShortViewport(com.tutpro.baresip.AboutLegalDeviceTest)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertNotNull(Assert.java:713)
+	at org.junit.Assert.assertNotNull(Assert.java:723)
+	at com.tutpro.baresip.AboutLegalDeviceTest.institutionalAboutPublicLegalNavigationSearchAndShortViewport(AboutLegalDeviceTest.kt:113)
+
+FAILURES!!!
+Tests run: 2,  Failures: 2
+
+
+INSTRUMENTATION_CODE: -1

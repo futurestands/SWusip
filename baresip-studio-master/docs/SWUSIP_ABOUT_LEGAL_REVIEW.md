@@ -1,3 +1,19 @@
+# Device acceptance update: 1.0.5-pilot
+
+The complete public About/legal instrumentation test now passes on the authorised
+25028RN03A handset, including licence search and portrait/landscape navigation.
+Bounded accessibility waits resolved the earlier harness assertions. Required
+bundled notices and the native SIP library are byte-identical to the baseline.
+Five public screenshots were visually reviewed in
+[current evidence](evidence/customer-workflows/verification.json):
+[About](evidence/customer-workflows/about-portrait.png),
+[Legal information](evidence/customer-workflows/legal-information-portrait.png),
+[licences](evidence/customer-workflows/open-source-licences-portrait.png),
+[About landscape](evidence/customer-workflows/about-landscape.png), and
+[Legal landscape](evidence/customer-workflows/legal-information-landscape.png).
+The older draft/test failures below are retained as history; current results are
+in [Customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
+
 # SWUSIP About and legal information — review build
 
 Baseline: `677f938` (the preceding Android continuation was committed and pushed

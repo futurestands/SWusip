@@ -50,6 +50,10 @@ import, export, undo batches, change provisioning or edit customer master detail
 
 ## Reliable incoming calls
 
+For agent-recorded outcomes and local pending follow-ups, see
+[Customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md). These belong to this phone,
+not a shared CRM queue or automatically detected SIP call results.
+
 Allow SWUSIP microphone and notification access. In Settings, Android app and
 battery settings opens the phone's app details; follow the administrator's approved
 background/battery policy. Do not make SWUSIP the default phone or SMS app merely

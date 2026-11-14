@@ -1,0 +1,43 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AboutLegalDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.AboutLegalDeviceTest:
+INSTRUMENTATION_STATUS: test=institutionalAboutPublicLegalNavigationSearchAndShortViewport
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+Public screenshot saved: /storage/emulated/0/Android/data/ug.go.mwe.swusip/files/legal-review/about-portrait.png
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+Public screenshot saved: /storage/emulated/0/Android/data/ug.go.mwe.swusip/files/legal-review/legal-information-portrait.png
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+Public screenshot saved: /storage/emulated/0/Android/data/ug.go.mwe.swusip/files/legal-review/open-source-licences-portrait.png
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+Public screenshot saved: /storage/emulated/0/Android/data/ug.go.mwe.swusip/files/legal-review/about-landscape.png
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+Public screenshot saved: /storage/emulated/0/Android/data/ug.go.mwe.swusip/files/legal-review/legal-information-landscape.png
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AboutLegalDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=institutionalAboutPublicLegalNavigationSearchAndShortViewport
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 32.669
+
+OK (1 test)
+
+
+INSTRUMENTATION_CODE: -1

@@ -33,6 +33,11 @@ class AboutLegalDeviceTest {
         it.packageName?.toString() == instrumentation.targetContext.packageName && it.isVisibleToUser &&
             (it.text?.toString() == label || it.contentDescription?.toString() == label)
     }
+    private fun awaitLabel(label: String): AccessibilityNodeInfo? {
+        val deadline = SystemClock.elapsedRealtime() + 5000
+        while(find(label) == null && SystemClock.elapsedRealtime() < deadline) SystemClock.sleep(100)
+        return find(label)
+    }
     private fun assertForeground(wait: Boolean = true) {
         val packageName = instrumentation.targetContext.packageName
         val deadline = SystemClock.elapsedRealtime() + if(wait) 5000 else 0
@@ -110,6 +115,8 @@ class AboutLegalDeviceTest {
             context.startActivity(Intent(context,MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
             SystemClock.sleep(1500)
             click("Settings"); click("About SWUSIP")
+            val ready = SystemClock.elapsedRealtime() + 5000
+            while(find("SWUSIP") == null && SystemClock.elapsedRealtime() < ready) SystemClock.sleep(100)
             assertNotNull(find("SWUSIP"))
             assertNotNull(find("South Western Umbrella of Water and Sanitation"))
             assertNotNull(find("Ministry of Water and Environment"))
@@ -117,7 +124,7 @@ class AboutLegalDeviceTest {
             assertFalse(Regex("Baresip|TutPro|GitHub|github\\.com",RegexOption.IGNORE_CASE).containsMatchIn(ordinary))
             screenshot("about-portrait.png")
             click("Legal information")
-            assertNotNull(find("Open-source licences"))
+            assertNotNull("Legal information must expose licences",awaitLabel("Open-source licences"))
             screenshot("legal-information-portrait.png")
             click("Open-source licences")
             repeat(10) { if(nodes().none { it.text?.contains("BSD 3-Clause License") == true }) SystemClock.sleep(300) }
@@ -128,6 +135,9 @@ class AboutLegalDeviceTest {
                 putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,"TutPro")
             }))
             settle()
+            val searched = SystemClock.elapsedRealtime() + 5000
+            while(nodes().none { it.text?.toString()?.matches(Regex("[1-9][0-9]* matches")) == true } &&
+                SystemClock.elapsedRealtime() < searched) SystemClock.sleep(100)
             assertTrue(nodes().any { it.text?.toString()?.matches(Regex("[1-9][0-9]* matches")) == true })
             click("Back"); click("Back")
             automation.setRotation(UiAutomation.ROTATION_FREEZE_90); settle()
@@ -135,7 +145,7 @@ class AboutLegalDeviceTest {
             assertNotNull(find("SWUSIP"))
             screenshot("about-landscape.png")
             click("Legal information")
-            assertNotNull(find("Open-source licences"))
+            assertNotNull("Legal information must expose licences in landscape",awaitLabel("Open-source licences"))
             screenshot("legal-information-landscape.png")
         } finally { automation.setRotation(UiAutomation.ROTATION_UNFREEZE) }
     }

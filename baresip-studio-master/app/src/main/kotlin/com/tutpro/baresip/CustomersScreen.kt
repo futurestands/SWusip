@@ -47,9 +47,13 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
     InstitutionScreenPrivacy()
     val ctx = LocalContext.current
     val authorised = directoryAccess(ctx)
+    val administrator = administratorAccess()
     var query by remember { mutableStateOf(initialQuery) }
     var scheme by remember { mutableStateOf(initialScheme) }
     var records by remember { mutableStateOf<List<CustomerRecord>>(emptyList()) }
+    var pendingFollowUps by remember { mutableStateOf<Map<String,Int>>(emptyMap()) }
+    var followUpsOnly by remember { mutableStateOf(false) }
+    var followUpsReady by remember { mutableStateOf(false) }
     var message by remember { mutableStateOf("Loading authorised local directory…") }
     var selected by remember { mutableStateOf<CustomerRecord?>(null) }
     var preview by remember { mutableStateOf<List<CustomerImportRow>?>(null) }
@@ -61,6 +65,12 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
     var passphrase by remember { mutableStateOf("") }
     var restoreUri by remember { mutableStateOf<Uri?>(null) }
     val scope = rememberCoroutineScope()
+    LaunchedEffect(administrator) {
+        if(!administrator) {
+            manage = false; preview = null; confirmUndo = false; passwordAction = ""
+            passphrase = ""; exportBytes = null; restoreUri = null
+        }
+    }
     val saveExport = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/octet-stream")) { uri ->
         val data = exportBytes; exportBytes = null
         if(uri != null && data != null) scope.launch {
@@ -117,12 +127,14 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
     }
     LaunchedEffect(authorised) {
         if(!authorised) {
-            records = emptyList(); selected = null; preview = null
+            records = emptyList(); pendingFollowUps = emptyMap(); followUpsReady = false; selected = null; preview = null
             passphrase = ""; passwordAction = ""; exportBytes = null; restoreUri = null
             return@LaunchedEffect
         }
         try {
             records = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.records() } }
+            pendingFollowUps = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.pendingFollowUps() } }
+            followUpsReady = true
             message = if(records.isEmpty()) "No customer records imported on this device." else "${records.size} customer account / phone entries"
             if(initialQuery.isNotEmpty()) {
                 val found = records.filter { it.phone == initialQuery }.distinctBy { it.id }
@@ -143,8 +155,10 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
         OutlinedTextField(query, { query = it }, label = { Text("Name, telephone, account or scheme") }, modifier = Modifier.fillMaxWidth())
         OutlinedTextField(scheme, { scheme = it }, label = { Text("Filter by scheme code or name") }, modifier = Modifier.fillMaxWidth())
         TextButton(onClick = { nav.navigate("schemes") }) { Text("Browse water schemes") }
+        FilterChip(selected = followUpsOnly && followUpsReady,enabled = followUpsReady,onClick = { followUpsOnly = !followUpsOnly },
+            label = { Text(if(followUpsReady) "Local pending follow-ups (${pendingFollowUps.values.sum()})" else "Follow-up status unavailable until directory loads") })
         Text(message, style = MaterialTheme.typography.bodySmall)
-        if (InstitutionAccess.administrator(ctx)) {
+        if (administrator) {
             TextButton(onClick = { manage = !manage }) { Text(if(manage) "Close directory management" else "Manage directory") }
             if(manage) Column(Modifier.heightIn(max = 240.dp).verticalScroll(rememberScrollState())) {
             Row {
@@ -160,12 +174,13 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
             }
         }
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(CustomerMatching.search(records,query,scheme)) { record ->
+            items(CustomerMatching.search(records,query,scheme).filter { !followUpsReady || !followUpsOnly || pendingFollowUps.getOrDefault(it.id,0) > 0 }) { record ->
                 OutlinedCard(onClick = { selected = record }, modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(12.dp)) {
                         Text(record.name, style = MaterialTheme.typography.titleMedium)
                         Text(record.phone)
                         Text("Account ${record.account} · ${record.schemeName} (${record.schemeCode})")
+                        if(followUpsReady && pendingFollowUps.getOrDefault(record.id,0) > 0) Text("Follow-up pending (${pendingFollowUps[record.id]})")
                     }
                 }
             }
@@ -248,6 +263,13 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
                 viewModel.dialerState.callUri.value = person.phone
                 nav.navigate("main") { popUpTo("main") { inclusive = true } }
             }
+        }, onInteractionsChanged = {
+            scope.launch {
+                try {
+                    pendingFollowUps = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.pendingFollowUps() } }
+                    followUpsReady = true
+                } catch (_: Exception) { followUpsReady = false; message = "Follow-up status unavailable. Unlock the workspace and reopen Customers." }
+            }
         }, onUpdated = {
             scope.launch { records = withContext(Dispatchers.IO) { runCatching { CustomerDirectory(ctx).use { it.records() } }.getOrDefault(emptyList()) }; selected = null }
         })
@@ -256,9 +278,9 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
 
 @Composable
 private fun CustomerProfileDialog(person: CustomerRecord, entries: List<CustomerRecord>, allRecords: List<CustomerRecord>,
-    onClose: () -> Unit, onCallback: () -> Unit, onUpdated: () -> Unit) {
+    onClose: () -> Unit, onCallback: () -> Unit, onInteractionsChanged: () -> Unit, onUpdated: () -> Unit) {
     val ctx = LocalContext.current; val scope = rememberCoroutineScope()
-    var notes by remember(person.id) { mutableStateOf<List<String>>(emptyList()) }
+    var notes by remember(person.id) { mutableStateOf<List<CustomerInteraction>>(emptyList()) }
     var draft by remember(person.id) { mutableStateOf("") }
     var name by remember(person.id) { mutableStateOf(person.name) }
     var location by remember(person.id) { mutableStateOf(person.location) }
@@ -266,8 +288,13 @@ private fun CustomerProfileDialog(person: CustomerRecord, entries: List<Customer
     var linkScheme by remember { mutableStateOf("") }
     var linkAccount by remember { mutableStateOf("") }
     var confirmLink by remember { mutableStateOf(false) }
+    var outcome by remember(person.id) { mutableStateOf(InteractionOutcome.UNSPECIFIED) }
+    var followUp by remember(person.id) { mutableStateOf(false) }
+    var outcomeMenu by remember { mutableStateOf(false) }
+    var saving by remember { mutableStateOf(false) }
     LaunchedEffect(person.id) {
-        notes = withContext(Dispatchers.IO) { runCatching { CustomerDirectory(ctx).use { it.callNotes(person.id) } }.getOrDefault(emptyList()) }
+        try { notes = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.interactions(person.id) } } }
+        catch (_: Exception) { status = "Interaction history unavailable. Check workspace authorisation." }
     }
     AlertDialog(onDismissRequest = onClose, title = { Text(person.name) }, text = {
         Column(Modifier.heightIn(max = 460.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -276,14 +303,46 @@ private fun CustomerProfileDialog(person: CustomerRecord, entries: List<Customer
             if(person.notes.isNotBlank()) Text("Customer notes: ${person.notes}")
             TextButton(enabled = !Call.inCall(),onClick = onCallback) { Text("Call back using dialler") }
             Text("Interaction notes", style = MaterialTheme.typography.titleSmall)
-            notes.forEach { Text(it) }
-            OutlinedTextField(draft,{ if(it.length <= 2000) draft = it },label = { Text("New call note") })
-            TextButton(enabled = draft.isNotBlank(),onClick = { scope.launch {
+            notes.forEach { note ->
+                Text(note.text)
+                Text("${note.author} · ${java.util.Date(note.createdAt)}",style = MaterialTheme.typography.bodySmall)
+                Text("${note.outcome.label} · ${note.followUp.label}")
+                if(note.followUp == FollowUpState.COMPLETE) Text("Completed by ${note.completedBy} · ${java.util.Date(note.completedAt)}",
+                    style = MaterialTheme.typography.bodySmall)
+                if(note.followUp == FollowUpState.PENDING) TextButton(enabled = !saving,onClick = { scope.launch {
+                    saving = true
+                    try {
+                        withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.completeFollowUp(person.id,note.id) } }
+                        notes = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.interactions(person.id) } }
+                        onInteractionsChanged(); status = "Follow-up marked complete"
+                    } catch (_: Exception) { status = "Could not complete follow-up. Check workspace authorisation." }
+                    finally { saving = false }
+                } }) { Text("Mark follow-up complete") }
+                HorizontalDivider()
+            }
+            OutlinedTextField(draft,{ if(it.length <= 2000) draft = it },enabled = !saving,label = { Text("New call note") })
+            Box {
+                TextButton(enabled = !saving,onClick = { outcomeMenu = true }) { Text("Call outcome: ${outcome.label}") }
+                DropdownMenu(expanded = outcomeMenu,onDismissRequest = { outcomeMenu = false }) {
+                    InteractionOutcome.entries.forEach { value -> DropdownMenuItem(text = { Text(value.label) },onClick = {
+                        outcome = value; if(value == InteractionOutcome.CALLBACK_REQUIRED) followUp = true; outcomeMenu = false
+                    }) }
+                }
+            }
+            Row {
+                Checkbox(checked = followUp,onCheckedChange = { followUp = it },enabled = !saving && outcome != InteractionOutcome.CALLBACK_REQUIRED)
+                Text("Follow-up required on this phone")
+            }
+            TextButton(enabled = draft.isNotBlank() && !saving,onClick = { scope.launch {
+                saving = true
                 try {
-                    withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.addCallNote(person.id,draft) } }
-                    notes = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.callNotes(person.id) } }
-                    draft = ""; status = "Call note saved"
-                } catch (_: Exception) { status = "Could not save note. Check workspace authorisation." }
+                    val entry = InteractionDraft(draft,outcome,followUp)
+                    withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.saveInteraction(person.id,entry) } }
+                    notes = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.interactions(person.id) } }
+                    draft = ""; outcome = InteractionOutcome.UNSPECIFIED; followUp = false
+                    onInteractionsChanged(); status = "Call note and outcome saved"
+                } catch (_: Exception) { status = "Check workspace authorisation and refresh history before retrying the note." }
+                finally { saving = false }
             } }) { Text("Save call note") }
             if(administratorAccess()) {
                 OutlinedTextField(name,{ name = it },label = { Text("Customer name") })
@@ -317,14 +376,18 @@ private fun SchemeDirectoryScreen(nav: NavController) {
     val ctx = LocalContext.current; val allowed = directoryAccess(ctx)
     var entries by remember { mutableStateOf<List<CustomerRecord>>(emptyList()) }
     var query by remember { mutableStateOf("") }
+    var error by remember { mutableStateOf("") }
     LaunchedEffect(allowed) {
-        entries = if(allowed) withContext(Dispatchers.IO) { runCatching { CustomerDirectory(ctx).use { it.records() } }.getOrDefault(emptyList()) } else emptyList()
+        entries = emptyList(); error = ""
+        if(allowed) try { entries = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.records() } } }
+        catch (_: Exception) { error = "Scheme directory unavailable. Check workspace authorisation." }
     }
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().padding(16.dp)) {
         Text("SWUSIP · Scheme Directory",style = MaterialTheme.typography.headlineSmall)
         TextButton(onClick = { nav.navigateUp() }) { Text("Back to customers") }
         if(!allowed) { WorkspaceUnlock(); DeviceEnrolment(); return@Column }
         OutlinedTextField(query,{ query = it }, label = { Text("Search scheme name or code") },modifier = Modifier.fillMaxWidth())
+        if(error.isNotEmpty()) Text(error)
         LazyColumn { items(entries.distinctBy { it.schemeCode }.filter { it.schemeCode.contains(query,true) || it.schemeName.contains(query,true) }) { scheme ->
             TextButton(onClick = { nav.navigate("customers?scheme=${Uri.encode(scheme.schemeCode)}") }) {
                 Text("${scheme.schemeName} (${scheme.schemeCode})")
@@ -352,8 +415,12 @@ fun CallCustomerPanel(number: String, onOpen: () -> Unit) {
         if(matches.isNotEmpty()) InstitutionScreenPrivacy()
         Column(Modifier.fillMaxWidth().padding(8.dp)) {
             Text(state, style = MaterialTheme.typography.titleMedium)
-            matches.firstOrNull()?.let { Text("${it.phone} · Account ${it.account}\n${it.schemeName} (${it.schemeCode})") }
-            TextButton(onClick = onOpen) { Text("Open customer directory") }
+            when(val identity = CustomerMatching.identify(matches,number)) {
+                is CallerIdentity.Single -> identity.record.let { Text("${it.phone} · Account ${it.account}\n${it.schemeName} (${it.schemeCode})") }
+                is CallerIdentity.Multiple -> Text("No account selected. Open the matching records and confirm the caller’s scheme and account.")
+                CallerIdentity.Unknown -> Unit
+            }
+            TextButton(onClick = onOpen) { Text(if(matches.size > 1) "Review matching customers" else if(matches.size == 1) "Open customer profile" else "Search customer directory") }
         }
-    }
+    } else { Text("Unlock the institutional workspace to identify this caller."); WorkspaceUnlock() }
 }

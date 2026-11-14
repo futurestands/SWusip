@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tutpro.baresip.CustomerInteractionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-14T18:50:14.458Z" hostname="DESKTOP-6B00F9J" time="0.012">
+  <properties/>
+  <testcase name="callbackCannotSilentlyLoseItsFollowUp" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.003"/>
+  <testcase name="allRecordedOutcomesRoundTrip" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.002"/>
+  <testcase name="callbackDraftTracksFollowUp" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.0"/>
+  <testcase name="excessiveNotesAreRejected" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.001"/>
+  <testcase name="unknownFutureFollowUpStatesAreExplicit" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.002"/>
+  <testcase name="legacyNotesDoNotAcquireInventedOutcomesOrFollowUps" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.001"/>
+  <testcase name="emptyNotesAreRejected" classname="com.tutpro.baresip.CustomerInteractionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
