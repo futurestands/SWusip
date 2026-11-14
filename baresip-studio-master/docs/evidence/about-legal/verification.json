@@ -1,0 +1,24 @@
+{
+  "baselineCommit": "677f938",
+  "version": "1.0.4-pilot",
+  "versionCode": 590,
+  "apk": "artifacts/SWUSIP-1.0.4-pilot-debug.apk",
+  "apkSha256": "7e51e912a3f7182396f33cbd17cb545c685dd0a286ebeecaacd2bdeb5e889c79",
+  "jvmTests": 35,
+  "jvmFailures": 0,
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 84
+  },
+  "noticesBytes": 146505,
+  "noticesSha256": "d64218b789a63ed2634483f7ed30472cab4c9c0ea51f4849b15b225c3bc6829b",
+  "noticesUnchanged": true,
+  "nativeLibraryUnchanged": true,
+  "nativeLibrarySha256": "108931f7a0780b4009c9548ecd5824a6ef26e266466870aa9456c50c3bc19fed",
+  "existingDeviceRegressionsPassed": 10,
+  "newScreenTest": "NOT PASSED; harness corrections require rerun; ADB endpoint disconnected",
+  "verifiedScreenshots": 0,
+  "installed": "adb install -r succeeded before disconnection; final installed readback pending",
+  "realSipCalling": "NOT VERIFIED"
+}

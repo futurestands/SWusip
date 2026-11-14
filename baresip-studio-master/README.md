@@ -19,6 +19,7 @@ extensions. No central directory server is required for this pilot.
 - [Physical-device validation and the 1.0.1-pilot correction](docs/SWUSIP_DEVICE_VALIDATION.md)
 - [1.0.2-pilot dialler repair and device tests](docs/SWUSIP_DIALLER_REPAIR.md)
 - [1.0.3-pilot Android continuation and remaining release gates](docs/SWUSIP_ANDROID_CONTINUATION.md)
+- [1.0.4-pilot About/legal review draft — device screenshots pending](docs/SWUSIP_ABOUT_LEGAL_REVIEW.md)
 - [Agent guide](docs/SWUSIP_AGENT_GUIDE.md) and [administrator setup](docs/SWUSIP_ADMIN_GUIDE.md)
 
 ## Build

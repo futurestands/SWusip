@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tutpro.baresip.CustomerBatchTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-14T05:44:15.110Z" hostname="DESKTOP-6B00F9J" time="1.968">
+  <properties/>
+  <testcase name="tenThousandCsvRecordsPreviewAndRetainTextAccounts" classname="com.tutpro.baresip.CustomerBatchTest" time="1.093"/>
+  <testcase name="csvRejectsTenThousandAndOne" classname="com.tutpro.baresip.CustomerBatchTest" time="0.029"/>
+  <testcase name="tenThousandExcelRecordsRetainLeadingZeroes" classname="com.tutpro.baresip.CustomerBatchTest" time="0.834"/>
+  <testcase name="sharedAccountOwnerConflictsMatchTheCommitPolicyRegardlessOfRowOrder" classname="com.tutpro.baresip.CustomerBatchTest" time="0.008"/>
+  <testcase name="malformedProgrammaticRowsAreRejectedInPreview" classname="com.tutpro.baresip.CustomerBatchTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

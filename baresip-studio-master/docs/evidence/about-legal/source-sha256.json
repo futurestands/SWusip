@@ -1,0 +1,5 @@
+{
+  "app/build.gradle.kts": "e77f84a7f8615087bdbc7bdb2a5f0d018f8373e0f125bc29e65ab08bd0ccb4b2",
+  "app/src/main/kotlin/com/tutpro/baresip/AboutScreen.kt": "9b316bec492719e95729a9a46894a4d5053216fd55bca94b921f6971d9255aca",
+  "app/src/androidTest/kotlin/com/tutpro/baresip/AboutLegalDeviceTest.kt": "df92c16c4445824da2f8016bd94cf6d9d8aa55dfa4040ed4074b96598b2124c9"
+}
