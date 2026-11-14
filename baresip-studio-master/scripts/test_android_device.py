@@ -88,8 +88,8 @@ def main():
 
     def adb(*command, selected=False):
         invocation = [str(args.adb)]
-        if selected:
-            invocation += ['-s', serial]
+        if selected or args.serial:
+            invocation += ['-s', serial if selected else args.serial]
         result = subprocess.run(invocation + list(command), capture_output=True, text=True,
                                 encoding='utf-8', errors='replace', timeout=120)
         return result.returncode, result.stdout + result.stderr

@@ -56,7 +56,19 @@ object OfflineAuthorisation {
         if(grant == null) "unassigned" else verify(ctx,grant)[2]
     } catch (_: Exception) { "unassigned" }
     fun identity(ctx: Context): String = try {
+        val managed = ctx.getSystemService(android.content.RestrictionsManager::class.java)
+            .applicationRestrictions.getString("swusip_agent_id")
         val grant = ctx.getSharedPreferences("institution-authorisation",Context.MODE_PRIVATE).getString("grant",null)
-        if(grant == null) "institution-agent" else verify(ctx,grant)[4]
+        when {
+            managed != null && managed.matches(Regex("[A-Za-z0-9_.-]{1,64}")) -> managed
+            grant == null -> "institution-agent"
+            else -> verify(ctx,grant)[4]
+        }
     } catch (_: Exception) { "institution-agent" }
+    /** Historical attribution is an assigned device identity, not proof that an agent answered. */
+    fun assignedIdentity(ctx: Context): String? = if(role(ctx) in setOf("agent", "administrator")) {
+        val managedId = ctx.getSystemService(android.content.RestrictionsManager::class.java)
+            .applicationRestrictions.getString("swusip_agent_id")
+        (managedId ?: identity(ctx)).takeIf { it != "institution-agent" && it.matches(Regex("[A-Za-z0-9_.-]{1,64}")) }
+    } else null
 }

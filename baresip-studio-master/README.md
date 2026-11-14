@@ -17,7 +17,9 @@ extensions. No central directory server is required for this pilot.
 - [CSV customer template](docs/templates/swusip-customers.csv)
 - [Native build verification and earlier milestones](docs/BUILD_VERIFICATION.md)
 - [Physical-device validation and the 1.0.1-pilot correction](docs/SWUSIP_DEVICE_VALIDATION.md)
-- [Latest APK: 1.0.2-pilot dialler repair and device tests](docs/SWUSIP_DIALLER_REPAIR.md)
+- [1.0.2-pilot dialler repair and device tests](docs/SWUSIP_DIALLER_REPAIR.md)
+- [1.0.3-pilot Android continuation and remaining release gates](docs/SWUSIP_ANDROID_CONTINUATION.md)
+- [Agent guide](docs/SWUSIP_AGENT_GUIDE.md) and [administrator setup](docs/SWUSIP_ADMIN_GUIDE.md)
 
 ## Build
 
@@ -31,10 +33,10 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`.
 Device test APK: `app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk`.
 Do not confuse a debug pilot with a production-signed institutional release.
 Phone installation, authenticated directory review and real PBX/audio tests are
-separate gates. Version 1.0.2-pilot is installed and all eight Android instrumentation
-tests pass, including keypad editing and unprovisioned Call feedback. Directory
+separate gates. Version 1.0.3-pilot is installed and ten Android instrumentation
+tests pass, including keypad editing and locked-workspace denials. Directory
 workflow tests require workspace authentication; approved PBX calling remains
-unverified. See the dialler repair record for exact results and limits.
+unverified. See the Android continuation record for exact results and limits.
 
 ## Data and authorisation
 

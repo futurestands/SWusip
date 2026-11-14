@@ -40,6 +40,7 @@ data class CustomerRecord(val id: String, val name: String, val phone: String,
 class CustomerDirectory(context: Context,
     databaseName: String = "swusip-directory.db") : SQLiteOpenHelper(context, databaseName, null, 1) {
     private val context: Context = context.applicationContext
+    private val directoryKey: SecretKey by lazy { loadKey() }
     companion object { private val keyLock = Any() }
     override fun onConfigure(db: SQLiteDatabase) { db.setForeignKeyConstraintsEnabled(true) }
     override fun onCreate(db: SQLiteDatabase) {
@@ -56,7 +57,8 @@ class CustomerDirectory(context: Context,
     override fun onUpgrade(db: SQLiteDatabase, old: Int, new: Int) {
         error("Unsupported directory migration; existing data retained")
     }
-    private fun key(): SecretKey {
+    private fun key(): SecretKey = directoryKey
+    private fun loadKey(): SecretKey {
         synchronized(keyLock) {
         val store = KeyStore.getInstance("AndroidKeyStore").apply { load(null) }
         (store.getKey("swusip.directory.v1", null) as? SecretKey)?.let { return it }
@@ -99,7 +101,8 @@ class CustomerDirectory(context: Context,
         val result = mutableListOf<CustomerRecord>()
         readableDatabase.rawQuery("""SELECT c.customer_id,c.account_id,p.phone_id,a.scheme_id
             FROM customer_account c JOIN account a ON a.id=c.account_id
-            LEFT JOIN customer_phone p ON p.customer_id=c.customer_id""", null).use { c ->
+            LEFT JOIN customer_phone p ON p.customer_id=c.customer_id AND EXISTS
+                (SELECT 1 FROM account_phone ap WHERE ap.account_id=c.account_id AND ap.phone_id=p.phone_id)""", null).use { c ->
             while(c.moveToNext()) {
                 val person = customers.getValue(c.getString(0)); val account = accounts.getValue(c.getString(1))
                 val scheme = schemes.getValue(c.getString(3))
@@ -130,6 +133,7 @@ class CustomerDirectory(context: Context,
      * Every created entity/link is journalled for latest-batch undo. */
     fun import(rows: List<CustomerImportRow>): ImportResult {
         check(InstitutionAccess.administrator(context)) { "Administrator role required" }
+        require(rows.size <= CustomerImport.MAX_ROWS) { "Import exceeds 10,000 rows" }
         val db = writableDatabase; val batch = UUID.randomUUID().toString()
         var accepted = 0; var updated = 0; var skipped = 0; var rejected = 0
         val errors = mutableListOf<String>(); val changes = JSONArray()
@@ -139,6 +143,11 @@ class CustomerDirectory(context: Context,
             val schemes = entities("scheme").toMutableMap()
             val accounts = entities("account").toMutableMap()
             val phones = entities("phone").toMutableMap()
+            val byAccount = current.groupBy { it.schemeCode.lowercase(java.util.Locale.ROOT) to it.account }
+                .mapValues { it.value.toMutableList() }.toMutableMap()
+            val byScheme = schemes.entries.associate { it.value.getString("code").lowercase(java.util.Locale.ROOT) to it.key }.toMutableMap()
+            val accountIds = accounts.entries.associate { (it.value.getString("schemeId") to it.value.getString("number")) to it.key }.toMutableMap()
+            val phoneIds = phones.entries.associate { it.value.getString("number") to it.key }.toMutableMap()
             fun create(table: String, data: JSONObject, foreign: Pair<String,String>? = null): String {
                 val id = UUID.randomUUID().toString()
                 val values = ContentValues().apply {
@@ -146,7 +155,11 @@ class CustomerDirectory(context: Context,
                     foreign?.let { put(it.first,it.second) }
                 }
                 db.insertOrThrow(table,null,values)
-                when(table) { "scheme" -> schemes[id] = data; "account" -> accounts[id] = data; "phone" -> phones[id] = data }
+                when(table) {
+                    "scheme" -> { schemes[id] = data; byScheme[data.getString("code").lowercase(java.util.Locale.ROOT)] = id }
+                    "account" -> { accounts[id] = data; accountIds[data.getString("schemeId") to data.getString("number")] = id }
+                    "phone" -> { phones[id] = data; phoneIds[data.getString("number")] = id }
+                }
                 changes.put(JSONObject().put("table",table).put("id",id)
                     .put("after",fingerprint(values.getAsString("payload"))))
                 return id
@@ -158,33 +171,33 @@ class CustomerDirectory(context: Context,
                         .put("rightKey",right.first).put("right",right.second))
             }
             rows.forEach { row ->
-                val problem = row.error
+                val problem = row.error ?: CustomerImport.validate(row.values)
                 if(problem != null) { rejected++; errors += "Row ${row.row}: $problem"; return@forEach }
                 val v = row.values; val number = CustomerNumbers.normalise(v[1])!!
-                val existing = current.filter { it.schemeCode.equals(v[3],true) && it.account == v[2] }
-                val scheme = schemes.entries.find { it.value.getString("code").equals(v[3],true) }
+                val accountKey = v[3].lowercase(java.util.Locale.ROOT) to v[2]
+                val existing = byAccount[accountKey].orEmpty()
+                val schemeIdExisting = byScheme[accountKey.first]
+                val scheme = schemeIdExisting?.let { schemes.getValue(it) }
                 if(existing.any { !it.name.equals(v[0],true) || it.category != v[5] } ||
-                    (scheme != null && !scheme.value.getString("name").equals(v[4],true))) {
+                    (scheme != null && !scheme.getString("name").equals(v[4],true))) {
                     rejected++; errors += "Row ${row.row}: account ownership, category or scheme conflict"; return@forEach
                 }
                 if(existing.any { it.phone == number }) { skipped++; return@forEach }
                 val now = System.currentTimeMillis()
-                val schemeId = scheme?.key ?: create("scheme",JSONObject().put("code",v[3]).put("name",v[4]))
-                val accountId = accounts.entries.find { e ->
-                    e.value.getString("number") == v[2] && e.value.getString("schemeId") == schemeId
-                }?.key ?: create("account",JSONObject().put("number",v[2]).put("schemeId",schemeId)
+                val schemeId = schemeIdExisting ?: create("scheme",JSONObject().put("code",v[3]).put("name",v[4]))
+                val accountId = accountIds[schemeId to v[2]] ?: create("account",JSONObject().put("number",v[2]).put("schemeId",schemeId)
                     .put("category",v[5]).put("createdAt",now), "scheme_id" to schemeId)
                 // Name alone never merges different people. Additional numbers on
                 // the same account can extend an existing, matching customer.
                 val customerId = existing.firstOrNull()?.id ?: create("customer",JSONObject()
                     .put("name",v[0]).put("notes",v[6]).put("primaryNumber",number)
                     .put("createdAt",now).put("updatedAt",now).put("createdBy",OfflineAuthorisation.identity(context)))
-                val phoneId = phones.entries.find { it.value.getString("number") == number }?.key ?:
+                val phoneId = phoneIds[number] ?:
                     create("phone",JSONObject().put("number",number))
                 link("customer_account","customer_id" to customerId,"account_id" to accountId)
                 link("customer_phone","customer_id" to customerId,"phone_id" to phoneId)
                 link("account_phone","account_id" to accountId,"phone_id" to phoneId)
-                current += CustomerRecord(customerId,v[0],number,v[2],v[3],v[4],v[5])
+                byAccount.getOrPut(accountKey) { mutableListOf() }.add(CustomerRecord(customerId,v[0],number,v[2],v[3],v[4],v[5]))
                 if(existing.isEmpty()) accepted++ else updated++
             }
             check(InstitutionAccess.administrator(context)) { "Administrator authorisation expired" }

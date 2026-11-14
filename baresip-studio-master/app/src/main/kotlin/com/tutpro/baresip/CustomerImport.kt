@@ -21,7 +21,11 @@ object CustomerImport {
         return rows.drop(1).mapIndexedNotNull { i, row ->
             if(row.all { it.isBlank() }) return@mapIndexedNotNull null
             val values = row.map { it.trim() }
-            val error = when {
+            val error = validate(values)
+            CustomerImportRow(i + 2, values, error)
+        }
+    }
+    internal fun validate(values: List<String>): String? = when {
                 values.size != headers.size -> "Expected seven columns"
                 values.take(5).any { it.isEmpty() } -> "Name, phone, account and scheme code/name are required"
                 values.any { it.length > 2000 } -> "Cell exceeds 2,000 characters"
@@ -30,9 +34,6 @@ object CustomerImport {
                 values.any { it.startsWith("#FORMULA#") } -> "Formula cells are not supported; use literal text"
                 else -> null
             }
-            CustomerImportRow(i + 2, values, error)
-        }
-    }
     internal fun csv(text: String): List<List<String>> {
         val rows = mutableListOf<List<String>>(); var row = mutableListOf<String>()
         val cell = StringBuilder(); var quoted = false; var closed = false; var i = 0

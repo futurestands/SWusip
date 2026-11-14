@@ -333,7 +333,7 @@ private fun startTime(detail: Details, onDelete: (Details) -> Unit): String {
     )
 
     Text(
-        text = startTimeText,
+        text = startTimeText + (detail.agentId?.let { "\nAssigned agent: $it" } ?: "\nAssigned agent: Not recorded"),
         modifier = Modifier.combinedClickable(
             onClick = { showDialog.value = true },
             onLongClick = { }

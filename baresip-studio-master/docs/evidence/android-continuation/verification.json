@@ -1,0 +1,33 @@
+{
+  "generatedUtc": "2026-11-14T05:31:38.693252+00:00",
+  "baselineCommit": "df3c71311ce4f2fc36332a98894aee8e183e43d1",
+  "version": "1.0.3-pilot",
+  "versionCode": 589,
+  "apk": "artifacts/SWUSIP-1.0.3-pilot-debug.apk",
+  "apkSha256": "7c51e35ff7f3b7ffb0e4cc97a3e9ba0df97ee6a079cebef3c93ad0302750d4cf",
+  "install": "adb install -r; no data clear/uninstall",
+  "installedHashVerified": true,
+  "jvmTests": 35,
+  "jvmFailures": 0,
+  "physicalTestsPassed": 10,
+  "physicalTestsSkipped": 0,
+  "authenticatedDirectory": "BLOCKED/SKIPPED",
+  "authenticatedPickerWorkflow": "NOT VERIFIED",
+  "pythonChecksPassed": 14,
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 83
+  },
+  "nativeLibraryUnchanged": true,
+  "nativeLibrarySha256": "108931f7a0780b4009c9548ecd5824a6ef26e266466870aa9456c50c3bc19fed",
+  "startup": "ui_native_and_foreground_startup_verified",
+  "startupFailureCounts": {
+    "crash": 0,
+    "nativeLoading": 0,
+    "foregroundService": 0,
+    "securityException": 0
+  },
+  "realSipCalling": "NOT VERIFIED - approved test extension/call required",
+  "productionSecurity": "NOT ACCEPTED - native credential/history storage and trace review remain"
+}

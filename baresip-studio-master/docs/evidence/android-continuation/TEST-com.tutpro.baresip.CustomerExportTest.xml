@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.tutpro.baresip.CustomerExportTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-14T05:15:27.499Z" hostname="DESKTOP-6B00F9J" time="7.788">
+  <properties/>
+  <testcase name="encryptedExportRoundTripsTextIdentifiers" classname="com.tutpro.baresip.CustomerExportTest" time="4.28"/>
+  <testcase name="shortPassphrasesAreRejected" classname="com.tutpro.baresip.CustomerExportTest" time="0.0"/>
+  <testcase name="wrongPasswordAndTamperingFailAuthentication" classname="com.tutpro.baresip.CustomerExportTest" time="3.506"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -518,10 +518,10 @@ private fun loadCallHistory(aor: String): MutableList<CallRow> {
             }
             if (res.isNotEmpty() && res.last().peerUri == h.peerUri)
                 res.last().details.add(
-                    CallRow.Details(direction, h.startTime, h.stopTime, h.recording.toList())
+                    CallRow.Details(direction, h.startTime, h.stopTime, h.recording.toList(), h.agentId)
                 )
             else
-                res.add(CallRow(h.aor, h.peerUri, direction, h.startTime, h.stopTime, h.recording.toList()))
+                res.add(CallRow(h.aor, h.peerUri, direction, h.startTime, h.stopTime, h.recording.toList(), h.agentId))
         }
     }
     return res

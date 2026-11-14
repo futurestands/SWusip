@@ -55,6 +55,7 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
     var preview by remember { mutableStateOf<List<CustomerImportRow>?>(null) }
     var busy by remember { mutableStateOf(false) }
     var manage by remember { mutableStateOf(false) }
+    var confirmUndo by remember { mutableStateOf(false) }
     var exportBytes by remember { mutableStateOf<ByteArray?>(null) }
     var passwordAction by remember { mutableStateOf("") }
     var passphrase by remember { mutableStateOf("") }
@@ -145,7 +146,7 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
         Text(message, style = MaterialTheme.typography.bodySmall)
         if (InstitutionAccess.administrator(ctx)) {
             TextButton(onClick = { manage = !manage }) { Text(if(manage) "Close directory management" else "Manage directory") }
-            if(manage) {
+            if(manage) Column(Modifier.heightIn(max = 240.dp).verticalScroll(rememberScrollState())) {
             Row {
                 TextButton(enabled = !busy, onClick = { template.launch("swusip-customers.csv") }) { Text("Save template") }
                 TextButton(enabled = !busy, onClick = { picker.launch(arrayOf("text/csv", "text/comma-separated-values", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) }) { Text("Import CSV / XLSX") }
@@ -155,17 +156,7 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
                 TextButton(enabled = !busy,onClick = { passwordAction = "export" }) { Text("Encrypted export") }
                 TextButton(enabled = !busy,onClick = { restoreExport.launch(arrayOf("application/octet-stream")) }) { Text("Restore export") }
             }
-            TextButton(enabled = !busy, onClick = {
-                scope.launch {
-                    busy = true
-                    try {
-                        withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.undoLatestImport() } }
-                        records = withContext(Dispatchers.IO) { runCatching { CustomerDirectory(ctx).use { it.records() } }.getOrDefault(emptyList()) }
-                        message = "Latest import undone. Earlier customer data preserved."
-                    } catch (_: Exception) { message = "No batch could be safely undone." }
-                    finally { busy = false }
-                }
-            }) { Text("Undo latest import") }
+            TextButton(enabled = !busy, onClick = { confirmUndo = true }) { Text("Undo latest import") }
             }
         }
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -180,6 +171,22 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
             }
         }
     }
+    if(authorised && confirmUndo && administratorAccess()) AlertDialog(
+        onDismissRequest = { if(!busy) confirmUndo = false },
+        title = { Text("Undo latest import?") },
+        text = { Text("Reverse only the most recent import batch. Earlier records remain. If later edits or notes depend on this batch, reversal will be refused to protect them.") },
+        dismissButton = { TextButton(enabled = !busy,onClick = { confirmUndo = false }) { Text("Cancel") } },
+        confirmButton = { TextButton(enabled = !busy, onClick = {
+                scope.launch {
+                    busy = true
+                    try {
+                        withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.undoLatestImport() } }
+                        records = withContext(Dispatchers.IO) { runCatching { CustomerDirectory(ctx).use { it.records() } }.getOrDefault(emptyList()) }
+                        message = "Latest import undone. Earlier customer data preserved."
+                    } catch (_: Exception) { message = "No batch could be safely undone." }
+                    finally { busy = false; confirmUndo = false }
+                }
+            }) { Text("Confirm undo") } })
     if(authorised && passwordAction.isNotEmpty()) AlertDialog(
         onDismissRequest = { if(!busy) { passwordAction = ""; passphrase = "" } },
         title = { Text(if(passwordAction == "export") "Encrypt customer spreadsheet" else "Open encrypted spreadsheet") },

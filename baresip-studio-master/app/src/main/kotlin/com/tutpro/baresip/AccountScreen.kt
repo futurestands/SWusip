@@ -1441,7 +1441,7 @@ private fun checkOnClick(ctx: Context, viewModel: AccountViewModel, ua: UserAgen
             }
             else {
                 alertTitle.value = noticeTitle
-                alertMessage.value = String.format(ctx.getString(R.string.invalid_authentication_password), ap)
+                alertMessage.value = "Authentication password is invalid. Re-enter it in the password field."
                 showAlert.value = true
                 return false
             }
@@ -1605,7 +1605,7 @@ private fun checkOnClick(ctx: Context, viewModel: AccountViewModel, ua: UserAgen
         }
         else {
             alertTitle.value = noticeTitle
-            alertMessage.value = String.format(ctx.getString(R.string.invalid_stun_password), newStunPass)
+            alertMessage.value = "STUN password is invalid. Re-enter it in the password field."
             showAlert.value = true
             return false
         }

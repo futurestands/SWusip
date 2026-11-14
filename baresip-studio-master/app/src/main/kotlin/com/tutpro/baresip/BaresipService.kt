@@ -820,7 +820,7 @@ class BaresipService: Service() {
                                 peerUri = Utils.telToSip(peerUri, ua.account)
                         }
                         if (peerUri != "") {
-                            Log.d(TAG, "Direct Reply from $aor to $peerUri: $replyText")
+                            Log.d(TAG, "Direct reply requested; content withheld")
                             Message.updateAorMessage(aor, timeStamp)
                             val time = System.currentTimeMillis()
                             val msg = Message(
@@ -1315,7 +1315,7 @@ class BaresipService: Service() {
                                 else
                                     Log.e(TAG, "Callwaiting tone $name.wav not found")
                                 if (ua.account.callHistory) {
-                                    CallHistory(aor, peerUri, "in").add()
+                                    CallHistory(aor, peerUri, "in", OfflineAuthorisation.assignedIdentity(this)).add()
                                     ua.account.missedCalls = true
                                 }
                             }
@@ -1583,7 +1583,7 @@ class BaresipService: Service() {
                                 val completedElsewhere = missed && ev[2].startsWith("SIP") &&
                                         ev[2].contains(";cause=200")
                                 CoroutineScope(Dispatchers.IO).launch {
-                                    val history = CallHistory(aor, call.peerUri, call.dir)
+                                    val history = CallHistory(aor, call.peerUri, call.dir, OfflineAuthorisation.assignedIdentity(this@BaresipService))
                                     history.stopTime = GregorianCalendar()
                                     history.startTime = if (completedElsewhere)
                                         history.stopTime
@@ -2381,7 +2381,7 @@ class BaresipService: Service() {
                         Utils.friendlyUri(this, uri, ua.account, unique = true))
                 )
                 if (ua.account.callHistory) {
-                    CallHistory(ua.account.aor, uri, "in").add()
+                    CallHistory(ua.account.aor, uri, "in", OfflineAuthorisation.assignedIdentity(this)).add()
                     ua.account.missedCalls = true
                 }
                 return
@@ -2516,7 +2516,7 @@ class BaresipService: Service() {
             stopRinging()
             stopMediaPlayer()
             if (call.ua.account.callHistory) {
-                val history = CallHistory(call.ua.account.aor, call.peerUri, call.dir)
+                val history = CallHistory(call.ua.account.aor, call.peerUri, call.dir, OfflineAuthorisation.assignedIdentity(this))
                 history.stopTime = GregorianCalendar()
                 history.startTime = call.startTime
                 history.rejected = call.rejected

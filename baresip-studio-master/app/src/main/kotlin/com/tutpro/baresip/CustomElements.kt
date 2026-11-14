@@ -724,10 +724,7 @@ object CustomElements {
                                     if (!(emptyOk && password.value.isEmpty()) && !Account.checkAuthPass(password.value)) {
                                         Toast.makeText(
                                             ctx,
-                                            String.format(
-                                                ctx.getString(R.string.invalid_authentication_password),
-                                                password.value
-                                            ),
+                                            "Authentication password is invalid. Re-enter it in the password field.",
                                             Toast.LENGTH_SHORT
                                         ).show()
                                         password.value = ""

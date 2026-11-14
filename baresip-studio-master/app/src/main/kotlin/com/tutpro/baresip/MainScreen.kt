@@ -586,13 +586,17 @@ private fun BottomBar(ctx: Context, viewModel: ViewModel, navController: NavCont
     val missed = remember(aor, updates) { Account.ofAor(aor)?.missedCalls == true }
     Row(Modifier.fillMaxWidth().navigationBarsPadding().background(MaterialTheme.colorScheme.surfaceVariant),
         horizontalArrangement = Arrangement.SpaceEvenly) {
-        listOf("Dialler", "Contacts", if (missed) "History •" else "History", "Customers").forEachIndexed { index, label ->
+        listOf("Dialler", "Contacts", if (missed) "Call History •" else "Call History", "Customers").forEachIndexed { index, label ->
             TextButton(modifier = Modifier.weight(1f), onClick = {
                 if (checkLockedAndToast(ctx)) return@TextButton
                 when (index) {
                     0 -> viewModel.showDialpad()
                     1 -> navController.navigate("contacts")
-                    2 -> if (aor.isNotEmpty()) navController.navigate("calls/${Uri.encode(aor)}")
+                    2 -> if (aor.isNotEmpty()) navController.navigate("calls/${Uri.encode(aor)}") else {
+                        alertTitle.value = "SWUSIP Call History"
+                        alertMessage.value = "No call history is available until your extension is configured. Contact your administrator."
+                        showAlert.value = true
+                    }
                     3 -> navController.navigate("customers")
                 }
             }) { Text(label, fontSize = 11.sp, maxLines = 2, textAlign = TextAlign.Center) }

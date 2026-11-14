@@ -12,7 +12,8 @@ import java.io.ObjectStreamClass
 import java.util.GregorianCalendar
 
 @Serializable
-class CallHistory(val aor: String, val peerUri: String, val direction: String) : java.io.Serializable {
+class CallHistory(val aor: String, val peerUri: String, val direction: String,
+    val agentId: String? = null) : java.io.Serializable {
 
     // Set to time when call is established (if ever) or stopTime if call was completed elsewhere
     @Serializable(with = Utils.GregorianCalendarSerializer::class)

@@ -11,11 +11,12 @@ Open the [Android project](baresip-studio-master/) in Android Studio.
 - [Excel customer template](baresip-studio-master/docs/templates/swusip-customers.xlsx)
 - [Verification evidence](baresip-studio-master/docs/evidence/swusip-pilot/verification.json)
 - [Physical-device validation and corrected APK](baresip-studio-master/docs/SWUSIP_DEVICE_VALIDATION.md)
-- [Latest APK: 1.0.2-pilot dialler repair](baresip-studio-master/docs/SWUSIP_DIALLER_REPAIR.md)
+- [1.0.2-pilot dialler repair](baresip-studio-master/docs/SWUSIP_DIALLER_REPAIR.md)
+- [1.0.3-pilot continuation, agent/admin guides and release gates](baresip-studio-master/docs/SWUSIP_ANDROID_CONTINUATION.md)
 
-The genuine Baresip native SIP engine is retained. SWUSIP 1.0.2-pilot is installed
-on the authorised Android 15 handset and eight Android instrumentation tests pass,
-including keypad editing and unprovisioned Call feedback. Directory workflow
+The genuine Baresip native SIP engine is retained. SWUSIP 1.0.3-pilot is installed
+on the authorised Android 15 handset and ten Android instrumentation tests pass,
+including keypad editing and locked-workspace denial. Directory workflow
 review requires workspace authentication. Live PBX/audio
 verification remains outstanding. No production PBX or server settings have changed.
 

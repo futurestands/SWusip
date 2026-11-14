@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<restrictions xmlns:android="http://schemas.android.com/apk/res/android"><restriction android:key="swusip_role" android:title="SWUSIP institutional role" android:restrictionType="string" android:defaultValue="unassigned" /></restrictions>
+<restrictions xmlns:android="http://schemas.android.com/apk/res/android">
+    <restriction android:key="swusip_role" android:title="SWUSIP institutional role" android:restrictionType="string" android:defaultValue="unassigned" />
+    <restriction android:key="swusip_agent_id" android:title="SWUSIP assigned agent identifier" android:restrictionType="string" android:defaultValue="" />
+</restrictions>

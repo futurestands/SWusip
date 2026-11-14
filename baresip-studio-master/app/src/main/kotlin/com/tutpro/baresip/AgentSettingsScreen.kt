@@ -108,6 +108,7 @@ fun AgentSettingsScreen(nav: NavController) {
         Text("SWUSIP · Agent Settings", style = MaterialTheme.typography.headlineSmall)
         WorkspaceUnlock()
         DeviceEnrolment()
+        AgentWorkspaceStatus()
         Text("South Western Umbrella of Water and Sanitation")
         Text("Assigned extension: " + (BaresipService.uas.value.firstOrNull()?.account?.aor
             ?.substringAfter("sip:")?.substringBefore("@") ?: "Not provisioned"))
@@ -117,6 +118,8 @@ fun AgentSettingsScreen(nav: NavController) {
             .putExtra(Settings.EXTRA_APP_PACKAGE, ctx.packageName)) }) { Text("Notification preferences") }
         Text("Background calls: allow SWUSIP notifications and microphone access. In Android battery settings, allow background activity for reliable incoming calls. A default phone or SMS role is not required.")
         Button(onClick = { ctx.startActivity(Intent(Settings.ACTION_SECURITY_SETTINGS)) }) { Text("Secure device lock") }
+        Button(onClick = { ctx.startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+            android.net.Uri.parse("package:${ctx.packageName}"))) }) { Text("Android app and battery settings") }
         Text("Help: enter the destination number and tap Call. During a call use Mute, Speaker, Hold, Transfer, Keypad or Hang up. Keep SWUSIP running for incoming calls.")
         Button(onClick = { nav.navigate("about") }) { Text("About SWUSIP") }
         if (administratorAccess()) {
