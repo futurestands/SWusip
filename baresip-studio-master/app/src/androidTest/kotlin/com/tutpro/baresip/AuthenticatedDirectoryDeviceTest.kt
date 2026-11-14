@@ -73,6 +73,16 @@ class AuthenticatedDirectoryDeviceTest {
                 assertTrue(directory.lookup("+12025550103").isEmpty())
                 directory.addCallNote(person.id,"Synthetic interaction note only")
                 assertTrue(directory.callNotes(person.id).single().contains("Synthetic interaction note only"))
+                directory.saveInteraction(person.id,InteractionDraft("Synthetic callback outcome",InteractionOutcome.CALLBACK_REQUIRED,true))
+                val interaction = directory.interactions(person.id).first { it.followUp == FollowUpState.PENDING }
+                assertEquals(1,directory.pendingFollowUps()[person.id])
+                directory.completeFollowUp(person.id,interaction.id)
+                val completed = directory.interactions(person.id).first { it.id == interaction.id }
+                assertEquals(FollowUpState.COMPLETE,completed.followUp)
+                assertEquals(interaction.author,completed.author)
+                assertEquals(interaction.createdAt,completed.createdAt)
+                assertTrue(completed.completedBy.isNotBlank())
+                assertFalse(directory.pendingFollowUps().containsKey(person.id))
                 try { directory.undoLatestImport(); fail("Undo discarded later association or note") }
                 catch (_: Exception) { }
                 assertTrue(directory.records().isNotEmpty())

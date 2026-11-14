@@ -276,23 +276,65 @@ class CustomerDirectory(context: Context,
     }
 
     fun addCallNote(customerId: String, text: String) {
-        requireAgent(); require(text.isNotBlank() && text.length <= 2000)
+        saveInteraction(customerId,InteractionDraft(text))
+    }
+
+    fun saveInteraction(customerId: String, draft: InteractionDraft) {
+        requireAgent()
         val id = UUID.randomUUID().toString()
+        val payload = encrypt("note",id,JSONObject().put("text",draft.text.trim())
+            .put("author",OfflineAuthorisation.identity(context)).put("createdAt",System.currentTimeMillis())
+            .put("outcome",draft.outcome.name).put("followUp",if(draft.followUpRequired) "PENDING" else "NOT_REQUIRED"))
+        requireAgent()
         writableDatabase.insertOrThrow("note",null,ContentValues().apply {
             put("id",id); put("customer_id",customerId)
-            put("payload",encrypt("note",id,JSONObject().put("text",text.trim())
-                .put("author",OfflineAuthorisation.identity(context)).put("createdAt",System.currentTimeMillis())))
+            put("payload",payload)
         })
     }
 
-    fun callNotes(customerId: String): List<String> {
-        requireAgent(); val notes = mutableListOf<String>()
+    fun interactions(customerId: String): List<CustomerInteraction> {
+        requireAgent(); val notes = mutableListOf<CustomerInteraction>()
         readableDatabase.rawQuery("SELECT id,payload FROM note WHERE customer_id=? ORDER BY rowid DESC",arrayOf(customerId)).use { c ->
             while(c.moveToNext()) {
                 val note = decrypt("note",c.getString(0),c.getString(1))
-                notes += "${note.getString("text")}\n${note.getString("author")} · ${java.util.Date(note.getLong("createdAt"))}"
+                notes += CustomerInteraction(c.getString(0),customerId,note.getString("text"),note.getString("author"),
+                    note.getLong("createdAt"),InteractionOutcome.stored(note.optString("outcome")),
+                    FollowUpState.stored(note.optString("followUp")),note.optString("completedBy"),note.optLong("completedAt"))
             }
         }
         requireAgent(); return notes
+    }
+
+    fun callNotes(customerId: String): List<String> = interactions(customerId).map {
+        "${it.text}\n${it.author} · ${java.util.Date(it.createdAt)}"
+    }
+
+    fun pendingFollowUps(): Map<String,Int> {
+        requireAgent(); val counts = mutableMapOf<String,Int>()
+        readableDatabase.rawQuery("SELECT id,customer_id,payload FROM note",null).use { c ->
+            while(c.moveToNext()) {
+                val note = decrypt("note",c.getString(0),c.getString(2))
+                if(FollowUpState.stored(note.optString("followUp")) == FollowUpState.PENDING)
+                    counts[c.getString(1)] = counts.getOrDefault(c.getString(1),0) + 1
+            }
+        }
+        requireAgent(); return counts
+    }
+
+    fun completeFollowUp(customerId: String, noteId: String) {
+        requireAgent(); val db = writableDatabase
+        db.beginTransaction()
+        try {
+            val note = db.rawQuery("SELECT payload FROM note WHERE id=? AND customer_id=?",arrayOf(noteId,customerId)).use { c ->
+                check(c.moveToFirst()) { "Interaction missing" }; decrypt("note",noteId,c.getString(0))
+            }
+            check(FollowUpState.stored(note.optString("followUp")) == FollowUpState.PENDING) { "Follow-up is not pending" }
+            note.put("followUp",FollowUpState.COMPLETE.name).put("completedBy",OfflineAuthorisation.identity(context))
+                .put("completedAt",System.currentTimeMillis())
+            val payload = encrypt("note",noteId,note)
+            requireAgent()
+            check(db.update("note",ContentValues().apply { put("payload",payload) },"id=? AND customer_id=?",arrayOf(noteId,customerId)) == 1)
+            db.setTransactionSuccessful()
+        } finally { db.endTransaction() }
     }
 }

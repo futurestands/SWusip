@@ -16,7 +16,9 @@ class DirectoryAccessDeviceTest {
                 { directory.records() }, { directory.preview(emptyList()) }, { directory.import(emptyList()) },
                 { directory.undoLatestImport() }, { directory.updateCustomer("missing","Synthetic","") },
                 { directory.associateAccount("missing","0001","SYN-01") },
-                { directory.addCallNote("missing","Synthetic note") }, { directory.callNotes("missing") })
+                { directory.addCallNote("missing","Synthetic note") }, { directory.callNotes("missing") },
+                { directory.saveInteraction("missing",InteractionDraft("Synthetic note")) },
+                { directory.interactions("missing") }, { directory.pendingFollowUps() }, { directory.completeFollowUp("missing","missing") })
             actions.forEach { action ->
                 try { action(); fail("Locked workspace permitted protected operation") }
                 catch (_: IllegalStateException) { }

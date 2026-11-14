@@ -4,9 +4,17 @@ object CustomerMatching {
     fun search(records: List<CustomerRecord>, query: String, scheme: String = ""): List<CustomerRecord> {
         val text = query.trim()
         val phone = CustomerNumbers.normalise(text)
+        val digits = text.takeIf { it.matches(Regex("[+0-9 ()\\-.]+")) }
+            ?.filter { it.isDigit() || it == '+' }.orEmpty()
+        val phoneFragment = when {
+            digits.matches(Regex("0[37][0-9]{1,8}")) -> "+256" + digits.drop(1)
+            digits.startsWith("00") -> "+" + digits.drop(2)
+            else -> digits
+        }
         return records.filter { record ->
             (listOf(record.name,record.phone,record.account,record.schemeCode,record.schemeName)
-                .any { it.contains(text,true) } || (phone != null && record.phone == phone)) &&
+                .any { it.contains(text,true) } || (phone != null && record.phone == phone) ||
+                (phoneFragment.length >= 3 && record.phone.contains(phoneFragment))) &&
                 (record.schemeCode.contains(scheme.trim(),true) || record.schemeName.contains(scheme.trim(),true))
         }
     }
@@ -14,6 +22,21 @@ object CustomerMatching {
         val normal = CustomerNumbers.normalise(number) ?: return emptyList()
         return records.filter { it.phone == normal }.distinctBy { Triple(it.id,it.account,it.schemeCode) }
     }
+    fun identify(records: List<CustomerRecord>, number: String): CallerIdentity {
+        val matches = lookup(records,number)
+        return when(matches.size) {
+            0 -> CallerIdentity.Unknown
+            1 -> CallerIdentity.Single(matches.single())
+            else -> CallerIdentity.Multiple(matches)
+        }
+    }
+}
+
+/** Multiple matches deliberately have no selected customer or default account. */
+sealed interface CallerIdentity {
+    data object Unknown : CallerIdentity
+    data class Single(val record: CustomerRecord) : CallerIdentity
+    data class Multiple(val matches: List<CustomerRecord>) : CallerIdentity
 }
 
 object CustomerImportPlanner {
