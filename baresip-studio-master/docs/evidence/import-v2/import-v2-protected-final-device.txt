@@ -1,0 +1,168 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.DirectoryStorageV2DeviceTest:
+INSTRUMENTATION_STATUS: test=legacySchemaPayloadsAndOversizedJournalRemainReadable
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+OWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=legacySchemaPayloadsAndOversizedJournalRemainReadable
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=boundedPagedImportReadSearchAndUndoProfile
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+SYNTHETIC_PAGED_PROFILE {"rows":10000,"importMs":46972.362698,"readMs":10814.337261,"callerLookupMs":57.781384,"accountSearchMs":573.432076,"undoMs":34876.120899}
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=boundedPagedImportReadSearchAndUndoProfile
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.AuthenticatedDirectoryDeviceTest:
+INSTRUMENTATION_STATUS: test=realAuthorisationEncryptedImportSearchNotesAndUndo
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: expected null, but was:<Unexpected data beyond the declared columns>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at org.junit.Assert.assertNull(Assert.java:748)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:251)
+
+INSTRUMENTATION_STATUS: stream=
+Error in realAuthorisationEncryptedImportSearchNotesAndUndo(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest):
+java.lang.AssertionError: expected null, but was:<Unexpected data beyond the declared columns>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at org.junit.Assert.assertNull(Assert.java:748)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:251)
+
+INSTRUMENTATION_STATUS: test=realAuthorisationEncryptedImportSearchNotesAndUndo
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=authenticatedCustomerAndSchemeNavigation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=7
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=authenticatedCustomerAndSchemeNavigation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 169.299
+There was 1 failure:
+1) realAuthorisationEncryptedImportSearchNotesAndUndo(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest)
+java.lang.AssertionError: expected null, but was:<Unexpected data beyond the declared columns>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at org.junit.Assert.assertNull(Assert.java:748)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:251)
+
+FAILURES!!!
+Tests run: 7,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,354 @@
+{
+  "application": "SWUSIP",
+  "version": "1.0.6-pilot",
+  "versionCode": 592,
+  "apkSha256": "77fd8abf77f75bf74eb02327d91507cf829f37061a7a57106f80d4e106573ac1",
+  "packagedIntegrity": {
+    "lib/arm64-v8a/libbaresip.so": "108931f7a0780b4009c9548ecd5824a6ef26e266466870aa9456c50c3bc19fed",
+    "assets/third-party-notices.txt": "d64218b789a63ed2634483f7ed30472cab4c9c0ea51f4849b15b225c3bc6829b"
+  },
+  "unitSuites": [
+    {
+      "name": "com.tutpro.baresip.CallerIdentityTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CallHistoryIdentityTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerBatchTest",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerExportTest",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerImportTest",
+      "tests": "10",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerInteractionTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerMatchingTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.CustomerXlsxTest",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.FourColumnImportTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.OutboundDiallingFormatterTest",
+      "tests": "4",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "com.tutpro.baresip.PhoneNormalisationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "deviceRuns": {
+    "import-v2-core-device.txt": [
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "forgedPhoneAuthorisationCannotGrantAdministrator",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "freshDatabaseReopensAndUnknownMigrationPreservesRecords",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "excelFormulaAccountsAreRejected",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "excelNumericAccountsAreRejectedRatherThanInventingLostZeroes",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "excelTextAccountsKeepLeadingZeroes",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "documentDeclarationsRemainRejectedOnAndroid",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryDeviceTest",
+        "test": "suppliedExcelTemplateHasCorrectColumnsAndNoCustomers",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryAccessDeviceTest",
+        "test": "tenThousandCsvRecordsParseOnAndroid",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryAccessDeviceTest",
+        "test": "lockedWorkspaceDeniesRepositoryOperations",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DiallerDeviceTest",
+        "test": "keypadEditingAndUnprovisionedCallFeedback",
+        "status": "passed"
+      }
+    ],
+    "import-v2-storage-device.txt": [
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "legacySchemaPayloadsAndOversizedJournalRemainReadable",
+        "status": "failed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "boundedPagedImportReadSearchAndUndoProfile",
+        "status": "passed"
+      }
+    ],
+    "import-v2-protected-final-device.txt": [
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "legacySchemaPayloadsAndOversizedJournalRemainReadable",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+        "test": "boundedPagedImportReadSearchAndUndoProfile",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.AuthenticatedDirectoryDeviceTest",
+        "test": "realAuthorisationEncryptedImportSearchNotesAndUndo",
+        "status": "failed"
+      },
+      {
+        "class": "com.tutpro.baresip.AuthenticatedDirectoryDeviceTest",
+        "test": "authenticatedCustomerAndSchemeNavigation",
+        "status": "passed"
+      }
+    ],
+    "import-v2-small-corrected-device.txt": [
+      {
+        "class": "com.tutpro.baresip.AuthenticatedDirectoryDeviceTest",
+        "test": "realAuthorisationEncryptedImportSearchNotesAndUndo",
+        "status": "passed"
+      }
+    ],
+    "import-v2-final-access-device.txt": [
+      {
+        "class": "com.tutpro.baresip.DirectoryAccessDeviceTest",
+        "test": "tenThousandCsvRecordsParseOnAndroid",
+        "status": "passed"
+      },
+      {
+        "class": "com.tutpro.baresip.DirectoryAccessDeviceTest",
+        "test": "lockedWorkspaceDeniesRepositoryOperations",
+        "status": "passed"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "rows": 1000,
+      "importMs": 5004.349612,
+      "readMs": 1168.563423,
+      "callerLookupMs": 6.157385,
+      "accountSearchMs": 137.89773,
+      "undoMs": 3272.34692
+    },
+    {
+      "rows": 10000,
+      "importMs": 46972.362698,
+      "readMs": 10814.337261,
+      "callerLookupMs": 57.781384,
+      "accountSearchMs": 573.432076,
+      "undoMs": 34876.120899
+    }
+  ],
+  "template": {
+    "headers": [
+      "customer_name",
+      "phone_number",
+      "account_number",
+      "scheme_name"
+    ],
+    "dataRows": 0,
+    "textFormattedPhoneAndAccountCells": 20000,
+    "sha256": "df7114f2d4a00a9e32cf02ddb3ab4c1b428bd2a56eedb8ec22ee9a85d8077224"
+  },
+  "limits": [
+    "Only synthetic isolated databases were used.",
+    "Earlier fixture failures are retained and identified in the narrative report.",
+    "No genuine PBX call or outgoing-profile compatibility was tested."
+  ],
+  "latestDistinctDeviceCases": [
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "forgedPhoneAuthorisationCannotGrantAdministrator",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "freshDatabaseReopensAndUnknownMigrationPreservesRecords",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "excelFormulaAccountsAreRejected",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "excelNumericAccountsAreRejectedRatherThanInventingLostZeroes",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "excelTextAccountsKeepLeadingZeroes",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "documentDeclarationsRemainRejectedOnAndroid",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryDeviceTest",
+      "test": "suppliedExcelTemplateHasCorrectColumnsAndNoCustomers",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryAccessDeviceTest",
+      "test": "tenThousandCsvRecordsParseOnAndroid",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryAccessDeviceTest",
+      "test": "lockedWorkspaceDeniesRepositoryOperations",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DiallerDeviceTest",
+      "test": "keypadEditingAndUnprovisionedCallFeedback",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+      "test": "legacySchemaPayloadsAndOversizedJournalRemainReadable",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+      "test": "fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+      "test": "pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+      "test": "journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.DirectoryStorageV2DeviceTest",
+      "test": "boundedPagedImportReadSearchAndUndoProfile",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.AuthenticatedDirectoryDeviceTest",
+      "test": "realAuthorisationEncryptedImportSearchNotesAndUndo",
+      "status": "passed"
+    },
+    {
+      "class": "com.tutpro.baresip.AuthenticatedDirectoryDeviceTest",
+      "test": "authenticatedCustomerAndSchemeNavigation",
+      "status": "passed"
+    }
+  ],
+  "latestDistinctDeviceTotals": {
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0
+  },
+  "implementationCommit": "ac47df6da0537baafe3b6da5d1aafd83f9d059c3",
+  "manualFourColumnPicker": "Pending: owner reported an unspecified import failure; filename, error and stage requested."
+}

@@ -1,0 +1,128 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.DirectoryStorageV2DeviceTest:
+INSTRUMENTATION_STATUS: test=legacySchemaPayloadsAndOversizedJournalRemainReadable
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+OWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stack=org.json.JSONException: No value for schemeId
+	at org.json.JSONObject.get(JSONObject.java:398)
+	at org.json.JSONObject.getString(JSONObject.java:559)
+	at com.tutpro.baresip.CustomerDirectory.import(CustomerDirectory.kt:170)
+	at com.tutpro.baresip.DirectoryStorageV2DeviceTest.legacySchemaPayloadsAndOversizedJournalRemainReadable(DirectoryStorageV2DeviceTest.kt:164)
+
+INSTRUMENTATION_STATUS: stream=
+Error in legacySchemaPayloadsAndOversizedJournalRemainReadable(com.tutpro.baresip.DirectoryStorageV2DeviceTest):
+org.json.JSONException: No value for schemeId
+	at org.json.JSONObject.get(JSONObject.java:398)
+	at org.json.JSONObject.getString(JSONObject.java:559)
+	at com.tutpro.baresip.CustomerDirectory.import(CustomerDirectory.kt:170)
+	at com.tutpro.baresip.DirectoryStorageV2DeviceTest.legacySchemaPayloadsAndOversizedJournalRemainReadable(DirectoryStorageV2DeviceTest.kt:164)
+
+INSTRUMENTATION_STATUS: test=legacySchemaPayloadsAndOversizedJournalRemainReadable
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=fourColumnsKeepOriginalsResolveSchemesReviewInvalidAndUndo
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=pagedCipherAndReferenceTamperingNeverReturnAnotherCustomer
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=journalTamperingIsAtomicAndOptionalCategoryFillCanBeReversed
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=boundedPagedImportReadSearchAndUndoProfile
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+SYNTHETIC_PAGED_PROFILE {"rows":1000,"importMs":5004.349612,"readMs":1168.563423,"callerLookupMs":6.157385,"accountSearchMs":137.89773,"undoMs":3272.34692}
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryStorageV2DeviceTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=5
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=boundedPagedImportReadSearchAndUndoProfile
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 54.908
+There was 1 failure:
+1) legacySchemaPayloadsAndOversizedJournalRemainReadable(com.tutpro.baresip.DirectoryStorageV2DeviceTest)
+org.json.JSONException: No value for schemeId
+	at org.json.JSONObject.get(JSONObject.java:398)
+	at org.json.JSONObject.getString(JSONObject.java:559)
+	at com.tutpro.baresip.CustomerDirectory.import(CustomerDirectory.kt:170)
+	at com.tutpro.baresip.DirectoryStorageV2DeviceTest.legacySchemaPayloadsAndOversizedJournalRemainReadable(DirectoryStorageV2DeviceTest.kt:164)
+
+FAILURES!!!
+Tests run: 5,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

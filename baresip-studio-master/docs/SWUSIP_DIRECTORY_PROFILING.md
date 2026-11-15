@@ -64,4 +64,7 @@ Test additive migration, tampering, lock/expiry denial and guarded undo on isola
 synthetic databases before installing an updated production APK.
 
 Evidence: `evidence/directory-profiling/device-profile.json`, the raw bounded-test
-statuses, and `structure.json`. Full bulk acceptance remains outstanding.
+statuses, and `structure.json`. Full bulk acceptance was outstanding at this
+historical milestone. The subsequent [1.0.6 delivery](SWUSIP_IMPORT_V2_DELIVERY.md)
+records the new paged implementation and successful 10,000-row device cycle.
+The legacy-only host model now refuses to apply its old operation counts to v2.

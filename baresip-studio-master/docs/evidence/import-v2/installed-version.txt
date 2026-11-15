@@ -1,0 +1,2 @@
+versionCode=592 minSdk=28 targetSdk=36
+    versionName=1.0.6-pilot

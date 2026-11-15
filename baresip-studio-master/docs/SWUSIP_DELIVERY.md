@@ -1,6 +1,12 @@
 # SWUSIP pilot deliveries
 
-**Current:** [1.0.5-pilot / 591 customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
+**Current:** [1.0.6-pilot / 592 four-column import and telephone identity](SWUSIP_IMPORT_V2_DELIVERY.md).
+APK `artifacts/SWUSIP-1.0.6-pilot-debug.apk`, SHA-256
+`77fd8abf77f75bf74eb02327d91507cf829f37061a7a57106f80d4e106573ac1`.
+Installed in place; 10,000-row encrypted import/read/search/undo passed on the
+authorised phone. Genuine PBX call verification remains outstanding.
+
+**Historical:** [1.0.5-pilot / 591 customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
 APK `artifacts/SWUSIP-1.0.5-pilot-debug.apk`, SHA-256
 `bc19bea5fd5897dc28a95497084fde6938ae6f482110fc52f8edcb3ee97dc4be`.
 Installed with existing data retained; authenticated directory and UI acceptance
