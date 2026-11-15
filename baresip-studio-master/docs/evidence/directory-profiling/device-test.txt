@@ -1,0 +1,1133 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryPerformanceDeviceTest
+
+INSTRUMENTATION_STATUS: current=1
+
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+
+INSTRUMENTATION_STATUS: numtests=1
+
+INSTRUMENTATION_STATUS: stream=
+
+com.tutpro.baresip.DirectoryPerformanceDeviceTest:
+
+INSTRUMENTATION_STATUS: test=boundedSyntheticCostProfile
+
+INSTRUMENTATION_STATUS_CODE: 1
+
+INSTRUMENTATION_STATUS: stream=
+
+OWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: sqlite_cursor_single_row_size_probe (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: sqlite_cursor_single_row_size_probe, 91 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: assigned_identity_lookup (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: assigned_identity_lookup, 85 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: ephemeral_key_generation (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: ephemeral_key_generation, 51 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_0 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_0, 1 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_0 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_0, 16 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_0 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_0, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_0 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_0, 8 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_0 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_0, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_1 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_1, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_1 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_1, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_1 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_1, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_1 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_1, 7 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_1 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_1, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_2 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_2, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_2 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_2, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_2 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_2, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_2 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_2, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_2 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_2, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_3 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_3, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_3 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_3, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_3 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_3, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_3 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_3, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_3 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_3, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_4 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_4, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_4 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_4, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_4 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_4, 3 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_4 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_4, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_4 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_4, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_5 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_5, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_5 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_5, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_5 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_5, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_5 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_5, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_5 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_5, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_6 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_6, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_6 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_6, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_6 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_6, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_6 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_6, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_6 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_6, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: cipher_factory_7 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: cipher_factory_7, 0 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_init_7 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_init_7, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_encrypt_doFinal_7 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_encrypt_doFinal_7, 3 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_init_7 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_init_7, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: small_decrypt_doFinal_7 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: small_decrypt_doFinal_7, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_encrypt_init_16384 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_encrypt_init_16384, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_encrypt_doFinal_16384 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_encrypt_doFinal_16384, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_decrypt_init_16384 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_decrypt_init_16384, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_decrypt_doFinal_16384 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_decrypt_doFinal_16384, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_encrypt_init_65536 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_encrypt_init_65536, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_encrypt_doFinal_65536 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_encrypt_doFinal_65536, 15 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_decrypt_init_65536 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_decrypt_init_65536, 6 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_decrypt_doFinal_65536 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_decrypt_doFinal_65536, 14 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_encrypt_init_262144 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_encrypt_init_262144, 5 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_encrypt_doFinal_262144 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_encrypt_doFinal_262144, 55 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_decrypt_init_262144 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_decrypt_init_262144, 7 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: journal_decrypt_doFinal_262144 (1 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: journal_decrypt_doFinal_262144, 57 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: csv_parse_5 (5 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: csv_parse_5, 3 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: repository_import_5 (5 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: repository_import_5, 246 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: repository_read_5 (5 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: repository_read_5, 134 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: loaded_account_search_5 (5 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: loaded_account_search_5, 4 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: sqlite_join_only_5 (5 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: sqlite_join_only_5, 1 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: repository_undo_5 (5 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: repository_undo_5, 35 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: csv_parse_20 (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: csv_parse_20, 8 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: repository_import_20 (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: repository_import_20, 921 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: repository_read_20 (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: repository_read_20, 553 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: loaded_account_search_20 (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: loaded_account_search_20, 10 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: sqlite_join_only_20 (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: sqlite_join_only_20, 1 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE start: repository_undo_20 (20 operations)
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: stream=
+
+PROFILE finish: repository_undo_20, 52 ms, completed
+
+
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.DirectoryPerformanceDeviceTest
+
+INSTRUMENTATION_STATUS: current=1
+
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+
+INSTRUMENTATION_STATUS: numtests=1
+
+INSTRUMENTATION_STATUS: stream=.
+
+INSTRUMENTATION_STATUS: test=boundedSyntheticCostProfile
+
+INSTRUMENTATION_STATUS_CODE: 0
+
+INSTRUMENTATION_RESULT: stream=
+
+
+
+Time: 15.152
+
+
+
+OK (1 test)
+
+
+
+
+
+INSTRUMENTATION_CODE: -1

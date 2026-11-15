@@ -140,7 +140,7 @@ class AuthenticatedDirectoryDeviceTest {
         return CustomerImport.parse(bytes.toByteArray().inputStream(),true)
     }
 
-    private fun authenticateAdministrator() {
+    internal fun authenticateAdministrator() {
         assumeTrue("Opt-in requires the phone owner", InstrumentationRegistry.getArguments().getString("swusipAuthenticated") == "true")
         context.startActivity(Intent(context,MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         SystemClock.sleep(1000)

@@ -1,0 +1,557 @@
+{
+  "kind": "bounded_synthetic_profile",
+  "startedUtcEpochMs": 1794709879685,
+  "rowsLimit": 20,
+  "fullBulkRun": false,
+  "stages": [
+    {
+      "stage": "sqlite_cursor_single_row_size_probe",
+      "operations": 1,
+      "wallMs": 91.83523,
+      "threadCpuMs": 87.119389,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "assigned_identity_lookup",
+      "operations": 20,
+      "wallMs": 85.541846,
+      "threadCpuMs": 6.100573,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "ephemeral_key_generation",
+      "operations": 1,
+      "wallMs": 51.721423,
+      "threadCpuMs": 8.887386,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_0",
+      "operations": 1,
+      "wallMs": 1.594462,
+      "threadCpuMs": 1.673076,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_0",
+      "operations": 1,
+      "wallMs": 16.693308,
+      "threadCpuMs": 4.232732,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_0",
+      "operations": 1,
+      "wallMs": 6.136961,
+      "threadCpuMs": 2.122617,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_0",
+      "operations": 1,
+      "wallMs": 8.485846,
+      "threadCpuMs": 1.977422,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_0",
+      "operations": 1,
+      "wallMs": 6.168308,
+      "threadCpuMs": 2.494465,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_1",
+      "operations": 1,
+      "wallMs": 0.325231,
+      "threadCpuMs": 0.376846,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_1",
+      "operations": 1,
+      "wallMs": 6.287346,
+      "threadCpuMs": 1.611886,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_1",
+      "operations": 1,
+      "wallMs": 5.609846,
+      "threadCpuMs": 1.562039,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_1",
+      "operations": 1,
+      "wallMs": 7.495077,
+      "threadCpuMs": 1.601461,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_1",
+      "operations": 1,
+      "wallMs": 4.966846,
+      "threadCpuMs": 1.452386,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_2",
+      "operations": 1,
+      "wallMs": 0.335077,
+      "threadCpuMs": 0.386884,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_2",
+      "operations": 1,
+      "wallMs": 6.742307,
+      "threadCpuMs": 1.667384,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_2",
+      "operations": 1,
+      "wallMs": 4.749423,
+      "threadCpuMs": 1.557539,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_2",
+      "operations": 1,
+      "wallMs": 5.774423,
+      "threadCpuMs": 1.59046,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_2",
+      "operations": 1,
+      "wallMs": 4.326039,
+      "threadCpuMs": 1.299,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_3",
+      "operations": 1,
+      "wallMs": 0.290846,
+      "threadCpuMs": 0.357693,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_3",
+      "operations": 1,
+      "wallMs": 5.864692,
+      "threadCpuMs": 1.458501,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_3",
+      "operations": 1,
+      "wallMs": 4.26227,
+      "threadCpuMs": 1.279615,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_3",
+      "operations": 1,
+      "wallMs": 5.665,
+      "threadCpuMs": 1.458809,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_3",
+      "operations": 1,
+      "wallMs": 4.579154,
+      "threadCpuMs": 1.416653,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_4",
+      "operations": 1,
+      "wallMs": 0.317884,
+      "threadCpuMs": 0.369077,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_4",
+      "operations": 1,
+      "wallMs": 6.411385,
+      "threadCpuMs": 1.525768,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_4",
+      "operations": 1,
+      "wallMs": 3.736385,
+      "threadCpuMs": 1.228267,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_4",
+      "operations": 1,
+      "wallMs": 6.041308,
+      "threadCpuMs": 1.557999,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_4",
+      "operations": 1,
+      "wallMs": 4.806346,
+      "threadCpuMs": 1.347307,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_5",
+      "operations": 1,
+      "wallMs": 0.411346,
+      "threadCpuMs": 0.459962,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_5",
+      "operations": 1,
+      "wallMs": 6.239423,
+      "threadCpuMs": 1.573154,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_5",
+      "operations": 1,
+      "wallMs": 4.609,
+      "threadCpuMs": 1.490423,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_5",
+      "operations": 1,
+      "wallMs": 5.585769,
+      "threadCpuMs": 1.538269,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_5",
+      "operations": 1,
+      "wallMs": 4.230077,
+      "threadCpuMs": 1.179229,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_6",
+      "operations": 1,
+      "wallMs": 0.300961,
+      "threadCpuMs": 0.354231,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_6",
+      "operations": 1,
+      "wallMs": 6.123308,
+      "threadCpuMs": 1.411961,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_6",
+      "operations": 1,
+      "wallMs": 4.522577,
+      "threadCpuMs": 1.440386,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_6",
+      "operations": 1,
+      "wallMs": 5.813423,
+      "threadCpuMs": 1.491808,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_6",
+      "operations": 1,
+      "wallMs": 4.280308,
+      "threadCpuMs": 1.348885,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "cipher_factory_7",
+      "operations": 1,
+      "wallMs": 0.372115,
+      "threadCpuMs": 0.421769,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_init_7",
+      "operations": 1,
+      "wallMs": 6.390884,
+      "threadCpuMs": 1.509461,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_encrypt_doFinal_7",
+      "operations": 1,
+      "wallMs": 3.704769,
+      "threadCpuMs": 1.321537,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_init_7",
+      "operations": 1,
+      "wallMs": 6.20673,
+      "threadCpuMs": 1.511577,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "small_decrypt_doFinal_7",
+      "operations": 1,
+      "wallMs": 4.171692,
+      "threadCpuMs": 1.331768,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_encrypt_init_16384",
+      "operations": 1,
+      "wallMs": 6.481731,
+      "threadCpuMs": 1.044962,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_encrypt_doFinal_16384",
+      "operations": 1,
+      "wallMs": 6.670731,
+      "threadCpuMs": 1.135386,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_decrypt_init_16384",
+      "operations": 1,
+      "wallMs": 5.169269,
+      "threadCpuMs": 0.892538,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_decrypt_doFinal_16384",
+      "operations": 1,
+      "wallMs": 5.7525,
+      "threadCpuMs": 0.999461,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_encrypt_init_65536",
+      "operations": 1,
+      "wallMs": 6.2865,
+      "threadCpuMs": 1.036691,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_encrypt_doFinal_65536",
+      "operations": 1,
+      "wallMs": 15.201616,
+      "threadCpuMs": 1.819154,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_decrypt_init_65536",
+      "operations": 1,
+      "wallMs": 6.858539,
+      "threadCpuMs": 0.979424,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_decrypt_doFinal_65536",
+      "operations": 1,
+      "wallMs": 14.693654,
+      "threadCpuMs": 2.545651,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_encrypt_init_262144",
+      "operations": 1,
+      "wallMs": 5.887077,
+      "threadCpuMs": 0.944153,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_encrypt_doFinal_262144",
+      "operations": 1,
+      "wallMs": 55.927769,
+      "threadCpuMs": 6.163195,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_decrypt_init_262144",
+      "operations": 1,
+      "wallMs": 7.427346,
+      "threadCpuMs": 1.644654,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "journal_decrypt_doFinal_262144",
+      "operations": 1,
+      "wallMs": 57.800577,
+      "threadCpuMs": 12.971612,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "csv_parse_5",
+      "operations": 5,
+      "wallMs": 3.116461,
+      "threadCpuMs": 3.118345,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "repository_import_5",
+      "operations": 5,
+      "wallMs": 246.450193,
+      "threadCpuMs": 57.128718,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "repository_read_5",
+      "operations": 5,
+      "wallMs": 134.254231,
+      "threadCpuMs": 28.575577,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "loaded_account_search_5",
+      "operations": 5,
+      "wallMs": 4.019461,
+      "threadCpuMs": 3.665615,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "sqlite_join_only_5",
+      "operations": 5,
+      "wallMs": 1.375308,
+      "threadCpuMs": 1.435808,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "repository_undo_5",
+      "operations": 5,
+      "wallMs": 35.981423,
+      "threadCpuMs": 19.751574,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "csv_parse_20",
+      "operations": 20,
+      "wallMs": 8.112615,
+      "threadCpuMs": 8.112848,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "repository_import_20",
+      "operations": 20,
+      "wallMs": 921.070038,
+      "threadCpuMs": 279.695604,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "repository_read_20",
+      "operations": 20,
+      "wallMs": 553.020115,
+      "threadCpuMs": 155.578973,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "loaded_account_search_20",
+      "operations": 20,
+      "wallMs": 10.711308,
+      "threadCpuMs": 10.656616,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "sqlite_join_only_20",
+      "operations": 20,
+      "wallMs": 1.050577,
+      "threadCpuMs": 1.090654,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    },
+    {
+      "stage": "repository_undo_20",
+      "operations": 20,
+      "wallMs": 52.384308,
+      "threadCpuMs": 33.338343,
+      "processBinderSentDelta": 0,
+      "status": "completed"
+    }
+  ],
+  "limits": "Small real-device samples; no measured 10,000-record stage times. Binder counts include background process traffic.",
+  "cursorProbe": {
+    "syntheticAsciiBytes": 2097216,
+    "defaultCursorRejectedRow": true
+  },
+  "profileKeyPolicy": {
+    "authenticationRequired": true,
+    "validitySeconds": 300,
+    "unlockedDeviceRequiredConfigured": true,
+    "securityLevel": 1
+  },
+  "status": "completed",
+  "ephemeralKeyDeleted": true
+}

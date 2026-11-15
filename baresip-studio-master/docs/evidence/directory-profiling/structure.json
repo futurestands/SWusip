@@ -1,0 +1,71 @@
+{
+  "kind": "host_structure_cost_model",
+  "sqliteVersion": "3.49.1",
+  "productionSourceSha256": "78edbe8f67cdfb221ba883fb2e690382e9c723b8156df79ccc34701fb62f8e65",
+  "limits": "Host SQLite, synthetic placeholders, no encryption. Not Android or Keystore performance evidence.",
+  "bulkShape": {
+    "rows": 10000,
+    "shape": "distinct customers/accounts; one shared phone and scheme",
+    "journalEntries": 50002,
+    "modeledJournalPlaintextBytes": 7390294,
+    "modeledStoredBase64Bytes": 9853764,
+    "importCipherInitialisations": 20003,
+    "oneFullReadCipherInitialisations": 20002,
+    "undoJournalDecryptions": 1,
+    "identityLookupsDuringImport": 10001,
+    "limits": "Exact operation counts for this input shape; journal bytes modeled with a synthetic actor. No measured Android durations."
+  },
+  "sqlSamples": [
+    {
+      "rows": 100,
+      "hostJoinMs": 0.3388,
+      "hostReverseSqlMs": 6.7867,
+      "readPlan": [
+        "SCAN c",
+        "SEARCH a USING INDEX sqlite_autoindex_account_1 (id=?)",
+        "SEARCH p USING COVERING INDEX sqlite_autoindex_customer_phone_1 (customer_id=?) LEFT-JOIN",
+        "CORRELATED SCALAR SUBQUERY 1",
+        "SEARCH ap USING COVERING INDEX sqlite_autoindex_account_phone_1 (account_id=? AND phone_id=?)"
+      ],
+      "accountDeletePlan": [
+        "SEARCH account USING INDEX sqlite_autoindex_account_1 (id=?)",
+        "SEARCH account_phone USING COVERING INDEX sqlite_autoindex_account_phone_1 (account_id=?)",
+        "SCAN customer_account"
+      ]
+    },
+    {
+      "rows": 500,
+      "hostJoinMs": 1.7535,
+      "hostReverseSqlMs": 44.7371,
+      "readPlan": [
+        "SCAN c",
+        "SEARCH a USING INDEX sqlite_autoindex_account_1 (id=?)",
+        "SEARCH p USING COVERING INDEX sqlite_autoindex_customer_phone_1 (customer_id=?) LEFT-JOIN",
+        "CORRELATED SCALAR SUBQUERY 1",
+        "SEARCH ap USING COVERING INDEX sqlite_autoindex_account_phone_1 (account_id=? AND phone_id=?)"
+      ],
+      "accountDeletePlan": [
+        "SEARCH account USING INDEX sqlite_autoindex_account_1 (id=?)",
+        "SEARCH account_phone USING COVERING INDEX sqlite_autoindex_account_phone_1 (account_id=?)",
+        "SCAN customer_account"
+      ]
+    },
+    {
+      "rows": 1000,
+      "hostJoinMs": 3.7309,
+      "hostReverseSqlMs": 110.5942,
+      "readPlan": [
+        "SCAN c",
+        "SEARCH a USING INDEX sqlite_autoindex_account_1 (id=?)",
+        "SEARCH p USING COVERING INDEX sqlite_autoindex_customer_phone_1 (customer_id=?) LEFT-JOIN",
+        "CORRELATED SCALAR SUBQUERY 1",
+        "SEARCH ap USING COVERING INDEX sqlite_autoindex_account_phone_1 (account_id=? AND phone_id=?)"
+      ],
+      "accountDeletePlan": [
+        "SEARCH account USING INDEX sqlite_autoindex_account_1 (id=?)",
+        "SEARCH account_phone USING COVERING INDEX sqlite_autoindex_account_phone_1 (account_id=?)",
+        "SCAN customer_account"
+      ]
+    }
+  ]
+}
