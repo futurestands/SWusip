@@ -1001,7 +1001,10 @@ private fun MainContent(navController: NavController, viewModel: ViewModel, cont
         aorCalls.forEach { call ->
             key(call.callp) {
                 CallCard(ctx = ctx, viewModel = viewModel, call = call, dialerState = null)
-                CallCustomerPanel(call.peerUri) { navController.navigate("customers?phone=${Uri.encode(CustomerNumbers.normalise(call.peerUri) ?: "")}") }
+                CallCustomerPanel(call.peerUri) { selected ->
+                    val phone=DirectoryTelephoneSettings.callerNumber(ctx,call.peerUri).orEmpty()
+                    navController.navigate("customers?phone=${Uri.encode(phone)}&customer=${Uri.encode(selected?.id.orEmpty())}&account=${Uri.encode(selected?.account.orEmpty())}")
+                }
             }
         }
 

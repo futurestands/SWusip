@@ -1,7 +1,8 @@
 # SWUSIP administrator setup
 
-The 1.0.5 customer-workflow changes and outstanding device/security acceptance
-gates are recorded in [Customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
+The four-column 1.0.6 import and telephone policies are described in
+[Customer import](SWUSIP_IMPORT_GUIDE.md). Historical 1.0.5 results remain in
+[Customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md).
 
 This pilot is not a production-signed release. Review the security release blockers
 in [the Android review](SWUSIP_ANDROID_REVIEW.md) before deployment to 15 agents.
@@ -43,22 +44,23 @@ registration/background-call regression remain production release prerequisites.
 
 ## Customer import and reversal
 
-**Current device limitation:** the authenticated small CSV/XLSX workflows passed,
+**Historical 1.0.5 device limitation:** the authenticated small CSV/XLSX workflows passed,
 but a 10,000-record encrypted import/read/search/undo cycle failed after 929 seconds
 when Keystore authentication expired during reading. The row limit below is a
 parser limit, not validated full-batch performance. Do not deploy large real-customer
-batches until this issue is resolved and retested. See
+batches without consulting the latest 1.0.6 device results. See
 [the authenticated test report](SWUSIP_AUTHENTICATED_DIRECTORY_TESTS.md).
 
 Use Manage directory to save the CSV or Excel template, then Import CSV / XLSX.
-Keep account and telephone cells as Text before entering values. The first five
-template fields are required. Limits are 10,000 data rows, 5 MB input, 20 MB expanded
+Keep account and telephone cells as Text before entering values. The four required
+fields are customer_name, phone_number, account_number and scheme_name. Legacy
+seven-column imports remain supported. Limits are 10,000 data rows, 5 MB input, 20 MB expanded
 XLSX and 2,000 characters per cell. Only UTF-8 CSV and ordinary first-sheet XLSX
 are supported. Never send real customer spreadsheets to development/AI services.
 
 Review the entire preview and row errors. Duplicate account/phone rows are skipped;
-conflicting ownership/category/scheme names are rejected. Import valid rows shows
-accepted/updated/skipped/rejected totals. New namesakes are not automatically
+conflicting ownership/category/scheme names require review. Confirm import and review
+list shows accepted/updated/skipped/corrected/ambiguous/rejected totals. New namesakes are not automatically
 merged. Use the profile's reviewed account-association workflow only after checking
 the institutional source of truth. Multiple customers can share a phone or account.
 

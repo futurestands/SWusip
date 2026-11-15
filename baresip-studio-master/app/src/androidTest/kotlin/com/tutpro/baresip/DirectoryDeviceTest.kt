@@ -62,10 +62,10 @@ class DirectoryDeviceTest {
         try {
             CustomerDirectory(context,name).use { directory ->
                 val db = directory.writableDatabase
-                assertEquals(1,db.version)
+                assertEquals(2,db.version)
                 // A schema marker is deliberately not a customer or encryption test.
                 db.insertOrThrow("customer",null,ContentValues().apply { put("id","synthetic-schema-marker"); put("payload","schema-marker") })
-                try { directory.onUpgrade(db,1,2); fail("Unknown migration accepted") } catch (_: IllegalStateException) { }
+                try { directory.onUpgrade(db,2,3); fail("Unknown migration accepted") } catch (_: IllegalStateException) { }
             }
             CustomerDirectory(context,name).use { directory ->
                 directory.readableDatabase.rawQuery("SELECT COUNT(*) FROM customer",null).use { c -> c.moveToFirst(); assertEquals(1,c.getInt(0)) }

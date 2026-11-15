@@ -14,7 +14,9 @@ class DirectoryAccessDeviceTest {
         CustomerDirectory(context,"swusip-synthetic-denied-test.db").use { directory ->
             val actions = listOf<() -> Unit>(
                 { directory.records() }, { directory.preview(emptyList()) }, { directory.import(emptyList()) },
-                { directory.undoLatestImport() }, { directory.updateCustomer("missing","Synthetic","") },
+                { directory.undoLatestImport() }, { directory.reviewRows() },
+                { DirectoryTelephoneSettings.save(context,PhoneNormalisationPolicy(),OutboundDiallingProfile()) },
+                { directory.updateCustomer("missing","Synthetic","") },
                 { directory.associateAccount("missing","0001","SYN-01") },
                 { directory.addCallNote("missing","Synthetic note") }, { directory.callNotes("missing") },
                 { directory.saveInteraction("missing",InteractionDraft("Synthetic note")) },

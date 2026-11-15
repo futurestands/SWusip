@@ -32,3 +32,6 @@ __pycache__/
 
 # Local deliverable copies (APK artifacts are not source files)
 artifacts/
+
+# Local spreadsheet render/authoring outputs; reviewed templates live in docs.
+/outputs/

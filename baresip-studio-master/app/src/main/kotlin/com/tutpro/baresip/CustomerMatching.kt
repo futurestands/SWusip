@@ -18,12 +18,12 @@ object CustomerMatching {
                 (record.schemeCode.contains(scheme.trim(),true) || record.schemeName.contains(scheme.trim(),true))
         }
     }
-    fun lookup(records: List<CustomerRecord>, number: String): List<CustomerRecord> {
-        val normal = CustomerNumbers.normalise(number) ?: return emptyList()
+    fun lookup(records: List<CustomerRecord>, number: String,policy: PhoneNormalisationPolicy = PhoneNormalisationPolicy()): List<CustomerRecord> {
+        val normal = PhoneNormaliser.normalise(number,policy).takeIf { it.accepted }?.canonical ?: return emptyList()
         return records.filter { it.phone == normal }.distinctBy { Triple(it.id,it.account,it.schemeCode) }
     }
-    fun identify(records: List<CustomerRecord>, number: String): CallerIdentity {
-        val matches = lookup(records,number)
+    fun identify(records: List<CustomerRecord>, number: String,policy: PhoneNormalisationPolicy = PhoneNormalisationPolicy()): CallerIdentity {
+        val matches = lookup(records,number,policy)
         return when(matches.size) {
             0 -> CallerIdentity.Unknown
             1 -> CallerIdentity.Single(matches.single())
@@ -40,26 +40,43 @@ sealed interface CallerIdentity {
 }
 
 object CustomerImportPlanner {
-    fun preview(current: List<CustomerRecord>, rows: List<CustomerImportRow>): List<CustomerImportRow> {
-        val schemes = current.associate { it.schemeCode.lowercase() to it.schemeName.lowercase() }.toMutableMap()
-        val owners = current.groupBy { it.schemeCode.lowercase() to it.account }
-            .mapValues { (_, entries) -> entries.map { it.name.lowercase() to it.category }.toSet() }.toMutableMap()
-        val numbers = current.map { Triple(it.schemeCode.lowercase(),it.account,it.phone) }.toMutableSet()
+    fun preview(current: List<CustomerRecord>, rows: List<CustomerImportRow>,
+        catalog: List<SchemeEntry> = current.map { SchemeEntry(it.schemeCode,it.schemeName) },
+        policy: PhoneNormalisationPolicy = PhoneNormalisationPolicy()): List<CustomerImportRow> {
+        fun String.lower() = lowercase(java.util.Locale.ROOT)
+        val schemes = SchemeIndex(catalog)
+        val names = SchemeIndex(catalog + rows.filter { it.values.size == 7 && it.values[3].isNotBlank() && it.values[4].isNotBlank() && it.error == null }
+            .map { SchemeEntry(it.values[3],it.values[4]) })
+        val owners = current.groupBy { it.schemeCode.lower() to it.account }
+            .mapValues { (_, entries) -> entries.map { it.name.lower() to it.category }.toSet() }.toMutableMap()
+        val numbers = current.map { Triple(it.schemeCode.lower(),it.account,it.phone) }.toMutableSet()
         return rows.map { row ->
-            val validation = row.error ?: CustomerImport.validate(row.values)
-            if(validation != null) row.copy(error = validation, action = "Reject") else {
-                val v = row.values; val key = v[3].lowercase() to v[2]
-                val owner = v[0].lowercase() to v[5]
-                val phone = CustomerNumbers.normalise(v[1])!!
+            val review = PhoneNormaliser.normalise(row.values.getOrElse(1) { "" },policy)
+            val changedPolicy = row.phone?.let { it.policyVersion != policy.version } == true
+            val validation = if(changedPolicy) "Telephone policy changed; reopen the import preview" else row.error ?: CustomerImport.validate(row.values,policy)
+            if(validation != null) row.copy(error = validation, action = "Administrator review",phone=review) else {
+                val v = row.values
+                val proposed = if(v[3].isBlank()) names.resolve(v[3],v[4]) else schemes.resolve(v[3],v[4])
+                val resolved = if(proposed.error == null) schemes.resolve(proposed.code,proposed.name).copy(generated=proposed.generated) else proposed
+                val key = resolved.code.lower() to v[2]
+                val owner = v[0].lower() to v[5]
+                val phone = requireNotNull(review.canonical)
                 val number = Triple(key.first,key.second,phone)
+                val fillCategory=v[5].isNotBlank() && owners[key]?.let { it.isNotEmpty() && it.all { entry -> entry.second.isBlank() } } == true
                 when {
-                    (schemes[key.first] != null && schemes[key.first] != v[4].lowercase()) ||
-                        (owners[key]?.any { it != owner } == true) -> row.copy(error = "Account ownership, category or scheme conflict",action = "Reject")
-                    number in numbers -> row.copy(action = "Skip duplicate")
+                    resolved.error != null -> row.copy(error=resolved.error,action="Administrator review",phone=review,scheme=resolved)
+                    owners[key]?.any { it.first != owner.first || (v[5].isNotBlank() && it.second.isNotBlank() && it.second != v[5]) } == true ->
+                        row.copy(error = "Account ownership or category conflict",action = "Reject",phone=review,scheme=resolved)
+                    number in numbers -> {
+                        if(fillCategory) owners[key]=owners.getValue(key).map { it.first to v[5] }.toSet()
+                        row.copy(action = if(fillCategory) "Fill missing connection category" else "Skip duplicate",phone=review,scheme=resolved)
+                    }
                     else -> {
-                        val action = if(key in owners) "Add telephone to existing account" else "New customer and account"
-                        schemes[key.first] = v[4].lowercase(); owners[key] = setOf(owner); numbers.add(number)
-                        row.copy(action = action)
+                        val action = if(fillCategory) "Add telephone and fill missing category" else if(key in owners) "Add telephone to existing account" else "New customer and account"
+                        schemes.add(SchemeEntry(resolved.code,resolved.name)); names.add(SchemeEntry(resolved.code,resolved.name))
+                        if(fillCategory) owners[key]=owners.getValue(key).map { it.first to v[5] }.toSet()
+                        owners[key] = owners[key].orEmpty()+owner; numbers.add(number)
+                        row.copy(action = action,phone=review,scheme=resolved)
                     }
                 }
             }

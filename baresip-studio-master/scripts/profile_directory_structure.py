@@ -92,7 +92,11 @@ def sql_sample(source, n):
 
 
 if __name__ == '__main__':
+    # This historical model counts v1 per-field cipher operations. Never apply
+    # those counts to the v2 paged implementation or overwrite evidence silently.
     text = SOURCE.read_text(encoding='utf-8')
+    if 'DirectoryCipherPages' in text:
+        raise SystemExit('Legacy-only model: use a checkout of commit f3b10f4. For v2 use DirectoryStorageV2DeviceTest; historical evidence is retained.')
     report = {'kind': 'host_structure_cost_model', 'sqliteVersion': sqlite3.sqlite_version,
               'productionSourceSha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
               'limits': 'Host SQLite, synthetic placeholders, no encryption. Not Android or Keystore performance evidence.',

@@ -35,15 +35,18 @@ private fun directoryAccess(context: Context): Boolean {
 }
 
 fun NavGraphBuilder.customersRoute(nav: NavController, viewModel: ViewModel) {
-    composable("customers?phone={phone}&scheme={scheme}", arguments = listOf(
-        navArgument("phone") { defaultValue = "" }, navArgument("scheme") { defaultValue = "" })) {
-        CustomersScreen(nav, viewModel, it.arguments?.getString("phone") ?: "", it.arguments?.getString("scheme") ?: "")
+    composable("customers?phone={phone}&scheme={scheme}&customer={customer}&account={account}", arguments = listOf(
+        navArgument("phone") { defaultValue = "" }, navArgument("scheme") { defaultValue = "" },
+        navArgument("customer") { defaultValue = "" }, navArgument("account") { defaultValue = "" })) {
+        CustomersScreen(nav, viewModel, it.arguments?.getString("phone") ?: "", it.arguments?.getString("scheme") ?: "",
+            it.arguments?.getString("customer") ?: "",it.arguments?.getString("account") ?: "")
     }
     composable("schemes") { SchemeDirectoryScreen(nav) }
+    composable("directory-telephone-policy") { DirectoryTelephoneSettingsScreen(nav) }
 }
 
 @Composable
-fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: String = "", initialScheme: String = "") {
+fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: String = "", initialScheme: String = "",initialCustomer: String="",initialAccount: String="") {
     InstitutionScreenPrivacy()
     val ctx = LocalContext.current
     val authorised = directoryAccess(ctx)
@@ -64,11 +67,12 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
     var passwordAction by remember { mutableStateOf("") }
     var passphrase by remember { mutableStateOf("") }
     var restoreUri by remember { mutableStateOf<Uri?>(null) }
+    var reviews by remember { mutableStateOf<List<ImportReviewRecord>?>(null) }
     val scope = rememberCoroutineScope()
     LaunchedEffect(administrator) {
         if(!administrator) {
             manage = false; preview = null; confirmUndo = false; passwordAction = ""
-            passphrase = ""; exportBytes = null; restoreUri = null
+            passphrase = ""; exportBytes = null; restoreUri = null; reviews=null
         }
     }
     val saveExport = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/octet-stream")) { uri ->
@@ -101,7 +105,7 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
     val template = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("text/csv")) { uri ->
         if(uri != null) scope.launch {
             try { withContext(Dispatchers.IO) {
-                ctx.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use { it.write(CustomerImport.headers.joinToString(",") + "\r\n") }
+                ctx.contentResolver.openOutputStream(uri)?.bufferedWriter()?.use { it.write(CustomerImport.requiredHeaders.joinToString(",") + "\r\n") }
             }; message = "Template saved. In Excel format account_number as Text before entering values."
             } catch (_: Exception) { message = "Could not save template." }
         }
@@ -115,7 +119,7 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
                     ctx.contentResolver.openInputStream(uri)?.let {
                         val buffered = it.buffered(); buffered.mark(4)
                         val zip = buffered.read() == 0x50 && buffered.read() == 0x4b; buffered.reset()
-                        val parsed = CustomerImport.parse(buffered, zip)
+                        val parsed = CustomerImport.parse(buffered, zip,DirectoryTelephoneSettings.normalisation(ctx))
                         CustomerDirectory(ctx).use { directory -> directory.preview(parsed) }
                     } ?: error("Unable to open document")
                 }
@@ -136,7 +140,8 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
             pendingFollowUps = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.pendingFollowUps() } }
             followUpsReady = true
             message = if(records.isEmpty()) "No customer records imported on this device." else "${records.size} customer account / phone entries"
-            if(initialQuery.isNotEmpty()) {
+            if(initialCustomer.isNotEmpty()) selected=records.firstOrNull { it.id==initialCustomer && (initialAccount.isEmpty() || it.account==initialAccount) && (initialQuery.isEmpty() || it.phone==initialQuery) }
+            else if(initialQuery.isNotEmpty()) {
                 val found = records.filter { it.phone == initialQuery }.distinctBy { it.id }
                 if(found.size == 1) selected = found.first()
             }
@@ -161,6 +166,12 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
         if (administrator) {
             TextButton(onClick = { manage = !manage }) { Text(if(manage) "Close directory management" else "Manage directory") }
             if(manage) Column(Modifier.heightIn(max = 240.dp).verticalScroll(rememberScrollState())) {
+            Text("Required: customer_name, phone_number, account_number, scheme_name. Legacy seven-column files remain supported.")
+            TextButton(onClick={ nav.navigate("directory-telephone-policy") }) { Text("Telephone and outgoing dialling policy") }
+            TextButton(onClick={scope.launch {
+                try { reviews=withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.reviewRows() } } }
+                catch(_:Exception) { message="Review records unavailable. Check administrator authorisation." }
+            }}) { Text("Review ambiguous or rejected rows") }
             Row {
                 TextButton(enabled = !busy, onClick = { template.launch("swusip-customers.csv") }) { Text("Save template") }
                 TextButton(enabled = !busy, onClick = { picker.launch(arrayOf("text/csv", "text/comma-separated-values", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) }) { Text("Import CSV / XLSX") }
@@ -228,7 +239,7 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
                             while(true) { val n = it.read(buffer); if(n < 0) break; out.write(buffer,0,n); require(out.size() <= CustomerImport.MAX_BYTES+128) }
                             out.toByteArray()
                         }
-                        val rows = CustomerImport.parse(CustomerExport.open(bytes,secret).byteInputStream(),false)
+                        val rows = CustomerImport.parse(CustomerExport.open(bytes,secret).byteInputStream(),false,DirectoryTelephoneSettings.normalisation(ctx))
                         CustomerDirectory(ctx).use { it.preview(rows) }
                     }
                     passwordAction = ""; message = "Restored spreadsheet ready for preview. Existing data has not changed."
@@ -241,27 +252,47 @@ fun CustomersScreen(nav: NavController, viewModel: ViewModel, initialQuery: Stri
         AlertDialog(onDismissRequest = { if(!busy) preview = null },
             title = { Text("Review ${rows.size} rows before import") },
             text = { LazyColumn {
-                item { Text("Valid: ${rows.count { it.error == null }} · Rejected: ${rows.count { it.error != null }}. Existing ownership and scheme conflicts will be rejected; existing data is never deleted.") }
-                items(rows) { row -> Text("Row ${row.row} · ${row.action}: " + (row.error ?: row.values.take(5).joinToString(" · ")), Modifier.padding(vertical = 6.dp)) }
+                item { Text("Accepted for processing: ${rows.count { it.error == null }} · Proposed corrections: ${rows.count { it.error==null && it.phone?.status==PhoneValidationStatus.CORRECTED }} · Needs review: ${rows.count { it.error!=null }}. Confirming stores review rows separately; they cannot identify callers. Existing data is never deleted.") }
+                items(rows) { row -> Column(Modifier.padding(vertical=6.dp)) {
+                    Text("Row ${row.row} · ${row.action}: "+(row.error ?: "${row.values[0]} · Account ${row.values[2]} · ${row.scheme?.name ?: row.values[4]}"))
+                    row.phone?.let { phone ->
+                        Text("Imported: ${phone.original}")
+                        Text("Canonical: ${phone.canonical ?: "Not assigned"} · ${phone.status.name}")
+                        Text(if(phone.corrections.isEmpty()) phone.reason else phone.correctionReason)
+                    }
+                    if(row.scheme?.generated==true) Text("A stable internal scheme identifier will be created; no scheme code is required.")
+                } }
             } },
             confirmButton = { TextButton(enabled = !busy, onClick = { scope.launch {
                 busy = true
                 try {
                     val result = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.import(rows) } }
                     records = withContext(Dispatchers.IO) { runCatching { CustomerDirectory(ctx).use { it.records() } }.getOrDefault(emptyList()) }
-                    message = "Accepted ${result.accepted} · Updated ${result.updated} · Skipped ${result.skipped} · Rejected ${result.rejected}" +
+                    message = "Accepted ${result.validRows} (new ${result.accepted}, updated ${result.updated}, duplicate ${result.skipped}) · Corrected ${result.corrected} · Ambiguous ${result.ambiguous} · Other rejected ${result.rejected-result.ambiguous}" +
                         if(result.errors.isEmpty()) "" else "\n" + result.errors.joinToString("\n")
                     preview = null
                 } catch (_: Exception) { message = "Import failed; changes were rolled back." }
                 finally { busy = false }
-            } }) { Text("Import valid rows") } },
+            } }) { Text("Confirm import and review list") } },
             dismissButton = { TextButton(enabled = !busy,onClick = { preview = null }) { Text("Cancel") } })
     }
+    if(administrator) reviews?.let { rows -> AlertDialog(onDismissRequest={reviews=null},title={Text("Administrator import review")},text={
+        LazyColumn(Modifier.heightIn(max=460.dp)) {
+            if(rows.isEmpty()) item { Text("No unresolved import rows stored on this phone.") }
+            items(rows) { row -> Column(Modifier.padding(vertical=8.dp)) {
+                Text("Row ${row.sourceRow} · ${row.status}");Text(row.reason)
+                Text(row.values.take(5).joinToString(" · "))
+                Text("Correct the authoritative spreadsheet and preview it again. This row is excluded from incoming customer identification.")
+            } }
+        }
+    },confirmButton={TextButton(onClick={reviews=null}) {Text("Close review")}}) }
     if(authorised) selected?.let { person ->
         CustomerProfileDialog(person, records.filter { it.id == person.id }, records, onClose = { selected = null }, onCallback = {
             if(InstitutionAccess.agent(ctx) && !Call.inCall()) {
-                viewModel.dialerState.callUri.value = person.phone
-                nav.navigate("main") { popUpTo("main") { inclusive = true } }
+                when(val destination=OutboundDiallingFormatter.format(person.phone,DirectoryTelephoneSettings.outgoing(ctx))) {
+                    is OutboundDestination.Ready -> { viewModel.dialerState.callUri.value=destination.number;nav.navigate("main") { popUpTo("main") { inclusive=true } } }
+                    is OutboundDestination.Blocked -> { message=destination.reason;selected=null }
+                }
             }
         }, onInteractionsChanged = {
             scope.launch {
@@ -299,6 +330,11 @@ private fun CustomerProfileDialog(person: CustomerRecord, entries: List<Customer
     AlertDialog(onDismissRequest = onClose, title = { Text(person.name) }, text = {
         Column(Modifier.heightIn(max = 460.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             entries.distinct().forEach { Text("${it.phone}${if(it.primary) " (Primary)" else ""}\nAccount ${it.account}\n${it.schemeName} (${it.schemeCode})\n${it.category}") }
+            entries.distinctBy { Triple(it.phone,it.account,it.schemeCode) }.forEach {
+                Text("Imported number: ${it.originalPhone ?: "Not recorded by the older importer"}")
+                Text("Validation: ${it.phoneStatus}${if(it.phonePlan.isEmpty()) "" else " · ${it.phonePlan}"}")
+                if(it.phoneCorrection.isNotEmpty()) Text(it.phoneCorrection)
+            }
             if(person.location.isNotBlank()) Text("Service location: ${person.location}")
             if(person.notes.isNotBlank()) Text("Customer notes: ${person.notes}")
             TextButton(enabled = !Call.inCall(),onClick = onCallback) { Text("Call back using dialler") }
@@ -399,12 +435,13 @@ private fun SchemeDirectoryScreen(nav: NavController) {
 /** Called from the real Call object, never from generated caller data. No lookup
  * result is written to notifications or logs. Answer controls render immediately. */
 @Composable
-fun CallCustomerPanel(number: String, onOpen: () -> Unit) {
+fun CallCustomerPanel(number: String, onOpen: (CustomerRecord?) -> Unit) {
     val ctx = LocalContext.current
     val authorised = directoryAccess(ctx)
+    val policy=DirectoryTelephoneSettings.normalisation(ctx)
     var matches by remember(number) { mutableStateOf<List<CustomerRecord>>(emptyList()) }
     var state by remember(number) { mutableStateOf("Looking up customer…") }
-    LaunchedEffect(number, authorised) {
+    LaunchedEffect(number, authorised,policy.version) {
         if(!authorised) { matches = emptyList(); return@LaunchedEffect }
         try {
             matches = withContext(Dispatchers.IO) { CustomerDirectory(ctx).use { it.lookup(number) } }
@@ -415,12 +452,17 @@ fun CallCustomerPanel(number: String, onOpen: () -> Unit) {
         if(matches.isNotEmpty()) InstitutionScreenPrivacy()
         Column(Modifier.fillMaxWidth().padding(8.dp)) {
             Text(state, style = MaterialTheme.typography.titleMedium)
-            when(val identity = CustomerMatching.identify(matches,number)) {
+            when(val identity = CustomerMatching.identify(matches,number,policy)) {
                 is CallerIdentity.Single -> identity.record.let { Text("${it.phone} · Account ${it.account}\n${it.schemeName} (${it.schemeCode})") }
-                is CallerIdentity.Multiple -> Text("No account selected. Open the matching records and confirm the caller’s scheme and account.")
+                is CallerIdentity.Multiple -> {
+                    Text("Confirm the caller’s scheme and account; no account has been selected.")
+                    LazyColumn(Modifier.heightIn(max=180.dp)) { items(identity.matches) { match ->
+                        TextButton(onClick={onOpen(match)}) { Text("${match.name} · Account ${match.account}\n${match.schemeName}") }
+                    } }
+                }
                 CallerIdentity.Unknown -> Unit
             }
-            TextButton(onClick = onOpen) { Text(if(matches.size > 1) "Review matching customers" else if(matches.size == 1) "Open customer profile" else "Search customer directory") }
+            TextButton(onClick = {onOpen(matches.singleOrNull())}) { Text(if(matches.size > 1) "Review matching customers" else if(matches.size == 1) "Open customer profile" else "Search customer directory") }
         }
     } else { Text("Unlock the institutional workspace to identify this caller."); WorkspaceUnlock() }
 }

@@ -6,32 +6,52 @@ import org.xmlpull.v1.XmlPullParserException
 import java.io.InputStream
 import java.util.zip.ZipInputStream
 
-data class CustomerImportRow(val row: Int, val values: List<String>, val error: String? = null, val action: String = "New record")
+data class CustomerImportRow(val row: Int, val values: List<String>, val error: String? = null, val action: String = "New record",
+    val phone: PhoneReview? = null,val scheme: SchemeResolution? = null)
 object CustomerImport {
+    // Stable internal field order and legacy export schema; new templates use requiredHeaders.
     val headers = listOf("customer_name", "phone_number", "account_number", "scheme_code", "scheme_name", "connection_type", "notes")
+    val requiredHeaders = listOf("customer_name","phone_number","account_number","scheme_name")
     const val MAX_BYTES = 5 * 1024 * 1024
     const val MAX_ROWS = 10000
-    fun parse(input: InputStream, xlsx: Boolean): List<CustomerImportRow> = parseWithParser(input,xlsx) { Xml.newPullParser() }
-    internal fun parseWithParser(input: InputStream, xlsx: Boolean, newParser: () -> XmlPullParser): List<CustomerImportRow> {
+    fun parse(input: InputStream, xlsx: Boolean, policy: PhoneNormalisationPolicy = PhoneNormalisationPolicy()): List<CustomerImportRow> = parseWithParser(input,xlsx,policy) { Xml.newPullParser() }
+    internal fun parseWithParser(input: InputStream, xlsx: Boolean, policy: PhoneNormalisationPolicy = PhoneNormalisationPolicy(),newParser: () -> XmlPullParser): List<CustomerImportRow> {
         val bytes = input.use { readBounded(it, MAX_BYTES + 1) }
         require(bytes.size <= MAX_BYTES) { "Import exceeds 5 MB" }
         val rows = if (xlsx) spreadsheet(bytes,newParser) else csv(String(bytes, Charsets.UTF_8).removePrefix("\uFEFF"))
         require(rows.size <= MAX_ROWS + 1) { "Import exceeds 10,000 rows" }
-        require(rows.firstOrNull()?.map { it.trim() } == headers) { "Use the SWUSIP template column names and order" }
+        val aliases = mapOf("name" to "customer_name","customername" to "customer_name","phone" to "phone_number","phonenumber" to "phone_number",
+            "telephone" to "phone_number","contact" to "phone_number","contactnumber" to "phone_number","account" to "account_number",
+            "accountno" to "account_number","accountnumber" to "account_number","scheme" to "scheme_name","schemename" to "scheme_name",
+            "waterscheme" to "scheme_name","schemecode" to "scheme_code","connectiontype" to "connection_type","notes" to "notes")
+        val sourceHeaders = rows.firstOrNull().orEmpty().dropLastWhile { it.isBlank() }.map { name ->
+            aliases[name.trim().lowercase(java.util.Locale.ROOT).filter { it in 'a'..'z' || it in '0'..'9' }]
+                ?: throw IllegalArgumentException("Unrecognised import column; use the four-column or legacy seven-column template")
+        }
+        require(sourceHeaders.distinct().size == sourceHeaders.size && sourceHeaders.containsAll(requiredHeaders)) {
+            "Required columns: customer_name, phone_number, account_number, scheme_name; no duplicate columns"
+        }
         return rows.drop(1).mapIndexedNotNull { i, row ->
             if(row.all { it.isBlank() }) return@mapIndexedNotNull null
-            val values = row.map { it.trim() }
-            val error = validate(values)
-            CustomerImportRow(i + 2, values, error)
+            val values = MutableList(headers.size) { "" }
+            sourceHeaders.forEachIndexed { index, name ->
+                val raw = row.getOrElse(index) { "" }
+                values[headers.indexOf(name)] = if(name == "account_number") raw.trim()
+                    else if(name == "phone_number") raw.removePrefix("#NUMERIC#") else raw.removePrefix("#NUMERIC#").trim()
+            }
+            val phone = PhoneNormaliser.normalise(values[1],policy)
+            val error = if(row.drop(sourceHeaders.size).any { it.isNotBlank() }) "Unexpected data beyond the declared columns" else validate(values,policy)
+            CustomerImportRow(i + 2, values, error,phone=phone)
         }
     }
-    internal fun validate(values: List<String>): String? = when {
+    internal fun validate(values: List<String>,policy: PhoneNormalisationPolicy = PhoneNormalisationPolicy()): String? = when {
                 values.size != headers.size -> "Expected seven columns"
-                values.take(5).any { it.isEmpty() } -> "Name, phone, account and scheme code/name are required"
+                listOf(0,1,2,4).any { values[it].isBlank() } -> "Customer name, phone, account and scheme name are required"
                 values.any { it.length > 2000 } -> "Cell exceeds 2,000 characters"
-                CustomerNumbers.normalise(values[1]) == null -> "Invalid telephone; use Uganda or international format"
                 values[2].startsWith("#NUMERIC#") -> "Format account numbers as Text in Excel, then re-enter the original account number"
                 values.any { it.startsWith("#FORMULA#") } -> "Formula cells are not supported; use literal text"
+                values.any { value -> value.any { it.isISOControl() && it !in "\r\n\t" } } -> "Unsupported control character in a cell"
+                !PhoneNormaliser.normalise(values[1],policy).accepted -> PhoneNormaliser.normalise(values[1],policy).reason
                 else -> null
             }
     internal fun csv(text: String): List<List<String>> {
@@ -133,7 +153,7 @@ object CustomerImport {
                 "c" -> row[column] = when {
                     formula -> "#FORMULA#"
                     type == "s" -> strings.getOrNull(value.toIntOrNull() ?: -1) ?: error("Invalid shared string")
-                    type == "n" && column == 2 && rows.isNotEmpty() && value.isNotEmpty() -> "#NUMERIC#$value"
+                    type == "n" && rows.isNotEmpty() && value.isNotEmpty() -> "#NUMERIC#$value"
                     else -> value
                 }
                 "row" -> {

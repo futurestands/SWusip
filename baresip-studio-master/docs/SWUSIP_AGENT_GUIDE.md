@@ -50,6 +50,12 @@ import, export, undo batches, change provisioning or edit customer master detail
 
 ## Reliable incoming calls
 
+The [four-column import guide](SWUSIP_IMPORT_GUIDE.md) explains telephone validation
+and administrator review. Customer call-back requires an administrator-verified
+office dialling profile; a clear message appears while no profile is enabled.
+The existing manual dialler remains available. Multiple incoming matches offer
+individual account/profile selection; confirm the account with the caller.
+
 For agent-recorded outcomes and local pending follow-ups, see
 [Customer workflows](SWUSIP_CUSTOMER_WORKFLOWS.md). These belong to this phone,
 not a shared CRM queue or automatically detected SIP call results.

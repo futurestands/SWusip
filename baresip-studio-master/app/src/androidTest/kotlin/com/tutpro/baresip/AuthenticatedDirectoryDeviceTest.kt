@@ -125,7 +125,7 @@ class AuthenticatedDirectoryDeviceTest {
                     val entry = input.nextEntry ?: break
                     var contents = input.readBytes()
                     if(entry.name == "xl/worksheets/sheet1.xml") {
-                        val values = listOf("Synthetic Excel","0772123456","0000456","SYN-X","Synthetic Excel Scheme","Domestic","Synthetic spreadsheet note")
+                        val values = listOf("Synthetic Excel","0772123456","0000456","Synthetic Excel Scheme")
                         val cells = values.mapIndexed { i,v -> "<c r=\"${'A'+i}2\" t=\"inlineStr\"><is><t>$v</t></is></c>" }.joinToString("")
                         val text = contents.toString(Charsets.UTF_8).replace("xmlns:x=","xmlns=")
                             .replace("<x:","<").replace("</x:","</")
@@ -140,12 +140,12 @@ class AuthenticatedDirectoryDeviceTest {
         return CustomerImport.parse(bytes.toByteArray().inputStream(),true)
     }
 
-    internal fun authenticateAdministrator() {
+    internal fun authenticateAdministrator(openDirectory: Boolean = true) {
         assumeTrue("Opt-in requires the phone owner", InstrumentationRegistry.getArguments().getString("swusipAuthenticated") == "true")
         context.startActivity(Intent(context,MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         SystemClock.sleep(1000)
         clickIfVisible("Back to call centre")
-        clickIfVisible("Customers")
+        clickIfVisible(if(openDirectory) "Customers" else "Settings")
         if(!InstitutionAccess.administrator(context)) {
             clickIfVisible("Unlock institutional workspace")
             instrumentation.sendStatus(0,Bundle().apply { putString("stream","\nOWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.\n") })
