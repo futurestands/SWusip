@@ -1,0 +1,86 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.AuthenticatedDirectoryDeviceTest:
+INSTRUMENTATION_STATUS: test=realAuthorisationEncryptedImportSearchNotesAndUndo
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+OWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+Small CSV/XLSX, search, edit, lookup, interactions and undo assertions passed; starting 10,000-record encrypted batch.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=android.security.keystore.UserNotAuthenticatedException: User not authenticated
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getInvalidKeyException(KeyStoreCryptoOperationUtils.java:125)
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getExceptionForCipherInit(KeyStoreCryptoOperationUtils.java:146)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:360)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.engineInit(AndroidKeyStoreCipherSpiBase.java:253)
+	at javax.crypto.Cipher.tryTransformWithProvider(Cipher.java:2997)
+	at javax.crypto.Cipher.tryCombinations(Cipher.java:2908)
+	at javax.crypto.Cipher$SpiAndProviderUpdater.updateAndGetSpiAndProvider(Cipher.java:2813)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:792)
+	at javax.crypto.Cipher.init(Cipher.java:1307)
+	at javax.crypto.Cipher.init(Cipher.java:1242)
+	at com.tutpro.baresip.CustomerDirectory.decrypt(CustomerDirectory.kt:85)
+	at com.tutpro.baresip.CustomerDirectory.entities(CustomerDirectory.kt:93)
+	at com.tutpro.baresip.CustomerDirectory.records(CustomerDirectory.kt:100)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:147)
+
+INSTRUMENTATION_STATUS: stream=
+Error in realAuthorisationEncryptedImportSearchNotesAndUndo(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest):
+android.security.keystore.UserNotAuthenticatedException: User not authenticated
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getInvalidKeyException(KeyStoreCryptoOperationUtils.java:125)
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getExceptionForCipherInit(KeyStoreCryptoOperationUtils.java:146)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:360)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.engineInit(AndroidKeyStoreCipherSpiBase.java:253)
+	at javax.crypto.Cipher.tryTransformWithProvider(Cipher.java:2997)
+	at javax.crypto.Cipher.tryCombinations(Cipher.java:2908)
+	at javax.crypto.Cipher$SpiAndProviderUpdater.updateAndGetSpiAndProvider(Cipher.java:2813)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:792)
+	at javax.crypto.Cipher.init(Cipher.java:1307)
+	at javax.crypto.Cipher.init(Cipher.java:1242)
+	at com.tutpro.baresip.CustomerDirectory.decrypt(CustomerDirectory.kt:85)
+	at com.tutpro.baresip.CustomerDirectory.entities(CustomerDirectory.kt:93)
+	at com.tutpro.baresip.CustomerDirectory.records(CustomerDirectory.kt:100)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:147)
+
+INSTRUMENTATION_STATUS: test=realAuthorisationEncryptedImportSearchNotesAndUndo
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 929.325
+There was 1 failure:
+1) realAuthorisationEncryptedImportSearchNotesAndUndo(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest)
+android.security.keystore.UserNotAuthenticatedException: User not authenticated
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getInvalidKeyException(KeyStoreCryptoOperationUtils.java:125)
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getExceptionForCipherInit(KeyStoreCryptoOperationUtils.java:146)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:360)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.engineInit(AndroidKeyStoreCipherSpiBase.java:253)
+	at javax.crypto.Cipher.tryTransformWithProvider(Cipher.java:2997)
+	at javax.crypto.Cipher.tryCombinations(Cipher.java:2908)
+	at javax.crypto.Cipher$SpiAndProviderUpdater.updateAndGetSpiAndProvider(Cipher.java:2813)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:792)
+	at javax.crypto.Cipher.init(Cipher.java:1307)
+	at javax.crypto.Cipher.init(Cipher.java:1242)
+	at com.tutpro.baresip.CustomerDirectory.decrypt(CustomerDirectory.kt:85)
+	at com.tutpro.baresip.CustomerDirectory.entities(CustomerDirectory.kt:93)
+	at com.tutpro.baresip.CustomerDirectory.records(CustomerDirectory.kt:100)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:147)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

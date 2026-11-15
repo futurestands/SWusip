@@ -43,6 +43,13 @@ registration/background-call regression remain production release prerequisites.
 
 ## Customer import and reversal
 
+**Current device limitation:** the authenticated small CSV/XLSX workflows passed,
+but a 10,000-record encrypted import/read/search/undo cycle failed after 929 seconds
+when Keystore authentication expired during reading. The row limit below is a
+parser limit, not validated full-batch performance. Do not deploy large real-customer
+batches until this issue is resolved and retested. See
+[the authenticated test report](SWUSIP_AUTHENTICATED_DIRECTORY_TESTS.md).
+
 Use Manage directory to save the CSV or Excel template, then Import CSV / XLSX.
 Keep account and telephone cells as Text before entering values. The first five
 template fields are required. Limits are 10,000 data rows, 5 MB input, 20 MB expanded

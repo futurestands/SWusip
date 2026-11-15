@@ -1,5 +1,10 @@
 # Customer workflows: 1.0.5-pilot
 
+**Authenticated follow-up:** small protected CSV/XLSX workflows now pass; the full
+10,000-record cycle failed on expired Keystore authentication. See the
+[current authenticated report](SWUSIP_AUTHENTICATED_DIRECTORY_TESTS.md). The older
+owner-authentication-pending statements below describe the initial delivery run.
+
 ## Priorities and changes
 
 The user-confirmed dialler and genuine native SIP engine are unchanged. This is

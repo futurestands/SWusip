@@ -1,0 +1,64 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.AuthenticatedDirectoryDeviceTest:
+INSTRUMENTATION_STATUS: test=syntheticDocumentPickerPreviews
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+OWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalStateException: Synthetic fixture must be visible in Downloads
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.selectSyntheticDocument(AuthenticatedDirectoryDeviceTest.kt:88)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.syntheticDocumentPickerPreviews(AuthenticatedDirectoryDeviceTest.kt:165)
+
+INSTRUMENTATION_STATUS: stream=
+Error in syntheticDocumentPickerPreviews(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest):
+java.lang.IllegalStateException: Synthetic fixture must be visible in Downloads
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.selectSyntheticDocument(AuthenticatedDirectoryDeviceTest.kt:88)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.syntheticDocumentPickerPreviews(AuthenticatedDirectoryDeviceTest.kt:165)
+
+INSTRUMENTATION_STATUS: test=syntheticDocumentPickerPreviews
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=authenticatedCustomerAndSchemeNavigation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+CONFIRMED: owner-authenticated administrator session; starting isolated synthetic workflows.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=authenticatedCustomerAndSchemeNavigation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 42.825
+There was 1 failure:
+1) syntheticDocumentPickerPreviews(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest)
+java.lang.IllegalStateException: Synthetic fixture must be visible in Downloads
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.selectSyntheticDocument(AuthenticatedDirectoryDeviceTest.kt:88)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.syntheticDocumentPickerPreviews(AuthenticatedDirectoryDeviceTest.kt:165)
+
+FAILURES!!!
+Tests run: 2,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

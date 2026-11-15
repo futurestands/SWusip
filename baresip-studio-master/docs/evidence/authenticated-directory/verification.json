@@ -1,0 +1,163 @@
+{
+  "baseline": "339560a019465c62e72a1ccf518f46d758feb1c0",
+  "testCoverageCommit": "fc2e9eb77bc228fe29aa33c6fc634d1327f34845",
+  "applicationVersion": "1.0.5-pilot",
+  "versionCode": 591,
+  "apkSha256": "bc19bea5fd5897dc28a95497084fde6938ae6f482110fc52f8edcb3ee97dc4be",
+  "productionSourceUnchanged": true,
+  "unitTask": "successful, up-to-date",
+  "unitResults": {
+    "tests": 47,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint": {
+    "Warning": 85
+  },
+  "pythonChecks": 14,
+  "finalDistinctPassedFunctionsAsTests": 13,
+  "remainingFailedWorkflows": [
+    "Full 10,000-record import/read/search/undo",
+    "Document-picker preview automation"
+  ],
+  "temporaryDisplaySetting": "Original stay_on_while_plugged_in=0 restored and read back",
+  "attempts": [
+    {
+      "evidence": "initial-device-lock.txt",
+      "cases": [
+        {
+          "method": "realAuthorisationEncryptedImportSearchNotesAndUndo",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "evidence": "expanded-bulk-failure.txt",
+      "cases": [
+        {
+          "method": "realAuthorisationEncryptedImportSearchNotesAndUndo",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "evidence": "small-pass-picker-harness-failure.txt",
+      "cases": [
+        {
+          "method": "realAuthorisationEncryptedImportSearchNotesAndUndo",
+          "status": "passed"
+        },
+        {
+          "method": "authenticatedCustomerAndSchemeNavigation",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "evidence": "picker-retry.txt",
+      "cases": [
+        {
+          "method": "authenticatedCustomerAndSchemeNavigation",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "evidence": "final-protected-ui.txt",
+      "cases": [
+        {
+          "method": "syntheticDocumentPickerPreviews",
+          "status": "failed"
+        },
+        {
+          "method": "authenticatedCustomerAndSchemeNavigation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "evidence": "go-picker-touch.txt",
+      "cases": [
+        {
+          "method": "syntheticDocumentPickerPreviews",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "evidence": "final-picker-unresolved.txt",
+      "cases": [
+        {
+          "method": "syntheticDocumentPickerPreviews",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "evidence": "core-regression.txt",
+      "cases": [
+        {
+          "method": "forgedPhoneAuthorisationCannotGrantAdministrator",
+          "status": "passed"
+        },
+        {
+          "method": "freshDatabaseReopensAndUnknownMigrationPreservesRecords",
+          "status": "passed"
+        },
+        {
+          "method": "excelFormulaAccountsAreRejected",
+          "status": "passed"
+        },
+        {
+          "method": "excelNumericAccountsAreRejectedRatherThanInventingLostZeroes",
+          "status": "passed"
+        },
+        {
+          "method": "excelTextAccountsKeepLeadingZeroes",
+          "status": "passed"
+        },
+        {
+          "method": "documentDeclarationsRemainRejectedOnAndroid",
+          "status": "passed"
+        },
+        {
+          "method": "suppliedExcelTemplateHasCorrectColumnsAndNoCustomers",
+          "status": "passed"
+        },
+        {
+          "method": "tenThousandCsvRecordsParseOnAndroid",
+          "status": "passed"
+        },
+        {
+          "method": "lockedWorkspaceDeniesRepositoryOperations",
+          "status": "passed"
+        },
+        {
+          "method": "keypadEditingAndUnprovisionedCallFeedback",
+          "status": "passed"
+        },
+        {
+          "method": "institutionalAboutPublicLegalNavigationSearchAndShortViewport",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "bulkWorkflow": {
+    "status": "FAILED",
+    "durationSeconds": 929.325,
+    "acceptedCountAssertion": 10000,
+    "failure": "UserNotAuthenticatedException during subsequent directory decryption",
+    "searchAndUndoCompleted": false,
+    "stageTimings": "not available in failed attempt"
+  },
+  "liveIncomingSip": "NOT_TESTED",
+  "realCustomerDataUsed": false,
+  "existingDirectoryImportedOrCleared": false,
+  "limits": [
+    "Repository editing/profile assertions are not a full visual profile-editing test",
+    "Synthetic caller matching is not a genuine incoming SIP call",
+    "Large batch performance and authentication lifetime remain a release issue"
+  ]
+}

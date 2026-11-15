@@ -1,0 +1,111 @@
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.tutpro.baresip.AuthenticatedDirectoryDeviceTest:
+INSTRUMENTATION_STATUS: test=realAuthorisationEncryptedImportSearchNotesAndUndo
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: stream=
+OWNER ACTION: confirm Unlock SWUSIP on the handset. Waiting up to 90 seconds.
+
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.tutpro.baresip.AuthenticatedDirectoryDeviceTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=java.security.InvalidKeyException: Keystore operation failed
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getInvalidKeyException(KeyStoreCryptoOperationUtils.java:127)
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getExceptionForCipherInit(KeyStoreCryptoOperationUtils.java:146)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:360)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.engineInit(AndroidKeyStoreCipherSpiBase.java:188)
+	at javax.crypto.Cipher.tryTransformWithProvider(Cipher.java:3001)
+	at javax.crypto.Cipher.tryCombinations(Cipher.java:2908)
+	at javax.crypto.Cipher$SpiAndProviderUpdater.updateAndGetSpiAndProvider(Cipher.java:2813)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:792)
+	at javax.crypto.Cipher.init(Cipher.java:1162)
+	at javax.crypto.Cipher.init(Cipher.java:1103)
+	at com.tutpro.baresip.CustomerDirectory.encrypt(CustomerDirectory.kt:78)
+	at com.tutpro.baresip.CustomerDirectory.import$create(CustomerDirectory.kt:154)
+	at com.tutpro.baresip.CustomerDirectory.import$create$default(CustomerDirectory.kt:151)
+	at com.tutpro.baresip.CustomerDirectory.import(CustomerDirectory.kt:192)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:98)
+	... 32 trimmed
+Caused by: android.security.KeyStoreException: Device locked (internal Keystore code: -72 message: system/security/keystore2/src/security_level.rs:317
+
+Caused by:
+    0: system/security/keystore2/src/enforcements.rs:591: device is locked.
+    1: Error::Km(r#DEVICE_LOCKED)) (public error code: 2 internal Keystore code: -72)
+	at android.security.KeyStore2.getKeyStoreException(KeyStore2.java:416)
+	at android.security.KeyStoreSecurityLevel.createOperation(KeyStoreSecurityLevel.java:122)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:355)
+	... 45 more
+
+INSTRUMENTATION_STATUS: stream=
+Error in realAuthorisationEncryptedImportSearchNotesAndUndo(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest):
+java.security.InvalidKeyException: Keystore operation failed
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getInvalidKeyException(KeyStoreCryptoOperationUtils.java:127)
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getExceptionForCipherInit(KeyStoreCryptoOperationUtils.java:146)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:360)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.engineInit(AndroidKeyStoreCipherSpiBase.java:188)
+	at javax.crypto.Cipher.tryTransformWithProvider(Cipher.java:3001)
+	at javax.crypto.Cipher.tryCombinations(Cipher.java:2908)
+	at javax.crypto.Cipher$SpiAndProviderUpdater.updateAndGetSpiAndProvider(Cipher.java:2813)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:792)
+	at javax.crypto.Cipher.init(Cipher.java:1162)
+	at javax.crypto.Cipher.init(Cipher.java:1103)
+	at com.tutpro.baresip.CustomerDirectory.encrypt(CustomerDirectory.kt:78)
+	at com.tutpro.baresip.CustomerDirectory.import$create(CustomerDirectory.kt:154)
+	at com.tutpro.baresip.CustomerDirectory.import$create$default(CustomerDirectory.kt:151)
+	at com.tutpro.baresip.CustomerDirectory.import(CustomerDirectory.kt:192)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:98)
+	... 32 trimmed
+Caused by: android.security.KeyStoreException: Device locked (internal Keystore code: -72 message: system/security/keystore2/src/security_level.rs:317
+
+Caused by:
+    0: system/security/keystore2/src/enforcements.rs:591: device is locked.
+    1: Error::Km(r#DEVICE_LOCKED)) (public error code: 2 internal Keystore code: -72)
+	at android.security.KeyStore2.getKeyStoreException(KeyStore2.java:416)
+	at android.security.KeyStoreSecurityLevel.createOperation(KeyStoreSecurityLevel.java:122)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:355)
+	... 45 more
+
+INSTRUMENTATION_STATUS: test=realAuthorisationEncryptedImportSearchNotesAndUndo
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 83.233
+There was 1 failure:
+1) realAuthorisationEncryptedImportSearchNotesAndUndo(com.tutpro.baresip.AuthenticatedDirectoryDeviceTest)
+java.security.InvalidKeyException: Keystore operation failed
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getInvalidKeyException(KeyStoreCryptoOperationUtils.java:127)
+	at android.security.keystore2.KeyStoreCryptoOperationUtils.getExceptionForCipherInit(KeyStoreCryptoOperationUtils.java:146)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:360)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.engineInit(AndroidKeyStoreCipherSpiBase.java:188)
+	at javax.crypto.Cipher.tryTransformWithProvider(Cipher.java:3001)
+	at javax.crypto.Cipher.tryCombinations(Cipher.java:2908)
+	at javax.crypto.Cipher$SpiAndProviderUpdater.updateAndGetSpiAndProvider(Cipher.java:2813)
+	at javax.crypto.Cipher.chooseProvider(Cipher.java:792)
+	at javax.crypto.Cipher.init(Cipher.java:1162)
+	at javax.crypto.Cipher.init(Cipher.java:1103)
+	at com.tutpro.baresip.CustomerDirectory.encrypt(CustomerDirectory.kt:78)
+	at com.tutpro.baresip.CustomerDirectory.import$create(CustomerDirectory.kt:154)
+	at com.tutpro.baresip.CustomerDirectory.import$create$default(CustomerDirectory.kt:151)
+	at com.tutpro.baresip.CustomerDirectory.import(CustomerDirectory.kt:192)
+	at com.tutpro.baresip.AuthenticatedDirectoryDeviceTest.realAuthorisationEncryptedImportSearchNotesAndUndo(AuthenticatedDirectoryDeviceTest.kt:98)
+	... 32 trimmed
+Caused by: android.security.KeyStoreException: Device locked (internal Keystore code: -72 message: system/security/keystore2/src/security_level.rs:317
+
+Caused by:
+    0: system/security/keystore2/src/enforcements.rs:591: device is locked.
+    1: Error::Km(r#DEVICE_LOCKED)) (public error code: 2 internal Keystore code: -72)
+	at android.security.KeyStore2.getKeyStoreException(KeyStore2.java:416)
+	at android.security.KeyStoreSecurityLevel.createOperation(KeyStoreSecurityLevel.java:122)
+	at android.security.keystore2.AndroidKeyStoreCipherSpiBase.ensureKeystoreOperationInitialized(AndroidKeyStoreCipherSpiBase.java:355)
+	... 45 more
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

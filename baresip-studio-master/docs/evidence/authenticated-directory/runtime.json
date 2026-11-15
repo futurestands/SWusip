@@ -1,0 +1,13 @@
+{
+  "scope": "App UID only, device timestamps at or after observation start; raw logs stay private",
+  "startDeviceEpoch": 1794688018.0,
+  "lines": 29,
+  "counts": {
+    "fatalCrash": 0,
+    "anr": 0,
+    "nativeLoading": 0,
+    "securityException": 0,
+    "keystoreAuthentication": 0
+  },
+  "limits": "This window excludes the earlier bulk-test failure; no genuine SIP call verified."
+}
