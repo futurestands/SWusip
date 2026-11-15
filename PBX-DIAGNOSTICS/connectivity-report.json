@@ -1,0 +1,10 @@
+{
+    "checkedUtc":  "2026-11-14T09:51:00.8356940Z",
+    "target":  "192.168.1.200",
+    "port":  8089,
+    "tcpReachable":  true,
+    "failureCategory":  null,
+    "timeoutMs":  5000,
+    "method":  "TCP handshake only; no application payload, authentication or configuration access",
+    "limitations":  "Does not verify device identity, administrator access, SIP calling or MTN service"
+}

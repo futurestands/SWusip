@@ -37,6 +37,25 @@ class DirectoryStorageV2DeviceTest {
     }
     private fun rows(text:String)=CustomerImport.parse((CustomerImport.requiredHeaders.joinToString(",")+"\n"+text).byteInputStream(),false)
 
+    @Test fun encryptedExportRestoreKeepsTextAccountsAndRejectsWrongPassword() {
+        val password="Synthetic device export passphrase".toCharArray()
+        CustomerDirectory(context,name()).use { source ->
+            source.import(rows("Synthetic Export One,0700123456,00000001,Synthetic Export Scheme\nSynthetic Export Two,0700123457,00000002,Synthetic Export Scheme"))
+            val bytes=CustomerExport.seal(CustomerExport.spreadsheet(source.records()),password)
+            assertFalse(String(bytes,Charsets.ISO_8859_1).contains("Synthetic Export"))
+            try {CustomerExport.open(bytes,"Wrong synthetic password".toCharArray());fail("Wrong password accepted")} catch(_:javax.crypto.AEADBadTagException) { }
+            val restored=CustomerImport.parse(CustomerExport.open(bytes,password).byteInputStream(),false)
+            CustomerDirectory(context,name()).use { target ->
+                assertEquals(2,target.import(restored).accepted)
+                assertEquals(setOf("00000001","00000002"),target.records().map {it.account}.toSet())
+                target.undoLatestImport();assertTrue(target.records().isEmpty())
+            }
+            bytes[bytes.lastIndex]=(bytes.last().toInt() xor 1).toByte()
+            try {CustomerExport.open(bytes,password);fail("Tampered export accepted")} catch(_:javax.crypto.AEADBadTagException) { }
+        }
+        password.fill('\u0000')
+    }
+
     @Test fun boundedPagedImportReadSearchAndUndoProfile() {
         CustomerDirectory(context,name()).use { directory ->
             val count=if(InstrumentationRegistry.getArguments().getString("swusipLarge")=="true") 10000 else 1000
