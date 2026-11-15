@@ -350,5 +350,5 @@
     "skipped": 0
   },
   "implementationCommit": "ac47df6da0537baafe3b6da5d1aafd83f9d059c3",
-  "manualFourColumnPicker": "Pending: owner reported an unspecified import failure; filename, error and stage requested."
+  "manualFourColumnPicker": "Passed: agent-operated phone UI selection/three-row preview/cancellation for both synthetic CSV/XLSX; see picker-followup.json. Follow-up structural inspection identified invalid CUSTO headers and numeric account cells; a corrected local copy was prepared after owner confirmation, without importing customer records."
 }

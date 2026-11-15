@@ -106,17 +106,31 @@ of an unloaded 10,000-row directory also incurs its read cost.
   background calls and call controls need approved live SIP tests. Simulated SIP
   identity lookup is not a successful call. No MTN call was attempted.
 - The earlier manual Android Go picker check passed for both three-row CSV/XLSX
-  preview/cancellation (owner-reported). New four-column picker fixtures are supplied
-  separately; their manual confirmation is recorded with the final evidence.
-  The known picker automation failure does not establish an application defect.
-- After automated testing, the owner reported an import failure without yet
-  identifying the file, exact message or stage. This remains unresolved pending
-  those details. The directory is local and does not require a hosted database.
-  Numeric account cells in the referenced workbook are a confirmed validation
-  issue, but are not established as the cause of that reported failure. A bounded
+  preview/cancellation (owner-reported). The subsequent agent-operated live phone UI
+  check also **passed for both new four-column files**: document selection, three-row
+  preview, two proposed corrections, one row needing review, Cancel and return to
+  Customers. Directory management was then closed. See
+  [the redacted follow-up](evidence/import-v2/picker-followup.json).
+  Fresh accessibility dumps and observed-control ADB touches worked with the
+  Android Go picker; the earlier instrumentation selector failure did not reproduce.
+  No import was confirmed, app restart/authentication bypass performed, or protected
+  screenshot taken. No application code/APK change was necessary for this check.
+- After automated testing, the owner reported a workbook import failure. Its exact
+  original error message/stage was not captured. A bounded
   app-UID Logcat check found zero listed crash, Keystore-authentication, SQLite,
   JSON, native-loading or out-of-memory error markers in the last 500 entries;
   caught errors need not appear there. No raw/customer logs were published.
+  Subsequent read-only structural inspection identified `custo.xlsx` with repeated
+  headings across A1:K1 (data only in A:D), and `custo (1).xlsx` without a heading
+  row. Both stored account cells numerically. These are confirmed import blockers;
+  neither original is ready for the four-column importer unchanged. After the
+  owner confirmed the displayed accounts were complete, a local four-column copy
+  was prepared with literal text cells, preserving all 1,208 records and leaving
+  originals unchanged. The verified copy was transferred to the owner's phone as
+  `Download/CUSTO-SWUSIP-ready.xlsx`. No customer workbook, row values or private
+  preparation files were committed or used as development test fixtures. The copy
+  was not imported into the directory; phone validation and duplicate/account
+  review still apply. A hosted database is not required.
 - The phone has an administrator grant. Authenticated ordinary-agent UI denial
   has not been re-tested by changing that device's assigned role; locked denial
   and production role gates remain. No authentication bypass was used.

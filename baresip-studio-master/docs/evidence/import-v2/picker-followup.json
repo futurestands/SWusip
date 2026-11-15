@@ -1,0 +1,211 @@
+{
+  "application": "SWUSIP",
+  "version": "1.0.6-pilot",
+  "versionCode": 592,
+  "method": "Agent-operated live phone UI through explicit-target wireless ADB. Fresh unique-path accessibility dumps and observed-control touch input; no instrumentation restart.",
+  "deviceModel": "25028RN03A",
+  "authentication": "Existing normally authenticated workspace; no credential entry, session injection or security changes.",
+  "results": [
+    {
+      "file": "swusip-four-column-preview.csv",
+      "sha256": "4aff20c660e2a0911ccd6445ad3436591cec16f96bc141631db6efabafdacbbb",
+      "phoneCopyHashMatches": true,
+      "documentSelection": "passed",
+      "previewRows": 3,
+      "acceptedForProcessing": 2,
+      "proposedCorrections": 2,
+      "needsReview": 1,
+      "cancel": "passed",
+      "returnedToCustomers": true,
+      "importConfirmed": false
+    },
+    {
+      "file": "swusip-four-column-preview.xlsx",
+      "sha256": "eb6cc49d45712f2cd58225cf2ba269f6a138c3aff0e3a5af905d0a1d7846e97d",
+      "phoneCopyHashMatches": true,
+      "documentSelection": "passed",
+      "previewRows": 3,
+      "acceptedForProcessing": 2,
+      "proposedCorrections": 2,
+      "needsReview": 1,
+      "cancel": "passed",
+      "returnedToCustomers": true,
+      "importConfirmed": false
+    }
+  ],
+  "applicationSourceChanged": false,
+  "apkChanged": false,
+  "finalScreen": "Customers; directory management closed",
+  "errorCountScope": "Last 500 app-UID log entries after tests. Counts only; no raw/customer logs.",
+  "errorMarkers": {
+    "FATAL EXCEPTION": 0,
+    "Fatal signal": 0,
+    "UserNotAuthenticatedException": 0,
+    "KeyPermanentlyInvalidatedException": 0,
+    "SQLiteConstraintException": 0,
+    "SQLiteBlobTooBigException": 0,
+    "OutOfMemoryError": 0,
+    "JSONException": 0,
+    "UnsatisfiedLinkError": 0
+  },
+  "limits": [
+    "This verifies document selection, preview and cancellation, not a new import into the existing directory.",
+    "The prior isolated encrypted import tests remain separate.",
+    "The original workbook import error was not captured. Later structural inspection found CUSTO header/type blockers; a corrected local copy was provided without importing customer records.",
+    "No real customer records, SIP calls or PBX changes."
+  ],
+  "observations": [
+    {
+      "timeUtc": "2026-11-15T04:41:02.973716+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Review 3 rows before import",
+        "Cancel"
+      ],
+      "previewSummary": [
+        "Accepted for processing: 2 \u00b7 Proposed corrections: 2 \u00b7 Needs review: 1. Confirming stores review rows separately; they cannot identify callers. Existing data is never deleted."
+      ],
+      "requestedAction": null
+    },
+    {
+      "timeUtc": "2026-11-15T04:41:05.870387+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Review 3 rows before import",
+        "Cancel"
+      ],
+      "previewSummary": [
+        "Accepted for processing: 2 \u00b7 Proposed corrections: 2 \u00b7 Needs review: 1. Confirming stores review rows separately; they cannot identify callers. Existing data is never deleted."
+      ],
+      "requestedAction": "Cancel"
+    },
+    {
+      "timeUtc": "2026-11-15T04:41:09.717798+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Back to call centre",
+        "Name, telephone, account or scheme",
+        "Close directory management",
+        "Import CSV / XLSX"
+      ],
+      "previewSummary": [],
+      "requestedAction": null
+    },
+    {
+      "timeUtc": "2026-11-15T04:41:12.675972+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Back to call centre",
+        "Name, telephone, account or scheme",
+        "Close directory management",
+        "Import CSV / XLSX"
+      ],
+      "previewSummary": [],
+      "requestedAction": "Import CSV / XLSX"
+    },
+    {
+      "timeUtc": "2026-11-15T04:41:16.144520+00:00",
+      "packages": [
+        "com.google.android.go.documentsui"
+      ],
+      "visibleAllowedLabels": [
+        "Downloads",
+        "Show roots",
+        "Downloads"
+      ],
+      "previewSummary": [],
+      "requestedAction": "--scroll-files"
+    },
+    {
+      "timeUtc": "2026-11-15T04:41:32.824618+00:00",
+      "packages": [
+        "com.google.android.go.documentsui"
+      ],
+      "visibleAllowedLabels": [
+        "Show roots",
+        "Downloads",
+        "swusip-four-column-preview.csv",
+        "swusip-four-column-preview.xlsx"
+      ],
+      "previewSummary": [],
+      "requestedAction": "swusip-four-column-preview.xlsx"
+    },
+    {
+      "timeUtc": "2026-11-15T04:41:36.011247+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Review 3 rows before import",
+        "Cancel"
+      ],
+      "previewSummary": [
+        "Accepted for processing: 2 \u00b7 Proposed corrections: 2 \u00b7 Needs review: 1. Confirming stores review rows separately; they cannot identify callers. Existing data is never deleted."
+      ],
+      "requestedAction": null
+    },
+    {
+      "timeUtc": "2026-11-15T04:42:06.881179+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Review 3 rows before import",
+        "Cancel"
+      ],
+      "previewSummary": [
+        "Accepted for processing: 2 \u00b7 Proposed corrections: 2 \u00b7 Needs review: 1. Confirming stores review rows separately; they cannot identify callers. Existing data is never deleted."
+      ],
+      "requestedAction": "Cancel"
+    },
+    {
+      "timeUtc": "2026-11-15T04:42:10.374764+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Back to call centre",
+        "Name, telephone, account or scheme",
+        "Close directory management",
+        "Import CSV / XLSX"
+      ],
+      "previewSummary": [],
+      "requestedAction": null
+    },
+    {
+      "timeUtc": "2026-11-15T04:42:13.638034+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Back to call centre",
+        "Name, telephone, account or scheme",
+        "Close directory management",
+        "Import CSV / XLSX"
+      ],
+      "previewSummary": [],
+      "requestedAction": "Close directory management"
+    },
+    {
+      "timeUtc": "2026-11-15T04:42:16.856834+00:00",
+      "packages": [
+        "ug.go.mwe.swusip"
+      ],
+      "visibleAllowedLabels": [
+        "Back to call centre",
+        "Name, telephone, account or scheme",
+        "Manage directory"
+      ],
+      "previewSummary": [],
+      "requestedAction": null
+    }
+  ]
+}
