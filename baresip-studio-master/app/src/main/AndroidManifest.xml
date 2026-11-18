@@ -217,8 +217,7 @@
         <receiver
             android:name=".TaskReceiver"
             android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedReceiver" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.tutpro.baresip.REGISTER" />
                 <action android:name="com.tutpro.baresip.UNREGISTER" />

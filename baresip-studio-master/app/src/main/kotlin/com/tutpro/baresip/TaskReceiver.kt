@@ -10,6 +10,12 @@ class TaskReceiver : BroadcastReceiver() {
 
         Log.d(TAG, "TaskReceiver: received intent ${intent.action}")
 
+        val targetPackage = intent.`package`
+        if (targetPackage != null && targetPackage != context.packageName) {
+            Log.w(TAG, "TaskReceiver: ignoring broadcast intended for foreign package $targetPackage")
+            return
+        }
+
         when (intent.action) {
 
             "com.tutpro.baresip.REGISTER", "com.tutpro.baresip.UNREGISTER" -> {
